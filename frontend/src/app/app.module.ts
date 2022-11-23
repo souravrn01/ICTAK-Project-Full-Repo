@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AdminModule } from './admin/admin.module';
+import { AlumniModule } from './alumni/alumni.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EmployerModule } from './employer/employer.module';
 import { MaterialModule } from './material/material.module';
 
 
@@ -14,8 +16,11 @@ import { MaterialModule } from './material/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
-    MaterialModule
+    MaterialModule,
+    AdminModule,
+    EmployerModule,
+    AlumniModule
+
 
 
   ],
