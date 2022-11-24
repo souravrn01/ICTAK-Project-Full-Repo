@@ -1,20 +1,22 @@
 const express = require('express')
-const mongoose = require('mongoose')
-const app = express();
-
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-
+const cors = require('cors')
+const logger = require('morgan') // for seeing api calls in terminal
 require('./middlewares/mongodb') //to init mongoDB
 
-const logger = require('morgan') // for seeing api calls in terminal
-const cors = require('cors')
+const app = express();
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 app.use(logger('dev'))
 app.use(cors()) //to connect frontend and backend without any disturbance
 
 
-// Server code 
+//api setup
+const api = require('./routes/api')
+app.use('/api', api)
+
+
+// Server connection 
 var port = process.env.PORT || 3000;
 app.listen(port,()=>{
-    console.log(`server is connected to ${port}`)
+    console.log(`server is connected to ${port}....`)
 })
