@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 const MaterialComponents = [
 
@@ -10,6 +11,8 @@ const MaterialComponents = [
   declarations: [],
   imports: [
     BrowserAnimationsModule,
+
+   
   ],
   exports:[]
   

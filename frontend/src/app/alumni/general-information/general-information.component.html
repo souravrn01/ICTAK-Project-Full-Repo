@@ -1,0 +1,154 @@
+<app-header></app-header>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+        <app-side-navbar></app-side-navbar>
+    </mat-drawer>
+    <mat-card-content class="m-2">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-card>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                            <h2 class="text-center" style="color:rgb(131, 131, 134)">Job Seeker General
+                                                Information</h2>
+                                            <div class="card-body">
+                                                <form action="" class="p-1">
+                                                    <div class="row m-2">
+                                                        <div class="col-md-12">
+                                                            <input type="text" class="form-control" name="firstname"
+                                                                placeholder="First Name">
+                                                        </div>
+                                                    </div>
+                                                        <div class="row m-2">
+                                                        <div class="col-md-12">
+                                                            <input type="text" class="form-control" name="lastname"
+                                                                placeholder="Last Name">
+                                                        </div>
+                                                        </div>
+                                                    <div class="row m-2">
+                                                        <div class="col-md-12">
+                                                            <input type="email" class="form-control" name="email"
+                                                                placeholder="Email Address">
+                                                        </div>
+                                                        </div>
+                                                        <div class="row m-2">
+                                                        <div class="col-md-12">
+                                                            <input type="number" class="form-control" name="phone"
+                                                                placeholder="Phone Number">
+                                                        </div>
+                                                        </div>
+                                                        <div class="row m-3">
+                                                            <div class="col-md-3">
+                                                                <label for="">Gender</label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                                                    <label class="form-check-label" for="exampleRadios1">
+                                                                      Male
+                                                                    </label>
+                                                                  </div>
+                                                                  </div>
+                                                                  <div class="col-md-3">
+                                                                  <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                                    <label class="form-check-label" for="exampleRadios2">
+                                                                      Female
+                                                                    </label>
+                                                                  </div>
+                                                                  </div>
+                                                                  <div class="col-md-3">
+                                                                  <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                                                    <label class="form-check-label" for="exampleRadios3">
+                                                                      Other
+                                                                    </label>
+                                                                  </div>
+                                                            </div>
+                                                           </div>
+                                                        <div class="row m-2">
+                                                        <div class="col-md-12">
+                                                            <input type="date" class="form-control" name="dob">
+                                                        </div>
+                                                        </div>
+                                                        <div class="row m-2">
+                                                            <div class="col-md-12">
+                                                                <select class="form-select" aria-label="Default select example">
+                                                                    <option selected>Martial Status</option>
+                                                                    <option value="1">Married</option>
+                                                                    <option value="2">Unmarried</option>
+                                                                    <option value="3">Divorced</option>
+                                                                  </select>
+                                                            </div>
+                                                            </div>
+                                                          
+                            
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                        </mat-card>
+                    </div>
+               
+       
+        <div class="col-md-6">
+            <mat-card>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="text-center" style="color:rgb(131, 131, 134)">Communication Details</h2>
+                            <div class="card-body">
+                                <form action="" class="p-1">
+                                    <div class="row m-2">
+                                        <div class="col-md-12">
+                                           <textarea name="address" class="form-control" placeholder="Permanent Address"></textarea>
+                                         </div>
+                                        </div>
+                                    <div class="row m-2">
+                                        <div class="col-md-12">
+                                            <input type="number" class="form-control" name="alternatenumber" placeholder="Alternate Phone Number">
+                                         </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-md-12">
+                                            <input type="number" class="form-control" name="pincode" placeholder="Pincode">
+                                         </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" name="district" placeholder="District">
+                                         </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" name="state" placeholder="State">
+                                         </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" name="country" placeholder="Country">
+                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center m-2 ps-3 pe-3">
+                                            <button type="button" class="btn btn-light">Save</button>
+                                        </div>
+                                       </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        </div>
+        </div>
+        </section>
+    </mat-card-content>
+</mat-drawer-container>
+
+<app-footer></app-footer>

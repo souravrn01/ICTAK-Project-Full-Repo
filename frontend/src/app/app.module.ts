@@ -8,6 +8,7 @@ import { EmployerModule } from './employer/employer.module';
 import { MaterialModule } from './material/material.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +21,6 @@ import { MaterialModule } from './material/material.module';
     AdminModule,
     EmployerModule,
     AlumniModule
-
-
 
   ],
   providers: [],

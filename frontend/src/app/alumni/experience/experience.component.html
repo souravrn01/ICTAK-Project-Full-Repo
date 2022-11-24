@@ -1,0 +1,83 @@
+<app-header></app-header>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+    <app-side-navbar></app-side-navbar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-card class="m-2">
+            <section>
+                <div class="container">
+                    <table class="table">
+                        <thead style="font-size: 15px">
+                          <tr>
+                            <th scope="col">SNo</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Designation/Role</th>
+                            <th scope="col">Total Year of Experience</th>
+                            <th scope="col">Salary</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </section>
+        </mat-card>
+        <mat-card class="m-2">
+          <div>
+            <h2 class="text-center" style="color:rgb(82, 82, 90)">Experience Details</h2>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="qualification" placeholder="Company/Organization">
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="role" placeholder="Designation/Role">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="status" placeholder="Presenting Working/Not">
+                  </div>
+              </div>
+            <div class="row">
+                <div class="col-md-2 mt-4">
+                    <label for="">Starting Date :</label>
+                </div>
+              <div class="col-md-4">
+                <input type="date" class="form-control" name="starting-date">
+              </div>
+              <div class="col-md-2 mt-4">
+                <label for="">Ending Date :</label>
+            </div>
+          <div class="col-md-4">
+            <input type="date" class="form-control" name="ending-date">
+          </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" name="salary" placeholder="Current monthly salary">
+              </div>
+              <div class="col-md-6">
+                <input type="number" class="form-control" name="notice-period" placeholder="Notice Period">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center m-4 ps-3 pe-3">
+                  <button type="button" class="btn btn-light">Save</button>
+              </div>
+             </div>
+          </div>
+        </mat-card>   
+             
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<app-footer></app-footer>
