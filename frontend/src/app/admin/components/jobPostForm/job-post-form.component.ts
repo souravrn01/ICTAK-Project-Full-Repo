@@ -15,10 +15,10 @@ export class JobPostFormComponent implements OnInit {
     'qualification':new FormControl(''),
     'jobSector':new FormControl(''),
     'location':new FormControl(''),
-    'skills':new FormControl(''),
+    'skills':new FormControl([]),
     'description':new FormControl(''),
     'salaryRange':new FormControl(''),
-    'postedBy':new FormControl(''),
+    'postedBy':new FormControl('admin'),
     'experience':new FormControl(''),
     'closingDate':new FormControl(''),
   
@@ -30,13 +30,11 @@ export class JobPostFormComponent implements OnInit {
   }
 
   onSubmit(){
-    alert('submitted')
     console.log(this.jobForm.value);
     
-    // this.api.postJob(this.jobForm.value).subscribe(res=>{
-    //   console.log(res);
-      
-    // })
+    this.api.postJob(this.jobForm.value).subscribe(res=>{
+      console.log(res);
+    })
   }
 
 }
