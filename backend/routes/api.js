@@ -9,3 +9,4 @@ const verifiedJobs = require('./jobApi')
 
 //use api
 router.use('/verifiedjobs',verifiedJobs)
+module.exports = router;

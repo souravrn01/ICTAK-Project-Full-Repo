@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployerModule } from './employer/employer.module';
 import { MaterialModule } from './material/material.module';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +20,9 @@ import { MaterialModule } from './material/material.module';
     MaterialModule,
     AdminModule,
     EmployerModule,
-    AlumniModule
+    AlumniModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

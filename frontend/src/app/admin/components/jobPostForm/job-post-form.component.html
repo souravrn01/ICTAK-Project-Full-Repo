@@ -1,0 +1,19 @@
+<div class="body">
+   
+   <form [formGroup] ="jobForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <label for="jobTitle">JOB TITLE: <input id="jobTitle" type="text" formControlName="jobTitle"></label>
+        <label for="companyName">COMPANY NAME: <input id="companyName" type="text" formControlName="companyName"></label>
+        <label for="qualification">EDUCATIONAL QUALIFICATION: <input id="qualification" type="text" formControlName="qualification"></label>
+        <label for="jobSector">JOB SECTOR: <input id="jobSector" type="text" formControlName="jobSector"></label>
+        <label for="location">LOCATION: <input id="location" type="text" formControlName="location"></label>
+        <label for="skills">REQUIRED SKILLS: <input id="skills" type="text" formControlName="skills"></label>
+        <label for="description">JOB DESCRIPTION: <textarea id="description" type="text" rows="5" cols="30" placeholder="Job description..." formControlName="description"></textarea></label>
+        <label for="salaryRange">SALARY RANGE: <input id="salaryRange" type="text" formControlName="salaryRange"></label>
+        <label for="experience">EXPERIENCE : <input id="experience" type="text" formControlName="experience"></label>
+        <label for="closingDate">CLOSING DATE: <input id="closingDate" type="date" formControlName="closingDate"></label>
+        <input id="postedBy" type="hidden" value="admin" formControlName="postedBy">
+    </fieldset>
+    <input type="submit" value="POST JOB" />
+   </form>
+</div >
