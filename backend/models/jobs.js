@@ -7,12 +7,13 @@ const jobSchema = new schema({
     qualification: String,
     experience: String,
     jobSector: String,
-    companyName:String,
+    companyName: String,
     location: String,
-    closingDate: String,
+    closingDate: Date,
     skills:Array,
     description:String,
-    salaryRange: String
+    salaryRange: String,
+    postedBy: String
 })
 
 let jobData = mongoose.model('jobData', jobSchema)
