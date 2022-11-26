@@ -14,6 +14,7 @@ router.get('/getjob', async(req, res)=>{  // getting job
 
 router.post('/postjob', async(req, res)=>{  // posting job
     try {
+        console.log(req.body)
         let data = {
             // data collection from body
             jobTitle: req.body.jobTitle,
