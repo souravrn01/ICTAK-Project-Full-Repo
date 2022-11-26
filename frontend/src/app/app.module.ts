@@ -8,6 +8,7 @@ import { EmployerModule } from './employer/employer.module';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminApiService } from './admin/admin-api.service';
+import { AlumniApiService } from './alumni/alumni-api.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { AdminApiService } from './admin/admin-api.service';
     ReactiveFormsModule
 
   ],
-  providers: [AdminApiService],
+  providers: [AdminApiService,AlumniApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

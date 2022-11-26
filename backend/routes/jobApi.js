@@ -16,6 +16,17 @@ router.post('/postjob', async(req, res)=>{  // posting job
     try {
         let data = {
             // data collection from body
+            jobTitle: req.body.jobTitle,
+            qualification: req.body.qualification,
+            experience: req.body.experience,
+            jobSector: req.body.jobSector,
+            companyName: req.body.companyName,
+            location: req.body.location,
+            closingDate:req.body.closingDate,
+            skills:req.body.skills,
+            description:req.body.description,
+            salaryRange: req.body.salaryRange,
+            postedBy: req.body.postedBy
         }
         const newJob = new JOBDATA(data)
         const savedJob = await newJob.save()
