@@ -16,7 +16,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
-import { EmployerSignupComponent } from './employer-signup/employer-signup.component';
 import {MatCardModule} from '@angular/material/card';
 import { AlumniSignupComponent } from './alumni-signup/alumni-signup.component';
 
@@ -31,7 +30,7 @@ import { AlumniApiService } from './alumni/alumni-api.service';
     HeaderComponent,
     HomeComponent,
     LoginComponent,
-    EmployerSignupComponent,
+
     AlumniSignupComponent,
    
   ],
