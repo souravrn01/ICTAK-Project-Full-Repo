@@ -28,13 +28,7 @@ router.post('/aluminisignup', async(req, res)=>{
 router.post('/alumnieducation',async(req,res)=>{
     try{
         let educationdata = {
-            qualification:req.body.qualification,
-            completion_status:req.body.completion_status,
-            main_stream:req.body.main_stream,
-            specialization:req.body.specialization,
-            university:req.body.university,
-            percentage:req.body.percentage,
-            year_of_pass:req.body.year_of_pass,
+            education:req.body.education
         }
         const alumni = new AluminiData(educationdata)
         const saveEducation = await alumni.save()
