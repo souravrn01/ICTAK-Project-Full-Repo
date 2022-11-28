@@ -16,28 +16,13 @@ const alumniSchema= new schema({
     state:String,
     country:String,
     education : {
-        qualification : {
-
-            type:String
-        },
-        completion_status : {
-            type:String
-        },
-        main_stream : {
-            type:String 
-        },
-        specialization :{
-            type:String
-        },
-        university : {
-            type:String
-        },
-        percentage : {
-            type:Number
-        },
-        year_of_pass : {
-            type:Number
-        }
+        qualification:String,
+        completion_status:String,
+        main_stream:String,
+        specialization:String,
+        university:String,
+        percentage:Number,
+        year_of_pass:Number   
     },
     experience :{
         company:String,
