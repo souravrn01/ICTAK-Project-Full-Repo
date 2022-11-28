@@ -8,13 +8,12 @@
   }
   mat-drawer-container{
     height: 100%;
-    margin-left: 5px;
   }
   mat-drawer-content{
     padding: 20px;
   }
   mat-card{
-    width:45%;
+    width:50%;
     height: 250px;
   }
   

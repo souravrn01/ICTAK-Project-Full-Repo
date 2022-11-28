@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { EmployerModule } from './employer/employer.module';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +19,11 @@ import {MatMenuModule} from '@angular/material/menu';
 import { EmployerSignupComponent } from './employer-signup/employer-signup.component';
 import {MatCardModule} from '@angular/material/card';
 import { AlumniSignupComponent } from './alumni-signup/alumni-signup.component';
+
+import { AdminApiService } from './admin/admin-api.service';
+import { AlumniApiService } from './alumni/alumni-api.service';
+
+
 
 @NgModule({
   declarations: [

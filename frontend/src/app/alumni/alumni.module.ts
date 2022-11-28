@@ -25,6 +25,9 @@ import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ViewjobsComponent } from './viewjobs/viewjobs.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,8 +39,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     GeneralInformationComponent,
     ExperienceComponent,
     EducationComponent,
+    ViewjobsComponent,
   
-  ],
+  ], 
   imports: [
     CommonModule,
     AlumniRoutingModule,
@@ -55,7 +59,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatButtonModule,
     RouterModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,FormsModule,
+    HttpClientModule
   ]
 })
-export class AlumniModule { }
+export class AlumniModule{ }

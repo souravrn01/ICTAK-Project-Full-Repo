@@ -4,17 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminApiService {
+export class AlumniApiService {
 
   constructor(private http:HttpClient) { }
-  postJob(data:any){
-    return this.http.post('http://localhost:3000/api/verifiedjobs/postjob', data)
+
+  getJob(){
+    return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
   }
-
-  
-
-
-
-
-
 }
