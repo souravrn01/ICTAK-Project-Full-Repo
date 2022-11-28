@@ -8,7 +8,7 @@ export class AlumniApiService {
 
   constructor(private http:HttpClient) { }
 
-  getJob(data:any){
-    return this.http.get('http://localhost:3000/getjob')
+  getJob(){
+    return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
   }
 }

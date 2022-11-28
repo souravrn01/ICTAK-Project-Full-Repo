@@ -26,6 +26,7 @@ import { EducationComponent } from './education/education.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ViewjobsComponent } from './viewjobs/viewjobs.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { ViewjobsComponent } from './viewjobs/viewjobs.component';
     MatButtonModule,
     RouterModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,FormsModule
   ]
 })
 export class AlumniModule{ }

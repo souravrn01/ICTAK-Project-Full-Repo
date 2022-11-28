@@ -1,5 +1,21 @@
 <app-header></app-header>
-<mat-card>
-    <mat-card-content>Simple card</mat-card-content>
-  </mat-card>
+<div class="container">    
+  <mat-card>
+    <mat-card-content>
+      <div  *ngFor="let job of jobs">
+        <h3>{{job.jobTitle}}</h3>
+        <h5>{{job.qualification}}</h5>
+        <h5>{{job.experience}}</h5>
+        <h5>{{job.jobSector}}</h5>
+        <h5>{{job.companyName}}</h5>
+        <h5>{{job.location}}</h5>
+        <h5>{{job.closingDate}}</h5>
+        <h5>{{job.skills}}</h5>
+        <h5>{{job.description}}</h5>
+        <h5>{{job.salaryRange}}</h5>
+      </div>
+    </mat-card-content>
+  </mat-card>   
+</div>
+
   
