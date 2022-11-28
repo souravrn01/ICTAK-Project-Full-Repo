@@ -1,0 +1,23 @@
+.container{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form{
+   width: 500px;
+}
+.form-floating>.form-select {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem;
+}
+select {
+    height: calc(2.5rem + 2px) !important;
+    line-height: 1.25;
+}
+.btn{
+    margin-left: 200px;
+    margin-top: 20px;
+}

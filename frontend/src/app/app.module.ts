@@ -7,11 +7,26 @@ import { AppComponent } from './app.component';
 import { EmployerModule } from './employer/employer.module';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './home/home.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { LoginComponent } from './login/login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+import { EmployerSignupComponent } from './employer-signup/employer-signup.component';
+import {MatCardModule} from '@angular/material/card';
+import { AlumniSignupComponent } from './alumni-signup/alumni-signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    LoginComponent,
+    EmployerSignupComponent,
+    AlumniSignupComponent,
    
   ],
   imports: [
@@ -22,10 +37,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EmployerModule,
     AlumniModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[LoginComponent]
 })
 export class AppModule { }
