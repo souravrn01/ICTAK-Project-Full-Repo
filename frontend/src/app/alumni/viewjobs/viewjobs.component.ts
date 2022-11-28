@@ -12,6 +12,7 @@ export class ViewjobsComponent implements OnInit {
 
   jobs:any=[]
   ngOnInit(): void {
+    this.getjob()
   }
 
  getjob(){
