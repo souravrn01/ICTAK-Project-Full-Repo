@@ -11,7 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { HeaderComponent } from './header/header.component';
+
 import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,18 +28,19 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ViewjobsComponent } from './viewjobs/viewjobs.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AlumniHeaderComponent } from './alumni-header/alumni-header.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     SideNavbarComponent,
-    HeaderComponent,
     FooterComponent,
     ProfileComponent,
     GeneralInformationComponent,
     ExperienceComponent,
     EducationComponent,
     ViewjobsComponent,
+    AlumniHeaderComponent,
   
   ], 
   imports: [
