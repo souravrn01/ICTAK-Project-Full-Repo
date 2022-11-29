@@ -1,26 +1,21 @@
-<app-alumni-header (toggleSideBarForMe)="sideBarToggler()"></app-alumni-header>
+<app-alumni-header></app-alumni-header>
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="sideBarOpen">
+    <mat-drawer mode="side" opened>
+
     <app-side-navbar></app-side-navbar>
     </mat-drawer>
     <mat-drawer-content>
-        <div class="container">
-            <mat-card class="m-3">
-                <div class="container">
-                    <div class="row">
-                    <mat-card-content style="color:rgb(53, 53, 139)" class="fw-bold" >Find your Job</mat-card-content>
-                    <p align="justify" class="p-1">Are you looking for more than a job? Do you want to advance 
-                        your career as you work to create tangible, meaningful, and inclusive impact,
-                         both inside and outside the walls of your workplace? Sounds like we have
-                          got a lot in common. See how we can support your professional 
-                          goals and help you find opportunities based on your strengths while 
-                          advancing our shared values.</p>
-                   </div>
-                    
-                          <button mat-stroked-button routerLink="/alumniviewjobs" color="primary">Find Jobs</button>
-                          </div>
-                </mat-card> 
-        </div>
+        
+             <mat-card class="m-3">
+                <mat-card-content style="color:rgb(53, 53, 139)" class="fw-bold" >JOB TITLE</mat-card-content>
+                <mat-card-content style="color:rgb(53, 53, 139)" align="justify">Are you looking for more than a job? Do you want to advance 
+                    your career as you work to create tangible, meaningful, and inclusive impact,
+                     both inside and outside the walls of your workplace? Sounds like we have
+                      got a lot in common. See how we can support your professional 
+                      goals and help you find opportunities based on your strengths while 
+                      advancing our shared values.</mat-card-content>
+                      <button mat-stroked-button routerLink="/alumniviewjobs"olor="primary">Find Jobs</button>
+            </mat-card> 
     </mat-drawer-content>
 </mat-drawer-container>
 

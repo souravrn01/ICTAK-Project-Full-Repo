@@ -13,8 +13,5 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  sideBarToggler(){
-    this.sideBarOpen= !this.sideBarToggler
-  }
+  opened=false;
 }

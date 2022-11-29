@@ -10,13 +10,9 @@ export class AlumniHeaderComponent implements OnInit {
 
   constructor() { }
 
-  @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter()
 
   ngOnInit(): void {
   }
-  toggleSideBar(){
-    this.toggleSideBarForMe.emit()
-
-  }
+ opened=false;
 
 }
