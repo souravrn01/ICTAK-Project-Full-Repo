@@ -44,6 +44,7 @@ const alumniSchema= new schema({
         default: "not approved"
     },
 
+    password:String
 })
 
 let aluminiData=mongoose.model('Alumini_Details',alumniSchema)

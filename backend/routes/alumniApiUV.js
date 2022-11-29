@@ -15,7 +15,8 @@ router.post('/aluminisignup', async(req, res)=>{
             course_started_at_ictak:req.body.course_started_at_ictak,
             batch_details:req.body.batch_details,
             placement_status:req.body.placement_status,
-            company_name:req.body.company
+            company_name:req.body.company_name,
+            password:req.body.password
         }
         const alumini = new AluminiData(data)
         const saveAlumini = await alumini.save()
@@ -38,4 +39,4 @@ router.post('/alumnieducation',async(req,res)=>{
         console.log('post error:',error); 
     }
 })
-module.exports=router
+module.exports=router;

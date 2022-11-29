@@ -8,15 +8,18 @@ import { EmployerModule } from './employer/employer.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './main/header/header.component';
+import { HomeComponent } from './main/home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './main/login/login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
-import { AlumniSignupComponent } from './alumni-signup/alumni-signup.component';
+import { AlumniSignupComponent } from './main/alumni-signup/alumni-signup.component';
+import { EmployeSignupComponent } from './main/employe-signup/employe-signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SignUpService } from './main/sign-up.service';
 
 
 
@@ -30,6 +33,8 @@ import { AlumniSignupComponent } from './alumni-signup/alumni-signup.component';
     LoginComponent,
 
     AlumniSignupComponent,
+      EmployeSignupComponent,
+      
    
   ],
   imports: [
@@ -45,9 +50,10 @@ import { AlumniSignupComponent } from './alumni-signup/alumni-signup.component';
     MatButtonModule,
     MatDialogModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SignUpService],
   bootstrap: [AppComponent],
   entryComponents:[LoginComponent]
 })

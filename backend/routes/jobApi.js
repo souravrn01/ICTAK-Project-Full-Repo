@@ -71,4 +71,4 @@ router.get('/getOneJob/:id', async(req,res)=>{ // Get a single job by id
     }
 })
 
-module.exports = router
+module.exports = router;
