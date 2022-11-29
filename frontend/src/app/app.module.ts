@@ -5,7 +5,6 @@ import { AlumniModule } from './alumni/alumni.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployerModule } from './employer/employer.module';
-import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,7 +37,6 @@ import { AlumniApiService } from './alumni/alumni-api.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
     AdminModule,
     EmployerModule,
     AlumniModule,

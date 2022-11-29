@@ -15,7 +15,7 @@ export class JobPostFormComponent implements OnInit {
     'qualification':new FormControl(''),
     'jobSector':new FormControl(''),
     'location':new FormControl(''),
-    'skills':new FormControl([]),
+    'skills':new FormControl(''),   
     'description':new FormControl(''),
     'salaryRange':new FormControl(''),
     'postedBy':new FormControl('admin'),
