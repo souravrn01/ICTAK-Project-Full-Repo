@@ -11,7 +11,9 @@ export class AdminApiService {
     return this.http.post('http://localhost:3000/api/verifiedjobs/postjob', data)
   }
 
-  
+  postmail(data:any){
+    return this.http.post('http://localhost:3000/api/nodemailer/alumnimail', data)
+  }
 
 
 

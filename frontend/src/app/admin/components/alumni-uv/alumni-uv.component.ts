@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormControl } from '@angular/forms';
+import { AdminApiService } from '../../admin-api.service';
 
 @Component({
   selector: 'app-alumni-uv',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlumniUVComponent implements OnInit {
 
-  constructor() { }
+
+  feedbackForm:any = new FormGroup({
+    'feedback' : new FormControl('')
+  })
+
+  constructor(private api: AdminApiService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log(this.feedbackForm.value);
+    this.api.postmail(this.feedbackForm.value).subscribe(res=>{
+      console.log(res);
+    })
+  }
+
 }
+
