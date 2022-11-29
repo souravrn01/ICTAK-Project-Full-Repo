@@ -37,7 +37,13 @@ const alumniSchema= new schema({
     highest_qualification:String,
     course_started_at_ictak:String,
     batch_details:String,
-    placement_status:String
+    placement_status:String,
+    company_name:String,
+    approval_status:{
+        type: String,
+        default: "not approved"
+    },
+
 })
 
 let aluminiData=mongoose.model('Alumini_Details',alumniSchema)
