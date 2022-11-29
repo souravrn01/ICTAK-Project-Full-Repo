@@ -25,7 +25,23 @@ router.post('/aluminisignup', async(req, res)=>{
         console.log('post error:',error);
     }
 })
-
+router.get('/aluminilist',async(req,res)=>{
+    try {
+        let list=await AluminiData.find()
+        res.send(list)
+    } catch (error) {
+       console.log(error) 
+    }
+})
+router.get('/aluminisignup/:id',async(req,res)=>{
+    try {
+        let id=req.params.id
+        const singleAlumni=await  AluminiData.findById(id)
+        res.send(singleAlumni)
+    } catch (error) {
+        console.log(error)
+    }
+})
 router.post('/alumnieducation',async(req,res)=>{
     try{
         let educationdata = {

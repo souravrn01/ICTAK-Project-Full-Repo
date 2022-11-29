@@ -20,6 +20,23 @@ router.post('/employesignup',async(req,res)=>{
         console.log('post error:',error);
     }
 })
+router.get('/employelist',async(req,res)=>{
+    try {
+        let list=await EmployeData.find()
+        res.send(list)
+    } catch (error) {
+       console.log(error) 
+    }
+})
+router.get('/employesignup/:id',async(req,res)=>{
+    try {
+        let id=req.params.id
+        const singleEmploye=await  EmployeData.findById(id)
+        res.send(singleEmploye)
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 
