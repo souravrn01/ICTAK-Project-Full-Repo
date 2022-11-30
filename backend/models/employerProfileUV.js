@@ -4,7 +4,7 @@ const schema=mongoose.Schema
 const employeSchema= new schema({
     name:String,
     email:String,
-    phone:Number,
+    phone:String,
     company:String,
     password:String
 })

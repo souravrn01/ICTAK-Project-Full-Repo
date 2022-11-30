@@ -1,0 +1,29 @@
+
+.card{
+ 
+    background-color: #2efd059f;
+   }
+   button{
+       border: none;
+       background-color: rgb(14, 218, 31);
+       margin: 10px;
+       color: white;
+       font-size: larger;
+       text-decoration: none;
+   }
+   h3{
+       text-align: center;
+   }
+   h2{
+       text-align: center;
+   }
+   .example-card {
+       
+       margin: 10px;
+       max-width: 360px;
+     }
+     
+     .example-header-image {
+       
+       background-size: cover;
+     }
