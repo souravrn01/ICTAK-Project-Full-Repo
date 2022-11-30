@@ -6,10 +6,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { JobPostFormComponent } from './components/jobPostForm/job-post-form.component';
 import { AdminDashComponent } from './admin-dash.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
-  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent],
-  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule],
+  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent,],
+  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule ],
 })
 export class AdminModule {}
