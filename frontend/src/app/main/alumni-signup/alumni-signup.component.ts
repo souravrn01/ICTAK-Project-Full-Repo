@@ -17,7 +17,7 @@ export class AlumniSignupComponent implements OnInit {
     batch_details:new FormControl(null,Validators.required),
     placement_status:new FormControl(null,Validators.required),
     company_name:new FormControl(null),
-    password:new FormControl(null)
+    password:new FormControl(null,[Validators.required,Validators.minLength(8),Validators.maxLength(15)])
   })
   constructor(private signup:SignUpService,private router:Router) { }
 
@@ -26,11 +26,8 @@ export class AlumniSignupComponent implements OnInit {
   sign(){
   this.signup.addData(this.alumniSignup.value).subscribe((res)=>{
     console.log(this.alumniSignup.value)
-    console.log(this.alumniSignup.status)
-    let status=this.alumniSignup.status
-    if(status=='VALID'){
       this.router.navigate(['/alumnidashboard'])
-    }
+    
   
  }
   )
