@@ -3,7 +3,7 @@
     <div class="ms-auto">
       <button mat-stroked-button color="basic" class="m-1" routerLink="/alumnidashboard">Home</button>
       <button mat-stroked-button color="basic" class="m-2 me-4">Logout</button>
-  </div>
+    </div>
   </div>
 </nav>
 <section id="home" class="bg-cover" style="background-color: rgb(136, 179, 142);">
@@ -12,30 +12,57 @@
     <div class="row">
       <div class="col-12 p-5">
         <div class="input-group mb-3">
-          <input type="text" class="form-control p-2" value="Find your Job Here"  aria-label="Recipient's username" aria-describedby="button-addon2">
+          <input type="text" class="form-control p-2" value="Find your Job Here" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
           <button class="btn btn-light m-1 p-2" type="button" id="button-addon2">SEARCH</button>
         </div>
       </div>
     </div>
   </div>
 </section>
-  <div class="container">
-    <div class="row" *ngFor="let job of jobs">
-      <div class="col-md-12 m-2">
-        <mat-card style="background-color:beige">
-          <mat-card-content>
-            <h2>{{job.jobTitle}}</h2>
-            <h4>Company : {{job.companyName}}</h4>
-            <h4>Place : {{job.location}}</h4>
-            <h4>Qualification : {{job.qualification}}</h4>
-            <h4>Experience : {{job.experience}}</h4>
-            <h4>ClosingDate : {{job.closingDate|date}}</h4>
-            <h4>Salary-Range : {{job.salaryRange}}</h4>
-            <button type="button" class="btn btn-light" style="background-color:rgb(136, 167, 136)" (click)=" getSinglejob(job._id)" routerLink="/applyjobs">Go to Job</button>
-          </mat-card-content>
-        </mat-card>
-      </div>
+<div class="container">
+  <div class="row" *ngFor="let job of jobs">
+    <div class="col-md-12 m-2">
+      <mat-card style="background-color:beige">
+        <mat-card-content>
+          <h2>{{job.jobTitle}}</h2>
+          <h4>Company : {{job.companyName}}</h4>
+          <h4>Place : {{job.location}}</h4>
+          <h4>Qualification : {{job.qualification}}</h4>
+          <h4>Experience : {{job.experience}}</h4>
+          <h4>ClosingDate : {{job.closingDate}}</h4>
+          <h4>Salary-Range : {{job.salaryRange}}</h4>
+          <h4>Skills : {{job.skills}}</h4>
+          <h4>Description : {{job.description}}</h4>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-light" style="background-color:rgb(136, 167, 136)" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Apply
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+                  <h1>OR</h1>
+                  <input type="text" class="text p-1">
+                  <h5>Online Link</h5>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Save</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
-
-
+</div>

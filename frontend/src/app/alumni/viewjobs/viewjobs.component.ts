@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlumniApiService } from '../alumni-api.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AlumniApiService } from '../alumni-api.service';
 })
 export class ViewjobsComponent implements OnInit {
 
-  constructor(private apiService: AlumniApiService) { }
+  constructor(private apiService: AlumniApiService, private router: Router) { }
 
   jobs:any=[]
   ngOnInit(): void {
@@ -18,10 +19,6 @@ export class ViewjobsComponent implements OnInit {
  getjob(){
   this.apiService.getJob().subscribe(res=>{
     this.jobs=res
-  })
- }
- getSinglejob(id:any){
-  this.apiService.getSinglejob(id).subscribe(res=>{
   })
  }
 }

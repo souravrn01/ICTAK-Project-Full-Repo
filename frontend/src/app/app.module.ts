@@ -21,6 +21,7 @@ import { AlumniSignupComponent } from './main/alumni-signup/alumni-signup.compon
 import { EmployeSignupComponent } from './main/employe-signup/employe-signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpService } from './main/sign-up.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 

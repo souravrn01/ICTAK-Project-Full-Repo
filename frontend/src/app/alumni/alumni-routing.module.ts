@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'experiences',component:ExperienceComponent},
   {path:'side-navbar',component:SideNavbarComponent},
   {path:'alumniviewjobs',component:ViewjobsComponent},
-  {path:'applyjobs',component:ApplyjobsComponent}
+  {path:'applyjobs/:id',component:ApplyjobsComponent}
 ];
 
 
