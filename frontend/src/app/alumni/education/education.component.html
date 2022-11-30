@@ -1,67 +1,89 @@
 
+<mat-toolbar class="navbar">
+  <mat-toolbar-row>
+      <button mat-icon-button>
+          <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <div class="ms-auto">
+          <button mat-stroked-button color="basic" class="m-1">Saved Jobs</button>
+          <button mat-stroked-button color="basic" class="m-1">Applied Jobs</button>
+          <button mat-stroked-button color="basic" class="m-1">Logout</button>
+      </div>
+</mat-toolbar-row>
+</mat-toolbar>
 
-    <mat-card class="m-2">
-        <section>
-            <div class="container">
-                <table class="table">
-                    <thead style="font-size: 15px">
-                      <tr>
-                        <th scope="col">SNo</th>
-                        <th scope="col">Qualification</th>
-                        <th scope="col">Institution</th>
-                        <th scope="col">Year of passing</th>
-                        <th scope="col">Percentage</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened>
+      <app-side-navbar></app-side-navbar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div style="height:88vh;">
+        <mat-card class="m-2">
+          <section>
+              <div class="container">
+                  <table class="table">
+                      <thead style="font-size: 15px">
+                        <tr>
+                          <th scope="col">SNo</th>
+                          <th scope="col">Qualification</th>
+                          <th scope="col">Institution</th>
+                          <th scope="col">Year of passing</th>
+                          <th scope="col">Percentage</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row"></th>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+          </section>
+      </mat-card>
+      <mat-card class="m-2">
+        <div>
+          <h2 class="text-center" style="color:rgb(82, 82, 90)">Education Details</h2>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="qualification" placeholder="Qualification">
             </div>
-        </section>
-    </mat-card>
-    <mat-card class="m-2">
-      <div>
-        <h2 class="text-center" style="color:rgb(82, 82, 90)">Education Details</h2>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="qualification" placeholder="Qualification">
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="status" placeholder="Completion Status">
+            </div>
           </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="status" placeholder="Completion Status">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="stream" placeholder="Main Stream">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="specialization" placeholder="Specialization">
+            </div>
           </div>
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="college" placeholder="University/Institute/Board">
+            </div>
+            <div class="col-md-3">
+              <input type="number" class="form-control" name="percentage" placeholder="Percentage">
+            </div>
+            <div class="col-md-3">
+              <input type="number" class="form-control" name="year" placeholder="Year of passing">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center m-4 ps-3 pe-3">
+                <button type="button" class="btn btn-light">Save</button>
+            </div>
+           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="stream" placeholder="Main Stream">
-          </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="specialization" placeholder="Specialization">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="college" placeholder="University/Institute/Board">
-          </div>
-          <div class="col-md-3">
-            <input type="number" class="form-control" name="percentage" placeholder="Percentage">
-          </div>
-          <div class="col-md-3">
-            <input type="number" class="form-control" name="year" placeholder="Year of passing">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center m-4 ps-3 pe-3">
-              <button type="button" class="btn btn-light">Save</button>
-          </div>
-         </div>
-      </div>
-    </mat-card>
+      </mat-card>
+      </div>    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+    
   
