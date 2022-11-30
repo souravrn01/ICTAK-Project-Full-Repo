@@ -27,6 +27,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     SideNavbarComponent,
     FooterComponent,
-    ViewjobsComponent
+    ViewjobsComponent,
+    ApplyjobsComponent
   ],
   imports: [
     CommonModule,

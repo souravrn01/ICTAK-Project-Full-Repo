@@ -20,4 +20,8 @@ export class ViewjobsComponent implements OnInit {
     this.jobs=res
   })
  }
+ getSinglejob(id:any){
+  this.apiService.getSinglejob(id).subscribe(res=>{
+  })
+ }
 }
