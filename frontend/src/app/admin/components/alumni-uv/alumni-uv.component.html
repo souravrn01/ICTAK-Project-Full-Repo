@@ -2,7 +2,7 @@
 
 <div class="body">
     <div class="card" *ngFor ="let alumni of alumniData">
-        <form [formGroup] = "feedbackForm "  (ngSubmit)="onSubmit()">
+        <form [formGroup] = "feedbackForm "  (ngSubmit)="onSubmit(alumni.name, alumni.email)">
             <fieldset>
                 <label>Name:<p>{{alumni.name}}</p></label>
                 <label>email:<p>{{alumni.email}}</p></label>
@@ -19,7 +19,7 @@
             </fieldset>
             <button type="submit">Send</button>
         </form>  
-        <button (ngSubmit)="delete()" >Delete</button>
-        <button (ngSubmit)="approve(alumni._id)" >Approve</button>   
+        <button (click)="delete(alumni._id)" >Delete</button>
+        <button (click)="approve(alumni)" >Approve</button>   
     </div>                                               
 </div>

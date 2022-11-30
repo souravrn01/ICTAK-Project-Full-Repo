@@ -35,7 +35,7 @@ router.get('/aluminilist',async(req,res)=>{
     }
 })
 
-router.get('/aluminiuv',async(req,res)=>{       // getdata for admin to collect unverified alumni
+router.get('/aluminis',async(req,res)=>{       // getdata for admin to collect unverified alumni
     try {
         let list=await AluminiData.find({approval_status: "not approved"})
         res.send(list)
@@ -67,4 +67,45 @@ router.post('/alumnieducation',async(req,res)=>{
         console.log('post error:',error); 
     }
 })
+
+router.put('/onealumni', async(req,res)=>{    // for admin to get one alumni to verify
+    try {
+
+        console.log(req.body)
+        let id = req.body._id
+        let update = { 
+            name: req.body.name,
+            email: req.body.email,
+            phone:  req.body.phone,
+            highest_qualification:  req.body.highest_qualification,
+            course_started_at_ictak:  req.body.course_started_at_ictak,
+            batch_details:  req.body.batch_details,
+            placement_status:  req.body.placement_status,
+            company_name:  req.body.company_name,
+            approval_status:  req.body.approval_status,
+            password:  req.body.password
+        }
+        let updates = {$set: update}
+        let verifiedAlumni = await AluminiData.findByIdAndUpdate({"_id": id}, updates,{new:true})
+        res.send(verifiedAlumni)
+
+} catch (error) {
+    console.log('update error:',error);
+}})
+
+router.delete('/deletealumni/:id', async(req, res)=>{        // for admin to delete alumni
+    try {
+
+       let id =  req.params.id
+       let data=await AluminiData.findByIdAndDelete(id)
+       res.send(data)
+        
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+
 module.exports=router;

@@ -5,20 +5,22 @@ const router = express.Router()
 
 router.post('/alumnimail', async(req,res)=>{
 
+  console.log(req.body.data.feedback, req.body.email, req.body.name )
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'souravg00gle@gmail.com',
-      pass: 'wdrwsckawblzoqxe' // naturally, replace both with your real credentials or an application-specific password
+      user: 'sherinthomas17011997@gmail.com',
+      pass: 'Jobportal@1' // naturally, replace both with your real credentials or an application-specific password wdrwsckawblzoqxe
     }
   });
   
   const mailOptions = {
     from: 'souravg00gle@gmail.com',
-    to: 'souravrnambiar3369@yahoo.com',
+    to: req.body.email,
     subject: 'ICATK Job Portal Update',
-    text: ` This is very important mail from admin
-            ${req.body.feedback}
+    text: ` This is very important mail from admin 
+            Dear ${req.body.name}
+            ${req.body.data.feedback}
             from ICTAK admin`
   };
 
