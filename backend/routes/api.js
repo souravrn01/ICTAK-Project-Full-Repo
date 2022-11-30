@@ -10,7 +10,6 @@ const verifiedJobs = require('./jobApi')
 const alumniUV = require('./alumniApiUV')
 const employeuv=require('./employerProfileApiUV')
 
-
 //use api
 router.use('/nodemailer',mail)
 router.use('/verifiedjobs',verifiedJobs)

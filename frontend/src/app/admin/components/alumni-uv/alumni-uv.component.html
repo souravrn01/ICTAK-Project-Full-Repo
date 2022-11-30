@@ -1,22 +1,25 @@
 
 
 <div class="body">
-    <form [formGroup] = "feedbackForm "  (ngSubmit)="onSubmit()">
-        <fieldset>
-            <label>Name:<p></p></label>
-            <label>email:<p></p></label>
-            <label>Phone:<p></p></label>
-            <label>Hightest Qualification:<p></p></label>
-            <label>Selected Course:<p></p></label>
-            <label>Batch Name:<p></p></label>
-            <label>Placement Status:<p></p></label>
-            <label>Company Name:<p></p></label>
-             <label for="feedback">
-                Feedback:<textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
-             </label>
-        </fieldset>
-        <button type="submit">Send</button>
-    </form>  
-    <button>Delete</button>
-    <button>Approve</button>                                                  
+    <div class="card" *ngFor ="let alumni of alumniData">
+        <form [formGroup] = "feedbackForm "  (ngSubmit)="onSubmit()">
+            <fieldset>
+                <label>Name:<p>{{alumni.name}}</p></label>
+                <label>email:<p>{{alumni.email}}</p></label>
+                <label>Phone:<p>{{alumni.phone}}</p></label>
+                <label>Hightest Qualification:<p>{{alumni.highest_qualification}}</p></label>
+                <label>Selected Course:<p>{{alumni.course_started_at_ictak}}</p></label>
+                <label>Batch Name:<p>{{alumni.batch_details}}</p></label>
+                <label>Placement Status:<p>{{alumni.placement_status
+                }}</p></label>
+                <label *ngIf = "alumni.company_name != null">Company Name:<p>{{alumni.company_name}}</p></label>
+                 <label for="feedback">
+                    Feedback:<textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
+                 </label>
+            </fieldset>
+            <button type="submit">Send</button>
+        </form>  
+        <button (ngSubmit)="delete()" >Delete</button>
+        <button (ngSubmit)="approve(alumni._id)" >Approve</button>   
+    </div>                                               
 </div>
