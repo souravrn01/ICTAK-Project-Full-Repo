@@ -1,21 +1,29 @@
-<app-header></app-header>
-<div class="container">    
-  <mat-card>
-    <mat-card-content>
-      <div  *ngFor="let job of jobs">
-        <h3>{{job.jobTitle}}</h3>
-        <h5>{{job.qualification}}</h5>
-        <h5>{{job.experience}}</h5>
-        <h5>{{job.jobSector}}</h5>
-        <h5>{{job.companyName}}</h5>
-        <h5>{{job.location}}</h5>
-        <h5>{{job.closingDate}}</h5>
-        <h5>{{job.skills}}</h5>
-        <h5>{{job.description}}</h5>
-        <h5>{{job.salaryRange}}</h5>
-      </div>
-    </mat-card-content>
-  </mat-card>   
-</div>
 
-  
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <input type="text" class="m-2">
+        <button>Search</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div *ngFor="let job of jobs">
+      <mat-card>
+        <mat-card-content>
+          <h2>{{job.jobTitle}}</h2>
+          <h4>Company : {{job.companyName}}</h4>
+          <h4>Place : {{job.location}}</h4>
+          <h4>Qualification : {{job.qualification}}</h4>
+          <h4>Experience : {{job.experience}}</h4>
+          <h4>Sector : {{job.jobSector}}</h4>
+          <h4>ClosingDate : {{job.closingDate}}</h4>
+          <h4>Skills : {{job.skills}}</h4>
+          <h4>Salary-Range : {{job.salaryRange}}</h4>
+          <h4>Description : {{job.description}}</h4>
+          <button type="button" class="btn btn-primary">Apply</button>
+              <button  type="button" class="btn btn-primary m-2">Save</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

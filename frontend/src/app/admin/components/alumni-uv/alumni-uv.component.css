@@ -1,0 +1,12 @@
+label{
+    display: block;
+}
+textarea{
+    display:block;
+}
+p{
+    display: inline;
+}
+button{
+    width: 10em;
+}

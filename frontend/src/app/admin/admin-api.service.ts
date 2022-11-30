@@ -11,10 +11,12 @@ export class AdminApiService {
     return this.http.post('http://localhost:3000/api/verifiedjobs/postjob', data)
   }
 
-  
+  postmail(data:any){
+    return this.http.post('http://localhost:3000/api/nodemailer/alumnimail', data)
+  }
 
-
-
-
+  getalumni(){
+    return this.http.get('http://localhost:3000/api/alumniuv/aluminiuv')
+  }
 
 }

@@ -11,4 +11,6 @@ export class AlumniApiService {
   getJob(){
     return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
   }
+
 }
+

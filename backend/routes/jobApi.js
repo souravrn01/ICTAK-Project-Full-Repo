@@ -43,7 +43,7 @@ router.put('/editJob', async(req, res)=>{  // update Job
         let updates = {
             // data of updated jobs
         }
-        let updateJob = {$set: update}
+        let updateJob = {$set: updates}
         let updatedJob = await JOBDATA.findByIdAndUpdate({"_id": id}, updateJob,{new:true})
         res.send(updatedJob)
     } catch (error) {
@@ -71,4 +71,4 @@ router.get('/getOneJob/:id', async(req,res)=>{ // Get a single job by id
     }
 })
 
-module.exports = router
+module.exports = router;
