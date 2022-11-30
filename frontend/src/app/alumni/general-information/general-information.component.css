@@ -11,12 +11,6 @@
     margin-top: 19px;
     color: rgb(128, 121, 121);
    }
-   button{
-    border: 1px solid rgb(168, 154, 154);
-    padding-right: 70px;
-    padding-left: 70px;
-    border-radius: 70px;
-   }
    button:hover{
     border-color: rgb(143, 134, 134);
     background-color: rgb(240, 233, 233);

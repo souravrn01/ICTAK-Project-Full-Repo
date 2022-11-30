@@ -4,10 +4,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SignUpService {
-apiURL:any='http://localhost:3000/api/Alumniuv'
+apiURL:any='http://localhost:3000/api'
   constructor(private http:HttpClient) { }
 
   addData(data:any){
-    return this.http.post(`${this.apiURL}/aluminisignup`,data)
+    return this.http.post(`${this.apiURL}/Alumniuv/aluminisignup`,data)
+  }
+  addEmploye(data:any){
+    return this.http.post(`${this.apiURL}/employeuv/employesignup`,data)
   }
 }
