@@ -1,35 +1,21 @@
-:host{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-    mat-drawer{
-      width: 300px;
-    }
-    mat-drawer-container{
-      height: 100%;
-      margin-left: 5px;
-    }
-    mat-drawer-content{
-      padding: 20px;
-    }
+
     .form-control{
-      background:transparent;
-      border-radius: 0px;
-      border: 1px solid rgb(218, 211, 211);
-      margin-top: 15px;
-      height: 40px;
-      border-radius: 10px;
-      color: black;
-     }
-     button{
-      border: 1px solid rgb(168, 154, 154);
-      padding-right: 70px;
-      padding-left: 70px;
-      border-radius: 60px;
-     }
-     button:hover{
-      border-color: rgb(143, 134, 134);
-      background-color: rgb(240, 233, 233);
-     }
-    
+        background:transparent;
+        border-radius: 0px;
+        border: 1px solid rgb(218, 211, 211);
+        margin-top: 15px;
+        height: 40px;
+        border-radius: 10px;
+        color: black;
+       }
+       button{
+        border: 1px solid rgb(168, 154, 154);
+        padding-right: 70px;
+        padding-left: 70px;
+        border-radius: 60px;
+       }
+       button:hover{
+        border-color: rgb(143, 134, 134);
+        background-color: rgb(240, 233, 233);
+       }
+      

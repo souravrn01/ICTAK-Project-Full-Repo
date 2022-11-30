@@ -1,22 +1,13 @@
 :host{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-  mat-drawer{
-    width: 300px;
-  }
-  mat-drawer-container{
+    display: flex;
+    flex-direction: column;
     height: 100%;
   }
-  mat-drawer-content{
-    padding: 20px;
+  mat-sidenav{
+    width: 300px;
   }
-  mat-card{
-    width:50%;
-    height: 250px;
-  }
-  .profile-card{
-    text-align: center;
-    padding: 0 15px 15px 15px;
-}
+    mat-card{
+      width:50%;
+      height: 250px;
+    }
+    
