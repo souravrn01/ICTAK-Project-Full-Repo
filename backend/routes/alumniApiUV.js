@@ -25,6 +25,7 @@ router.post('/aluminisignup', async(req, res)=>{
         console.log('post error:',error);
     }
 })
+
 router.get('/aluminilist',async(req,res)=>{
     try {
         let list=await AluminiData.find()
@@ -33,6 +34,17 @@ router.get('/aluminilist',async(req,res)=>{
        console.log(error) 
     }
 })
+
+router.get('/aluminiuv',async(req,res)=>{       // getdata for admin to collect unverified alumni
+    try {
+        let list=await AluminiData.find({approval_status: "not approved"})
+        res.send(list)
+    } catch (error) {
+       console.log(error) 
+    }
+})
+
+
 router.get('/aluminisignup/:id',async(req,res)=>{
     try {
         let id=req.params.id

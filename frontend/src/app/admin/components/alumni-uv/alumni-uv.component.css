@@ -4,3 +4,9 @@ label{
 textarea{
     display:block;
 }
+p{
+    display: inline;
+}
+button{
+    width: 10em;
+}

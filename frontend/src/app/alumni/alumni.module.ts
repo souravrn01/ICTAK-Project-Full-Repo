@@ -9,7 +9,6 @@ import { EducationComponent } from './education/education.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { JobDashboardComponent } from './job-dashboard/job-dashboard.component';
 import { ViewjobsComponent } from './viewjobs/viewjobs.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -38,7 +37,6 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     SideNavbarComponent,
     FooterComponent,
-    JobDashboardComponent,
     ViewjobsComponent
   ],
   imports: [
