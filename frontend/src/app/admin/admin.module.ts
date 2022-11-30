@@ -8,8 +8,12 @@ import { AdminDashComponent } from './admin-dash.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatCardModule} from '@angular/material/card';
+import { AlumniUVComponent } from './components/alumni-uv/alumni-uv.component';
+
+
+
 @NgModule({
-  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent,],
-  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule ],
+  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent],
+  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule],
 })
 export class AdminModule {}
