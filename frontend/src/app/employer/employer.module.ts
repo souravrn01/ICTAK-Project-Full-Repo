@@ -9,9 +9,10 @@ import { EmployerRoutingModule } from './employer-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddjobComponent } from './addjob/addjob.component';
 import { ProfileComponent } from './profile/profile.component';
-
-
-
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule }  from'@angular/material/input'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -25,8 +26,11 @@ import { ProfileComponent } from './profile/profile.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule
-
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class EmployerModule { }

@@ -1,3 +1,67 @@
-<div class=divs>
+<mat-card class="header">
+    <mat-card-content>
+        <div class="header">
+            <h3>ADD JOB</h3>
+        </div>
+    </mat-card-content>
+</mat-card><br><br>
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="addForm" (ngSubmit)="onsubmit()">
+            <div class="mb-3">
+              <label class="form-label">JOB TITLE</label>
+              <input type="text" class="form-control" id="jobTitle" formControlName="jobTitle" >
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">COMPANY</label>
+              <input type="text" class="form-control" id="companyName" formControlName="companyName">
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label  class="form-label">EDUCATION QUALIFICATION</label>
+                    <input type="text" class="form-control" id="qualification" formControlName="qualification">
+                </div>
+                <div class="col mb-3">
+                    <label  class="form-label">JOB SECTOR</label>
+                    <input type="text" class="form-control" id="jobSector" formControlName="jobSector">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label  class="form-label">LOCATION</label>
+                    <input type="text" class="form-control" id="location" formControlName="location">
+                </div>
+                <div class="col mb-3">
+                    <label  class="form-label">REQUIRED SKILL</label>
+                    <input type="text" class="form-control" id="skills" formControlName="skills">
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label  class="form-label">JOB DESCRIPTION</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Job description..." formControlName="description"></textarea>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label  class="form-label">SALARY RANGE</label>
+                    <input type="text" class="form-control" id="salaryRange" formControlName="salaryRange">
+                </div>
+                <div class="col mb-3">
+                    <label  class="form-label">EXPERIENCE</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formControlName="experience">
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label  class="form-label">CLOSING DATE</label>
+                <input type="date" class="form-control" id="closingDate" formControlName="closingDate">
+            </div> <div class="col mb-3">
+                <label  class="form-label"></label>
+                <input id="postedBy" type="hidden" value="employe" formControlName="postedBy">
+            </div>
 
-</div>
+            
+  
+            <button type="submit" [disabled]="!addForm.valid" class="btn btn-primary">POST JOB</button>
+          </form>
+    </mat-card-content>
+  </mat-card>
+  

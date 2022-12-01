@@ -1,11 +1,12 @@
 .navbar{
-    margin-top:5px;
+
     background-color: rgba(0, 0, 0, .2);
-    height: 60px;
+    
 }
 .head{
-    width: 25%;
+    width: 15%;
 }
 .side{
-    width: 75%;
+    width: 85%;
 }
+

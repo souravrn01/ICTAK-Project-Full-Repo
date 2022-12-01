@@ -4,6 +4,7 @@ const EmployeData=require('../models/employerProfileUV')
 
 
 
+
 router.post('/employesignup',async(req,res)=>{
     try {
         let data={
