@@ -22,15 +22,16 @@ export class AddjobComponent implements OnInit {
     salaryRange:new FormControl('',Validators.required),
     experience:new FormControl('',Validators.required),
     closingDate:new FormControl('',Validators.required),
-    postedBy:new FormControl('employe'),
+    postedBy:new FormControl('employe')
   
   })
   ngOnInit(): void {
   }
   onsubmit(){
-    console.log(this.addForm.value)
     this.api.addJob(this.addForm.value).subscribe(res=>{
       console.log(res);
+      alert('data saved successfully')
+      this.addForm.reset();
     })
   }
 

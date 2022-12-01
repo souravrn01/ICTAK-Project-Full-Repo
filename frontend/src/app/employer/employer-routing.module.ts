@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddjobComponent } from './addjob/addjob.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ViewjobComponent } from './viewjob/viewjob.component';
+
 
 const routes: Routes = [{path: 'empDash', component: DashboardComponent},
   {path: 'empDash', component: DashboardComponent,children: [{ path: 'job', component: AddjobComponent },
-  { path: 'profile', component: ProfileComponent }]
+  {path: 'viewjob', component: ViewjobComponent}]
 },];
 
 @NgModule({
