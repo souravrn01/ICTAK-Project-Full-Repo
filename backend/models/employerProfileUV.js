@@ -8,6 +8,10 @@ const employeSchema= new schema({
     company:String,
     password:String, 
     designation:String,
+    usertype:{
+        type:String,
+        default:"employee"
+    },
     approval_status:{
         type: String,
         default: "not approved"

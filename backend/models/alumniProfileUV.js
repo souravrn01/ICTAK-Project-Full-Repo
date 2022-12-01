@@ -43,6 +43,10 @@ const alumniSchema= new schema({
         type: String,
         default: "not approved"
     },
+    usertype:{
+        type:String,
+        default:"alumni"
+    },
 
     password:String
 })

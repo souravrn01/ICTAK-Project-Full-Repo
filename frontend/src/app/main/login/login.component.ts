@@ -13,31 +13,42 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,
     private SignUpService:SignUpService) { }
 
-    database:any
-
+    
+    alumnidata:any
+    empdata:any
   loginForm=new FormGroup({
-    emailid:new FormControl(null,[Validators.required,Validators.email]),
-    passwords:new FormControl(null,[Validators.required,Validators.minLength(8)])
+    email:new FormControl(null,[Validators.required,Validators.email]),
+    password:new FormControl(null,[Validators.required,Validators.minLength(8)]),
+    usertype:new FormControl(null,[Validators.required])
   })
   ngOnInit() {
 
-    this.SignUpService.getlogin().subscribe((res:any)=>{
-      this.database=res
-      console.log(res)
+    this.SignUpService.getalumnilogin().subscribe((res:any)=>{
+      this.alumnidata=res
     })
+    this.SignUpService.getemployeelogin().subscribe(res=>{
+      this.empdata=res
+    })
+   
   }
   condition:any=''
 login(){
 
-  for(var data of this.database){
-    if(data.email===this.loginForm.value.emailid && data.password===this.loginForm.value.passwords){
-      this.router.navigate(['alumnidashboard'])
+    for(var data of this.alumnidata){
+    if(this.loginForm.value.usertype===data.usertype){
+      if(data.email===this.loginForm.value.email && data.password===this.loginForm.value.password){
+        this.router.navigate(['alumnidashboard'])
+      }
     }
-    else{
-      this.condition='invalid username and password'
+    }
+    for(var data of this.empdata){
+     if(this.loginForm.value.usertype==data.usertype){
+      if(data.email===this.loginForm.value.email && data.password===this.loginForm.value.password){
+        this.router.navigate(['empDash'])
+      }
     }
   }
-     
-}
+    
+  } 
 
 }
