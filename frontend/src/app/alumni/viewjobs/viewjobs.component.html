@@ -49,10 +49,21 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                  <div class="m-2">
+                    <input id="name" type="text" placeholder="Name">
+                  </div>
+                <div class="m-2">
+                  <input id="email" type="email" placeholder="Email Address">
+                </div>
+                <div class="m-2">
+                  <input id="phone" type="number" placeholder="Phone Number">
+                </div>
+                 <div class="m-2">
                   <input type="file" class="file-upload" onchange="console.log(event.target.files)">
-                  <h1>OR</h1>
-                  <input type="text" class="text p-1">
-                  <h5>Online Link</h5>
+                  <h1 class="m-2">OR</h1>
+                  <input type="text" class="text" placeholder="Profile Link">
+                 </div>
+                 
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-primary">Save</button>
