@@ -13,4 +13,7 @@ apiURL:any='http://localhost:3000/api'
   addEmploye(data:any){
     return this.http.post(`${this.apiURL}/employeuv/employesignup`,data)
   }
+  getlogin(){
+    return this.http.get(`${this.apiURL}/Alumniuv/aluminilist`)
+  }
 }
