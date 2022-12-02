@@ -4,9 +4,6 @@ const schema = mongoose.Schema
 
 const applicationSchema = new schema({
 
-    name: String,
-    email: String,
-    phone: Number,
     resume_file_upload: {
         data: Buffer,
         contentType: String

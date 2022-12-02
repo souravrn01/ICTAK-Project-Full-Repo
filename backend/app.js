@@ -8,18 +8,11 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(logger('dev'))
 app.use(cors()) //to connect frontend and backend without any disturbance
-//file upload
-const multer = require('multer')
 
-const Storage = multer.diskStorage({
-    destination:'uploads',
-    filename:(req,file,cb)=>{
-        cd(null,file,originalname);
-    }
-})
-const upload = multer({
-    storage:Storage
-}).single('resume_file_upload')
+
+
+
+
 
 //api setup
 const api = require('./routes/api') 

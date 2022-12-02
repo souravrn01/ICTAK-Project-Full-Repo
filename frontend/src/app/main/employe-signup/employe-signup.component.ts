@@ -27,7 +27,7 @@ onSubmit(){
   // let status=this.employeeForm.status
   this.signup.addEmploye(this.employeeForm.value).subscribe((res)=>{
     console.log(this.employeeForm.value)
-    this.router.navigate(['/empDash'])
+    this.router.navigate(['/home'])
   })
 }
 }
