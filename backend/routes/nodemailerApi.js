@@ -10,7 +10,7 @@ router.post('/alumnimail', async(req,res)=>{
     service: 'gmail',
     auth: {
       user: 'sherinthomas17011997@gmail.com',
-      pass: 'Jobportal@1' // naturally, replace both with your real credentials or an application-specific password wdrwsckawblzoqxe
+      pass: 'Jobportal@1' // naturally, replace both with your real credentials or an application-specific password: wdrwsckawblzoqxe
     }
   });
   

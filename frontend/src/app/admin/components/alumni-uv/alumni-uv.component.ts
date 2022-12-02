@@ -12,7 +12,7 @@ export class AlumniUVComponent implements OnInit {
 
   feedbackForm:any = new FormGroup({
     'feedback' : new FormControl('')
-  })
+    })
                                                                // all decalarations
 
   alumniData:any = []
@@ -43,19 +43,18 @@ export class AlumniUVComponent implements OnInit {
     })
   }
 
-  async approve(data:any){   // approval
-
+   approve(data:any){   // approval
      data.approval_status  = "verified"
     this.verified = data
-     this.api.getonealumni(this.verified).subscribe( async res =>{
+     this.api.approvealumni(this.verified).subscribe( res =>{
         console.log(res);
-        await this.getAlumni()
+         this.getAlumni()
      })
   }
 
    delete(id:any){          // alumni delete
-    this.api.deletealumni(id).subscribe(async res =>{
-      await this.getAlumni()
+    this.api.deletealumni(id).subscribe( res =>{
+       this.getAlumni()
     })
   }
 

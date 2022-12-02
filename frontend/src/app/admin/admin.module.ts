@@ -9,11 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatCardModule} from '@angular/material/card';
 import { AlumniUVComponent } from './components/alumni-uv/alumni-uv.component';
+import { VerifyEmpComponent } from './components/verify-emp/verify-emp.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent],
+  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent, VerifyEmpComponent],
   imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule],
 })
 export class AdminModule {}

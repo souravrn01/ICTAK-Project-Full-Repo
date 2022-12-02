@@ -19,12 +19,24 @@ export class AdminApiService {
     return this.http.get('http://localhost:3000/api/alumniuv/aluminis')
   }
 
-  getonealumni(data:any){
+  approvealumni(data:any){
     return this.http.put(`http://localhost:3000/api/alumniuv/onealumni`,data)
     
   }
 
   deletealumni(id:any){
     return this.http.delete(`http://localhost:3000/api/alumniuv/deletealumni/${id}`)
+  }
+
+  getEmp(){
+    return this.http.get('http://localhost:3000/api/employeuv/employers')
+  }
+
+  deleteemp(id:any){
+    return this.http.delete(`http://localhost:3000/api/employeuv/deleteemployer/${id}`)
+  }
+
+  approveemp(data:any){
+    return this.http.put(`http://localhost:3000/api/employeuv/verifyemp`, data)
   }
 }
