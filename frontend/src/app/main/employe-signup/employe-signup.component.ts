@@ -14,6 +14,7 @@ export class EmployeSignupComponent implements OnInit {
     email:new FormControl(null,[Validators.required,Validators.pattern('^([A-Za-z0-9\-.]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$')]),
     phone:new FormControl(null,[Validators.required,Validators.pattern('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$')]),
     company:new FormControl(null,Validators.required),
+    designation:new FormControl(null,Validators.required),
     password:new FormControl(null,[Validators.required,Validators.minLength(8),Validators.maxLength(15)])
   })
   constructor(private signup:SignUpService,private router:Router) { }
