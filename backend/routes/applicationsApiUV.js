@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const ApplicationData = require('../models/applicationsUV')
 
+const multer=require('multer')
 
 
 //stora data 

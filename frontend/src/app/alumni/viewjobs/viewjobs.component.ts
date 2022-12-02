@@ -37,8 +37,8 @@ export class ViewjobsComponent implements OnInit {
 onSubmit(){
   this.apiService.addjobapplication(this.form.value).subscribe({
     complete:()=>{
-      
-      this.router.navigate(['/alumniviewjobs'])
+      alert("data saved");
+     window.close();
     }
   })
 }
