@@ -15,8 +15,7 @@ const applicationSchema = new schema({
     approval_status: {
         type: String,
         default: "not approved"
-    },
-
+    }
 }) 
 let applicationData = mongoose.model('Application_Details',applicationSchema)
 module.exports= applicationData
