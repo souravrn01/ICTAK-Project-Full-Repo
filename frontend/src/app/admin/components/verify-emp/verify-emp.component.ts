@@ -23,6 +23,7 @@ verified: any = []
   constructor(private api: AdminApiService) { }
 
   ngOnInit(): void {
+    this.getEmp()
   }
 
 
