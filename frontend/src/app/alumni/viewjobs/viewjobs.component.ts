@@ -15,35 +15,31 @@ export class ViewjobsComponent implements OnInit {
 
 
   form:any=new FormGroup({
-    name:new FormControl(null),
-    email:new FormControl(null),
-    phone:new FormControl(null),
     resume_file_upload:new FormControl(null),
     profile_link:new FormControl(null)
   })
+  fileName = '';
   jobs:any=[]
   ngOnInit(): void {
     this.getjob()
     
   }
+  fileselect(e: any) {
+    this.form.fileupload = e.target.files[0].name;
 
-//  onFileSelect(event : Event){
-//   const file = (event.target as HTMLInputElement);
-//   this.form.patchValue({file:file,image:file})
-//   const allowedFileTypes = ["file/pdf","file/doc","image/png","image/jpeg","image/jpg"];
-//   if(file&&allowedFileTypes.includes(file.type)){
-//     const reader = new FileReader();
-//     reader.onload = () =>{
-    
-//     }
-//   }
- 
-//  }
-
+  }
  getjob(){
   this.apiService.getJob().subscribe(res=>{
     this.jobs=res
   })
  }
- onSubmit(){}
+
+onSubmit(){
+  this.apiService.addjobapplication(this.form.value).subscribe({
+    complete:()=>{
+      
+      this.router.navigate(['/alumniviewjobs'])
+    }
+  })
+}
 }

@@ -45,7 +45,7 @@ router.get('/aluminis', async (req, res) => {       // getdata for admin to coll
 })
 router.get('/singlealumni',async(req,res)=>{       //get singledata of alumni
     try{
-        let data = await AluminiData.findOne({email:req.body.email,password:req.body.password})
+        let data = await AluminiData.find({email:req.body.email,password:req.body.password})
         res.send(data)
     }catch(error){
         console.log(error)

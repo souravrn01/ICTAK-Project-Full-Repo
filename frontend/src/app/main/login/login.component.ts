@@ -21,24 +21,23 @@ export class LoginComponent implements OnInit {
     password:new FormControl(null,[Validators.required,Validators.minLength(8)]),
     usertype:new FormControl(null,[Validators.required])
   })
-  ngOnInit() {
-
-    this.SignUpService.getalumnilogin().subscribe((res:any)=>{
-      this.alumnidata=res
-    })
- 
+  ngOnInit() {  
   }
-  condition:any=''
-login(){
 
+login(){
     for(var data of this.alumnidata){
     if(this.loginForm.value.usertype===data.usertype){
       if(data.email===this.loginForm.value.email && data.password===this.loginForm.value.password){
         this.router.navigate(['alumnidashboard'])
       }
     }
-    }
-    
-  } 
-
+  }
 }
+    onsubmit(){
+      this.SignUpService.getalumnilogin().subscribe((res)=>{
+        this.alumnidata=res
+      })
+    }
+}
+
+

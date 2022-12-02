@@ -21,6 +21,6 @@ router.use('/employeuv',employeuv)
 router.use('/jobuv',jobuv)
 router.use('/applicationsuv',applicationsUV)
 
-
+const { route } = require('./nodemailerApi')
 module.exports = router;
 
