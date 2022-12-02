@@ -13,7 +13,7 @@ const jobSchema = new schema({
     skills:Array,
     description:String,
     salaryRange: String,
-    postedBy: String
+    postedBy: String,
 })
 
 let JOBDATA = mongoose.model('jobDataUV', jobSchema)
