@@ -48,27 +48,28 @@
                 <div class="modal-header">
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  <div class="m-2">
-                    <input id="name" type="text" placeholder="Name">
+                <form  (ngSubmit)="onSubmit()" [formGroup]="form">
+                  <div class="modal-body">
+                    <div class="m-2 form-group ">
+                      <input id="name"  type="text" placeholder="Name" name="name" >
+                    </div>
+                  <div class="m-2 form-group ">
+                    <input id="email"  type="email" placeholder="Email Address" name="email" >
                   </div>
-                <div class="m-2">
-                  <input id="email" type="email" placeholder="Email Address">
-                </div>
-                <div class="m-2">
-                  <input id="phone" type="number" placeholder="Phone Number">
-                </div>
-                 <div class="m-2">
-                  <input type="file" class="file-upload" onchange="console.log(event.target.files)">
-                  <h1 class="m-2">OR</h1>
-                  <input type="text" class="text" placeholder="Profile Link">
-                 </div>
-                 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Save</button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                  <div class="m-2 form-group ">
+                    <input id="phone"  type="number" placeholder="Phone Number" name="phone" >
+                  </div>
+                   <div class="m-2 form-group">
+                    <input type="file"  class="file-upload" name="resume_file_upload">
+                    <h1 class="m-2">OR</h1>
+                    <input type="text" placeholder="Profile Link" name="profile_link"  >
+                   </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

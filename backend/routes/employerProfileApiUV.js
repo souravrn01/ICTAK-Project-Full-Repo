@@ -12,6 +12,7 @@ router.post('/employesignup',async(req,res)=>{
     email:req.body.email,
     phone:req.body.phone,
     company:req.body.company,
+    designation:req.body.designation,
     password:req.body.password
     }
     const employe = new EmployeData(data)

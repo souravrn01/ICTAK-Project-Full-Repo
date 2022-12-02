@@ -8,3 +8,6 @@ input{
     padding-right: 80px;
     padding-top: 3px;
 }
+.file-input {
+    display: none;
+  }
