@@ -4,12 +4,15 @@ const schema = mongoose.Schema
 
 const applicationSchema = new schema({
 
-    resume_file_upload:String,
-    profile_link: String,
-    approval_status: {
+    resume_file_upload:{
+        data:Buffer,
+        contentType: String
+    },
+    approval_status: { 
         type: String,
         default: "not approved"
-    }
+    },
+    profile_link: String,
 }) 
-let applicationData = mongoose.model('Application_Detail',applicationSchema)
+let applicationData = mongoose.model('Applications',applicationSchema)
 module.exports= applicationData

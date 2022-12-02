@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlumniApiService } from '../alumni-api.service';
-import { HttpClientModule } from '@angular/common/http';
 import { FormGroup,FormControl } from '@angular/forms';
-
+ 
 @Component({
   selector: 'app-viewjobs',
   templateUrl: './viewjobs.component.html',
@@ -11,23 +10,44 @@ import { FormGroup,FormControl } from '@angular/forms';
 })
 export class ViewjobsComponent implements OnInit {
 
-  constructor(private apiService: AlumniApiService, private router: Router,private http: HttpClientModule) { }
+  constructor(private apiService: AlumniApiService, private router: Router) { }
 
-
+                                                      //? data collected from form
   form:any=new FormGroup({
     resume_file_upload:new FormControl(null),
     profile_link:new FormControl(null)
   })
+
+  preview!: string;
   fileName = '';
   jobs:any=[]
+
+
   ngOnInit(): void {
     this.getjob()
-    
   }
-  fileselect(e: any) {
-    this.form.fileupload = e.target.files[0].name;
+
+
+
+  fileselect(event: any) {
+    const file:File = event.target.files[0]
+    const formData = new FormData();
+    formData.append("resume", file)
+    const upload$ = this.apiService
 
   }
+
+
+
+
+
+
+
+
+
+
+
+  
  getjob(){
   this.apiService.getJob().subscribe(res=>{
     this.jobs=res
@@ -42,4 +62,5 @@ onSubmit(){
     }
   })
 }
+
 }
