@@ -1,19 +1,24 @@
-<div class="body">
-    <div class="card" *ngFor ="let emp of employerData">
-        <form [formGroup] = "feedbackForm"  (ngSubmit)="onSubmit(emp.name, emp.email)">
-            <fieldset>
-                <label>Name:<p>{{emp.name}}</p></label>
-                <label>email:<p>{{emp.email}}</p></label>
-                <label>Phone:<p>{{emp.phone}}</p></label>
-                <label>Company:<p>{{emp.company}}</p></label>
-                <label>Position:<p>{{emp.designation}}</p></label>
-                 <label for="feedback">
-                    Feedback:<textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
-                 </label>
-            </fieldset> 
-            <button type="submit">Send</button>
-        </form>  
-        <button (click)="delete(emp._id)" >Delete</button>
-        <button (click)="approve(emp)" >Approve</button>   
-    </div>                                               
+                                             
+<h1>Employee Verification</h1>
+<div class="container">
+    <div class="row" *ngFor ="let emp of employerData">
+      <div class="col-md-12 m-2">
+        <mat-card style="background-color:rgb(194, 194, 144)">
+          <mat-card-content>
+            <form [formGroup] = "feedbackForm"  (ngSubmit)="onSubmit(emp.name, emp.email)">
+            <h3>Name : {{emp.name}}</h3>
+            <h3>email : {{emp.email}} </h3>
+            <h3>Phone : {{emp.phone}} </h3>
+            <h3>Company : {{emp.company}}</h3>
+            <h3>Position : {{emp.designation}} </h3>
+             <h3 for="feedback">
+                Feedback : <textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
+             </h3>
+             <button class="btn btn-light" type="submit">Send</button>
+             <button class="btn btn-light" (click)="delete(emp._id)" >Delete</button>
+             <button class="btn btn-light" (click)="approve(emp)" >Approve</button>   
+            </form>
+        </mat-card-content>
+    </mat-card>
+  </div>
 </div>
