@@ -11,28 +11,49 @@
         <div class="col mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" formControlName="name">
+            <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
+                Name is required
+            </div>
+            <div class="form-text text-danger" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">
+                Name is too short
+            </div>
         </div>
     </div>
     <div class="row p-1">
         <div class="col mb-3">
             <label for="email" class="form-label">Email address</label>
             <input type="text" class="form-control" id="email" formControlName="email" >
+            <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                email is required
+            </div>
+            <div class="form-text text-danger" *ngIf="Email.errors?.['pattern'] && (Email.touched || Email.dirty)">
+                ***invalid email
+            </div>
         </div>
         <div class="col mb-3">
             <label for="phone" class="form-label">phone Number</label>
             <input type="text" class="form-control" id="phone" formControlName="phone" >
+            <div class="form-text text-danger" *ngIf="Phone.errors?.['required'] && (Phone.touched || Phone.dirty)">
+                phone number is required
+            </div>
+            <div class="form-text text-danger" *ngIf="Phone.errors?.['pattern'] && (Phone.touched || Phone.dirty)">
+                ***invalid phone number
+            </div>
         </div>
     </div>
     <div class="row p-1">
        <div class="col mb-3">
         <label for="qualification" class="form-label">Highest Qulification</label>
         <input type="text" class="form-control" id="qualification" formControlName="highest_qualification" >
+        <div class="form-text text-danger" *ngIf="Highest_Qualification.errors?.['required'] && (Highest_Qualification.touched || Highest_Qualification.dirty)">
+            Field is invalid
+        </div>
        </div>
        <div class="col mb-3">
         <label for="floatingSelect">Course Studied at ICTAK</label>
         <div class="form-floating">
             <select class="form-select" id="floatingSelect1" aria-label="Floating label select example" formControlName="course_started_at_ictak">
-              <option selected>Open this select menu</option>
+              
               <option value="FSD">FSD</option>
               <option value="DSA">DSA</option>
               <option value="ML-AI">ML-AI</option>
@@ -41,6 +62,9 @@
               <option value="CSA">CSA</option>
             </select>
           </div>
+          <div class="form-text text-danger" *ngIf="Course_Studied_at_ICTAK.errors?.['required'] && (Course_Studied_at_ICTAK.touched || Course_Studied_at_ICTAK.dirty)">
+            Field is invalid
+        </div>
        </div>
     </div>
     <div class="row p-1">
@@ -48,23 +72,28 @@
             <label for="floatingSelect">Batch Details</label>
             <div class="form-floating">
                 <select class="form-select" id="floatingSelect2" aria-label="Floating label select example" formControlName="batch_details">
-                  <option selected>Open this select menu</option>
+                  
                   <option value="KKEM">KKEM</option>
                   <option value="NORKA">NORKA</option>
                   <option value="KDISC">KDISC</option>
                 </select>
               </div>
+              <div class="form-text text-danger" *ngIf="Batch_Details.errors?.['required'] && (Batch_Details.touched || Batch_Details.dirty)">
+                Field is invalid
+            </div>
         </div>
         <div class="col mb-3">
             <label for="floatingSelect">Placement Status</label>
             <div class="form-floating">
                 <select class="form-select" id="floatingSelect3" aria-label="Floating label select example" formControlName="placement_status">
-                  <option selected>Open this select menu</option>
                   <option value="Placed">Placed</option>
                   <option value="Job-Seeking">Job-Seeking</option>
                   
                 </select>
               </div>
+              <div class="form-text text-danger" *ngIf="Placement_Status.errors?.['required'] && (Placement_Status.touched || Batch_Details.dirty)">
+                Field is invalid
+            </div>
         </div>
     </div>
     <div class="row p-1">
@@ -78,6 +107,12 @@
         <div class="col mb-3">
             <label for="name" class="form-label">Password</label>
             <input type="password" class="form-control" id="Password" formControlName="password">
+            <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                Field is invalid
+            </div>
+            <div class="form-text text-danger" *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)">
+                password should contain atleast 8 and 15 charecters
+            </div>
         </div>
         </div>
 

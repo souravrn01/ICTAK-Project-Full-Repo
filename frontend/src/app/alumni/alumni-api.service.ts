@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class AlumniApiService {
 
   constructor(private http:HttpClient) { }
-
+ 
   getJob(){
     return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
   }
