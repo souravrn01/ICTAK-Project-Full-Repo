@@ -25,7 +25,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
 
@@ -62,7 +62,8 @@ import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
     MatRadioModule,
     MatDatepickerModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class AlumniModule { }
