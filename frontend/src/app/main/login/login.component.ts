@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
     private SignUpService:SignUpService) { }
 
     
-    alumnidata:any
-    empdata:any
+    alumnidata:any=[]
+
   loginForm=new FormGroup({
     email:new FormControl(null,[Validators.required,Validators.email]),
     password:new FormControl(null,[Validators.required,Validators.minLength(8)]),
@@ -26,10 +26,7 @@ export class LoginComponent implements OnInit {
     this.SignUpService.getalumnilogin().subscribe((res:any)=>{
       this.alumnidata=res
     })
-    this.SignUpService.getemployeelogin().subscribe(res=>{
-      this.empdata=res
-    })
-   
+ 
   }
   condition:any=''
 login(){
@@ -41,13 +38,6 @@ login(){
       }
     }
     }
-    for(var data of this.empdata){
-     if(this.loginForm.value.usertype==data.usertype){
-      if(data.email===this.loginForm.value.email && data.password===this.loginForm.value.password){
-        this.router.navigate(['empDash'])
-      }
-    }
-  }
     
   } 
 
