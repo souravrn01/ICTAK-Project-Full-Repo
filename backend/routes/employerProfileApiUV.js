@@ -85,4 +85,12 @@ router.put('/verifyemp', async(req,res)=>{    // for admin to get employer to ve
     console.log('update error:',error);
 }})
 
+router.get('/singleemp',async(req,res)=>{       //get singledata of alumni
+    try{
+        let data = await EmployeData.findOne({email:req.body.email,password:req.body.password})
+        res.send(data)
+    }catch(error){
+        console.log(error)
+    }
+})
 module.exports=router;

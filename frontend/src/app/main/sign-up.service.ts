@@ -16,6 +16,9 @@ apiURL:any='http://localhost:3000/api'
   getalumnilogin(data:any){
     return this.http.get(`${this.apiURL}/Alumniuv/singlealumni`,data)
   }
+  getsingleemplogin(data:any){
+    return this.http.get(`${this.apiURL}/employeuv/singleemp`,data)
+  }
   getemployeelogin(){
     return this.http.get(`${this.apiURL}/employeuv/employelist`)
   }

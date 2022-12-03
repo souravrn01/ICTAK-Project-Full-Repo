@@ -22,6 +22,7 @@ import { EmployeSignupComponent } from './main/employe-signup/employe-signup.com
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpService } from './main/sign-up.service';
 import { ActivatedRoute } from '@angular/router';
+import { EmpLoginComponent } from './main/emp-login/emp-login.component';
 
 
 
@@ -34,6 +35,7 @@ import { ActivatedRoute } from '@angular/router';
     LoginComponent,
     AlumniSignupComponent,
     EmployeSignupComponent,
+    EmpLoginComponent,
       
    
   ],

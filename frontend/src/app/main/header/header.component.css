@@ -5,3 +5,14 @@ a:hover{
     background-color: white;
     color: #3f51b5;
 }
+button:hover{
+    background-color: white;
+    color: black;
+}
+h4{
+    color: rgb(55, 117, 74);
+    font-weight: 500;
+}
+mat-menu{
+    padding-right: 20px;
+}

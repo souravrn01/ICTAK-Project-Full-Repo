@@ -83,6 +83,27 @@ router.post('/alumnigeneraldata',async(req,res)=>{ //add Alumni general informat
         console.log('post error:', error);
     }
 })
+router.put('/onealumnigeneraldataupdate',async(req,res)=>{ //update one alumni general information
+    try{
+        console.log(req.body)
+        let id = req.body._id
+        let update = {
+            gender:req.body.gender,
+            date_of_birth:req.body.date_of_birth,
+            marital_status:req.body.marital_status,
+            permanent_address:req.body.permanent_address,
+            alternate_phone_number:req.body.alternate_phone_number,
+            pincode:req.body.pincode,
+            district:req.body.district,
+            state:req.body.state,
+            country:req.body.country,
+        }
+        let updates = {$set:update}
+        let generaldataupdate= await AluminiData.findByIdAndUpdate({"_id":id},updates,{new:true})
+    }catch(error){
+        console.log('update error : ',error)
+    }
+})
 router.post('/alumnieducation', async (req, res) => { //for adding education data of alumni
     try {
         let educationdata= {

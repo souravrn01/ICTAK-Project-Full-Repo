@@ -4,11 +4,15 @@
     
     <a mat-button routerLink="home" >Home</a>
     <a mat-button>About Us</a>
-    <a mat-button (click)="onCreate()">Login</a>
-    <button mat-raised-button [matMenuTriggerFor]="menu" color="accent">Sign Up</button>
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="accent">Login/Register</button>
 <mat-menu #menu="matMenu">
+  <h4>Registration</h4>
   <button mat-menu-item routerLink="employesignup">Employer/Faculty</button>
   <button mat-menu-item routerLink="alumnisignup">Alumni</button>
+<h4>Login</h4>
+<button mat-menu-item routerLink="alumnilogin">Jobseeker Login</button>
+<button mat-menu-item routerLink="employelogin" >Employer Login</button>
+<button mat-menu-item >Admin Login</button>
 </mat-menu>
 
   </mat-toolbar>
