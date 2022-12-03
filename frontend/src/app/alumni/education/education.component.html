@@ -48,31 +48,32 @@
           <h2 class="text-center" style="color:rgb(82, 82, 90)">Education Details</h2>
         </div>
         <div class="container">
+          <form [formGroup]="educationForm">
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control" name="qualification" placeholder="Qualification">
+              <input type="text" class="form-control" name="qualification" placeholder="Qualification" formControlName="qualification">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" name="status" placeholder="Completion Status">
+              <input type="text" class="form-control" name="status" placeholder="Completion Status" formControlName="status">
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control" name="stream" placeholder="Main Stream">
+              <input type="text" class="form-control" name="stream" placeholder="Main Stream" formControlName="stream">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" name="specialization" placeholder="Specialization">
+              <input type="text" class="form-control" name="specialization" placeholder="Specialization" formControlName="specialization">
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control" name="college" placeholder="University/Institute/Board">
+              <input type="text" class="form-control" name="college" placeholder="University/Institute/Board" formControlName="college">
             </div>
             <div class="col-md-3">
-              <input type="number" class="form-control" name="percentage" placeholder="Percentage">
+              <input type="number" class="form-control" name="percentage" placeholder="Percentage" formControlName="percentage">
             </div>
             <div class="col-md-3">
-              <input type="number" class="form-control" name="year" placeholder="Year of passing">
+              <input type="number" class="form-control" name="year" placeholder="Year of passing" formControlName="year">
             </div>
           </div>
           <div class="row">
@@ -80,6 +81,7 @@
                 <button type="button" class="btn btn-light">Save</button>
             </div>
            </div>
+          </form>
         </div>
       </mat-card>
       </div>    

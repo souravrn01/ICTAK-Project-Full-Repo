@@ -63,7 +63,8 @@ import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
     MatDatepickerModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ]
 })
 export class AlumniModule { }

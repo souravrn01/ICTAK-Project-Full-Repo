@@ -48,39 +48,45 @@
             <div>
               <h2 class="text-center" style="color:rgb(82, 82, 90)">Experience Details</h2>
             </div>
-            <div class="row">
+            <form [formGroup]="experienceForm">
+            <div class="row form-group">
               <div class="col-md-12">
-                <input type="text" class="form-control" name="qualification" placeholder="Company/Organization">
+                <input type="text" class="form-control" name="qualification"
+                placeholder="Company/Organization" formControlName="qualification">
               </div>
             </div>
-            <div class="row">
+            <div class="row form-group">
                 <div class="col-md-9">
-                  <input type="text" class="form-control" name="role" placeholder="Designation/Role">
+                  <input type="text" class="form-control" name="role"
+                   placeholder="Designation/Role" formControlName="role">
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="status" placeholder="Presenting Working/Not">
+                    <input type="text" class="form-control" name="status" 
+                    placeholder="Presenting Working/Not" formControlName="status">
                   </div>
               </div>
-            <div class="row">
+            <div class="row form-group">
                 <div class="col-md-2 mt-4">
                     <label for="">Starting Date :</label>
                 </div>
               <div class="col-md-4">
-                <input type="date" class="form-control" name="starting-date">
+                <input type="date" class="form-control" name="starting_date" formControlName="starting_date">
               </div>
               <div class="col-md-2 mt-4">
                 <label for="">Ending Date :</label>
             </div>
           <div class="col-md-4">
-            <input type="date" class="form-control" name="ending-date">
+            <input type="date" class="form-control" name="ending_date" formControlName="ending_date">
           </div>
             </div>
-            <div class="row">
+            <div class="row form-group">
               <div class="col-md-6">
-                <input type="text" class="form-control" name="salary" placeholder="Current monthly salary">
+                <input type="text" class="form-control" name="salary" 
+                placeholder="Current monthly salary" formControlName="salary">
               </div>
               <div class="col-md-6">
-                <input type="number" class="form-control" name="notice-period" placeholder="Notice Period">
+                <input type="number" class="form-control" name="notice_period"
+                 placeholder="Notice Period" formControlName="notice_period">
               </div>
             </div>
             <div class="row">
@@ -88,6 +94,7 @@
                   <button type="button" class="btn btn-light">Save</button>
               </div>
              </div>
+            </form>
           </div>
         </mat-card>   
         </div>

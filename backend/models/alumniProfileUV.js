@@ -26,7 +26,8 @@ const alumniSchema= new schema({
             percentage:Number,
             year_of_pass:Number   
         }
-    ],
+    ]
+       ,
     experience :[
         {
             company:String,
@@ -37,7 +38,8 @@ const alumniSchema= new schema({
             current_monthly_salary:Number,
             notice_period:Number
         }
-    ],
+    ]
+       ,
    
     highest_qualification:String,
     course_started_at_ictak:String,

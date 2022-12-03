@@ -14,10 +14,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 onCreate(){
-  const dialogConfig=new MatDialogConfig();
-  dialogConfig.disableClose=true;
-  dialogConfig.autoFocus=true;
-  dialogConfig.width="600";
+  // const dialogConfig=new MatDialogConfig();
+  // dialogConfig.disableClose=false;
+  // dialogConfig.autoFocus=true;
+  // dialogConfig.width="800";
 this.dialog.open(LoginComponent)
 }
 }

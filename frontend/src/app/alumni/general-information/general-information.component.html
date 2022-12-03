@@ -21,7 +21,7 @@
                 <mat-card-content class="m-2">
                     <mat-card>
                         <section>
-                            <form action="" class="p-1">
+                            <form class="p-1" [formGroup]="personalForm">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -33,32 +33,32 @@
                                                         Information</h2>
                                                     <div class="card-body">
                                                        
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="name"
-                                                                        placeholder="Name">
+                                                                        placeholder="Name"  formControlName="name">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="email" class="form-control" name="email"
-                                                                        placeholder="Email Address">
+                                                                        placeholder="Email Address"  formControlName="email">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="number" class="form-control" name="phone"
-                                                                        placeholder="Phone Number">
+                                                                        placeholder="Phone Number"  formControlName="phone">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-3">
+                                                            <div class="row m-3 form-group">
                                                                 <div class="col-md-3">
                                                                     <label for="">Gender</label>
                                                                 </div>
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio"
-                                                                            name="exampleRadios" id="exampleRadios1" value="option1"
+                                                                            name="gender" id="male" value="option1"  formControlName="gender"
                                                                             checked>
                                                                         <label class="form-check-label" for="exampleRadios1">
                                                                             Male
@@ -67,9 +67,9 @@
                                                                 </div>
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="exampleRadios" id="exampleRadios2"
-                                                                            value="option2">
+                                                                        <input class="form-check-input" type="radio" 
+                                                                            name="gender" id="female"
+                                                                            value="option2" formControlName="gender">
                                                                         <label class="form-check-label" for="exampleRadios2">
                                                                             Female
                                                                         </label>
@@ -78,15 +78,15 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio"
-                                                                            name="exampleRadios" id="exampleRadios3"
-                                                                            value="option3">
+                                                                            name="gender" id="other"
+                                                                            value="option3" formControlName="gender">
                                                                         <label class="form-check-label" for="exampleRadios3">
                                                                             Other
                                                                         </label>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-4 mt-4">
                                                                     <label style="color: rgb(61, 56, 56)">Date of Birth :</label>
                                                                 </div>
@@ -94,9 +94,9 @@
                                                                     <input type="date" class="form-control" name="dob">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
-                                                                    <select class="form-select" aria-label="Default select example">
+                                                                    <select class="form-select" aria-label="Default select example" formControlName="martial_status">
                                                                         <option selected>Martial Status</option>
                                                                         <option value="1">Married</option>
                                                                         <option value="2">Unmarried</option>
@@ -118,40 +118,40 @@
                                                     <h2 class="text-center" style="color:rgb(131, 131, 134)">Communication Details
                                                     </h2>
                                                     <div class="card-body">
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <textarea name="address" class="form-control"
-                                                                        placeholder="Permanent Address"></textarea>
+                                                                        placeholder="Permanent Address" formControlName="address"></textarea>
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="number" class="form-control" name="alternatenumber"
-                                                                        placeholder="Alternate Phone Number">
+                                                                        placeholder="Alternate Phone Number" formControlName="alternate_number">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="number" class="form-control" name="pincode"
-                                                                        placeholder="Pincode">
+                                                                        placeholder="Pincode" formControlName="pincode">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="district"
-                                                                        placeholder="District">
+                                                                        placeholder="District" formControlName="district">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-1">
+                                                            <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="state"
-                                                                        placeholder="State">
+                                                                        placeholder="State" formControlName="state">
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-2">
+                                                            <div class="row m-2 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="country"
-                                                                        placeholder="Country">
+                                                                        placeholder="Country" formControlName="country">
                                                                 </div>
                                                             </div>
                                                     </div>

@@ -17,6 +17,8 @@ export class AlumniApiService {
   addjobapplication(data:any){
     return this.http.post('http://localhost:3000/api/applicationsuv/upload',data)
   }
-  
+  getappliedjobs(){
+    return this.http.get('http://localhost:3000/api/verifiedjobs/applicatiodata')
+  }
 }
 

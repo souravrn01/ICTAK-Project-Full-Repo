@@ -11,14 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
 id:any
-data:any
+datas:any=[]
   constructor( private alumniApi:AlumniApiService,private router:Router,
     private route:ActivatedRoute) { }
 
   ngOnInit(): void {
 
     this.alumniApi.getsinglealumnidata(this.id).subscribe(res=>{
-      this.data=res
+      this.datas=res
     })
   }
 
