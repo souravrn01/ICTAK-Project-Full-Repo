@@ -49,11 +49,10 @@ export class EditComponent implements OnInit {
     console.log(res)
     this.editForm=res.editForm
     alert('data updated')
+    this.router.navigate(['/empDash'])
     })
   }
 
-  function(){
-    this.router.navigate(['/empDash'])
-  }
+ 
 
 }

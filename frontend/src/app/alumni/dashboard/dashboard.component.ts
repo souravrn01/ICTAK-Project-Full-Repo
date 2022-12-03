@@ -15,8 +15,7 @@ alumnidata:any = ""
   ngOnInit(): void {
     // this.id= this.activaRoute.snapshot.paramMap.get('id')
     // this.apiService.getsinglealumnidata(this.id)
-    console.log(this.activaRoute.snapshot.params)
-    this.alumnidata=this.activaRoute.snapshot.paramMap.get('id')
+    
   } 
   opened=false;
 }

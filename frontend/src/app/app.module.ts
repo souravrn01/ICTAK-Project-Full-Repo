@@ -24,6 +24,7 @@ import { SignUpService } from './main/sign-up.service';
 import { ActivatedRoute } from '@angular/router';
 import { EmpLoginComponent } from './main/emp-login/emp-login.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterComponent } from './main/footer/footer.component';
 
 
 
@@ -36,6 +37,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     AlumniSignupComponent,
     EmployeSignupComponent,
     EmpLoginComponent,
+    FooterComponent,
       
    
   ],

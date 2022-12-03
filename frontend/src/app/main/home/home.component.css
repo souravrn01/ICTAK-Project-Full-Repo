@@ -1,7 +1,7 @@
 
 
 img{
-    margin: 10px;
+    margin: 5px;
     
 }
 marquee{
@@ -23,13 +23,18 @@ mat-card{
     font-size: 18px;
     background-color: orange;
 }
-h4{
+.cards h3{
     color: white;
+    font-size: 30px;
 }
 p{
     color: white;
+    font-size: 20px;
 }
 h2{
-    font-size: 27px;
-    color: rgb(235, 157, 14);
+    font-size: 30px;
+    color: rgb(71, 133, 95);
 }
+
+
+
