@@ -10,7 +10,7 @@ import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 import { ViewjobsComponent } from './viewjobs/viewjobs.component';
 
 const routes: Routes = [
-  {path:'alumnidashboard',component:DashboardComponent},
+  {path:'alumnidashboard/:id',component:DashboardComponent},
   {path:'profile',component:ProfileComponent },
   {path:'general-information',component:GeneralInformationComponent },
   {path:'education',component:EducationComponent},
