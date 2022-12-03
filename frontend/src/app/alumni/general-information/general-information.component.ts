@@ -1,6 +1,8 @@
 import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AlumniApiService } from '../alumni-api.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-general-information',
@@ -9,8 +11,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class GeneralInformationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alumniApi:AlumniApiService,private router:Router,
+    private route:ActivatedRoute) { }
 
+    id:any
   personalForm: any = new FormGroup({
     name:new FormControl(null,Validators.required),
     email:new FormControl(null,Validators.required),
@@ -25,6 +29,11 @@ export class GeneralInformationComponent implements OnInit {
     country:new FormControl(null,Validators.required)
   })
   ngOnInit(): void {
+    
+    // this.id= this.route.snapshot.paramMap.get('id')
+    //   this.alumniApi.getsinglealumnidata(this.id).subscribe(res=>{
+    //     this.personalForm=res
+    //   })
   }
-
+  opened=false;
 }

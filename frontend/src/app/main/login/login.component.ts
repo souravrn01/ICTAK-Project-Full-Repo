@@ -32,6 +32,7 @@ login(){
   
    this.SignUpService.getalumnilogin(this.loginForm.value).subscribe(res=>{
     this.alumnidata = res
+    console.log(res)
     if(this.alumnidata === null){
       console.log("data not in database");
     }else{
