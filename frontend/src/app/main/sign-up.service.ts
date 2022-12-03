@@ -23,5 +23,8 @@ apiURL:any='http://localhost:3000/api'
   getemployeelogin(){
     return this.http.get(`${this.apiURL}/employeuv/employelist`)
   }
+  getJob(){
+    return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
+  }
  
 }

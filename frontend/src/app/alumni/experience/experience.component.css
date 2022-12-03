@@ -14,4 +14,12 @@
     border-color: rgb(143, 134, 134);
     background-color: rgb(240, 233, 233);
    }
-  
+   :host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  mat-sidenav{
+    width: 300px;
+  }
+   

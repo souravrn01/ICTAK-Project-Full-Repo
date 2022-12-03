@@ -25,6 +25,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EmpLoginComponent } from './main/emp-login/emp-login.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FooterComponent } from './main/footer/footer.component';
+import { JobsComponent } from './main/jobs/jobs.component';
 
 
 
@@ -38,6 +39,7 @@ import { FooterComponent } from './main/footer/footer.component';
     EmployeSignupComponent,
     EmpLoginComponent,
     FooterComponent,
+    JobsComponent,
       
    
   ],

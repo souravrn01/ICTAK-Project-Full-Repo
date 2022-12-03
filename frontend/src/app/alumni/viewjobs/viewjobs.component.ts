@@ -37,17 +37,6 @@ export class ViewjobsComponent implements OnInit {
 
   }
 
-
-
-
-
-
-
-
-
-
-
-  
  getjob(){
   this.apiService.getJob().subscribe(res=>{
     this.jobs=res

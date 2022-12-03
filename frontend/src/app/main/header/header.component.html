@@ -7,8 +7,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <a mat-button routerLink="" >Home</a>
-    <a mat-button>About Us</a>
+        <button mat-raised-button [matMenuTriggerFor]="menu" routerLink="" color="accent">Home</button>
+        <button mat-raised-button [matMenuTriggerFor]="menu" routerLink="/jobs" color="accent">Jobs</button>
     <button mat-raised-button [matMenuTriggerFor]="menu" color="accent">Login/Register</button>
         <mat-menu #menu="matMenu">
           <h4>Registration</h4>
