@@ -50,7 +50,6 @@ const alumniSchema= new schema({
         type:String,
         default:"alumni"
     },
-
     password:String
 })
 
