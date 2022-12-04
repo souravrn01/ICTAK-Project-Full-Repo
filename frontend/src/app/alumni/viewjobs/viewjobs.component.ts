@@ -1,55 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlumniApiService } from '../alumni-api.service';
-import { FormGroup,FormControl } from '@angular/forms';
- 
+import { FormGroup, FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-viewjobs',
   templateUrl: './viewjobs.component.html',
-  styleUrls: ['./viewjobs.component.css']
+  styleUrls: ['./viewjobs.component.css'],
 })
 export class ViewjobsComponent implements OnInit {
+  constructor(private apiService: AlumniApiService, private router: Router) {}
 
-  constructor(private apiService: AlumniApiService, private router: Router) { }
+  form: any = new FormGroup({
+    link: new FormControl(null),
+  });
 
-                                                      //? data collected from form
-  form:any=new FormGroup({
-    resume_file_upload:new FormControl(null),
-    profile_link:new FormControl(null)
-  })
 
-  preview!: string;
-  fileName = '';
-  jobs:any=[]
-
+  jobs: any = []; 
+  selectedFile!: File;
 
   ngOnInit(): void {
-    this.getjob()
+    this.getjob();
   }
 
-
+  getjob() {
+    this.apiService.getJob().subscribe((res) => {
+      this.jobs = res;
+    });
+  }
 
   fileselect(event: any) {
-    const file:File = event.target.files[0]
-    const formData = new FormData();
-    formData.append("resume", file)
-    const upload$ = this.apiService
-
+    this.selectedFile = event.target.files[0];
   }
 
- getjob(){
-  this.apiService.getJob().subscribe(res=>{
-    this.jobs=res
-  })
- }
-
-onSubmit(){
-  this.apiService.addjobapplication(this.form.value).subscribe({
-    complete:()=>{
-      alert("data saved");
-     window.close();
-    }
-  })
-}
-
+   onSubmit() {
+    const data = new FormData();
+        let link = this.form.value
+        for (const prop in link) {
+          data.append(prop, link[prop])
+        }
+     data.append('resume', this.selectedFile)
+    console.log(data)
+    this.apiService.addjobapplication(data).subscribe((res) => {
+      console.log(res);
+    });
+  }
 }

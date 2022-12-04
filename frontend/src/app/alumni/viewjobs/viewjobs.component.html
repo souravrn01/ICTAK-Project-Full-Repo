@@ -51,9 +51,9 @@
                 <form  [formGroup]="form">
                   <div class="modal-body">
                    <div class="m-2 form-group">
-                    <input class="form-control" type="file" id="formFile"  formControlName="resume_file_upload" (change)="fileselect($event)"/>
+                    <input class="form-control" type="file" id="formFile" (change)="fileselect($event)"/>
                     <h1 class="m-2">&</h1>
-                    <input type="text" placeholder="Profile Link" formControlName="profile_link" class="form-control">
+                    <input type="text" placeholder="Profile Link" formControlName="link" class="form-control">
                    </div>
                   </div>
                   <div class="modal-footer">
@@ -63,7 +63,7 @@
                 </form>
               </div>
             </div>
-          </div>
+          </div> 
         </mat-card-content>
       </mat-card>
     </div>

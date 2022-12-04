@@ -30,6 +30,11 @@ export class ApplyjobsComponent implements OnInit {
     const upload$ = this.apiService
 
   }
-  onSubmit(){}
+
+  
+  onSubmit(){
+    console.log('hii');
+    
+  }
 
 }

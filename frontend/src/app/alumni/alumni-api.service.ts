@@ -26,7 +26,7 @@ export class AlumniApiService {
   return this.http.get(`http://localhost:3000/api/alumniuv/alumni/${id}`)
 }
 alumnigeneraldata(data:any){
-  return this.http.put(`http://localhost:3000/api/alumniuv/onealumnigeneraldataupdate`,data)
+  return this.http.put(`http://localhost:3000/api/alumniuv/generaldata`,data)
   
 }
 }

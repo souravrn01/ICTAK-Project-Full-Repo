@@ -29,6 +29,7 @@ import { JobsComponent } from './main/jobs/jobs.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
