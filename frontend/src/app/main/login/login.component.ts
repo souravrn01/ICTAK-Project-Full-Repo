@@ -13,9 +13,23 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,
     private SignUpService:SignUpService) { }
 
-    
-   
-    alumnidata:any=[]
+    alumnidata:any={
+      name:'',
+      email:'',
+      phone:'',
+      gender:'',
+      date_of_birth:'',
+      marital_status:'',
+      permanent_address:'',
+      alternate_phone_number:'',
+      pincode:'',
+      district:'',
+      state:'',
+      country:'',
+      profile:'',
+      education:'',
+      experience:''
+    }
 
   loginForm=new FormGroup({
     email:new FormControl(null,[Validators.required,Validators.email]),
@@ -25,8 +39,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {  
   
   }
-
-
 
 login(){
   

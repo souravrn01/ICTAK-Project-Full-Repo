@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { AlumniApiService } from '../alumni-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -12,17 +12,18 @@ export class ProfileComponent implements OnInit {
 
 id:any
 alumnidata:any=[]
-datas:any=[]
-  constructor( private alumniApi:AlumniApiService,private router:Router,
-    private route:ActivatedRoute) { }
+  constructor( private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
 
   ngOnInit(): void {
-
-    this.id=this.route.snapshot.params['id']
-    this.alumniApi.getsinglealumnidata(this.id).subscribe((res:any)=>{
-      this.alumnidata=res
+    this.id= this.activaRoute.snapshot.paramMap.get('id')
+    console.log(this.id)
+    this.apiService.getsinglealumnidata(this.id).subscribe(res=>{
+     this.alumnidata=res
+     console.log(res)
     })
   }
+
+  
 
   opened=false;
 

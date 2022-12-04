@@ -16,7 +16,7 @@ const alumniSchema= new schema({
     state:String,
     country:String,
     profile:String,
-    education :[
+    education :
         {
             qualification:String,
             completion_status:String,
@@ -25,10 +25,8 @@ const alumniSchema= new schema({
             university:String,
             percentage:Number,
             year_of_pass:Number   
-        }
-    ]
-       ,
-    experience :[
+        },
+    experience :
         {
             company:String,
             Designation:String,
@@ -37,9 +35,7 @@ const alumniSchema= new schema({
             ending_date:Date,
             current_monthly_salary:Number,
             notice_period:Number
-        }
-    ]
-       ,
+        } ,
    
     highest_qualification:String,
     course_started_at_ictak:String,

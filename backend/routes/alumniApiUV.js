@@ -47,45 +47,57 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
     console.log(req.body)
 
     try{
-        let data = await AluminiData.find({email:req.body.email,password:req.body.password})
+        let data = await AluminiData.find({email:req.body.email,password:req.body.password,})
         res.send(data)
     }catch(error){
         console.log(error)
     }
 })
-
-router.get('/aluminisignup/:id', async (req, res) => {
-    try {
-        let id = req.params.id
-        const singleAlumni = await AluminiData.findById(id)
-        res.send(singleAlumni)
-    } catch (error) {
-        console.log(error)
-    }
-})
-
-router.post('/alumnigeneraldata',async(req,res)=>{ //add Alumni general informations
+//TODO: get single data from db  
+router.get('/alumni/:id',(req,res)=>{
     try{
-        let alumnigeneraldata={
-            gender:req.body.gender,
-            date_of_birth:req.body.date_of_birth,
-            marital_status:req.body.marital_status,
-            permanent_address:req.body.permanent_address,
-            alternate_phone_number:req.body.alternate_phone_number,
-            pincode:req.body.pincode,
-            district:req.body.district,
-            state:req.body.state,
-            country:req.body.country,
-        }
-        const alumni = new AluminiData(alumnigeneraldata)
-        const savealumni = await alumni.save()
-        res.send(savealumni)
+        AluminiData.findById({"_id":req.params.id}).then(function(data){
+            res.send(data);
+            })
     }
-    catch (error) {
-        console.log('post error:', error);
-    }
+    catch(error){
+        console.log(error);
+    } 
 })
-router.put('/onealumnigeneraldataupdate',async(req,res)=>{ //update one alumni general information
+
+// router.get('/aluminisignup/:id', async (req, res) => {
+//     try {
+//         let id = req.params.id
+//         const singleAlumni = await AluminiData.findById(id)
+//         res.send(singleAlumni)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// })
+
+// router.post('/alumnigeneraldata',async(req,res)=>{ //add Alumni general informations
+//     try{
+//         let alumnigeneraldata={
+//             gender:req.body.gender,
+//             date_of_birth:req.body.date_of_birth,
+//             marital_status:req.body.marital_status,
+//             permanent_address:req.body.permanent_address,
+//             alternate_phone_number:req.body.alternate_phone_number,
+//             pincode:req.body.pincode,
+//             district:req.body.district,
+//             state:req.body.state,
+//             country:req.body.country,
+//         }
+//         let id = req.params.id
+//         const alumni = new AluminiData(alumnigeneraldata).findById(id)
+//         const savealumni = await alumni.save()
+//         res.send(savealumni)
+//     }
+//     catch (error) {
+//         console.log('post error:', error);
+//     }
+// })
+router.put('/onealumnigeneraldataupdate/:id',async(req,res)=>{ //update one alumni general information
     try{
         console.log(req.body)
         let id = req.body._id
@@ -102,20 +114,21 @@ router.put('/onealumnigeneraldataupdate',async(req,res)=>{ //update one alumni g
         }
         let updates = {$set:update}
         let generaldataupdate= await AluminiData.findByIdAndUpdate({"_id":id},updates,{new:true})
+        res.send(generaldataupdate)
     }catch(error){
         console.log('update error : ',error)
     }
 })
-router.post('/alumnieducation', async (req, res) => { //for adding education data of alumni
+router.put('/alumnieducation', async (req, res) => { //for adding education data of alumni
     try {
         let educationdata= {
-           qualification: req.body.qualification,
+            education:{qualification: req.body.qualification,
            completion_status: req.body.completion_status,
            main_stream: req.body.main_stream,
            specialization: req.body.specialization,
            university: req.body.university,
            percentage: req.body.percentage,
-           year_of_pass: req.body.year_of_pass
+           year_of_pass: req.body.year_of_pass}
         }
         const educations = new AluminiData(educationdata)
         const saveEducation = await educations.save()

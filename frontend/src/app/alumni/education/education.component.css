@@ -1,11 +1,4 @@
-:host{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  mat-sidenav{
-    width: 300px;
-  }
+
     .form-control{
         background:transparent;
         border-radius: 0px;
