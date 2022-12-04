@@ -12,6 +12,7 @@ import { ViewjobsComponent } from './viewjobs/viewjobs.component';
 const routes: Routes = [
   {path:'alumnidashboard/:id',component:DashboardComponent,
   children:[
+  {path:'alumnidashboard',component:DashboardComponent},
   {path:'profile',component:ProfileComponent },
   {path:'general-information',component:GeneralInformationComponent },
   {path:'education',component:EducationComponent},
