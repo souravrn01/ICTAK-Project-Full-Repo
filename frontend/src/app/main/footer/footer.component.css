@@ -1,0 +1,11 @@
+footer{
+    text-align: center;
+    background-color: rgb(122, 228, 228);
+    padding-top: 20px;
+}
+mat-icon{
+    border:1px solid white;
+    background-color: white;
+    width: 35px;
+    height: 27px;
+}

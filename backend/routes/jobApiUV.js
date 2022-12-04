@@ -41,6 +41,16 @@ router.get('/job/:id',async(req,res)=>{
         console.log('single error:',error)
     }
 })
+router.put('/job',async(req,res)=>{
+    try {
+        let data=req.body
+        let updatedata=await jobData.findOneAndUpdate({"_id":req.body._id},data)
+        res.send(updatedata)
+    } catch (error) {
+        console.log('update error:',error)
+
+    }
+})
 router.delete('/job/:id',async (req,res)=>{
     try {
         let id=req.params.id

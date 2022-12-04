@@ -5,6 +5,9 @@ a:hover{
     background-color: white;
     color: #3f51b5;
 }
+button{
+    margin-left: 10px;
+}
 button:hover{
     background-color: white;
     color: black;
@@ -15,4 +18,16 @@ h4{
 }
 mat-menu{
     padding-right: 20px;
+}
+nav{
+   
+    background-color: rgb(190, 229, 229);
+    
+}
+img.logo{
+    width:12%;
+    height: 95px;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;  
 }

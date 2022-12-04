@@ -5,20 +5,31 @@
             <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
         </button>
         <div class="ms-auto">
-            <button mat-stroked-button color="basic" class="m-1">Saved Jobs</button>
+            <button mat-stroked-button color="basic" class="m-1" routerLink="/alumniviewjobs">View Jobs</button>
             <button mat-stroked-button color="basic" routerLink="/appliedjobs" class="m-1">Applied Jobs</button>
-            <button mat-stroked-button color="basic" class="m-1">Logout</button>
+            <button mat-stroked-button color="basic" class="m-1" routerLink="">Logout</button>
         </div>
 </mat-toolbar-row>
   </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" opened>
-        <app-side-navbar></app-side-navbar>
+        <div class="header m-4">
+            <h3>Name :{{alumnidata.name}}</h3>
+            <h4>Email ID:{{alumnidata.email}} </h4>
+        </div>                                           
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/alumnidashboard/:id"><mat-icon>dashboard_outline</mat-icon>Dashboard</a>
+            <a mat-list-item routerLink="profile"><mat-icon>person_outline</mat-icon>Profile</a>
+            <a mat-list-item routerLink="general-information"><mat-icon>book_outline</mat-icon>General Information</a>
+            <a mat-list-item routerLink="education"><mat-icon>school_outline</mat-icon>Education</a>
+            <a mat-list-item routerLink="experiences"><mat-icon>work_outline</mat-icon>Experience</a>
+        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
         <div style="height:88vh;">
-            <mat-card class="m-3" style="background-color: rgb(233, 233, 239)">
+            <!-- <mat-card class="m-3" style="background-color: rgb(233, 233, 239)">
                 <div class="container">
                     <h2 style="color:rgb(7, 7, 8)" class="fw-bold" >JOB TITLE</h2>
                     <p style="color:rgb(15, 15, 16)" align="justify">Are you looking for more than a job? Do you want to advance 
@@ -29,8 +40,8 @@
                           advancing our shared values.</p>
                     <button mat-stroked-button routerLink="/alumniviewjobs" style="background-color:rgb(130, 154, 164)">Find Jobs<mat-icon>arrow_forward</mat-icon></button>
                 </div>
-            </mat-card> 
-            
+            </mat-card>  -->
+            <router-outlet></router-outlet>
         </div>    
     </mat-sidenav-content>
 </mat-sidenav-container>

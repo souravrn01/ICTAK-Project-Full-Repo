@@ -1,18 +1,25 @@
-<mat-toolbar color="primary">
-  <img src="/assets/images/logo.png" alt="">
-    <div class="spacer"></div>
-    
-    <a mat-button routerLink="" >Home</a>
-    <a mat-button>About Us</a>
+ <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container-fluid">
+     <img src="/assets/images/logo.png" alt="logo" class="logo"> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <button mat-raised-button [matMenuTriggerFor]="menu" routerLink="" color="accent">Home</button>
+        <button mat-raised-button [matMenuTriggerFor]="menu" routerLink="/jobs" color="accent">Jobs</button>
     <button mat-raised-button [matMenuTriggerFor]="menu" color="accent">Login/Register</button>
-<mat-menu #menu="matMenu">
-  <h4>Registration</h4>
-  <button mat-menu-item routerLink="/employesignup">Employer/Faculty</button>
-  <button mat-menu-item routerLink="/alumnisignup">Alumni</button>
-<h4>Login</h4>
-<button mat-menu-item routerLink="/alumnilogin">Jobseeker Login</button>
-<button mat-menu-item routerLink="/employelogin" >Employer Login</button>
-<button mat-menu-item >Admin Login</button>
-</mat-menu>
-
-  </mat-toolbar>
+        <mat-menu #menu="matMenu">
+          <h4>Registration</h4>
+          <button mat-menu-item routerLink="/employesignup">Employer/Faculty</button>
+          <button mat-menu-item routerLink="/alumnisignup">Alumni</button>
+        <h4>Login</h4>
+        <button mat-menu-item routerLink="/alumnilogin">Jobseeker Login</button>
+        <button mat-menu-item routerLink="/employelogin" >Employer Login</button>
+        <button mat-menu-item >Admin Login</button>
+        </mat-menu>
+      </ul>
+    </div>
+  </div>
+</nav>

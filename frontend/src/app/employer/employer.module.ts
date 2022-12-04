@@ -13,11 +13,13 @@ import { MatInputModule }  from'@angular/material/input'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewjobComponent } from './viewjob/viewjob.component';
+import { EditComponent } from './edit/edit.component';
 @NgModule({
   declarations: [
     DashboardComponent,
     AddjobComponent,
     ViewjobComponent,
+    EditComponent,
    
   ],
   imports: [

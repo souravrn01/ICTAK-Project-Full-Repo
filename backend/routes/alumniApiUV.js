@@ -50,49 +50,29 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
     console.log(req.body)
 
     try{
-        let data = await AluminiData.find({email:req.body.email,password:req.body.password})
+        let data = await AluminiData.find({email:req.body.email,password:req.body.password,})
         res.send(data)
     }catch(error){
         console.log(error)
     }
 })
-
-router.get('/aluminisignup/:id', async (req, res) => {
-    try {
-        let id = req.params.id
-        const singleAlumni = await AluminiData.findById(id)
-        res.send(singleAlumni)
-    } catch (error) {
-        console.log(error)
-    }
-})
-
-router.post('/alumnigeneraldata',async(req,res)=>{ //add Alumni general informations
+//TODO: get single data from db  
+router.get('/alumni/:id',(req,res)=>{
     try{
-        let alumnigeneraldata={
-            gender:req.body.gender,
-            date_of_birth:req.body.date_of_birth,
-            marital_status:req.body.marital_status,
-            permanent_address:req.body.permanent_address,
-            alternate_phone_number:req.body.alternate_phone_number,
-            pincode:req.body.pincode,
-            district:req.body.district,
-            state:req.body.state,
-            country:req.body.country,
-        }
-        const alumni = new AluminiData(alumnigeneraldata)
-        const savealumni = await alumni.save()
-        res.send(savealumni)
+        AluminiData.findById({"_id":req.params.id}).then(function(data){
+            res.send(data);
+            })
     }
-    catch (error) {
-        console.log('post error:', error);
-    }
+    catch(error){
+        console.log(error);
+    } 
 })
-router.put('/onealumnigeneraldataupdate',async(req,res)=>{ //update one alumni general information
+
+router.put('/generaldata',async(req,res)=>{ //update one alumni general information
     try{
         console.log(req.body)
         let id = req.body._id
-        let update = {
+        let generaldata = {
             gender:req.body.gender,
             date_of_birth:req.body.date_of_birth,
             marital_status:req.body.marital_status,
@@ -103,15 +83,22 @@ router.put('/onealumnigeneraldataupdate',async(req,res)=>{ //update one alumni g
             state:req.body.state,
             country:req.body.country,
         }
-        let updates = {$set:update}
-        let generaldataupdate= await AluminiData.findByIdAndUpdate({"_id":id},updates,{new:true})
-    }catch(error){
+        let generaldatas = {$set:generaldata}
+        let generaldataupdate= await AluminiData.findByIdAndUpdate({"_id":id},generaldatas,{new:true})
+        res.send(generaldataupdate)
+    }
+    catch(error){
         console.log('update error : ',error)
     }
 })
-router.post('/alumnieducation', async (req, res) => { //for adding education data of alumni
+
+
+router.put('/alumnieducation', async (req, res) => { //for adding education data of alumni
     try {
+        console.log(req.body)
+        let id = req.body._id
         let educationdata= {
+            education:{
            qualification: req.body.qualification,
            completion_status: req.body.completion_status,
            main_stream: req.body.main_stream,
@@ -120,13 +107,38 @@ router.post('/alumnieducation', async (req, res) => { //for adding education dat
            percentage: req.body.percentage,
            year_of_pass: req.body.year_of_pass
         }
-        const educations = new AluminiData(educationdata)
-        const saveEducation = await educations.save()
-        res.send(saveEducation)
+        }
+        let educationdatas={$set:educationdata}
+        let education = await AluminiData.findByIdAndUpdate({"_id":id},educationdatas,{new:true})
+        res.send(education)
        }
        catch (error) {
        console.log('post error:', error);
 }
+})
+
+router.put('/alumniexperience',async (req,res)=>{
+    try{
+        console.log(req.body)
+        let id = req.body._id
+        let experiencedata={
+            experience:{
+                company:req.body.company,
+                Designation:req.body.Designation,
+                presently_working:req.body.presently_working,
+                starting_date:req.body.starting_date,
+                ending_date:req.body.ending_date,
+                current_monthly_salary:req.body.current_monthly_salary,
+                notice_period:req.body.notice_period
+            }
+        }
+        let experiencedatas = {$set:experiencedata}
+        let experience= await AluminiData.findByIdAndUpdate({"_id":id},experiencedatas,{new:true})
+        res.send(experience)
+    }
+    catch (error) {
+        console.log('post error:', error);
+ }
 })
 
 router.put('/onealumni', async (req, res) => {    // for admin to get one alumni to verify

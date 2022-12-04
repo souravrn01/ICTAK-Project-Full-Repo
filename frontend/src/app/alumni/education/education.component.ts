@@ -22,5 +22,5 @@ export class EducationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  opened=false;
 }
