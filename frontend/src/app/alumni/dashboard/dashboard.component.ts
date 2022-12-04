@@ -16,10 +16,10 @@ alumnidata:any
   ngOnInit(): void {
     let id= this.activaRoute.snapshot.paramMap.get('id')
      console.log(id)
-     this.apiService.getsinglealumnidata(id||this.alumni_id).subscribe(res=>{
+     this.apiService.getsinglealumnidata(id).subscribe(res=>{
       this.alumnidata=res
       this.alumni_id=this.alumnidata._id
-      console.log(this.alumni_id)
+      console.log(this.alumnidata);
      })
   } 
   

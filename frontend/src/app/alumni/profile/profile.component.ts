@@ -15,12 +15,7 @@ alumnidata:any=[]
   constructor( private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
 
   ngOnInit(): void {
-    this.id= this.activaRoute.snapshot.paramMap.get('id')
-    console.log(this.id)
-    this.apiService.getsinglealumnidata(this.id).subscribe(res=>{
-     this.alumnidata=res
-     console.log(res)
-    })
+
   }
 
   

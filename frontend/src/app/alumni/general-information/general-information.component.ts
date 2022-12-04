@@ -30,7 +30,6 @@ export class GeneralInformationComponent implements OnInit {
   })
   ngOnInit(): void {
     
-     this.id= this.route.snapshot.paramMap.get('id')
      this.alumniApi.alumnigeneraldata(this.personalForm).subscribe(res=>{
       this.personalForm=res
      })

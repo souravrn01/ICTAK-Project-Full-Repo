@@ -18,11 +18,22 @@
             <h3>Name :{{alumnidata.name}}</h3>
             <h4>Email ID:{{alumnidata.email}} </h4>
         </div>                                           
-        <mat-divider></mat-divider>
         <app-side-navbar></app-side-navbar>
     </mat-sidenav>
     <mat-sidenav-content>
         <div style="height:88vh;">
+            <!-- <mat-card class="m-3" style="background-color: rgb(233, 233, 239)">
+                <div class="container">
+                    <h2 style="color:rgb(7, 7, 8)" class="fw-bold" >JOB TITLE</h2>
+                    <p style="color:rgb(15, 15, 16)" align="justify">Are you looking for more than a job? Do you want to advance 
+                        your career as you work to create tangible, meaningful, and inclusive impact,
+                         both inside and outside the walls of your workplace? Sounds like we have
+                          got a lot in common. See how we can support your professional 
+                          goals and help you find opportunities based on your strengths while 
+                          advancing our shared values.</p>
+                    <button mat-stroked-button routerLink="/alumniviewjobs" style="background-color:rgb(130, 154, 164)">Find Jobs<mat-icon>arrow_forward</mat-icon></button>
+                </div>
+            </mat-card>  -->
             <router-outlet></router-outlet>
         </div>    
     </mat-sidenav-content>
