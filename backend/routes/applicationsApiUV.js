@@ -4,7 +4,7 @@ const ApplicationData = require('../models/applicationsUV')
 const multer=require('multer')
 
 
-const DIR  = './uploads/'                                   // file upload code
+const DIR  = './uploads/'                                   // file upload code 
 const storage  = multer.diskStorage({
     destination: (req, res, cb)=>{
         cb(null, DIR)
@@ -17,20 +17,36 @@ const storage  = multer.diskStorage({
 var upload = multer({
     storage:storage,
 })
+// router.post('/upload', upload.single('resume'), async(req, res, next)=>{
+//     const url = req.protocol + '://' + req.get('host')
+//     const user = new ApplicationData({
+//         resume : url + '/uploads/' + req.file.filename,
+//         link: req.body.link,
+//         job_id: req.body.id
+//     })
+//     let saved = user.save()
+//     res.send(saved)
+//     .then((res)=>{
+//         console.log(res)
+//     })
+//     .catch((error)=>{
+//         console.log(error)
+//     })
+// })
+
 router.post('/upload', upload.single('resume'), async(req, res, next)=>{
+   try {
     const url = req.protocol + '://' + req.get('host')
     const user = new ApplicationData({
         resume : url + '/uploads/' + req.file.filename,
-        link: req.body.link
+        link: req.body.link,
+        job_id: req.body.id
     })
-    user.save()
-    .then((res)=>{
-        console.log(res)
-    })
-    .catch((error)=>{
-        console.log(error)
-    })
-
+    let saved = await user.save()
+    res.send(saved)
+   } catch (error) {
+    console.log(error)
+   }
 })
 
 

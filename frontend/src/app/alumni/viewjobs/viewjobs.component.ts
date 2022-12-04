@@ -13,12 +13,14 @@ export class ViewjobsComponent implements OnInit {
 
   form: any = new FormGroup({
     link: new FormControl(null),
+    id: new FormControl(null)
   });
+
 
 
   jobs: any = []; 
   selectedFile!: File;
-
+  storeID: any
   ngOnInit(): void {
     this.getjob();
   }
@@ -29,11 +31,16 @@ export class ViewjobsComponent implements OnInit {
     });
   }
 
+  storeid(id:any){
+    this.storeID = id
+  }
+
   fileselect(event: any) {
     this.selectedFile = event.target.files[0];
   }
 
    onSubmit() {
+    this.form.value.id = this.storeID
     const data = new FormData();
         let link = this.form.value
         for (const prop in link) {
