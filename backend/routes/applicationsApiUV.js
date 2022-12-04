@@ -1,51 +1,41 @@
 const express = require('express')
 const router = express.Router()
 const ApplicationData = require('../models/applicationsUV')
-
 const multer=require('multer')
-// const Storage = multer.diskStorage({
-//     destination:'uploads',
-//     filename:(req,file,cb)=>{
-//         cb(null,file.originalname)
-//     }
-// })
-// const upload=multer({
-//     storage:Storage
-// }).single('applicationdata')
 
-//store data 
-const Storage = multer.diskStorage({
-    destination: 'uploads',
+
+const DIR  = './uploads/'                                   // file upload code
+const storage  = multer.diskStorage({
+    destination: (req, res, cb)=>{
+        cb(null, DIR)
+    },
     filename: (req, file, cb)=>{
-        cb(null, file.originalname);
+        const filename = file.originalname.toLowerCase().split(' ').join('-')
+        cb(null, filename)
     },
 })
+var upload = multer({
+    storage:storage,
+})
+router.post('/upload', upload.single('resume'), async(req, res, next)=>{
+    const url = req.protocol + '://' + req.get('host')
+    const user = new ApplicationData({
+        resume : url + '/uploads/' + req.file.filename,
+        link: req.body.link
+    })
+    user.save()
+    .then((res)=>{
+        console.log(res)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
 
-const upload = multer({
-    storage: Storage
-}).single('resume')
-
-
-
-
-router.post('/upload',async(req,res)=>{ 
-    try{
-        let applicationdata={
-            resume_file_upload:req.body.resume_file_upload,
-            profile_link:req.body.profile_link
-           
-            }
-            const application = new ApplicationData(applicationdata)
-        const saveapplication = await application.save()
-        res.send(saveapplication)
-        }
-        catch (error) {
-        console.log('post error:',error);
-    }
-   
 })
 
-router.get('/applicatiodata', async (req, res) => {       // getdata for admin to collect unverified alumni
+
+
+router.get('/applicationdata', async (req, res) => {       // getdata for admin to collect unverified applications
     try {
         let list = await ApplicationData.find({ approval_status: "approved" })
         res.send(list)

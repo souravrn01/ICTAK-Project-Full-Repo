@@ -4,13 +4,8 @@ const schema = mongoose.Schema
 
 const applicationSchema = new schema({
 
-    resume_file_upload:{
-        data:Buffer,
-        contentType: String
-    },
-    approval_status: { 
-        contentType:String
-    },
+    resume:String,
+    link: String,
     approval_status: {
         type: String,
         default: "not approved"

@@ -27,6 +27,7 @@ import { EmpLoginComponent } from './main/emp-login/emp-login.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { EmpLoginComponent } from './main/emp-login/emp-login.component';
     AlumniSignupComponent,
     EmployeSignupComponent,
     EmpLoginComponent,
+
       
    
   ],

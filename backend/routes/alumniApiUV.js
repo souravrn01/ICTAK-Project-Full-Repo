@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const AluminiData = require('../models/alumniProfileUV')
+const multer=require('multer')
+
+
 
 
 
