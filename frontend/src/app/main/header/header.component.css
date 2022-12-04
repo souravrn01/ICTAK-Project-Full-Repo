@@ -24,10 +24,13 @@ nav{
     background-color: rgb(190, 229, 229);
     
 }
-img.logo{
-    width:12%;
-    height: 95px;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;  
+.logo{
+
+     display: block;
+     max-width:100px;
+     max-height:50px;
+     scale:5;
+     aspect-ratio: auto;
+     padding-left: 20px;
+     /* border: 1px solid red; */
 }
