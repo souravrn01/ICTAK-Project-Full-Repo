@@ -10,6 +10,14 @@ router.get('/getjob', async(req, res)=>{  // getting job
         console.log('get error:', error);
     }
 })
+router.get('/getempjob', async(req, res)=>{  // getting job
+    try {
+    let jobs = await JOBDATA.find({postedBy:"employe"})
+        res.send(jobs)
+    } catch (error) {
+        console.log('get error:', error);
+    }
+})
 
 
 router.post('/postjob', async(req, res)=>{  // posting job

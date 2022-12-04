@@ -7,15 +7,15 @@ export class EmployerApiService {
 apiUrl:any=('http://localhost:3000/api')
   constructor(private http:HttpClient) { }
   addJob(data:any){
-    return this.http.post(`${this.apiUrl}/jobuv/job`,data)
+    return this.http.post(`${this.apiUrl}/verifiedjobs/postjob`,data)
   }
   getJob(){
-    return this.http.get(`${this.apiUrl}/jobuv/joblist`)
+    return this.http.get(`${this.apiUrl}/verifiedjobs/getempjob`)
   }
   getSingleJob(id:any){
-    return this.http.get(`${this.apiUrl}/jobuv/job/${id}`)
+    return this.http.get(`${this.apiUrl}/verifiedjobs/getOneJob/${id}`)
   }
-  updatejob(data:any){
-    return this.http.put(`${this.apiUrl}/jobuv/job`,data)
-  }
+  // updatejob(data:any){
+  //   return this.http.put(`${this.apiUrl}/verifiedjobs/job`,data)
+  // }
 }

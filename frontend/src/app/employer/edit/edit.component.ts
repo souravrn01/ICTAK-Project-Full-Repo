@@ -45,14 +45,18 @@ export class EditComponent implements OnInit {
     })
   }
   update(){
-    this.api.updatejob(this.editForm).subscribe((res:any)=>{
-    console.log(res)
-    this.editForm=res.editForm
-    alert('data updated')
-    this.router.navigate(['/empDash'])
-    })
+    // this.api.updatejob(this.editForm).subscribe((res:any)=>{
+    // console.log(res)
+    // this.editForm=res.editForm
+    // alert('data updated')
+    
+    // })
+   
   }
 
- 
+ backfn(){
+  this.router.navigate(['/empDash'])
+ }
+  
 
 }
