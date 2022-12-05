@@ -12,9 +12,9 @@ export class EducationComponent implements OnInit {
   constructor(private alumniApi:AlumniApiService,private router:Router,
     private route:ActivatedRoute) { }
 
-  id:any =''
-  data:any=[]                           
-                                                       
+  id:any
+  data:any=[]
+
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
     console.log(this.id)
@@ -30,9 +30,7 @@ export class EducationComponent implements OnInit {
     this.alumniApi.alumnieducation(this.data, this.id).subscribe(res=>{
       console.log(res)
       this.data=res
-      alert("Data updated successfully")
-      this.ngOnInit()
-      this.router.navigate([`alumnidashboard/${this.id}`])
+        //this.router.navigate(['/dashboard'])
     })
   }
  
