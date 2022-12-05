@@ -30,10 +30,20 @@ export class GeneralInformationComponent implements OnInit {
   })
   ngOnInit(): void {
     
-     this.alumniApi.alumnigeneraldata(this.personalForm).subscribe(res=>{
+    this.id=this.route.snapshot.params['id'];
+    this.alumniApi.getsinglealumnidata(this.id).subscribe((res:any)=>{
       this.personalForm=res
-     })
+    })
    
   }
+onsubmit(){
+  this.alumniApi.alumnigeneraldata(this.personalForm).subscribe(res=>{
+    console.log(res)
+    this.personalForm=res
+    alert("Data updated successfully")
+      this.router.navigate(['/profile'])
+  })
+}
+
   opened=false;
 }

@@ -15,7 +15,7 @@ alumnidata:any=[]
   constructor( private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
 
   ngOnInit(): void {
-
+    
   }
 
   
