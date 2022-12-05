@@ -120,7 +120,7 @@
                 <h2>Education</h2>
             </div>
             <div class="col-md-2">
-                <button type="button" routerLink="/education" class="btn btn-light">Add/Edit</button>
+                <button type="button" (click)="navigatetoeducation(alumnidata._id)" class="btn btn-light">Add/Edit</button>
             </div>
         </div>
         <div class="row">
@@ -166,7 +166,7 @@
                 <h2>Experience</h2>
             </div>
             <div class="col-md-2">
-                <button type="button" routerLink="/experiences" class="btn btn-light">Add/Edit</button>
+                <button type="submit" (click)="navigatetoexperience(alumnidata._id)" class="btn btn-light">Add/Edit</button>
             </div>
         </div>
         <div class="row">

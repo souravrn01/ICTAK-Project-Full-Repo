@@ -1,21 +1,12 @@
-<!-- 
- <mat-toolbar class="navbar">
-  <mat-toolbar-row>
-      <button mat-icon-button>
-          <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
-      </button>
+<nav class="navbar navbar-light" style=" background-color: rgb(190, 229, 229);">
+  <div class="container-fluid p-1">
       <div class="ms-auto">
-          <button mat-stroked-button color="basic" class="m-1">Saved Jobs</button>
-          <button mat-stroked-button color="basic" class="m-1">Applied Jobs</button>
-          <button mat-stroked-button color="basic" class="m-1">Logout</button>
+          <button mat-stroked-button color="basic" (click)="back()">Home</button>
+          <button mat-stroked-button color="basic" class="m-2 me-4" routerLink="">Logout</button>
       </div>
-</mat-toolbar-row>
-</mat-toolbar> -->
-
+  </div>
+</nav>
 <mat-sidenav-container>
-  <!-- <mat-sidenav #sidenav mode="side" opened>
-    <app-side-navbar></app-side-navbar>
-</mat-sidenav> -->
   <mat-sidenav-content>
       <div style="height:88vh;">
       <mat-card class="m-2">
@@ -23,37 +14,44 @@
           <h2 class="text-center" style="color:rgb(82, 82, 90)">Education Details</h2>
         </div>
         <div class="container">
-          <form [formGroup]="educationForm">
+          <form #educationForm="ngForm" (click)="onsubmit()">
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control" name="qualification" placeholder="Qualification : Graduation" formControlName="qualification">
+              <input type="text" class="form-control" name="qualification"
+               placeholder="Qualification : Graduation" [(ngModel)]="data.education.qualification">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" name="status" placeholder="Completion Status" formControlName="status">
+              <input type="text" class="form-control" name="completion_status"
+               placeholder="Completion Status" [(ngModel)]="data.education.completion_status">
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control" name="stream" placeholder="Main Stream : Btech/BSc/MSc/Mtech" formControlName="stream">
+              <input type="text" class="form-control" name="main_stream" 
+              placeholder="Main Stream : Btech/BSc/MSc/Mtech" [(ngModel)]="data.education.main_stream">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" name="specialization" placeholder="Specialization : Computer Science" formControlName="specialization">
+              <input type="text" class="form-control" name="specialization"
+               placeholder="Specialization : Computer Science" [(ngModel)]="data.education.specialization">
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control" name="college" placeholder="University/Institute/Board" formControlName="college">
+              <input type="text" class="form-control" name="university"
+               placeholder="University/Institute/Board" [(ngModel)]="data.education.university">
             </div>
             <div class="col-md-3">
-              <input type="number" class="form-control" name="percentage" placeholder="Percentage" formControlName="percentage">
+              <input type="number" class="form-control" name="percentage" 
+              placeholder="Percentage" [(ngModel)]="data.education.percentage">
             </div>
             <div class="col-md-3">
-              <input type="number" class="form-control" name="year" placeholder="Year of passing" formControlName="year">
+              <input type="number" class="form-control" name="year_of_pass" 
+              placeholder="Year of passing" [(ngModel)]="data.education.year_of_pass">
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 text-center m-4 ps-3 pe-3">
-                <button type="button" class="btn btn-light">Save</button>
+                <button type="submit" class="btn btn-light">Save</button>
             </div>
            </div>
           </form>

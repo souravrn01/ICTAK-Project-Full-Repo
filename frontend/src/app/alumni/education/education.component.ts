@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
-
+import { AlumniApiService } from '../alumni-api.service';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
@@ -8,19 +9,40 @@ import { FormGroup, FormControl,Validators } from '@angular/forms';
 })
 export class EducationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alumniApi:AlumniApiService,private router:Router,
+    private route:ActivatedRoute) { }
 
-  educationForm:any = new FormGroup({
-    qualification:new FormControl(null,Validators.required),
-    status:new FormControl(null,Validators.required),
-    stream:new FormControl(null,Validators.required),
-    specialization:new FormControl(null,Validators.required),
-    college:new FormControl(null,Validators.required),
-    percentage:new FormControl(null,Validators.required),
-    year:new FormControl(null,Validators.required)
-  })
+  id:any
+  data:any={
+    qualification:'',
+    completion_status:'',
+    main_stream:'',
+    specialization:'',
+    university:'',
+    percentage:'',
+    year_of_pass:'',
+    _id:''
+  }
 
   ngOnInit(): void {
+    this.id=this.route.snapshot.params['id'];
+    console.log(this.id)
+    this.alumniApi.getsinglealumnidata(this.id).subscribe((res:any)=>{
+      this.data=res
+      console.log(this.data)
+    })
   }
-  opened=false;
+
+  onsubmit(){
+    this.alumniApi.alumnieducation(this.data).subscribe(res=>{
+      console.log(res)
+      this.data=res
+      alert("Data updated successfully")
+        //this.router.navigate(['/dashboard'])
+    })
+  }
+ 
+  back(){
+    history.back()
+  }
 }
