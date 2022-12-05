@@ -40,7 +40,9 @@ router.post('/upload', upload.single('resume'), async(req, res, next)=>{
     const user = new ApplicationData({
         resume : url + '/uploads/' + req.file.filename,
         link: req.body.link,
-        job_id: req.body.id
+        job_id: req.body.job_id,
+        alum_id: req.body.alum_id
+
     })
     let saved = await user.save()
     res.send(saved)

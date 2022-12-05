@@ -33,4 +33,7 @@ export class DashboardComponent implements OnInit {
   navigatetoexperience(id:any){
     this.router.navigate([`/experiences/${id}`])
   }
+  tojobs(id:any){
+    this.router.navigateByUrl(`/alumniviewjobs/${id}`)
+  }
 }

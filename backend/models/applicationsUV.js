@@ -7,6 +7,7 @@ const applicationSchema = new schema({
     resume:String,
     link: String,
     job_id: String,
+    alum_id: String,
     approval_status: {
         type: String,
         default: "not approved"
