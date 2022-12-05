@@ -9,6 +9,8 @@ import { EmployerModule } from '../employer.module';
   styleUrls: ['./addjob.component.css']
 })
 export class AddjobComponent implements OnInit {
+  id:any;
+  datas:any=[];
 
   constructor(private api:EmployerApiService) { }
   addForm:any=new FormGroup({
@@ -34,5 +36,11 @@ export class AddjobComponent implements OnInit {
       this.addForm.reset();
     })
   }
+  // getsingleemp(){
+  //   this.api.getsingleemp(this.id).subscribe((res:any)=>{
+     
+  //   this.datas=res;
+  //   })
+  // }
 
 }

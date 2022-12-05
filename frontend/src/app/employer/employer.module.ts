@@ -14,12 +14,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewjobComponent } from './viewjob/viewjob.component';
 import { EditComponent } from './edit/edit.component';
+import { DashboComponent } from './dashbo/dashbo.component';
 @NgModule({
   declarations: [
     DashboardComponent,
     AddjobComponent,
     ViewjobComponent,
     EditComponent,
+    DashboComponent,
    
   ],
   imports: [
