@@ -2,7 +2,7 @@
 
 <body>
     <div class="wrapper"></div>
-    <div class="container mt-2">
+    <div class="container">
         <mat-card>
             <form [formGroup]="alumniSignup" (ngSubmit)="sign()" class="bg-light">
                 <div class="row g-0">
@@ -12,8 +12,8 @@
                 </div>
                 <div class="row p-2">
                     <div class="col mb-2">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" formControlName="name">
+                        
+                        <input type="text" class="form-control" placeholder="Name" id="name" formControlName="name">
                         <div class="form-text text-danger"
                             *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
                             Name is required
@@ -23,8 +23,6 @@
                             Name is too short
                         </div>
                     </div>
-                </div>
-                <div class="row p-2">
                     <div class="col mb-2">
     
                         <input type="text" class="form-control" placeholder="Email Address" id="email"
@@ -38,6 +36,9 @@
                             ***invalid email
                         </div>
                     </div>
+                </div>
+                <div class="row p-2">
+                    
                     <div class="col mb-2">
     
                         <input type="text" class="form-control" placeholder="Phone Number" id="phone"
@@ -51,9 +52,7 @@
                             ***invalid phone number
                         </div>
                     </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col mb-2">
+                    <div class="col ">
     
                         <input type="text" class="form-control" placeholder="Highest Qualification" id="qualification"
                             formControlName="highest_qualification">
@@ -62,6 +61,9 @@
                             Field is invalid
                         </div>
                     </div>
+                </div>
+                <div class="row p-2">
+                    
                     <div class="col">
                         <label for="floatingSelect">Course Studied at ICTAK</label>
                         <div class="form-floating">
@@ -79,6 +81,26 @@
                         <div class="form-text text-danger"
                             *ngIf="Course_Studied_at_ICTAK.errors?.['required'] && (Course_Studied_at_ICTAK.touched || Course_Studied_at_ICTAK.dirty)">
                             Field is invalid
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col mb-2">
+    
+                        <input type="text" class="form-control" id="company" placeholder="Company Name"
+                            formControlName="company_name">
+    
+                    </div>
+                    <div class="col mb-2">
+                        <input type="password" class="form-control" id="Password" placeholder="Password"
+                            formControlName="password">
+                        <div class="form-text text-danger"
+                            *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                            Field is invalid
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)">
+                            password should contain atleast 8 and 15 charecters
                         </div>
                     </div>
                 </div>
@@ -112,26 +134,6 @@
                         <div class="form-text text-danger"
                             *ngIf="Placement_Status.errors?.['required'] && (Placement_Status.touched || Batch_Details.dirty)">
                             Field is invalid
-                        </div>
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col mb-2">
-    
-                        <input type="text" class="form-control" id="company" placeholder="Company Name"
-                            formControlName="company_name">
-    
-                    </div>
-                    <div class="col mb-2">
-                        <input type="password" class="form-control" id="Password" placeholder="Password"
-                            formControlName="password">
-                        <div class="form-text text-danger"
-                            *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
-                            Field is invalid
-                        </div>
-                        <div class="form-text text-danger"
-                            *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)">
-                            password should contain atleast 8 and 15 charecters
                         </div>
                     </div>
                 </div>
