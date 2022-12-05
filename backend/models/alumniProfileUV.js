@@ -59,7 +59,7 @@ const alumniSchema= new schema({
             },
             presently_working:{
                 type: String,
-                default: "nil"
+                default: " "
             },
             starting_date:{
                 type: Date,

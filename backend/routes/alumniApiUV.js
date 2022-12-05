@@ -96,7 +96,7 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 router.put('/alumnieducation', async (req, res) => { //for update education data of alumni
     try {
          console.log(req.body.data, req.body.id)
-        let id = req.body.id
+        let id = req.body._id
         let educationdata= {
             education:{
            qualification: req.body.data.qualification,
@@ -120,7 +120,7 @@ router.put('/alumnieducation', async (req, res) => { //for update education data
 
 router.put('/alumniexperience',async (req,res)=>{ //for update experience data of alumni
     try{
-        console.log(req.body)
+        console.log(req.body, req.body.id)
         let id = req.body._id
         let experiencedata={
             experience:{
