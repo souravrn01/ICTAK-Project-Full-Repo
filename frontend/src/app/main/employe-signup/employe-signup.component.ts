@@ -26,8 +26,17 @@ onSubmit(){
   // console.log(this.employeeForm.status)
   // let status=this.employeeForm.status
   this.signup.addEmploye(this.employeeForm.value).subscribe((res)=>{
-    console.log(this.employeeForm.value)
-    this.router.navigate(['/home'])
+    // console.log(this.employeeForm.value)
+    // this.router.navigate(['/employelogin'])
+    if(res.message){
+      alert(res.message)
+        this.router.navigate(['/employesignup'])
+    }
+    else{
+      alert('registerd successfully')
+      this.router.navigate(['/employelogin'])
+
+    }
   })
 }
 get Name():FormControl{

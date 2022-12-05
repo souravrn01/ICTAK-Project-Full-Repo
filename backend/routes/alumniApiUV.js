@@ -124,13 +124,13 @@ router.put('/alumniexperience',async (req,res)=>{ //for update experience data o
         let id = req.body.id
         let experiencedata={
             experience:{
-                company:req.body.company,
-                Designation:req.body.Designation,
-                presently_working:req.body.presently_working,
-                starting_date:req.body.starting_date,
-                ending_date:req.body.ending_date,
-                current_monthly_salary:req.body.current_monthly_salary,
-                notice_period:req.body.notice_period
+                company:req.body.data.company,
+                Designation:req.body.data.Designation,
+                presently_working:req.body.data.presently_working,
+                starting_date:req.body.data.starting_date,
+                ending_date:req.body.data.ending_date,
+                current_monthly_salary:req.body.data.current_monthly_salary,
+                notice_period:req.body.data.notice_period
             }
         }
         let experiencedatas = {$set:experiencedata}

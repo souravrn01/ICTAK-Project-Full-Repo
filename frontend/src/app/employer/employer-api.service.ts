@@ -15,6 +15,9 @@ apiUrl:any=('http://localhost:3000/api')
   getSingleJob(id:any){
     return this.http.get(`${this.apiUrl}/verifiedjobs/getOneJob/${id}`)
   }
+  getsingleemp(id:any){
+    return this.http.get(`${this.apiUrl}/employeuv/singleemp/${id}`)
+  }
   // updatejob(data:any){
   //   return this.http.put(`${this.apiUrl}/verifiedjobs/job`,data)
   // }

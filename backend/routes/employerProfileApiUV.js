@@ -5,23 +5,23 @@ const EmployeData=require('../models/employerProfileUV')
 
 
 
-router.post('/employesignup',async(req,res)=>{
-    try {
-        let data={
-    name:req.body.name,
-    email:req.body.email,
-    phone:req.body.phone,
-    company:req.body.company,
-    designation:req.body.designation,
-    password:req.body.password
-    }
-    const employe = new EmployeData(data)
-    const saveEmploye = await employe.save()
-        res.send(saveEmploye)
-    } catch (error) {
-        console.log('post error:',error);
-    }
-})
+// router.post('/employesignup',async(req,res)=>{
+//     try {
+//         let data={
+//     name:req.body.name,
+//     email:req.body.email,
+//     phone:req.body.phone,
+//     company:req.body.company,
+//     designation:req.body.designation,
+//     password:req.body.password
+//     }
+//     const employe = new EmployeData(data)
+//     const saveEmploye = await employe.save()
+//         res.send(saveEmploye)
+//     } catch (error) {
+//         console.log('post error:',error);
+//     }
+// })
 router.get('/employelist',async(req,res)=>{
     try {
         let list=await EmployeData.find()
@@ -90,6 +90,44 @@ router.get('/singleemp',async(req,res)=>{       //get singledata of alumni
         let data = await EmployeData.findOne({email:req.body.email,password:req.body.password})
         res.send(data)
     }catch(error){
+        console.log(error)
+    }
+})
+
+    router.post('/employesignup', async (req, res) => {
+    try {
+        let item = {
+            name:req.body.name,
+            email:req.body.email,
+            phone:req.body.phone,
+            company:req.body.company,
+            designation:req.body.designation,
+            password:req.body.password
+        }
+        let user = await EmployeData.findOne({ email: req.body.email })
+        if (!user) {
+            const newuser = new EmployeData(item)
+            const saveuser = await newuser.save()
+            res.send(saveuser)
+        }
+        return res.json({ message:"Email already registered" });
+    } catch (error)
+{
+        console.log('post error:',error)
+    }
+})
+router.post('/emplogin', async (req, res) => {
+    try {
+        let user = await EmployeData.findOne({ 
+            email: req.body.email, 
+            password: req.body.password })
+        if (!user) {
+            return res.json({ message: "Invalid Credentials" });
+
+
+        }
+        res.send(user)
+    } catch (error) {
         console.log(error)
     }
 })
