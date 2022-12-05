@@ -82,10 +82,10 @@
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-4 mt-4">
-                                                                    <label style="color: rgb(61, 56, 56)">Date of Birth :</label>
+                                                                    <label style="color: rgb(61, 56, 56)">Date of Birth: </label>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <input type="date" class="form-control" name="dob"  [(ngModel)]="data.date_of_birth" >
+                                                                    <p>{{data.date_of_birth | date}}</p><input type="date" class="form-control" name="dob"  [(ngModel)]="data.date_of_birth" >
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
