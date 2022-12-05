@@ -71,7 +71,7 @@ router.get('/alumni/:id',(req,res)=>{
 router.put('/generaldata',async(req,res)=>{ //update one alumni general information
     try{
         console.log(req.body)
-        let id = req.body._id
+        let id = req.body.id
         let generaldata = {
             gender:req.body.gender,
             date_of_birth:req.body.date_of_birth,
