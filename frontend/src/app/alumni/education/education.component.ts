@@ -13,17 +13,18 @@ export class EducationComponent implements OnInit {
     private route:ActivatedRoute) { }
 
   id:any
-  data:any={
-    qualification:'',
-    completion_status:'',
-    main_stream:'',
-    specialization:'',
-    university:'',
-    percentage:'',
-    year_of_pass:'',
-    _id:''
-  }
-
+  data:any=[]
+  formData = {
+    qualification: this.data.education.qualification,
+    completion_status:this.data.education.completion_status,
+    main_stream: this.data.education.main_stream,
+    specialization: this.data.education.specialization,
+    university: this.data.education.university,
+    percentage: this.data.education.percentage,
+    year_of_pass: this.data.education.year_of_pass,
+    id: this.data._id
+  }                              
+                                                       
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
     console.log(this.id)
@@ -34,7 +35,7 @@ export class EducationComponent implements OnInit {
   }
 
   onsubmit(){
-    this.alumniApi.alumnieducation(this.data).subscribe(res=>{
+    this.alumniApi.alumnieducation(this.formData).subscribe(res=>{
       console.log(res)
       this.data=res
       alert("Data updated successfully")

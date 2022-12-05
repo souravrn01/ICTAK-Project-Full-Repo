@@ -61,7 +61,7 @@ router.get('/alumni/:id',(req,res)=>{
     try{
         AluminiData.findById({"_id":req.params.id}).then(function(data){
             res.send(data);
-            })
+        })
     }
     catch(error){
         console.log(error);
@@ -96,7 +96,7 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 router.put('/alumnieducation', async (req, res) => { //for update education data of alumni
     try {
         console.log(req.body)
-        let id = req.body._id
+        let id = req.body.id
         let educationdata= {
             education:{
            qualification: req.body.qualification,

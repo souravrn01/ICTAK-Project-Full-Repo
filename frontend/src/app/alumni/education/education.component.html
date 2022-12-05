@@ -14,7 +14,7 @@
           <h2 class="text-center" style="color:rgb(82, 82, 90)">Education Details</h2>
         </div>
         <div class="container">
-          <form #educationForm="ngForm" (click)="onsubmit()">
+          <form #educationForm="ngForm" (ngSubmit)="onsubmit()">
           <div class="row">
             <div class="col-md-6">
               <input type="text" class="form-control" name="qualification"
