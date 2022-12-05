@@ -7,7 +7,6 @@ import { GeneralInformationComponent } from './general-information/general-infor
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewjobsComponent } from './viewjobs/viewjobs.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -37,7 +36,6 @@ import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
     ExperienceComponent,
     EducationComponent,
     DashboardComponent,
-    SideNavbarComponent,
     FooterComponent,
     ViewjobsComponent,
     ApplyjobsComponent,
