@@ -12,18 +12,18 @@ export class EducationComponent implements OnInit {
   constructor(private alumniApi:AlumniApiService,private router:Router,
     private route:ActivatedRoute) { }
 
-  id:any
+  id:any =''
   data:any=[]
-  formData = {
-    qualification: this.data.education.qualification,
-    completion_status:this.data.education.completion_status,
-    main_stream: this.data.education.main_stream,
-    specialization: this.data.education.specialization,
-    university: this.data.education.university,
-    percentage: this.data.education.percentage,
-    year_of_pass: this.data.education.year_of_pass,
-    id: this.data._id
-  }                              
+  // formData = {
+  //   qualification: `this.data.education.qualification`,
+  //   completion_status:'',
+  //   main_stream: '',
+  //   specialization: '',
+  //   university: '',
+  //   percentage: '',
+  //   year_of_pass: '',
+  //   id:''
+  // }                              
                                                        
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
@@ -35,11 +35,13 @@ export class EducationComponent implements OnInit {
   }
 
   onsubmit(){
-    this.alumniApi.alumnieducation(this.formData).subscribe(res=>{
+    
+    console.log(this.data);
+    this.alumniApi.alumnieducation(this.data).subscribe(res=>{
       console.log(res)
       this.data=res
       alert("Data updated successfully")
-        //this.router.navigate(['/dashboard'])
+      this.router.navigate(['/dashboard'])
     })
   }
  
