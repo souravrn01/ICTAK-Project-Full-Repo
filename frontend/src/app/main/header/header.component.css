@@ -20,8 +20,7 @@ mat-menu{
     padding-right: 20px;
 }
 nav{
-   
-    background-color: rgb(190, 229, 229);
+    background: linear-gradient(90deg, rgba(0,212,255,1)0%, rgb(44, 38, 41)35%, rgba(9,9,121,1)100%);
     
 }
 .logo{
