@@ -27,5 +27,10 @@ export class DashboardComponent implements OnInit {
   navigatetogeneraldata(id:any){
     this.router.navigate([`/general-information/${id}`])
   }
-  opened=false;
+  navigatetoeducation(id:any){
+    this.router.navigate([`/education/${id}`])
+  }
+  navigatetoexperience(id:any){
+    this.router.navigate([`/experiences/${id}`])
+  }
 }

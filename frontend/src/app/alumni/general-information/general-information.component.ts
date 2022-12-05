@@ -15,16 +15,29 @@ export class GeneralInformationComponent implements OnInit {
     private route:ActivatedRoute) { }
 
     id:any
-    data:any 
-   
-
+    data:any={
+      name:'',
+      email:'',
+      phone:'',
+      gender:'',
+      date_of_birth:'',
+      martial_status:'',
+      permanent_address:'',
+      alternate_phone_number:'',
+      pincode:'',
+      district:'',
+      state:'',
+      country:'',
+      _id:''
+    }
+  
   ngOnInit(): void {
     
     this.id=this.route.snapshot.params['id'];
     console.log(this.id)
     this.alumniApi.getsinglealumnidata(this.id).subscribe((res:any)=>{
       this.data=res
-      console.log(this.data)
+
       
     })
    
@@ -34,7 +47,7 @@ onsubmit(){
     console.log(res)
     this.data=res
     alert("Data updated successfully")
-      this.router.navigate(['/profile'])
+      //this.router.navigate(['/dashboard'])
   })
 }
 back(){
