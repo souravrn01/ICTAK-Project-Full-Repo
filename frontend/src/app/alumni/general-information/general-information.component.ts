@@ -44,6 +44,9 @@ onsubmit(){
       this.router.navigate(['/profile'])
   })
 }
+back(){
+  history.back()
+}
 
   opened=false;
 }
