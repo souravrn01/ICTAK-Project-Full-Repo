@@ -10,11 +10,12 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatCardModule} from '@angular/material/card';
 import { AlumniUVComponent } from './components/alumni-uv/alumni-uv.component';
 import { VerifyEmpComponent } from './components/verify-emp/verify-emp.component';
+import { JobApplicationsComponent } from './components/job-applications/job-applications.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent, VerifyEmpComponent],
+  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent, VerifyEmpComponent, JobApplicationsComponent],
   imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule],
 })
 export class AdminModule {}

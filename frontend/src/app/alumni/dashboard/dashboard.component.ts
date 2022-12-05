@@ -8,10 +8,12 @@ import { AlumniApiService } from '../alumni-api.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
- alumni_id:any
-alumnidata:any
+
 
   constructor(private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
+  
+  alumni_id:any
+  alumnidata:any
 
   ngOnInit(): void {
     let id= this.activaRoute.snapshot.paramMap.get('id')

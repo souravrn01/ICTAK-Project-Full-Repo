@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row" *ngFor="let job of jobs">
+      <div class="col-md-12 m-2">
+        <mat-card style="background-color:beige">
+          <mat-card-content>
+            <h2>{{job.jobTitle}}</h2>
+            <h4>Company : {{job.companyName}}</h4>
+            <h4>Place : {{job.location}}</h4>
+            <h4>Qualification : {{job.qualification}}</h4>
+            <h4>Experience : {{job.experience}}</h4>
+            <h4>ClosingDate : {{job.closingDate}}</h4>
+            <h4>Salary-Range : {{job.salaryRange}}</h4>
+            <h4>Skills : {{job.skills}}</h4>
+            <h4>Description : {{job.description}}</h4>
+            <!-- Button trigger modal -->
+  
+            <!-- Modal -->
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
