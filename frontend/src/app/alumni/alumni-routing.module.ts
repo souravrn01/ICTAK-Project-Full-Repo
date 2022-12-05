@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'general-information/:id',component:GeneralInformationComponent },
   {path:'education/:id',component:EducationComponent},
   {path:'experiences/:id',component:ExperienceComponent},
-  {path:'alumniviewjobs',component:ViewjobsComponent},
+  {path:'alumniviewjobs/:id',component:ViewjobsComponent},
   {path:'appliedjobs',component:ApplyjobsComponent}
 ];
 

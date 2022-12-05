@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlumniApiService } from '../alumni-api.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -9,20 +9,23 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./viewjobs.component.css'],
 })
 export class ViewjobsComponent implements OnInit {
-  constructor(private apiService: AlumniApiService, private router: Router) {}
+  constructor(private apiService: AlumniApiService, private router: Router, private activeroute: ActivatedRoute) {}
 
   form: any = new FormGroup({
     link: new FormControl(null),
-    id: new FormControl(null)
+    job_id: new FormControl(null),
+    alum_id: new FormControl(null)
   });
 
 
 
   jobs: any = []; 
   selectedFile!: File;
-  storeID: any
+  jobID: any
+  alumID: any
   ngOnInit(): void {
     this.getjob();
+    this.alumID= this.activeroute.snapshot.paramMap.get('id')
   }
 
   getjob() {
@@ -31,8 +34,8 @@ export class ViewjobsComponent implements OnInit {
     });
   }
 
-  storeid(id:any){
-    this.storeID = id
+storeid(id:any){
+    this.jobID = id
   }
 
   fileselect(event: any) {
@@ -40,7 +43,8 @@ export class ViewjobsComponent implements OnInit {
   }
 
    onSubmit() {
-    this.form.value.id = this.storeID
+    this.form.value.job_id = this.jobID
+    this.form.value.alum_id = this.alumID
     const data = new FormData();
         let link = this.form.value
         for (const prop in link) {
