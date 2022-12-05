@@ -10,7 +10,7 @@ marquee{
     color: orange;
 }
 h1{
-    color: orange;
+    color: rgb(114, 65, 114);
     font-weight: 600;
 }
 mat-card{
@@ -18,11 +18,10 @@ mat-card{
     margin: 15px;
 }
 .cards{
-    border: 1px solid orange;
     padding: 50px;
     margin-left: 10px;
     font-size: 18px;
-    background-color: orange;
+    background: linear-gradient(90deg, rgb(112, 93, 102)0%, rgb(123, 123, 148)35%, rgb(17, 67, 77)100%);
 }
 .cards h3{
     color: white;
