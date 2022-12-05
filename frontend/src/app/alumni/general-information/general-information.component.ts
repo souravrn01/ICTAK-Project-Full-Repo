@@ -15,7 +15,7 @@ export class GeneralInformationComponent implements OnInit {
     private route:ActivatedRoute) { }
 
     id:any
-    data:any
+    data:any 
    
 
   ngOnInit(): void {
