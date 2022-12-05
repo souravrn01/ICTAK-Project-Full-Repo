@@ -47,7 +47,7 @@ router.get('/aluminis', async (req, res) => {       // getdata for admin to coll
     }
 })
 router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
-    console.log(req.body)
+    console.log(req.body) 
 
     try{
         let data = await AluminiData.find({email:req.body.email,password:req.body.password,})
@@ -95,7 +95,7 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 
 router.put('/alumnieducation', async (req, res) => { //for update education data of alumni
     try {
-        console.log(req.body)
+         console.log(req.body)
         let id = req.body.id
         let educationdata= {
             education:{
