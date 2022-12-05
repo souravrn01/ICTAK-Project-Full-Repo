@@ -8,11 +8,10 @@ import { GeneralInformationComponent } from './general-information/general-infor
 import { ViewjobsComponent } from './viewjobs/viewjobs.component';
 
 const routes: Routes = [
-  {path:'alumnidashboard',component:DashboardComponent},
+  {path:'alumnidashboard/:id',component:DashboardComponent},
   {path:'general-information/:id',component:GeneralInformationComponent },
   {path:'education/:id',component:EducationComponent},
   {path:'experiences/:id',component:ExperienceComponent},
- 
   {path:'alumniviewjobs',component:ViewjobsComponent},
   {path:'appliedjobs',component:ApplyjobsComponent}
 ];

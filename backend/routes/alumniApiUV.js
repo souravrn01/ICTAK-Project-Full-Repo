@@ -95,18 +95,18 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 
 router.put('/alumnieducation', async (req, res) => { //for update education data of alumni
     try {
-         console.log(req.body)
+         console.log(req.body.data, req.body.id)
         let id = req.body.id
         let educationdata= {
             education:{
-           qualification: req.body.qualification,
-           completion_status: req.body.completion_status,
-           main_stream: req.body.main_stream,
-           specialization: req.body.specialization,
-           university: req.body.university,
-           percentage: req.body.percentage,
-           year_of_pass: req.body.year_of_pass
-        }
+           qualification: req.body.data.qualification,
+           completion_status: req.body.data.completion_status,
+           main_stream: req.body.data.main_stream,
+           specialization: req.body.data.specialization,
+           university: req.body.data.university,
+           percentage: req.body.data.percentage,
+           year_of_pass: req.body.data.year_of_pass
+            }
         }
         let educationdatas={$set:educationdata}
         let education = await AluminiData.findByIdAndUpdate({"_id":id},educationdatas,{new:true})

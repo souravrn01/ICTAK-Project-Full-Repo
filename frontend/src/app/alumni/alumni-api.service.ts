@@ -29,8 +29,8 @@ alumnigeneraldata(data:any){
   return this.http.put(`http://localhost:3000/api/alumniuv/generaldata`,data)
   
 }
-alumnieducation(data:any){
-  return this.http.put(`http://localhost:3000/api/alumniuv/alumnieducation`,data)
+alumnieducation(data:any, id:any){
+  return this.http.put(`http://localhost:3000/api/alumniuv/alumnieducation`,{data,id})
 }
 alumniexperience(data:any){
   return this.http.put(`http://localhost:3000/api/alumniuv/alumniexperience`,data)

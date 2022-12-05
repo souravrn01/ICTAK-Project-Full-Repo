@@ -33,7 +33,7 @@ login(){
       console.log("data not in database");
     }else{
       console.log(this.alumnidata[0]._id);
-       this.router.navigate(['/alumnidashboard', {id:this.alumnidata[0]._id}])
+       this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata[0]._id}`)
     }
    })
 }
