@@ -20,84 +20,84 @@ const alumniSchema= new schema({
         {
             qualification:{
                 type: String,
-                default: " "
+                default: ""
             },
             completion_status:{
                 type: String,
-                default: " "
+                default: ""
             },
             main_stream:{
                 type: String,
-                default: " "
+                default: ""
             },
             specialization:{
                 type: String,
-                default: " "
+                default: ""
             },
             university:{
                 type: String,
-                default: " "
+                default: ""
             },
             percentage:{
                 type: Number,
-                default: " "
+                default:  0
             },
             year_of_pass:{
                 type: Number,
-                default: " "
+                default: 0
             },   
         },
     experience :
         {
             company:{
                 type: String,
-                default: " "
+                default: ""
             },
             Designation:{
                 type: String,
-                default: " "
+                default: ""
             },
             presently_working:{
                 type: String,
-                default: "nil"
+                default: " "
             },
             starting_date:{
                 type: Date,
-                default: " "
+                default: ""
             },
             ending_date:{
                 type: Date,
-                default: " "
+                default: ""
             },
             current_monthly_salary:{
                 type: Number,
-                default: ""
+                default: 0
             },
             notice_period:{
                 type: Number,
-                default: ""
+                default: 0
             },
         } ,
    
     highest_qualification:{
                 type: String,
-                default: " "
+                default: ""
             },
     course_started_at_ictak:{
                 type: String,
-                default: " "
+                default: ""
             },
     batch_details:{
                 type: String,
-                default: " "
+                default: ""
             },
     placement_status:{
                 type: String,
-                default: " "
+                default: ""
             },
     company_name:{
                 type: String,
-                default: " "
+                default: ""
             },
     approval_status:{
         type: String,
@@ -107,10 +107,7 @@ const alumniSchema= new schema({
         type:String,
         default:"alumni"
     },
-    password:{
-        type: String,
-        default: " "
-    },
+    password:String
 })
 
 let aluminiData=mongoose.model('Alumini_Details',alumniSchema)
