@@ -16,9 +16,7 @@ h4{
     color: rgb(55, 117, 74);
     font-weight: 500;
 }
-mat-menu{
-    padding-right: 20px;
-}
+
 nav{
     background: linear-gradient(90deg, rgba(0,212,255,1)0%, rgb(44, 38, 41)35%, rgba(9,9,121,1)100%);
     
