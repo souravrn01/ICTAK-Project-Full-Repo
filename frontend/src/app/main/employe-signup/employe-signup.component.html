@@ -9,7 +9,7 @@
                         <span class="fs-3">Sign Up</span>
                     </div>
                 </div>
-                <div class="row p-1">
+                <div class="row p-2">
                     <div class="col form-group">
                         <input type="text" class="form-control" placeholder="Name" id="name" formControlName="name">
                         <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-1">
+                <div class="row p-2">
                     <div class="col form-group">
                         <input type="email" class="form-control" id="email" placeholder="Email Address" formControlName="email">
                         <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-1">
+                <div class="row p-2">
                     <div class="col form-group">
                         <input type="text" class="form-control" placeholder="Phone Number" id="phone" formControlName="phone">
                         <div class="form-text text-danger" *ngIf="Phone.errors?.['required'] && (Phone.touched || Phone.dirty)">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-1">
+                <div class="row p-2">
                     <div class="col form-group">
                         <input type="text" class="form-control" placeholder="Company Name" id="company" formControlName="company">
                         <div class="form-text text-danger" *ngIf="Company_Name.errors?.['required'] && (Company_Name.touched || Company_Name.dirty)">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-1">
+                <div class="row p-2">
                     <div class="col form-group">
                         <input type="text" class="form-control" placeholder="Designation" id="designation" formControlName="designation">
                         <div class="form-text text-danger" *ngIf="Designation.errors?.['required'] && (Designation.touched || Designation.dirty)">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-1">
+                <div class="row p-2">
                     <div class="col form-group">
                         <input type="password" class="form-control" placeholder="Password" id="password" formControlName="password">
                         <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-1">
+                <div class="row p-2">
                     <div class="col form-group">
                         <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary">Sign Up</button>
                     </div>
