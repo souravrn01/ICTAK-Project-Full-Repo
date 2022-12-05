@@ -31,7 +31,6 @@ export class ExperienceComponent implements OnInit {
     alert("Data updated successfully")
     this.ngOnInit()
     this.router.navigate([`alumnidashboard/${this.id}`])
-    //this code works
   })
   }
 
