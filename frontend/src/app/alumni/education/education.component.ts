@@ -26,8 +26,8 @@ export class EducationComponent implements OnInit {
 
   onsubmit(){
     
-    console.log(this.data);
-    this.alumniApi.alumnieducation(this.data, this.id).subscribe(res=>{
+      console.log(this.data); 
+      this.alumniApi.alumnieducation(this.data, this.id).subscribe(res=>{
       console.log(res)
       this.data=res
       alert("Data updated successfully")

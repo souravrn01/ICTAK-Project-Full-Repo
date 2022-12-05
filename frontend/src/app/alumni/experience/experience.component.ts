@@ -13,33 +13,26 @@ export class ExperienceComponent implements OnInit {
     private route:ActivatedRoute) { }
 
   id:any
-  data:any={
-    company:'',
-    Designation:'',
-    presently_working:'',
-    starting_date:'',
-    ending_date:'',
-    current_monthly_salary:'',
-    notice_period:'',
-    _id:''
-    
-  }
+  data:any=[]
     
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
     console.log(this.id)
     this.alumniApi.getsinglealumnidata(this.id).subscribe((res:any)=>{
-      this.data=res
+      this.data=res.experience
       console.log(this.data)
     })
   }
   onsubmit(){
-    this.alumniApi.alumniexperience(this.data).subscribe(res=>{
-      console.log(res)
-      this.data=res
-      alert("Data updated successfully")
-        //this.router.navigate(['/dashboard'])
-    })
+    console.log(this.data); 
+    this.alumniApi.alumniexperience(this.data, this.id).subscribe(res=>{
+    console.log(res)
+    this.data=res
+    alert("Data updated successfully")
+    this.ngOnInit()
+    this.router.navigate([`alumnidashboard/${this.id}`])
+    //this code works
+  })
   }
 
   back(){

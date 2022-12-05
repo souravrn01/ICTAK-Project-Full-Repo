@@ -47,7 +47,7 @@ onsubmit(){
     console.log(res)
     this.data=res
     alert("Data updated successfully")
-      //this.router.navigate(['/dashboard'])
+    this.router.navigate([`alumnidashboard/${this.id}`])
   })
 }
 back(){
