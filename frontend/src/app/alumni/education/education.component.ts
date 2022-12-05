@@ -15,14 +15,17 @@ export class EducationComponent implements OnInit {
   id:any
   data:any=[]
   formData = {
-    qualification: this.data.education.qualification,
-    completion_status:this.data.education.completion_status,
-    main_stream: this.data.education.main_stream,
-    specialization: this.data.education.specialization,
-    university: this.data.education.university,
-    percentage: this.data.education.percentage,
-    year_of_pass: this.data.education.year_of_pass,
+    education:{
+    qualification: this.data.qualification,
+    completion_status:this.data.completion_status,
+    main_stream: this.data.main_stream,
+    specialization: this.data.specialization,
+    university: this.data.university,
+    percentage: this.data.percentage,
+    year_of_pass: this.data.year_of_pass,
     id: this.data._id
+    }
+    
   }                              
                                                        
   ngOnInit(): void {
