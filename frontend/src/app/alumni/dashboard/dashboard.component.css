@@ -4,12 +4,9 @@
     height: 100%;
   }
   mat-sidenav{
-    width: 300px;
+    width: 250px;
   }
-    mat-card{
-      width:50%;
-      height: 250px;
-    }
+  
     .profile-card {
       text-align: center;
       padding: 0 15px 15px 15px;
@@ -23,11 +20,28 @@
   }
   
   mat-card {
-      box-shadow: rgb(3, 3, 3);
+      box-shadow: 10px 10px 2px rgb(3, 3, 3);
+      
   }
   
   mat-icon {
       margin-left: 15px;
       margin-right: 5px;
   
+  }
+  .form-control{
+    background:transparent;
+    border-radius: 0px;
+    border:0px;
+    border-bottom: 1px solid rgb(218, 211, 211);
+    margin-top: 10px;
+    height: 40px;
+    color: black;
+   }
+   select{
+    margin-top: 19px;
+    color: rgb(128, 121, 121);
+   }
+  h3{
+    font-weight: 600;
   }

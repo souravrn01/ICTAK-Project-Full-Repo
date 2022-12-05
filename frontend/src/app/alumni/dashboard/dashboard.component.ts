@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit {
       console.log(this.alumnidata);
      })
   } 
-  
+  navigatetogeneraldata(id:any){
+    this.router.navigate([`/general-information/${id}`])
+  }
   opened=false;
 }
