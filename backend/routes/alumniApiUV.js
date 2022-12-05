@@ -96,7 +96,7 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 router.put('/alumnieducation', async (req, res) => { //for update education data of alumni
     try {
          console.log(req.body.data, req.body.id)
-        let id = req.body._id
+        let id = req.body.id
         let educationdata= {
             education:{
            qualification: req.body.data.qualification,
@@ -121,16 +121,16 @@ router.put('/alumnieducation', async (req, res) => { //for update education data
 router.put('/alumniexperience',async (req,res)=>{ //for update experience data of alumni
     try{
         console.log(req.body, req.body.id)
-        let id = req.body._id
+        let id = req.body.id
         let experiencedata={
             experience:{
-                company:req.body.company,
-                Designation:req.body.Designation,
-                presently_working:req.body.presently_working,
-                starting_date:req.body.starting_date,
-                ending_date:req.body.ending_date,
-                current_monthly_salary:req.body.current_monthly_salary,
-                notice_period:req.body.notice_period
+                company:req.body.data.company,
+                Designation:req.body.data.Designation,
+                presently_working:req.body.data.presently_working,
+                starting_date:req.body.data.starting_date,
+                ending_date:req.body.data.ending_date,
+                current_monthly_salary:req.body.data.current_monthly_salary,
+                notice_period:req.body.data.notice_period
             }
         }
         let experiencedatas = {$set:experiencedata}
