@@ -15,7 +15,7 @@
                 <mat-card-content class="m-2">
                     <mat-card>
                         <section>
-                            <form class="p-1" [formGroup]="personalForm">
+                            <form class="p-1" #personalForm="ngForm" (ngSubmit)="onsubmit()">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -30,19 +30,19 @@
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="name"
-                                                                        placeholder="Name"  formControlName="name">
+                                                                        placeholder="Name"  [(ngModel)]="data.name" >
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="email" class="form-control" name="email"
-                                                                        placeholder="Email Address"  formControlName="email">
+                                                                        placeholder="Email Address"  [(ngModel)]="data.email">
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="number" class="form-control" name="phone"
-                                                                        placeholder="Phone Number"  formControlName="phone">
+                                                                        placeholder="Phone Number"  [(ngModel)]="data.phone">
                                                                 </div>
                                                             </div>
                                                             <div class="row m-3 form-group">
@@ -52,7 +52,7 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio"
-                                                                            name="gender" id="male" value="option1"  formControlName="gender"
+                                                                            name="gender" id="male" value="option1"  [(ngModel)]="data.gender"
                                                                             checked>
                                                                         <label class="form-check-label" for="exampleRadios1">
                                                                             Male
@@ -63,7 +63,7 @@
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio" 
                                                                             name="gender" id="female"
-                                                                            value="option2" formControlName="gender">
+                                                                            value="option2" [(ngModel)]="data.gender">
                                                                         <label class="form-check-label" for="exampleRadios2">
                                                                             Female
                                                                         </label>
@@ -73,7 +73,7 @@
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio"
                                                                             name="gender" id="other"
-                                                                            value="option3" formControlName="gender">
+                                                                            value="option3" [(ngModel)]="data.gender">
                                                                         <label class="form-check-label" for="exampleRadios3">
                                                                             Other
                                                                         </label>
@@ -85,12 +85,12 @@
                                                                     <label style="color: rgb(61, 56, 56)">Date of Birth :</label>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <input type="date" class="form-control" name="dob">
+                                                                    <input type="date" class="form-control" name="dob"  [(ngModel)]="data.date_of_birth" >
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
-                                                                    <select class="form-select" aria-label="Default select example" formControlName="martial_status">
+                                                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="data.martial_status">
                                                                         <option selected>Martial Status</option>
                                                                         <option value="1">Married</option>
                                                                         <option value="2">Unmarried</option>
@@ -115,37 +115,37 @@
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <textarea name="address" class="form-control"
-                                                                        placeholder="Permanent Address" formControlName="address"></textarea>
+                                                                        placeholder="Permanent Address" [(ngModel)]="data.permanent_address"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="number" class="form-control" name="alternatenumber"
-                                                                        placeholder="Alternate Phone Number" formControlName="alternate_number">
+                                                                        placeholder="Alternate Phone Number" [(ngModel)]="data.alternate_phone_number">
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="number" class="form-control" name="pincode"
-                                                                        placeholder="Pincode" formControlName="pincode">
+                                                                        placeholder="Pincode" [(ngModel)]="data.pincode">
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="district"
-                                                                        placeholder="District" formControlName="district">
+                                                                        placeholder="District" [(ngModel)]="data.district">
                                                                 </div>
                                                             </div>
                                                             <div class="row m-1 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="state"
-                                                                        placeholder="State" formControlName="state">
+                                                                        placeholder="State" [(ngModel)]="data.state">
                                                                 </div>
                                                             </div>
                                                             <div class="row m-2 form-group">
                                                                 <div class="col-md-12">
                                                                     <input type="text" class="form-control" name="country"
-                                                                        placeholder="Country" formControlName="country">
+                                                                        placeholder="Country" [(ngModel)]="data.country">
                                                                 </div>
                                                             </div>
                                                     </div>

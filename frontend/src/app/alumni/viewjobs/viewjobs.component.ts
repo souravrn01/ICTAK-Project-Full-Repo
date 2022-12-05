@@ -52,4 +52,9 @@ export class ViewjobsComponent implements OnInit {
       console.log(res);
     });
   }
+
+  back(){
+    history.back()
+  }
+  
 }
