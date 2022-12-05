@@ -20,23 +20,23 @@ const alumniSchema= new schema({
         {
             qualification:{
                 type: String,
-                default: " "
+                default: ""
             },
             completion_status:{
                 type: String,
-                default: " "
+                default: ""
             },
             main_stream:{
                 type: String,
-                default: " "
+                default: ""
             },
             specialization:{
                 type: String,
-                default: " "
+                default: ""
             },
             university:{
                 type: String,
-                default: " "
+                default: ""
             },
             percentage:{
                 type: Number,
@@ -51,11 +51,11 @@ const alumniSchema= new schema({
         {
             company:{
                 type: String,
-                default: " "
+                default: ""
             },
             Designation:{
                 type: String,
-                default: " "
+                default: ""
             },
             presently_working:{
                 type: String,
@@ -81,23 +81,23 @@ const alumniSchema= new schema({
    
     highest_qualification:{
                 type: String,
-                default: " "
+                default: ""
             },
     course_started_at_ictak:{
                 type: String,
-                default: " "
+                default: ""
             },
     batch_details:{
                 type: String,
-                default: " "
+                default: ""
             },
     placement_status:{
                 type: String,
-                default: " "
+                default: ""
             },
     company_name:{
                 type: String,
-                default: " "
+                default: ""
             },
     approval_status:{
         type: String,
