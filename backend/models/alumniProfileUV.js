@@ -40,11 +40,11 @@ const alumniSchema= new schema({
             },
             percentage:{
                 type: Number,
-                default: " "
+                default:  0
             },
             year_of_pass:{
                 type: Number,
-                default: " "
+                default: 0
             },   
         },
     experience :
@@ -62,20 +62,20 @@ const alumniSchema= new schema({
                 default: "nil"
             },
             starting_date:{
-                type: String,
-                default: "nil"
+                type: Date,
+                default: ""
             },
             ending_date:{
-                type: String,
-                default: "nil"
+                type: Date,
+                default: ""
             },
             current_monthly_salary:{
                 type: Number,
-                default: "nil"
+                default: 0
             },
             notice_period:{
                 type: Number,
-                default: "nil"
+                default: 0
             },
         } ,
    
@@ -107,10 +107,7 @@ const alumniSchema= new schema({
         type:String,
         default:"alumni"
     },
-    password:{
-        type: String,
-        default: " "
-    },
+    password:String
 })
 
 let aluminiData=mongoose.model('Alumini_Details',alumniSchema)
