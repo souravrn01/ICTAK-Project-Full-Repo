@@ -13,7 +13,17 @@ export class ExperienceComponent implements OnInit {
     private route:ActivatedRoute) { }
 
   id:any
-  data:any=[]
+  data:any={
+    company:'',
+    Designation:'',
+    presently_working:'',
+    starting_date:'',
+    ending_date:'',
+    current_monthly_salary:'',
+    notice_period:'',
+    _id:''
+    
+  }
     
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
