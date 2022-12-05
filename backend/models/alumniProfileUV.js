@@ -51,11 +51,11 @@ const alumniSchema= new schema({
         {
             company:{
                 type: String,
-                default: "nil"
+                default: " "
             },
             Designation:{
                 type: String,
-                default: "nil"
+                default: " "
             },
             presently_working:{
                 type: String,

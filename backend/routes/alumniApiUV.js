@@ -116,49 +116,9 @@ router.put('/alumnieducation', async (req, res) => { //for update education data
        console.log('post error:', error);
 }
 })
-router.post('/addeducation', async (req, res) => {      //to add education data
-    try {
-        let data = {
-            education:{
-                qualification: req.body.qualification,
-                completion_status: req.body.completion_status,
-                main_stream: req.body.main_stream,
-                specialization: req.body.specialization,
-                university: req.body.university,
-                percentage: req.body.percentage,
-                year_of_pass: req.body.year_of_pass
-             }
-        }
-        const educations = new AluminiData(data)
-        const saveeducation = await educations.save()
-        res.send(saveeducation)
-    } catch (error) {
-        console.log('post error:', error);
-    }
-})
 
-router.post('/addexperience', async (req, res) => {      //to add experience data
-    try {
-        let data = {
-            experience:{
-                company:req.body.company,
-                Designation:req.body.Designation,
-                presently_working:req.body.presently_working,
-                starting_date:req.body.starting_date,
-                ending_date:req.body.ending_date,
-                current_monthly_salary:req.body.current_monthly_salary,
-                notice_period:req.body.notice_period
-            }
-        }
-        const experiences = new AluminiData(data)
-        const saveexperiences = await experiences.save()
-        res.send(saveexperiences)
-    } catch (error) {
-        console.log('post error:', error);
-    }
-})
 
-router.put('/alumniexperience',async (req,res)=>{
+router.put('/alumniexperience',async (req,res)=>{ //for update experience data of alumni
     try{
         console.log(req.body)
         let id = req.body._id
