@@ -3,7 +3,14 @@ mat-card{
     height: 100%;
     box-shadow: 20px 20px 18px 20px #1e1a1a;
     border-radius: 1px;
-    background: linear-gradient(90deg, rgb(214, 173, 192)0%, rgb(184, 184, 202)35%, rgb(17, 67, 77)100%);
+    background: linear-gradient(90deg, rgb(230, 152, 188)0%, rgb(139, 139, 173)35%, rgb(17, 67, 77)100%);
+    align-items: center;
+    color: white;
+    
+}
+h2,h4{
+    font-weight: 400;
+    font-size: 19px;
 }
 input{
     padding-right: 80px;
