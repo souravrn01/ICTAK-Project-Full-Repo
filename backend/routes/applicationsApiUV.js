@@ -47,4 +47,29 @@ router.get('/applicationdata/:id', async (req, res) => {       // getdata for ad
     }
 })
 
+router.delete('/delete/:id', async (req, res)=>{
+    try {
+        id = req.params.id
+        let data = await ApplicationData.findByIdAndDelete(id)
+        res.send(data)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+router.put('/verify', async(req, res)=>{
+    try {
+        console.log(req.body.id)
+        let id = req.body.id
+        let update = {
+            approval_status: "verified"
+        }
+        let updates = {$set: update}
+        let verified = await ApplicationData.findByIdAndUpdate({"_id": id}, updates, {new:true} )
+        res.send(verified)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router;

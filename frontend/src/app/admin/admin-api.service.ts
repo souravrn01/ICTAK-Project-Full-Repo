@@ -50,4 +50,13 @@ export class AdminApiService {
   getsinglealumnidata(id:any){
     return this.http.get(`http://localhost:3000/api/alumniuv/alumni/${id}`)
   }
+deleteApplication(id:any){
+  return this.http.delete(`http://localhost:3000/api/applicationsuv/delete/${id}`)
+}
+
+verifyApplication(id:any){
+  return this.http.put('http://localhost:3000/api/applicationsuv/verify/', {id})
+}
+  
+
 }

@@ -39,4 +39,14 @@ export class JobApplicationsComponent implements OnInit {
       
     })
   }
+  delete(id:any){
+    this.adminApi.deleteApplication(id).subscribe(res=>{
+      
+    })
+  }
+  verify(id:any){
+    this.adminApi.verifyApplication(id).subscribe(res=>{
+    })
+    
+  }
 }
