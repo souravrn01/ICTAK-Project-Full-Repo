@@ -11,11 +11,12 @@ import {MatCardModule} from '@angular/material/card';
 import { AlumniUVComponent } from './components/alumni-uv/alumni-uv.component';
 import { VerifyEmpComponent } from './components/verify-emp/verify-emp.component';
 import { JobApplicationsComponent } from './components/job-applications/job-applications.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
 @NgModule({
   declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent, VerifyEmpComponent, JobApplicationsComponent],
-  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule],
+  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule,MatExpansionModule],
 })
 export class AdminModule {}

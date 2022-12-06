@@ -9,8 +9,8 @@ router.post('/alumnimail', async(req,res)=>{
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'sherinthomas17011997@gmail.com',
-      pass: 'Jobportal@1' // naturally, replace both with your real credentials or an application-specific password: wdrwsckawblzoqxe
+      user: 'souravg00gle@gmail.com',
+      pass: 'wdrwsckawblzoqxe' // naturally, replace both with your real credentials or an application-specific password: wdrwsckawblzoqxe
     }
   });
   

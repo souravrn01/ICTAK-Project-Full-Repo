@@ -47,5 +47,7 @@ export class AdminApiService {
   applicationforjob(id:any){
     return this.http.get(`http://localhost:3000/api/applicationsuv/applicationdata/${id}`)
   }
-
+  getsinglealumnidata(id:any){
+    return this.http.get(`http://localhost:3000/api/alumniuv/alumni/${id}`)
+  }
 }
