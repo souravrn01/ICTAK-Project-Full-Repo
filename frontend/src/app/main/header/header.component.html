@@ -7,9 +7,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <button mat-raised-button [matMenuTriggerFor]="menu" routerLink="" color="accent">Home</button>
-        <button mat-raised-button [matMenuTriggerFor]="menu" routerLink="/jobs" color="accent">Jobs</button>
-    <button mat-raised-button [matMenuTriggerFor]="menu" color="accent">Login/Register</button>
+        <button class="color" mat-raised-button [matMenuTriggerFor]="menu" routerLink="" >Home</button>
+        <button class="color" mat-raised-button [matMenuTriggerFor]="menu" routerLink="/jobs" >Jobs</button>
+        <button class="color" mat-raised-button [matMenuTriggerFor]="menu" >Login/Register</button>
         <mat-menu #menu="matMenu">
           <h3>Registration</h3>
           <button mat-menu-item routerLink="/employesignup">Employer/Faculty</button>

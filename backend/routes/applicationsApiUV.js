@@ -17,22 +17,6 @@ const storage  = multer.diskStorage({
 var upload = multer({
     storage:storage,
 })
-// router.post('/upload', upload.single('resume'), async(req, res, next)=>{
-//     const url = req.protocol + '://' + req.get('host')
-//     const user = new ApplicationData({
-//         resume : url + '/uploads/' + req.file.filename,
-//         link: req.body.link,
-//         job_id: req.body.id
-//     })
-//     let saved = user.save()
-//     res.send(saved)
-//     .then((res)=>{
-//         console.log(res)
-//     })
-//     .catch((error)=>{
-//         console.log(error)
-//     })
-// })
 
 router.post('/upload', upload.single('resume'), async(req, res, next)=>{
    try {
@@ -53,9 +37,10 @@ router.post('/upload', upload.single('resume'), async(req, res, next)=>{
 
 
 
-router.get('/applicationdata', async (req, res) => {       // getdata for admin to collect unverified applications
+router.get('/applicationdata/:id', async (req, res) => {       // getdata for admin to collect unverified applications
     try {
-        let list = await ApplicationData.find({ approval_status: "approved" })
+        let id = req.params.id
+        let list = await ApplicationData.find({ approval_status: "not approved", job_id: id })
         res.send(list)
     } catch (error) {
         console.log(error)

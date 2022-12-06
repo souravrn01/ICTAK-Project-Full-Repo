@@ -30,13 +30,13 @@
           <h4>Place : {{job.location}}</h4>
           <h4>Qualification : {{job.qualification}}</h4>
           <h4>Experience : {{job.experience}}</h4>
-          <h4>ClosingDate : {{job.closingDate}}</h4>
+          <h4>ClosingDate : {{job.closingDate|date}}</h4>
           <h4>Salary-Range : {{job.salaryRange}}</h4>
           <h4>Skills : {{job.skills}}</h4>
           <h4>Description : {{job.description}}</h4>
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-light" style="background-color:rgb(136, 167, 136)" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" (click)="storeid(job._id)">
+            data-bs-target="#exampleModal" (click)="storeid(job._id)" [disabled]="">
             Apply
           </button>
 
