@@ -19,6 +19,7 @@ export class ViewjobsComponent implements OnInit {
 
 
 
+  
   jobs: any = []; 
   selectedFile!: File;
   jobID: any
