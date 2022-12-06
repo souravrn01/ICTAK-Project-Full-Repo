@@ -15,21 +15,7 @@ export class GeneralInformationComponent implements OnInit {
     private route:ActivatedRoute) { }
 
     id:any
-    data:any={
-      name:'',
-      email:'',
-      phone:'',
-      gender:'',
-      date_of_birth:'',
-      martial_status:'',
-      permanent_address:'',
-      alternate_phone_number:'',
-      pincode:'',
-      district:'',
-      state:'',
-      country:'',
-      _id:''
-    }
+    data:any=[]
   
   ngOnInit(): void {
     
@@ -43,7 +29,7 @@ export class GeneralInformationComponent implements OnInit {
    
   }
 onsubmit(){
-  this.alumniApi.alumnigeneraldata(this.data).subscribe(res=>{
+  this.alumniApi.alumnigeneraldata(this.data,this.id).subscribe(res=>{
     console.log(res)
     this.data=res
     alert("Data updated successfully")
