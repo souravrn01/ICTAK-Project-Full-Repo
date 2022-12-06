@@ -1,71 +1,126 @@
 <div class="container">
-    <div class="row" *ngFor="let job of jobs">
-      <div class="col-md-6">
-        <mat-card style="background-color:beige">
-          <mat-card-content>
-            <h2>{{job.jobTitle}}</h2>
-            <h4>Company : {{job.companyName}}</h4>
-            <h4>Place : {{job.location}}</h4>
-            <h4>Qualification : {{job.qualification}}</h4>
-            <h4>Experience : {{job.experience}}</h4>
-            <h4>ClosingDate : {{job.closingDate}}</h4>
-            <h4>Salary-Range : {{job.salaryRange}}</h4>
-            <h4>Skills : {{job.skills}}</h4>
-            <h4>Description : {{job.description}}</h4>
-          </mat-card-content>
-        </mat-card>
-                    
-        <button mb-3 (click)="view(job._id)" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          View/Hide Applications
-        </button>
+  <div class="row" *ngFor="let job of jobs">
+    <div class="col-md-6">
+      <mat-card style="background-color: beige">
+        <mat-card-content>
+          <h2>{{ job.jobTitle }}</h2>
+          <h4>Company : {{ job.companyName }}</h4>
+          <h4>Place : {{ job.location }}</h4>
+          <h4>Qualification : {{ job.qualification }}</h4>
+          <h4>Experience : {{ job.experience }}</h4>
+          <h4>ClosingDate : {{ job.closingDate }}</h4>
+          <h4>Salary-Range : {{ job.salaryRange }}</h4>
+          <h4>Skills : {{ job.skills }}</h4>
+          <h4>Description : {{ job.description }}</h4>
+          <button
+            mb-3
+            (click)="view(job._id)"
+            type="button"
+            class="btn btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            View/Hide Applications
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              APPLICATIONS
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h4 *ngIf="applications.length == 0">
+              APPLICATIONS ARE NOT AVAILABLE
+            </h4>
+            <div class="col-md-6">
+              <div
+                *ngFor="let data of applications"
+                class="applications border-dark border-bottom pb-3">
 
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content"> 
-            <div class="modal-header">
-              <h1 *ngIf="applications.length === 0" class="modal-title fs-5" id="staticBackdropLabel">NO APPLICATIONS</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="col-md-6">
-                  <div *ngFor="let data of applications" class="applications  border-dark border-bottom pb-3" >
-                      
-                    <button type="button" class="btn btn-warning my-3">Download Resume</button><br>
-                    <p>Profile Links: {{data.link}}</p>
-                    <div class="profile" >
-                    <h4> PERSONAL DETAILS</h4>
-                    <!-- <p>Name:</p><span>{{}}</span> 
-                    <p>Email:</p><span>{{}}</span>
-                    <p>Phone Number:</p><span>{{}}</span>
-                    <p>Gender:</p><span>{{}}</span>
-                    <p>Date of Birth:</p><span>{{}}</span>
-                    <p>Martial Status:</p><span>{{}}</span>
-                    <p>Permanent Address:</p><span>{{}}</span>
-                    <p>Alternate Number:</p><span>{{}}</span>
-                    <p>Pincode:</p><span>{{}}</span>
-                    <p>District:</p><span>{{}}</span>
-                    <p>State:</p><span>{{}}</span>
-                    <p>Country:</p><span>{{}}</span>
-                    <h4>EDUCATION:</h4>
-                    <p>Qualification:</p><span>{{}}</span>
-                    <p>Completion Status:</p><span>{{}}</span>
-                    <p>Main Stream:</p><span>{{}}</span>
-                    <p>Specialization:</p><span>{{}}</span>
-                    <p>University:</p><span>{{}}</span>
-                    <p>Percentage:</p><span>{{}}</span>
-                    <p>Year of Passing:</p><span>{{}}</span> -->
-                    </div>
-                    <button type="button" class="btn btn-success me-3">Verify</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </div>
+
+
+                
+              <div class="profile">
+                <button
+                class="btn btn-info mb-3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#profile"
+                aria-expanded="false"
+                aria-controls="profile">
+                VIEW PROFILE
+              </button>
+              <div class="collapse" id="profile">
+                <div class="card card-body">
+                  <p>testing</p>
+                  <!-- <p>Name:</p><span>{{}}</span> 
+                <p>Email:</p><span>{{}}</span>
+                <p>Phone Number:</p><span>{{}}</span>
+                <p>Gender:</p><span>{{}}</span>
+                <p>Date of Birth:</p><span>{{}}</span>
+                <p>Martial Status:</p><span>{{}}</span>
+                <p>Permanent Address:</p><span>{{}}</span>
+                <p>Alternate Number:</p><span>{{}}</span>
+                <p>Pincode:</p><span>{{}}</span>
+                <p>District:</p><span>{{}}</span>
+                <p>State:</p><span>{{}}</span>
+                <p>Country:</p><span>{{}}</span>
+                <h4>EDUCATION:</h4>
+                <p>Qualification:</p><span>{{}}</span>
+                <p>Completion Status:</p><span>{{}}</span>
+                <p>Main Stream:</p><span>{{}}</span>
+                <p>Specialization:</p><span>{{}}</span>
+                <p>University:</p><span>{{}}</span>
+                <p>Percentage:</p><span>{{}}</span>
+                <p>Year of Passing:</p><span>{{}}</span> -->
                 </div>
-            <div class="modal-footer">
+            </div>
 
-              <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+
+
+
+
+                <button type="button" class="btn btn-warning my-3">
+                  Download Resume</button
+                ><br />
+                <p>Profile Links: {{ data.link }}</p>
+                <button type="button" class="btn btn-success me-3">
+                  Verify
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-info"
+                data-bs-dismiss="modal"
+              >
+                close
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
+</div>
