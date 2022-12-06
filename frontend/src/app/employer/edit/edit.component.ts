@@ -45,12 +45,12 @@ export class EditComponent implements OnInit {
     })
   }
   update(){
-    // this.api.updatejob(this.editForm).subscribe((res:any)=>{
-    // console.log(res)
-    // this.editForm=res.editForm
-    // alert('data updated')
-    
-    // })
+    this.api.updatejob(this.editForm,this.id).subscribe((res:any)=>{
+    console.log(res)
+    this.editForm=res
+    alert('data updated')
+    // this.ngOnInit()
+    })
    
   }
 

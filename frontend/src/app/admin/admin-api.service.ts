@@ -43,4 +43,9 @@ export class AdminApiService {
   getappliedjobs(){
     return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
   }
+
+  applicationforjob(id:any){
+    return this.http.get(`http://localhost:3000/api/applicationsuv/applicationdata/${id}`)
+  }
+
 }
