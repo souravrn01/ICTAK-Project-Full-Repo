@@ -18,13 +18,14 @@ export class ViewjobsComponent implements OnInit {
   });
 
 
-
-  closingDate:any
+  date:boolean = true
+  closingDate:any=''
   jobs: any = []; 
   selectedFile!: File;
-  jobID: any
-  alumID: any
+  jobID: any=''
+  alumID: any=''
   ngOnInit(): void {
+    
     this.getjob();
     this.alumID= this.activeroute.snapshot.paramMap.get('id')
   }
@@ -59,6 +60,18 @@ storeid(id:any){
     });
   }
 
+  datecheck(date:any){
+    const today = new Date()
+    const jobdate = new Date(date)
+    console.log(today, jobdate);
+    if(jobdate > today){
+      this.date = true
+      return true
+    }else{
+      this.date = false
+      return false
+    }
+  }
  
   
 }
