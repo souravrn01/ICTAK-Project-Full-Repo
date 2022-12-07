@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AlumniRoutingModule } from './alumni-routing.module';
-import { ProfileComponent } from './profile/profile.component';
+
 import { GeneralInformationComponent } from './general-information/general-information.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
@@ -32,7 +32,6 @@ import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    ProfileComponent,
     GeneralInformationComponent,
     ExperienceComponent,
     EducationComponent,
