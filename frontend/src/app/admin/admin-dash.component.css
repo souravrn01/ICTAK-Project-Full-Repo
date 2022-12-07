@@ -1,4 +1,7 @@
-
+.navbar{
+    height: 50px;
+    background-color: aqua;
+}
 .card{
  
     background-color: #2efd059f;

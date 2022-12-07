@@ -18,5 +18,7 @@ export class AdminApiService {
   getalumni(){
     return this.http.get('http://localhost:3000/api/alumniuv/aluminiuv')
   }
-
+postalumni(){
+  return this.http.get('http://localhost:3000/api/alumniuv/aluminisignup')
+}
 }
