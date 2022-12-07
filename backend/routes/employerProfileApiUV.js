@@ -122,7 +122,7 @@ router.post('/emplogin', async (req, res) => {
             email: req.body.email, 
             password: req.body.password })
         if (!user) {
-            return res.json({ message: "Invalid Credentials" });
+            return res.json({ message: "Invalid username or password" });
 
 
         }

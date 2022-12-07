@@ -25,17 +25,14 @@ export class EditComponent implements OnInit {
     console.log(this.data)
     this.api.updatejob(this.data,this.id).subscribe((res:any)=>{
     console.log(res)
-    this.data=res
-    alert('Data updated successfully')
-    this.ngOnInit()
-    this.router.navigate([`empDash/$id`])
+    this.editForm=res
+    alert('data updated')
+    
     })
    
   }
 
  backfn(){
-  history.back()
+  this.router.navigate(['/empDash/dash'])
  }
   
-
-}
