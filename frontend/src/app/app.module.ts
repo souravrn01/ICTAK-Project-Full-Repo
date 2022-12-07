@@ -28,8 +28,7 @@ import { FooterComponent } from './main/footer/footer.component';
 import { JobsComponent } from './main/jobs/jobs.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminLoginComponent } from './main/admin-login/admin-login.component';
-
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -64,7 +63,8 @@ import { AdminLoginComponent } from './main/admin-login/admin-login.component';
     HttpClientModule,
     MatIconModule,
     CarouselModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [SignUpService],
   bootstrap: [AppComponent],

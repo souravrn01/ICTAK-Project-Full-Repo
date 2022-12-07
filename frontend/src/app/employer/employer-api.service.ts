@@ -21,4 +21,5 @@ apiUrl:any=('http://localhost:3000/api')
   updatejob(data:any,id:any){
     return this.http.put(`${this.apiUrl}/verifiedjobs/editJob`,{data,id})
   }
+ 
 }

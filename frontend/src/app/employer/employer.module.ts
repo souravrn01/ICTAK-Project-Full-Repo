@@ -16,6 +16,7 @@ import { ViewjobComponent } from './viewjob/viewjob.component';
 import { EditComponent } from './edit/edit.component';
 import { DashboComponent } from './dashbo/dashbo.component';
 import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class EmployerModule { }

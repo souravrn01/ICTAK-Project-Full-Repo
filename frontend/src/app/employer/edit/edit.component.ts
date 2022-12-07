@@ -13,12 +13,12 @@ export class EditComponent implements OnInit {
  data:any=[]
   constructor(private route:ActivatedRoute,private api:EmployerApiService,private router:Router) { }
 
+
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
     this.api.getSingleJob(this.id).subscribe((res:any)=>{
       this.data=res
       console.log(this.data)
-    
     })
   }
   update(){
@@ -27,13 +27,10 @@ export class EditComponent implements OnInit {
     console.log(res)
     this.data=res
     alert('data updated')
-    
-    })
-   
+    }) 
   }
 
  backfn(){
   this.router.navigate(['/empDash/dash'])
  }
-  
 }
