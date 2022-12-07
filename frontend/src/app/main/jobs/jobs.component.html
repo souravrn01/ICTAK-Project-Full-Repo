@@ -13,29 +13,11 @@
             <h4>Salary-Range : {{job.salaryRange}}</h4>
             
           <!-- Button trigger modal -->
-<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:rgb(148, 126, 144)" >
+<button type="button" class="btn btn-light" (click)="apply()"tyle="background-color:rgb(148, 126, 144)" >
   Apply
 </button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       <h2>Please Login or Signup to Apply for the job. Only valid user's can apply for the job.
-       </h2>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" routerLink="/alumnilogin">Login</button>
-        <button type="button" class="btn btn-primary" routerLink="/alumnisignup">Signup</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
            </mat-card-content>
         </mat-card>
         </div>
