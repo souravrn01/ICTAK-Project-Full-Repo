@@ -10,15 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-id:any
+id:any=''
 alumnidata:any=[]
   constructor( private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
 
   ngOnInit(): void {
     
   }
-
-  
 
   opened=false;
 

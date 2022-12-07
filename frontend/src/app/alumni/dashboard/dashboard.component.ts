@@ -12,8 +12,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
   
-  alumni_id:any
-  alumnidata:any
+  alumni_id:any=''
+  alumnidata:any=''
 
   ngOnInit(): void {
     let id= this.activaRoute.snapshot.paramMap.get('id')
