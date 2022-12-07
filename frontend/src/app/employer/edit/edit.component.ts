@@ -25,7 +25,7 @@ export class EditComponent implements OnInit {
     console.log(this.data)
     this.api.updatejob(this.data,this.id).subscribe((res:any)=>{
     console.log(res)
-    this.editForm=res
+    this.data=res
     alert('data updated')
     
     })
@@ -36,3 +36,4 @@ export class EditComponent implements OnInit {
   this.router.navigate(['/empDash/dash'])
  }
   
+}
