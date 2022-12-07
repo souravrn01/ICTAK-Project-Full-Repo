@@ -93,12 +93,13 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 })
 router.put('/alumnieducation', async (req, res) => { //for add education data of alumni
     try {
-        const {education,id} = req.body;
-        console.log(education);
-        let educationdatas={$push:{education:education}}
-        let education2 = await AluminiData.findByIdAndUpdate({"_id":id},educationdatas,{new:true})
-        res.send(education2)
-        console.log(verifiedAlumni);
+        // const {education,id} = req.body;
+        // console.log(education);
+        // let educationdatas={$push:{education:education}}
+        // let education2 = await AluminiData.findByIdAndUpdate({"_id":id},educationdatas,{new:true})
+        // res.send(education2)
+        // console.log(education2);
+        console.log(req.body)
        }
        catch (error) {
        console.log('post error:', error);
@@ -111,7 +112,7 @@ router.put('/alumniexperience',async (req,res)=>{ //for update experience data o
         let experiencedatas = {$push:{experience:experience}}
         let experiences= await AluminiData.findByIdAndUpdate({"_id":id},experiencedatas,{new:true})
         res.send(experiences)
-        console.log(verifiedAlumni)
+        console.log(experiences)
     }
     catch (error) {
         console.log('post error:', error);
@@ -156,7 +157,26 @@ router.delete('/deletealumni/:id', async (req, res) => {        // for admin to 
     }
 })
 
+router.delete('/deleteeducation/:id',async (req,res)=>{
+    try{
 
+    }
+    catch(error){
+        console.log(error)
+    }
+})
 
+router.delete('/deleteexperience/:id',async (req,res)=>{
+    try{
+
+        let id = req.params.id
+        console.log(id)
+        let data = await AluminiData.findByIdAndDelete(id)
+        res.send(data)
+    }
+    catch(error){
+        console.log(error)
+    }
+})
 
 module.exports = router;
