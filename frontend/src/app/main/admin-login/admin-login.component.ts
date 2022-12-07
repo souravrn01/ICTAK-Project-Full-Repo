@@ -20,19 +20,17 @@ export class AdminLoginComponent implements OnInit {
   })
   ngOnInit(): void {
   }
-  login(){
-    this.SignUpService.login(this.loginForm).subscribe(res=>{
-
-    if (res.email == "admin123@gmail.com" && res.password =="Admin123" ){
-      localStorage.setItem('token',res.token)
-
-      alert("Admin has successfully logged in")
-      this.router.navigate(['/admin'])
-
-     }
-    })
-}
-onsubmit(data:any){
+  userverify(){
   
-}
+    this.SignUpService.login(this.loginForm).subscribe(res=>{
+  
+      
+        localStorage.setItem('token',res.token)
+  
+        alert("Admin has successfully logged in")
+        this.router.navigate(['adminDash'])
+  
+    })
+    
+  }
 }

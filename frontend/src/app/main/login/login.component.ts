@@ -30,7 +30,6 @@ login(){
     this.alumnidata = res
     console.log(res)
     if(this.alumnidata === null){
-      alert("Your application is not verified yet!!")
     }else{
       console.log(this.alumnidata[0]._id);
        this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata[0]._id}`)
