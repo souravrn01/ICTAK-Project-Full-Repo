@@ -19,7 +19,6 @@ export class ViewjobsComponent implements OnInit {
 
 
   date:boolean = true
-  closingDate:any=''
   jobs: any = []; 
   selectedFile!: File;
   jobID: any=''
