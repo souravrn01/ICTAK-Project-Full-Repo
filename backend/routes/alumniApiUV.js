@@ -93,10 +93,10 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 })
 router.put('/alumnieducation', async (req, res) => { //for add education data of alumni
     try {
-        const {education,_id} = req.body;
+        const {education,id} = req.body;
         console.log(education);
         let educationdatas={$push:{education:education}}
-        let education2 = await AluminiData.findByIdAndUpdate({"_id":_id},educationdatas,{new:true})
+        let education2 = await AluminiData.findByIdAndUpdate({"_id":id},educationdatas,{new:true})
         res.send(education2)
         console.log(verifiedAlumni);
        }
@@ -106,10 +106,10 @@ router.put('/alumnieducation', async (req, res) => { //for add education data of
 })
 router.put('/alumniexperience',async (req,res)=>{ //for update experience data of alumni
     try{
-       const {experience,_id} = req.body;
+       const {experience,id} = req.body;
        console.log(experience);
         let experiencedatas = {$push:{experience:experience}}
-        let experiences= await AluminiData.findByIdAndUpdate({"_id":_id},experiencedatas,{new:true})
+        let experiences= await AluminiData.findByIdAndUpdate({"_id":id},experiencedatas,{new:true})
         res.send(experiences)
         console.log(verifiedAlumni)
     }

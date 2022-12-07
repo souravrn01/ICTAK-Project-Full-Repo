@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewjobComponent } from './viewjob/viewjob.component';
 import { EditComponent } from './edit/edit.component';
 import { DashboComponent } from './dashbo/dashbo.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -35,7 +36,8 @@ import { DashboComponent } from './dashbo/dashbo.component';
     MatCardModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class EmployerModule { }
