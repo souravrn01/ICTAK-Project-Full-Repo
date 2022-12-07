@@ -31,5 +31,8 @@ apiURL:any='http://localhost:3000/api'
   singleemploye(data:any){
     return this.http.post<any>(`${this.apiURL}/employeuv/employe`,data)
   }
+  loginadmin(data:any){
+    return this.http.post<any>(`${this.apiURL}/login/loginadmin`,data)
+  }
  
 }
