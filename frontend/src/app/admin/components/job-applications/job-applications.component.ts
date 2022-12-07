@@ -47,6 +47,12 @@ export class JobApplicationsComponent implements OnInit {
   verify(id:any){
     this.adminApi.verifyApplication(id).subscribe(res=>{
     })
-    
   }
+
+  // download(id:any){
+  //   this.adminApi.download(id).subscribe(res=>{
+  //     console.log(res);
+      
+  //   })
+  // }
 }

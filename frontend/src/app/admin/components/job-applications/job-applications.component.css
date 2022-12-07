@@ -6,8 +6,8 @@
     padding:20px;
 }
  .modal-body, .modal-header{
-    background-color: rgb(247, 195, 195);
-    color:rgb(52, 2, 45)
+    background-color: rgb(210, 156, 182);
+    color:rgb(68, 3, 60)
 }
 
 .btn-head{
@@ -21,4 +21,11 @@
 .profile_display em{
     color:brown;
     font-weight: 700;
+}
+
+.download_btn{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color:rgb(43, 15, 86);
+    background-color:rgb(209, 159, 255)
 }

@@ -14,11 +14,11 @@
   </div>
 </section>
 <div class="container">
-  <div class="row" *ngFor="let job of jobs">
+  <div class="row" *ngFor="let job of jobs" >
     <div class="col-md-12 m-2">
-      <mat-card >
-        <mat-card-content>
-          <h2>{{job.jobTitle}}</h2>
+      <mat-card [ngClass]="{'disabled' : datecheck(job.closingDate)}">
+        <mat-card-content >
+          <h2>{{job.jobTitle}}<h4 *ngIf="datecheck(job.closingDate)" id="closed"><b>APPLICATION CLOSED</b></h4></h2>
           <h4>Company : {{job.companyName}}</h4>
           <h4>Place : {{job.location}}</h4>
           <h4>Qualification : {{job.qualification}}</h4>
@@ -29,10 +29,7 @@
           <h4>Description : {{job.description}}</h4>
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-light" style="background-color:rgb(192, 92, 184)" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" (click)="storeid(job._id)" [disabled]="">
-            Apply
-          </button>
-
+            data-bs-target="#exampleModal" (click)="storeid(job._id)" [disabled]="datecheck(job.closingDate)"> Apply </button>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
