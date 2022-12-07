@@ -12,7 +12,7 @@ import { EmployerApiService } from '../employer-api.service';
 export class ViewjobComponent implements OnInit {
   jobs:any=[];
   data:any;
-  constructor(private api:EmployerApiService,private dialog:MatDialog,private router:Router) { }
+  constructor(private api:EmployerApiService,private router:Router) { }
 
   ngOnInit(): void {
     this.getjob()

@@ -49,13 +49,13 @@ export class EditComponent implements OnInit {
     console.log(res)
     this.editForm=res
     alert('data updated')
-    // this.ngOnInit()
+    
     })
    
   }
 
  backfn(){
-  this.router.navigate(['/empDash'])
+  this.router.navigate(['/empDash/dash'])
  }
   
 
