@@ -6,7 +6,16 @@ const employeSchema= new schema({
     email:String,
     phone:String,
     company:String,
-    password:String
+    password:String, 
+    designation:String,
+    usertype:{
+        type:String,
+        default:"employee"
+    },
+    approval_status:{
+        type: String,
+        default: "not approved"
+    },
 })
 
 let employeData=mongoose.model('Employe_Details',employeSchema)

@@ -1,38 +1,209 @@
 
-<mat-toolbar class="navbar">
-    <mat-toolbar-row>
-        <button mat-icon-button>
-            <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
-        </button>
+ <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+       <img src="/assets/images/logo.png" alt="logo" class="logo"> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
         <div class="ms-auto">
-            <button mat-stroked-button color="basic" class="m-1">Saved Jobs</button>
-            <button mat-stroked-button color="basic" class="m-1">Applied Jobs</button>
-            <button mat-stroked-button color="basic" class="m-1">Logout</button>
+            <button mat-stroked-button (click)="tojobs(alumnidata._id)" color="basic" class="m-2 me-4">
+                <mat-icon>works_outline</mat-icon>View Jobs
+            </button>
+            <button mat-stroked-button color="basic" class="m-2 me-4" routerLink="">Logout</button>
         </div>
-</mat-toolbar-row>
-  </mat-toolbar>
-
-<mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened>
-        <app-side-navbar></app-side-navbar>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div style="height:88vh;">
-            <mat-card class="m-3">
-                <div class="container">
-                    <h2 style="color:rgb(53, 53, 139)" class="fw-bold" >JOB TITLE</h2>
-                    <p style="color:rgb(53, 53, 139)" align="justify">Are you looking for more than a job? Do you want to advance 
-                        your career as you work to create tangible, meaningful, and inclusive impact,
-                         both inside and outside the walls of your workplace? Sounds like we have
-                          got a lot in common. See how we can support your professional 
-                          goals and help you find opportunities based on your strengths while 
-                          advancing our shared values.</p>
-                    <button mat-stroked-button routerLink="/alumniviewjobs"olor="primary">Find Jobs</button>
-                </div>
-            </mat-card> 
-            
-        </div>    
-    </mat-sidenav-content>
-</mat-sidenav-container>
+      </div>
+    </div>
+  </nav>
+<div class="container mt-1">
+    <div class="row">
+        <div class="col-md-4">
+            <mat-card style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+                <h2>“There is no greater thing you can do with your life and your work than follow your
+                    passions in a way that serves the world and you.” - Richard Branson</h2>
+            </mat-card>
+        </div>
+        <div class="col-md-4">
+            <mat-card style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+                <h2>
+                    “Work takes on new meaning when you feel you are pointed in the right direction.
+                    Otherwise, it's
+                    just a job, and life is too short for that.”-Tim Cook
+                </h2>
+            </mat-card>
+        </div>
+        <div class="col-md-4 ">
+            <mat-card style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+                <h2>
+                    “Whatever your life's work is, do it well. A man should do his job so well that the
+                    living, the dead,
+                    and the unborn could do it no better.” - Martin Luther King, Jr.
+                </h2>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<mat-card class="m-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h2>Personal Details</h2>
+            </div>
+            <div class="col-md-2">
+                <button type="button" (click)="navigatetogeneraldata(alumnidata._id)"
+                    class="btn btn-light">Add/Edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Name</h4>
+                <h3>{{alumnidata.name}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Email</h4>
+                <h3>{{alumnidata.email}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Phone Number</h4>
+                <h3>{{alumnidata.phone}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Gender</h4>
+                <h3>{{alumnidata.gender}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Date of Birth</h4>
+                <h3>{{alumnidata.date_of_birth|date}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Marital Status</h4>
+                <h3>{{alumnidata.marital_status}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Permanent Address</h4>
+                <h3>{{alumnidata.permanent_address}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Alternate Number</h4>
+                <h3>{{alumnidata.alternate_phone_number}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Pincode</h4>
+                <h3>{{alumnidata.pincode}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>District</h4>
+                <h3>{{alumnidata.district}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>State</h4>
+                <h3>{{alumnidata.state}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Country</h4>
+                <h3>{{alumnidata.country}}</h3>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="m-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h2>Education</h2>
+            </div>
+            <div class="col-md-2">
+                <button type="button" (click)="navigatetoeducation(alumnidata._id)" class="btn btn-light">Add/Edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Qualification</h4>
+                <h3>{{alumnidata.education.qualification}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Completion Status</h4>
+                <h3>{{alumnidata.education.completion_status}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Main Stream</h4>
+                <h3>{{alumnidata.education.main_stream}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Specialization</h4>
+                <h3>{{alumnidata.education.specialization}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>University</h4>
+                <h3>{{alumnidata.education.university}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Percentage</h4>
+                <h3>{{alumnidata.education.percentage}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Year Of Passing</h4>
+                <h3>{{alumnidata.education.year_of_pass}}</h3>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="m-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h2>Experience</h2>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" (click)="navigatetoexperience(alumnidata._id)" class="btn btn-light">Add/Edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Company</h4>
+                <h3>{{alumnidata.experience.company}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Designation</h4>
+                <h3>{{alumnidata.experience.Designation}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Presently Working</h4>
+                <h3>{{alumnidata.experience.presently_working}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Starting Date</h4>
+                <h3>{{alumnidata.experience.starting_date|date}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Ending Date</h4>
+                <h3>{{alumnidata.experience.ending_date|date}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Current Month Salary</h4>
+                <h3>{{alumnidata.experience.current_monthly_salary}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Notice Period</h4>
+                <h3>{{alumnidata.experience.notice_period}}</h3>
+            </div>
+        </div>
+    </div>
+</mat-card>
 
 <app-footer></app-footer>

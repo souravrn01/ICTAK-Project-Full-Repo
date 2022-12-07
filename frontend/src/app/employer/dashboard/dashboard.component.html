@@ -4,17 +4,19 @@
         <button mat-icon-button>
             <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
         </button>
+        <div class="spacer"></div>
+        <button mat-icon-button>Home</button>
 </mat-toolbar-row>
   </mat-toolbar>
   <div class="row">
     <div class="head head col-sm-12 col-md-4 col-lg-4 col-xl-4">
-  <mat-sidenav-container>
+  <mat-sidenav-container class="sidenav">
     <mat-sidenav #sidenav opened="true" mode="side" class="sidenavv">
         <mat-nav-list>
-            <a mat-list-item>DASHBOARD</a><br>
-            <a mat-list-item routerLink="profile">PROFILE</a><br>
+            <a mat-list-item routerLink="dash">DASHBOARD</a><br>
+            <a mat-list-item routerLink="viewjob">VIEW JOB</a><br>
             <a mat-list-item routerLink="job">ADD JOB</a><br>
-            <a mat-list-item>LOGOUT</a><br>
+            <a mat-list-item routerLink="">LOGOUT</a><br>
             
         </mat-nav-list>
     </mat-sidenav>

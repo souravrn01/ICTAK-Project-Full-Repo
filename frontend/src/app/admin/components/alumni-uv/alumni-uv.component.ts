@@ -12,11 +12,11 @@ export class AlumniUVComponent implements OnInit {
 
   feedbackForm:any = new FormGroup({
     'feedback' : new FormControl('')
-  })
+    })
                                                                // all decalarations
 
   alumniData:any = []
-
+  verified:any = []
 
 
   constructor(private api: AdminApiService) { }
@@ -26,11 +26,11 @@ export class AlumniUVComponent implements OnInit {
   }
 
 
-                                                                // all functions
+                                                   // all functions
   
-  onSubmit(){            // send mail via nodemailer                                             
+  onSubmit(name:string, email:string){            // send email via nodemailer                                             
     console.log(this.feedbackForm.value);
-    this.api.postmail(this.feedbackForm.value).subscribe(res=>{
+    this.api.postmail(this.feedbackForm.value, email, name).subscribe(res=>{
       console.log(res);
     })
   }
@@ -43,13 +43,22 @@ export class AlumniUVComponent implements OnInit {
     })
   }
 
-  approve(id:string){
-    
+   approve(data:any){   // approval
+     data.approval_status  = "verified"
+    this.verified = data
+     this.api.approvealumni(this.verified).subscribe( res =>{
+        console.log(res);
+         this.getAlumni()
+     })
   }
 
-  delete(){
-    
+   delete(id:any){          // alumni delete
+    this.api.deletealumni(id).subscribe( res =>{
+       this.getAlumni()
+    })
   }
+
+
 
 }
 

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AlumniSignupComponent implements OnInit {
   alumniSignup:any=new FormGroup({
-    name:new FormControl(null,Validators.required),
+    name:new FormControl(null,[Validators.required,Validators.minLength(3)]),
     email:new FormControl(null,[Validators.required,Validators.pattern('^([A-Za-z0-9\-.]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$')]),
     phone:new FormControl(null,[Validators.required,Validators.pattern('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$')]),
     highest_qualification:new FormControl(null,Validators.required),
@@ -26,10 +26,34 @@ export class AlumniSignupComponent implements OnInit {
   sign(){
   this.signup.addData(this.alumniSignup.value).subscribe((res)=>{
     console.log(this.alumniSignup.value)
-      this.router.navigate(['/alumnidashboard'])
-    
-  
+      this.router.navigate(['/home'])
  }
   )
 }
+get Name():FormControl{
+  return this.alumniSignup.get("name") as FormControl;
+}
+get Email():FormControl{
+  return this.alumniSignup.get("email") as FormControl;
+}
+get Phone():FormControl{
+  return this.alumniSignup.get("phone") as FormControl;
+}
+get Highest_Qualification():FormControl{
+  return this.alumniSignup.get("highest_qualification") as FormControl;
+}
+get Course_Studied_at_ICTAK():FormControl{
+  return this.alumniSignup.get("course_started_at_ictak") as FormControl;
+}
+get Batch_Details():FormControl{
+  return this.alumniSignup.get("batch_details") as FormControl;
+}
+get Placement_Status():FormControl{
+  return this.alumniSignup.get("placement_status") as FormControl;
+}
+
+get Password():FormControl{
+  return this.alumniSignup.get("password") as FormControl;
+}
+
 }

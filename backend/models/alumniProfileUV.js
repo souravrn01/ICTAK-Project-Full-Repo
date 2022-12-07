@@ -15,35 +15,98 @@ const alumniSchema= new schema({
     district:String,
     state:String,
     country:String,
-    education : {
-        qualification:String,
-        completion_status:String,
-        main_stream:String,
-        specialization:String,
-        university:String,
-        percentage:Number,
-        year_of_pass:Number   
-    },
-    experience :{
-        company:String,
-        Designation:String,
-        presently_working:String,
-        starting_date:Date,
-        ending_date:Date,
-        current_monthly_salary:Number,
-        notice_period:Number
-    },
+    profile:String,
+    education :
+        {
+            qualification:{
+                type: String,
+                default: ""
+            },
+            completion_status:{
+                type: String,
+                default: ""
+            },
+            main_stream:{
+                type: String,
+                default: ""
+            },
+            specialization:{
+                type: String,
+                default: ""
+            },
+            university:{
+                type: String,
+                default: ""
+            },
+            percentage:{
+                type: Number,
+                default:  0
+            },
+            year_of_pass:{
+                type: Number,
+                default: 0
+            },   
+        },
+    experience :
+        {
+            company:{
+                type: String,
+                default: ""
+            },
+            Designation:{
+                type: String,
+                default: ""
+            },
+            presently_working:{
+                type: String,
+                default: " "
+            },
+            starting_date:{
+                type: Date,
+                default: ""
+            },
+            ending_date:{
+                type: Date,
+                default: ""
+            },
+            current_monthly_salary:{
+                type: Number,
+                default: 0
+            },
+            notice_period:{
+                type: Number,
+                default: 0
+            },
+        } ,
    
-    highest_qualification:String,
-    course_started_at_ictak:String,
-    batch_details:String,
-    placement_status:String,
-    company_name:String,
+    highest_qualification:{
+                type: String,
+                default: ""
+            },
+    course_started_at_ictak:{
+                type: String,
+                default: ""
+            },
+    batch_details:{
+                type: String,
+                default: ""
+            },
+    placement_status:{
+                type: String,
+                default: ""
+            },
+    company_name:{
+                type: String,
+                default: ""
+            },
     approval_status:{
         type: String,
         default: "not approved"
     },
-
+    usertype:{
+        type:String,
+        default:"alumni"
+    },
     password:String
 })
 

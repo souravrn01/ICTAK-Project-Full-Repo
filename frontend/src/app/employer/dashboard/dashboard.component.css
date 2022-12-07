@@ -1,11 +1,16 @@
 .navbar{
-    margin-top:5px;
+
     background-color: rgba(0, 0, 0, .2);
-    height: 60px;
+    
 }
+.spacer{
+    flex:1 1 auto;
+}
+
 .head{
-    width: 25%;
+    width: 15%;
 }
 .side{
-    width: 75%;
+    width: 85%;
 }
+

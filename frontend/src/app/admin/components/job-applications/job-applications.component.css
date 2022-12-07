@@ -1,0 +1,24 @@
+.job{
+    background-color: rgb(3, 64, 27);
+    width: 60vw;
+    color: rgb(214, 184, 136);
+    margin:10px auto;
+    padding:20px;
+}
+ .modal-body, .modal-header{
+    background-color: rgb(247, 195, 195);
+    color:rgb(52, 2, 45)
+}
+
+.btn-head{
+    background-color: rgb(245, 85, 27) !important;
+}
+
+.profile_display span{
+    color:rgb(248, 36, 61);
+    font-weight: 500;
+}
+.profile_display em{
+    color:brown;
+    font-weight: 700;
+}

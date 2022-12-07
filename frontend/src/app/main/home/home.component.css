@@ -1,0 +1,67 @@
+
+mat-card{
+    padding:20px;
+    margin: 15px;
+} 
+.cards{
+    padding: 50px;
+    margin-left: 10px;
+    font-size: 18px;
+    background: linear-gradient(90deg, rgb(71, 64, 67)0%, rgb(76, 76, 95)35%, rgb(80, 149, 163)100%);
+}
+.cards h3{
+    color: white;
+    font-size: 30px;
+}
+p{
+    color: white;
+}
+h2{
+    
+    color: rgb(73, 49, 100);
+} 
+h1{
+    font-size: 30px;
+    font-weight: 400;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.card{
+    background: linear-gradient(90deg, rgb(71, 64, 67)0%, rgb(76, 76, 95)35%, rgb(80, 149, 163)100%);
+    text-align: center;
+}
+.card h2{
+    color: white;
+}
+
+.card h1{
+    color: white;
+    margin-top: 50px;
+}
+.job{
+ background: white;
+}
+.job:hover{
+    transform: scale(1.10);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

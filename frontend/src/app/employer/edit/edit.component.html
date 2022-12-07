@@ -1,0 +1,67 @@
+<mat-toolbar class="navbar">
+    <div class="spacer"></div>
+    <a mat-button routerLink="Home" (click)="backfn()">HOME</a>
+    <a mat-button>LOG OUT</a>
+
+  </mat-toolbar>
+  <mat-card class="editdiv">
+    <mat-card-content>
+        <form [formGroup]="editForm" (ngSubmit)="update()">
+            <div class="row mb-3">
+              <label class="form-label">JOB TITLE</label>
+              <input type="text" class="form-control" id="jobTitle" formControlName="jobTitle" >
+            </div>
+            <div class="row mb-3">
+              <label  class="form-label">COMPANY</label>
+              <input type="text" class="form-control" id="companyName" formControlName="companyName">
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label  class="form-label">EDUCATION QUALIFICATION</label>
+                    <input type="text" class="form-control" id="qualification" formControlName="qualification">
+                </div>
+                <div class="col mb-3">
+                    <label  class="form-label">JOB SECTOR</label>
+                    <input type="text" class="form-control" id="jobSector" formControlName="jobSector">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label  class="form-label">LOCATION</label>
+                    <input type="text" class="form-control" id="location" formControlName="location">
+                </div>
+                <div class="col mb-3">
+                    <label  class="form-label">REQUIRED SKILL</label>
+                    <input type="text" class="form-control" id="skills" formControlName="skills">
+                </div>
+            </div>
+            <div class="row col mb-3">
+                <label  class="form-label">JOB DESCRIPTION</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Job description..." formControlName="description"></textarea>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label  class="form-label">SALARY RANGE</label>
+                    <input type="text" class="form-control" id="salaryRange" formControlName="salaryRange">
+                </div>
+                <div class="col mb-3">
+                    <label  class="form-label">EXPERIENCE</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" formControlName="experience">
+                </div>
+            </div>
+            <div class="row col mb-3">
+                <label  class="form-label">CLOSING DATE</label>
+                <input type="date" class="form-control" id="closingDate" formControlName="closingDate"><br>
+                <input id="postedBy" type="hidden" value="employe" formControlName="postedBy">
+            </div> 
+
+            <div class="col mb-3">
+                <button type="submit" class="btn btn-primary">update job</button>
+                
+               
+            </div>
+            
+          </form>
+        </mat-card-content>
+    </mat-card>
+    

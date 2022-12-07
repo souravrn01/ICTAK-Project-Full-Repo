@@ -1,25 +1,28 @@
 
 
-<div class="body">
-    <div class="card" *ngFor ="let alumni of alumniData">
-        <form [formGroup] = "feedbackForm "  (ngSubmit)="onSubmit()">
-            <fieldset>
-                <label>Name:<p>{{alumni.name}}</p></label>
-                <label>email:<p>{{alumni.email}}</p></label>
-                <label>Phone:<p>{{alumni.phone}}</p></label>
-                <label>Hightest Qualification:<p>{{alumni.highest_qualification}}</p></label>
-                <label>Selected Course:<p>{{alumni.course_started_at_ictak}}</p></label>
-                <label>Batch Name:<p>{{alumni.batch_details}}</p></label>
-                <label>Placement Status:<p>{{alumni.placement_status
-                }}</p></label>
-                <label *ngIf = "alumni.company_name != null">Company Name:<p>{{alumni.company_name}}</p></label>
-                 <label for="feedback">
-                    Feedback:<textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
-                 </label>
-            </fieldset>
-            <button type="submit">Send</button>
-        </form>  
-        <button (ngSubmit)="delete()" >Delete</button>
-        <button (ngSubmit)="approve(alumni._id)" >Approve</button>   
-    </div>                                               
+<h1>Alumni Verification</h1>
+<div class="container">
+    <div class="row" *ngFor ="let alumni of alumniData">
+      <div class="col-md-12 m-2">
+        <mat-card style="background-color:rgb(194, 194, 144)">
+          <mat-card-content>
+            <form [formGroup] = "feedbackForm "  (ngSubmit)="onSubmit(alumni.name, alumni.email)">
+            <h3>Name:{{alumni.name}}</h3>
+            <h3>email : {{alumni.email}} </h3>
+            <h3>Phone : {{alumni.phone}} </h3>
+            <h3>Hightest Qualification: {{alumni.highest_qualification}}</h3>
+            <h3>Selected Course: {{alumni.course_started_at_ictak}} </h3>
+            <h3>Batch Name: {{alumni.batch_details}} </h3>
+            <h3>Placement Status:{{alumni.placement_status}} </h3>
+             <h3 for="feedback">
+                Feedback : <textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
+             </h3>
+             <button class="btn btn-light" type="submit">Send</button>
+             <button class="btn btn-light" (click)="delete(alumni._id)" >Delete</button>
+             <button class="btn btn-light" (click)="approve(alumni)" >Approve</button>   
+            </form>
+        </mat-card-content>
+    </mat-card>
+  </div>
+</div>
 </div>

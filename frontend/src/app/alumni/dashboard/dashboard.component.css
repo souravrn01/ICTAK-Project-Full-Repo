@@ -1,13 +1,54 @@
-:host{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.spacer{
+  flex:1 1 auto;
+}
+a:hover{
+  background-color: white;
+  color: #3f51b5;
+}
+button{
+  margin-left: 10px;
+}
+button:hover{
+  background-color: white;
+  color: black;
+}
+h4{
+  color:white;
+  font-weight: 500;
+  font-size: 17px;
+}
+mat-menu{
+  padding-right: 20px;
+}
+nav{
+ 
+  background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);
+  
+}
+.logo{
+
+   display: block;
+   max-width:100px;
+   max-height:50px;
+   scale:5;
+   aspect-ratio: auto;
+   padding-left: 20px;
+   /* border: 1px solid red; */
+}
+
+  .form-control{
+    background:transparent;
+    border-radius: 0px;
+    border:0px;
+    border-bottom: 1px solid rgb(218, 211, 211);
+    margin-top: 10px;
+    height: 40px;
+    color: black;
+   }
+   select{
+    margin-top: 19px;
+    color: rgb(128, 121, 121);
+   }
+  h3{
+    font-weight: 600;
   }
-  mat-sidenav{
-    width: 300px;
-  }
-    mat-card{
-      width:50%;
-      height: 250px;
-    }
-    

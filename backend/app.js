@@ -9,7 +9,6 @@ app.use(express.urlencoded({extended:true}))
 app.use(logger('dev'))
 app.use(cors()) //to connect frontend and backend without any disturbance
 
-
 //api setup
 const api = require('./routes/api') 
 app.use('/api', api)

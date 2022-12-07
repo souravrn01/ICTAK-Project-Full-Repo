@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { AlumniApiService } from '../alumni-api.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+id:any
+alumnidata:any=[]
+  constructor( private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
 
   ngOnInit(): void {
+    
   }
+
+  
+
+  opened=false;
 
 }

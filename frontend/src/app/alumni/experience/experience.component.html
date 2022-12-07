@@ -1,93 +1,75 @@
-<mat-toolbar class="navbar">
-  <mat-toolbar-row>
-      <button mat-icon-button>
-          <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
-      </button>
-      <div class="ms-auto">
-          <button mat-stroked-button color="basic" class="m-1">Saved Jobs</button>
-          <button mat-stroked-button color="basic" class="m-1">Applied Jobs</button>
-          <button mat-stroked-button color="basic" class="m-1">Logout</button>
-      </div>
-</mat-toolbar-row>
-</mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" opened>
-      <app-side-navbar></app-side-navbar>
-  </mat-sidenav>
   <mat-sidenav-content>
       <div style="height:88vh;">
         <div class="container">
-          <mat-card class="m-2">
-            <section>
-                <div class="container">
-                    <table class="table">
-                        <thead style="font-size: 15px">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Company</th>
-                            <th scope="col">Designation/Role</th>
-                            <th scope="col">Experience</th>
-                            <th scope="col">Salary</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-            </section>
-        </mat-card>
         <mat-card class="m-2">
           <div class="container">
             <div>
               <h2 class="text-center" style="color:rgb(82, 82, 90)">Experience Details</h2>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <input type="text" class="form-control" name="qualification" placeholder="Company/Organization">
+            <form #experienceForm="ngForm" (ngSubmit)="onsubmit()">
+            <div class="row ">
+              <div class="col-md-1 mt-4">
+                Company
+              </div>
+              <div class="col-md-11">
+                <input type="text" class="form-control" name="company"
+                placeholder="Company/Organization" [(ngModel)]="data.company">
               </div>
             </div>
-            <div class="row">
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="role" placeholder="Designation/Role">
+            <div class="row ">
+              <div class="col-md-1 mt-4">
+                Designation
+              </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="Designation"
+                   placeholder="Designation/Designation" [(ngModel)]="data.Designation">
+                </div>
+                <div class="col-md-2 mt-4">
+                 Presently working
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="status" placeholder="Presenting Working/Not">
+                    <input type="text" class="form-control" name="presently_working" 
+                    placeholder="Presenting Working/Not" [(ngModel)]="data.presently_working">
                   </div>
               </div>
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-2 mt-4">
                     <label for="">Starting Date :</label>
                 </div>
               <div class="col-md-4">
-                <input type="date" class="form-control" name="starting-date">
+                <input type="date" class="form-control" name="starting_date" [(ngModel)]="data.starting_date">
               </div>
               <div class="col-md-2 mt-4">
                 <label for="">Ending Date :</label>
             </div>
           <div class="col-md-4">
-            <input type="date" class="form-control" name="ending-date">
+            <input type="date" class="form-control" name="ending_date" [(ngModel)]="data.ending_date">
           </div>
             </div>
-            <div class="row">
-              <div class="col-md-6">
-                <input type="text" class="form-control" name="salary" placeholder="Current monthly salary">
+            <div class="row ">
+              <div class="col-md-2 mt-3">
+               Current Salary
+               </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" name="current_monthly_salary" 
+                placeholder="Current monthly salary" [(ngModel)]="data.current_monthly_salary">
               </div>
-              <div class="col-md-6">
-                <input type="number" class="form-control" name="notice-period" placeholder="Notice Period">
+              <div class="col-md-2 mt-4">
+               Notice Period
+               </div>
+              <div class="col-md-4">
+                <input type="number" class="form-control" name="notice_period"
+                 placeholder="Notice Period" [(ngModel)]="data.notice_period">
               </div>
             </div>
             <div class="row">
               <div class="col-md-12 text-center m-4 ps-3 pe-3">
-                  <button type="button" class="btn btn-light">Save</button>
+                   <button type="submit" class="btn btn-light">Save</button>
               </div>
              </div>
+            </form>
           </div>
         </mat-card>   
         </div>
