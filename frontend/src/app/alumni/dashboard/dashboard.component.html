@@ -37,7 +37,7 @@
         </div>
     </div>
 </div>
-<mat-card class="m-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+<mat-card class="m-2" style="background: linear-gradient(90deg, rgb(228, 206, 217)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
     <div class="container">
         <div class="row">
             <div class="col-md-10">
@@ -121,79 +121,54 @@
     </div>
 </mat-card>
 
-    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(231, 189, 210)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-11">
                     <h2>Education</h2>
                 </div>
-                <div class="col-md-2 ms-auto">
+                <div class="col-md-1">
                     <button type="button" (click)="navigatetoeducation(alumnidata._id)" class="btn btn-light">Add</button>
                 </div>
             </div>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Qualification</th>
-                    <th scope="col">Completion Status</th>
-                    <th scope="col">Main Stream</th>
-                    <th scope="col">Specialization</th>
-                    <th scope="col">University</th>
-                    <th scope="col">Percentage</th>
-                    <th scope="col">Notice Period</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let education of educations">  <!--<tr *ngFor="let book of books; let i= index"></tr> -->
-                    <td>{{education.qualification}}</td>
-                    <td>{{education.completion_status}}</td>
-                    <td>{{education.main_stream}}</td>
-                    <td>{{education.specialization}}</td>
-                    <td>{{education.university}}</td>
-                    <td>{{education.percentage}}</td>
-                    <td>{{education.percentage}}</td>
+           <div class="row">
+            <div class="col" *ngFor="let education of educations">
+            <h4>{{education.qualification}}</h4>
+            <p>College: {{education.university}}</p>
+            <p>Completion Status: {{education.completion_status}}</p>
+            <p>Percentage{{education.percentage}}</p>
+            <p>Year of Passing: {{education.year_of_pass}}</p>
+            <button type="submit" class="btn btn-light">Delete</button>
 
-                  </tr>
-                </tbody>
-              </table>
+            </div>
+           </div>
+                
             </div>
     </mat-card>
 
-    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(206, 167, 187)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-11">
                     <h2>Experience</h2>
                 </div>
-                <div class="col-md-2 ms-auto">
+                <div class="col-md-1">
                     <button type="submit" (click)="navigatetoexperience(alumnidata._id)" class="btn btn-light">Add</button>
                 </div>
             </div>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Company</th>
-                    <th scope="col">Designation</th>
-                    <th scope="col">Presently Working</th>
-                    <th scope="col">Starting Date</th>
-                    <th scope="col">Ending Date</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Notice Period</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let experience of experiences">
-                    <td>{{experience.company}}</td>
-                    <td>{{experience.Designation}}</td>
-                    <td>{{experience.presently_working}}</td>
-                    <td>{{experience.starting_date|date}}</td>
-                    <td>{{experience.ending_date|date}}</td>
-                    <td>{{experience.current_monthly_salary}}</td>
-                    <td>{{experience.notice_period}}</td>
-
-                  </tr>
-                </tbody>
-              </table>
+            <div class="row">
+                <div class="col" *ngFor="let experience of experiences">
+                    <h4>Company: {{experience.company}}</h4>
+                    <p>Designation: {{experience.Designation}}</p>
+                    <p>Presently working: {{experience.presently_working}}</p>
+                    <p>Starting Date: {{experience.starting_date|date}}</p>
+                    <p>Ending Date: {{experience.ending_date|date}}</p>
+                    <p>Salary: {{experience.current_monthly_salary}}</p>
+                    <p>Notice Period: {{experience.notice_period}}</p>
+                    <button type="submit" class="btn btn-light">Delete</button>
+                </div>
+            </div>
+            
               </div>
     </mat-card>
 

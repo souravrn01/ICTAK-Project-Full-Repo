@@ -14,14 +14,14 @@ button:hover{
 h4{
   color:white;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 18px;
 }
 mat-menu{
   padding-right: 20px;
 }
 nav{
  
-  background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);
+  background: linear-gradient(90deg, rgb(231, 176, 204)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);
   
 }
 .logo{
@@ -55,4 +55,10 @@ nav{
     font-size: 28px;
     color:white;
     font-weight: 400;
+  }
+  h2{
+    font-size: 25px;
+  }
+  p{
+    font-size: 16px;
   }

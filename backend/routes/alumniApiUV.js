@@ -91,7 +91,7 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
         console.log('update error : ',error)
     }
 })
-router.put('/alumnieducation', async (req, res) => { //for update education data of alumni
+router.put('/alumnieducation', async (req, res) => { //for add education data of alumni
     try {
         const {education,_id} = req.body;
         console.log(education);
