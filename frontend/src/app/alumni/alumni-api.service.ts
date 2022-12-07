@@ -21,7 +21,7 @@ export class AlumniApiService {
     return this.http.get('http://localhost:3000/api/verifiedjobs/applicatiodata')
   }
 
-  // to fetch data of a single 
+  // to fetch data of a single  
   getsinglealumnidata(id:any){
   return this.http.get(`http://localhost:3000/api/alumniuv/alumni/${id}`)
 }
