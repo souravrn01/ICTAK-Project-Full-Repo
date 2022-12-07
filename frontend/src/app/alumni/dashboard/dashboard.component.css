@@ -13,15 +13,16 @@ button:hover{
   color: black;
 }
 h4{
-  color: rgb(55, 117, 74);
+  color:white;
   font-weight: 500;
+  font-size: 17px;
 }
 mat-menu{
   padding-right: 20px;
 }
 nav{
  
-  background-color: rgb(190, 229, 229);
+  background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);
   
 }
 .logo{

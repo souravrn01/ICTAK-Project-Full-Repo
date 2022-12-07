@@ -1,12 +1,5 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid p-1">
-    <div class="ms-auto">
-      <button mat-stroked-button color="basic" class="m-1" (click)="back()">Home</button>
-      <button mat-stroked-button color="basic" class="m-2 me-4">Logout</button>
-    </div>
-  </div>
-</nav>
-<section id="home" class="bg-cover" style="background-color: rgb(136, 179, 142);">
+<app-header></app-header>
+<section id="home" class="bg-cover" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
   <div class="overlay"></div>
   <div class="container text-white text-center">
     <div class="row">
@@ -23,7 +16,7 @@
 <div class="container">
   <div class="row" *ngFor="let job of jobs">
     <div class="col-md-12 m-2">
-      <mat-card style="background-color:beige">
+      <mat-card >
         <mat-card-content>
           <h2>{{job.jobTitle}}</h2>
           <h4>Company : {{job.companyName}}</h4>
@@ -35,7 +28,7 @@
           <h4>Skills : {{job.skills}}</h4>
           <h4>Description : {{job.description}}</h4>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-light" style="background-color:rgb(136, 167, 136)" data-bs-toggle="modal"
+          <button type="button" class="btn btn-light" style="background-color:rgb(192, 92, 184)" data-bs-toggle="modal"
             data-bs-target="#exampleModal" (click)="storeid(job._id)" [disabled]="">
             Apply
           </button>

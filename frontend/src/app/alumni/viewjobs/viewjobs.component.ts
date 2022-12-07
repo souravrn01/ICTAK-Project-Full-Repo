@@ -19,7 +19,7 @@ export class ViewjobsComponent implements OnInit {
 
 
 
-  
+  closingDate:any
   jobs: any = []; 
   selectedFile!: File;
   jobID: any
@@ -32,6 +32,7 @@ export class ViewjobsComponent implements OnInit {
   getjob() {
     this.apiService.getJob().subscribe((res) => {
       this.jobs = res;
+      console.log(this.jobs) 
     });
   }
 
@@ -58,8 +59,6 @@ storeid(id:any){
     });
   }
 
-  back(){
-    history.back()
-  }
+ 
   
 }
