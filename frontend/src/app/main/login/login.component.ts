@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { SignUpService } from '../sign-up.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private router:Router,
-    private SignUpService:SignUpService) { }
+    private SignUpService:SignUpService, private snackBar:MatSnackBar) { }
 
     alumnidata:any
 
@@ -35,6 +36,9 @@ login(){
        this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata[0]._id}`)
     }
    })
+}
+openSnackBar(message:any,action:any){
+  this.snackBar.open(message,action)
 }
 }
 
