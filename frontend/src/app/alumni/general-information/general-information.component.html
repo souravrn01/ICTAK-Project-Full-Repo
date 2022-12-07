@@ -1,8 +1,5 @@
 <app-header></app-header>
-<mat-sidenav-container>
-    <mat-sidenav-content>
-        <div style="height:88vh;">
-            <div class="container">
+
                 <mat-card-content class="m-2">
                     <mat-card>
                         <section>
@@ -38,6 +35,13 @@
                                                                         <input type="number" class="form-control"
                                                                             name="phone" placeholder="Phone Number"
                                                                             [(ngModel)]="data.phone" disabled>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row m-2 form-group">
+                                                                    <div class="col-md-12">
+                                                                        <input type="text" class="form-control"
+                                                                            name="highest_qualification" placeholder="Highest Qualification"
+                                                                            [(ngModel)]="data.highest_qualification" disabled>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row m-3 form-group">
@@ -82,7 +86,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row m-1 form-group">
+                                                                <div class="row m-2 form-group">
                                                                     <div class="col-md-4 mt-4">
                                                                         <label style="color: rgb(61, 56, 56)">Date of
                                                                             Birth: </label>
@@ -93,19 +97,6 @@
                                                                         <input type="date" class="form-control"
                                                                             name="date_of_birth"
                                                                             [(ngModel)]="data.date_of_birth">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row m-1 form-group">
-                                                                    <div class="col-md-12">
-                                                                        <select class="form-select"
-                                                                            aria-label="Floating label select example"
-                                                                            id="floatingSelect1" for="marital_status"
-                                                                            name="marital_status"
-                                                                            [(ngModel)]="data.marital_status">
-                                                                            <option value="Married">Married</option>
-                                                                            <option value="Unmarried">Unmarried</option>
-                                                                            <option value="Divorced">Divorced</option>
-                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -185,7 +176,4 @@
                         </section>
                     </mat-card>
                 </mat-card-content>
-            </div>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+     
