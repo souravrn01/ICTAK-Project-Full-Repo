@@ -120,9 +120,24 @@ router.post('/emplogin', async (req, res) => {
     try {
         let user = await EmployeData.findOne({ 
             email: req.body.email, 
-            password: req.body.password })
+            password: req.body.password})
         if (!user) {
             return res.json({ message: "Invalid username or password" });
+
+
+        }
+        res.send(user)
+    } catch (error) {
+        console.log(error)
+    }
+})
+router.post('/employe', async (req, res) => {
+    try {
+        let user = await EmployeData.findOne({ 
+            email: req.body.email, 
+            password: req.body.password,approval_status:"verified"})
+        if (!user) {
+            return res.json({ message: "admin didnot verified yet" });
 
 
         }
