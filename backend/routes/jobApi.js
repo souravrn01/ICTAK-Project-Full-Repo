@@ -45,39 +45,39 @@ router.post('/postjob', async(req, res)=>{  // posting job
     }
 })
 
-// router.put('/editJob', async(req, res)=>{  // update Job
-//     try {
-//         let id = req.body.id
-//         let updates = {
-//             jobTitle: req.body.jobTitle,
-//             qualification: req.body.qualification,
-//             experience: req.body.experience,
-//             jobSector: req.body.jobSector,
-//             companyName: req.body.companyName,
-//             location: req.body.location,
-//             closingDate:req.body.closingDate,
-//             skills:req.body.skills,
-//             description:req.body.description,
-//             salaryRange: req.body.salaryRange,
-//             postedBy: req.body.postedBy// data of updated jobs
-//         }
-//         let updateJob = {$set: updates}
-//         let updatedJob = await JOBDATA.findByIdAndUpdate({"_id": id}, updateJob,{new:true})
-//         res.send(updatedJob)
-//     } catch (error) {
-//         console.log('update error:',error);
-//     }
-// })
-router.put('/editJob',async(req,res)=>{
+router.put('/editJob', async(req, res)=>{  // update Job
     try {
-        let data=req.body
-        let updatedata=await JOBDATA.findOneAndUpdate({"_id":req.body._id},data)
-        res.send(updatedata)
+        let id = req.body.id
+        let updates = {
+            jobTitle: req.body.jobTitle,
+            qualification: req.body.qualification,
+            experience: req.body.experience,
+            jobSector: req.body.jobSector,
+            companyName: req.body.companyName,
+            location: req.body.location,
+            closingDate:req.body.closingDate,
+            skills:req.body.skills,
+            description:req.body.description,
+            salaryRange: req.body.salaryRange,
+            postedBy: req.body.postedBy// data of updated jobs
+        }
+        let updateJob = {$set: updates}
+        let updatedJob = await JOBDATA.findByIdAndUpdate({"_id":id}, updateJob,{new:true})
+        res.send(updatedJob)
     } catch (error) {
-        console.log('update error:',error)
-
+        console.log('update error:',error);
     }
 })
+// router.put('/editJob',async(req,res)=>{
+//     try {
+//         let data=req.body
+//         let updatedata=await JOBDATA.findOneAndUpdate({"_id":req.body.id},data)
+//         res.send(updatedata)
+//     } catch (error) {
+//         console.log('update error:',error)
+
+//     }
+// })
 
 router.delete('/deletejob/:id', async(req, res)=>{  //delete Jobs
     try {

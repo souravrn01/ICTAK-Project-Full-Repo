@@ -8,7 +8,9 @@ import { ViewjobComponent } from './viewjob/viewjob.component';
 
 
 const routes: Routes = [{path: 'empDash', component: DashboardComponent},
-  {path: 'empDash', component: DashboardComponent,children: [{ path: 'dash', component:DashboComponent },{ path: 'job', component: AddjobComponent },
+  {path: 'empDash', component: DashboardComponent,
+  children: [{ path: 'dash', component:DashboComponent },
+  { path: 'job', component: AddjobComponent },
   {path: 'viewjob', component: ViewjobComponent}]
 },{path: 'edit/:id', component: EditComponent},{path: 'Home', component:DashboardComponent }];
 

@@ -14,13 +14,18 @@ export class DashboardComponent implements OnInit {
   
   alumni_id:any=''
   alumnidata:any=''
-
+  educations:any=''
+  experiences:any=''
   ngOnInit(): void {
     let id= this.activaRoute.snapshot.paramMap.get('id')
      console.log(id)
      this.apiService.getsinglealumnidata(id).subscribe(res=>{
       this.alumnidata=res
       this.alumni_id=this.alumnidata._id
+      this.educations=this.alumnidata.education
+      this.experiences=this.alumnidata.experience
+      console.log(this.educations)
+      console.log(this.experiences)
       console.log(this.alumnidata);
      })
   } 

@@ -33,7 +33,7 @@ export class EmpLoginComponent implements OnInit {
       }
       else{
         alert("Successfully logged in")
-        this.router.navigate(['/empDash'])
+        this.router.navigate(['/empDash/dash'])
       }
     })
 }

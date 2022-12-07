@@ -37,7 +37,7 @@
         </div>
     </div>
 </div>
-<mat-card class="m-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+<mat-card class="m-2" style="background: linear-gradient(90deg, rgb(228, 206, 217)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
     <div class="container">
         <div class="row">
             <div class="col-md-10">
@@ -120,108 +120,58 @@
         </div>
     </div>
 </mat-card>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">
-    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+
+    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(231, 189, 210)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-11">
                     <h2>Education</h2>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Qualification</h4>
-                    <h3>{{alumnidata.education.qualification}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Completion Status</h4>
-                    <h3>{{alumnidata.education.completion_status}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Main Stream</h4>
-                    <h3>{{alumnidata.education.main_stream}}</h3>
+                <div class="col-md-1">
+                    <button type="button" (click)="navigatetoeducation(alumnidata._id)" class="btn btn-light">Add</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Specialization</h4>
-                    <h3>{{alumnidata.education.specialization}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>University</h4>
-                    <h3>{{alumnidata.education.university}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Percentage</h4>
-                    <h3>{{alumnidata.education.percentage}}</h3>
-                </div>
+           <div class="row">
+            <div class="col" *ngFor="let education of educations">
+            <h4>{{education.qualification}}</h4>
+            <p>College: {{education.university}}</p>
+            <p>Completion Status: {{education.completion_status}}</p>
+            <p>Percentage{{education.percentage}}</p>
+            <p>Year of Passing: {{education.year_of_pass}}</p>
+            <button type="submit" class="btn btn-light">Delete</button>
+
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Year Of Passing</h4>
-                    <h3>{{alumnidata.education.year_of_pass}}</h3>
-                </div>
+           </div>
+                
             </div>
-            <div class="row">
-                <div class="col-md-12 ms-auto">
-                    <button type="button" (click)="navigatetoeducation(alumnidata._id)" class="btn btn-light">Add/Edit</button>
-                </div>
-            </div>
-        </div>
     </mat-card>
-</div>
-<div class="col-md-6">
-    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
+
+    <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(206, 167, 187)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-11">
                     <h2>Experience</h2>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Company</h4>
-                    <h3>{{alumnidata.experience.company}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Designation</h4>
-                    <h3>{{alumnidata.experience.Designation}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Presently Working</h4>
-                    <h3>{{alumnidata.experience.presently_working}}</h3>
+                <div class="col-md-1">
+                    <button type="submit" (click)="navigatetoexperience(alumnidata._id)" class="btn btn-light">Add</button>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <h4>Starting Date</h4>
-                    <h3>{{alumnidata.experience.starting_date|date}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Ending Date</h4>
-                    <h3>{{alumnidata.experience.ending_date|date}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Current Month Salary</h4>
-                    <h3>{{alumnidata.experience.current_monthly_salary}}</h3>
+                <div class="col" *ngFor="let experience of experiences">
+                    <h4>Company: {{experience.company}}</h4>
+                    <p>Designation: {{experience.Designation}}</p>
+                    <p>Presently working: {{experience.presently_working}}</p>
+                    <p>Starting Date: {{experience.starting_date|date}}</p>
+                    <p>Ending Date: {{experience.ending_date|date}}</p>
+                    <p>Salary: {{experience.current_monthly_salary}}</p>
+                    <p>Notice Period: {{experience.notice_period}}</p>
+                    <button type="submit" class="btn btn-light">Delete</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Notice Period</h4>
-                    <h3>{{alumnidata.experience.notice_period}}</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 ms-auto">
-                <button type="submit" (click)="navigatetoexperience(alumnidata._id)" class="btn btn-light">Add/Edit</button>
-            </div>
-        </div>
+            
+              </div>
     </mat-card>
-</div></div></div>
+
 
 
 
