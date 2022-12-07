@@ -50,7 +50,7 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
     console.log(req.body) 
 
     try{
-        let data = await AluminiData.find({email:req.body.email,password:req.body.password,})
+        let data = await AluminiData.find({email:req.body.email,password:req.body.password,approval_status:"verified"})
         res.send(data)
     }catch(error){
         console.log(error)
@@ -91,51 +91,27 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
         console.log('update error : ',error)
     }
 })
-
-
-router.put('/alumnieducation', async (req, res) => { //for update education data of alumni
+router.put('/alumnieducation', async (req, res) => { //for add education data of alumni
     try {
-         console.log(req.body.data, req.body.id)
-        let id = req.body.id
-        let educationdata= {
-            education:{
-           qualification: req.body.data.qualification,
-           completion_status: req.body.data.completion_status,
-           main_stream: req.body.data.main_stream,
-           specialization: req.body.data.specialization,
-           university: req.body.data.university,
-           percentage: req.body.data.percentage,
-           year_of_pass: req.body.data.year_of_pass
-            }
-        }
-        let educationdatas={$set:educationdata}
-        let education = await AluminiData.findByIdAndUpdate({"_id":id},educationdatas,{new:true})
-        res.send(education)
+        const {education,_id} = req.body;
+        console.log(education);
+        let educationdatas={$push:{education:education}}
+        let education2 = await AluminiData.findByIdAndUpdate({"_id":_id},educationdatas,{new:true})
+        res.send(education2)
+        console.log(verifiedAlumni);
        }
        catch (error) {
        console.log('post error:', error);
 }
 })
-
-
 router.put('/alumniexperience',async (req,res)=>{ //for update experience data of alumni
     try{
-        console.log(req.body, req.body.id)
-        let id = req.body.id
-        let experiencedata={
-            experience:{
-                company:req.body.data.company,
-                Designation:req.body.data.Designation,
-                presently_working:req.body.data.presently_working,
-                starting_date:req.body.data.starting_date,
-                ending_date:req.body.data.ending_date,
-                current_monthly_salary:req.body.data.current_monthly_salary,
-                notice_period:req.body.data.notice_period
-            }
-        }
-        let experiencedatas = {$set:experiencedata}
-        let experience= await AluminiData.findByIdAndUpdate({"_id":id},experiencedatas,{new:true})
-        res.send(experience)
+       const {experience,_id} = req.body;
+       console.log(experience);
+        let experiencedatas = {$push:{experience:experience}}
+        let experiences= await AluminiData.findByIdAndUpdate({"_id":_id},experiencedatas,{new:true})
+        res.send(experiences)
+        console.log(verifiedAlumni)
     }
     catch (error) {
         console.log('post error:', error);
@@ -162,7 +138,7 @@ router.put('/onealumni', async (req, res) => {    // for admin to get one alumni
         let updates = { $set: update }
         let verifiedAlumni = await AluminiData.findByIdAndUpdate({ "_id": id }, updates, { new: true })
         res.send(verifiedAlumni)
-
+        
     } catch (error) {
         console.log('update error:', error);
     }

@@ -27,6 +27,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
     FooterComponent,
     ViewjobsComponent,
     ApplyjobsComponent,
+    HeaderComponent,
   
   ],
   imports: [
@@ -62,6 +64,7 @@ import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    
     
   ]
 })

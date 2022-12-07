@@ -12,7 +12,7 @@ export class ExperienceComponent implements OnInit {
   constructor(private alumniApi:AlumniApiService,private router:Router,
     private route:ActivatedRoute) { }
 
-  id:any
+  id:any=''
   data:any=[]
     
   ngOnInit(): void {

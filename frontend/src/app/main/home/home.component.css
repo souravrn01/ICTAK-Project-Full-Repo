@@ -41,7 +41,9 @@ body{
     color: white;
     margin-top: 50px;
 }
-
+.job{
+ background: white;
+}
 .job:hover{
     transform: scale(1.10);
 }

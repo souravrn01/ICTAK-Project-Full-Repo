@@ -1,19 +1,23 @@
 <app-header></app-header>
 <div class="container">
     <div class="row" *ngFor="let job of jobs">
-      <div class="col-md-6 m-2">
+      <div class="col m-2">
         <mat-card>
           <mat-card-content>
-            <h2>{{job.jobTitle}}</h2>
+            <h1>{{job.jobTitle}}</h1>
             <h4>Company : {{job.companyName}}</h4>
             <h4>Place : {{job.location}}</h4>
             <h4>Qualification : {{job.qualification}}</h4>
             <h4>Experience : {{job.experience}}</h4>
             <h4>ClosingDate : {{job.closingDate|date}}</h4>
             <h4>Salary-Range : {{job.salaryRange}}</h4>
-            <button type="button" class="btn btn-light" style="background-color:rgb(177, 96, 170)" routerLink="/alumnisignup">
-            Apply
-          </button>
+            
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-light" (click)="apply()"tyle="background-color:rgb(148, 126, 144)" >
+  Apply
+</button>
+
+
            </mat-card-content>
         </mat-card>
         </div>

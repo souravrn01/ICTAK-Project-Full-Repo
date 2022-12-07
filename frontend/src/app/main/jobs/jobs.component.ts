@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SignUpService } from '../sign-up.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-jobs',
   templateUrl: './jobs.component.html',
@@ -7,7 +8,7 @@ import { SignUpService } from '../sign-up.service';
 })
 export class JobsComponent implements OnInit {
 
-  constructor(private apiService:SignUpService) { }
+  constructor(private apiService:SignUpService, private router:Router) { }
 
   jobs:any=[]
   ngOnInit(): void {
@@ -17,5 +18,9 @@ export class JobsComponent implements OnInit {
     this.apiService.getJob().subscribe(res=>{
       this.jobs=res
     })
+   }
+   apply(){
+    alert("Login/Signup to Apply for the job")
+    this.router.navigate(['/alumnisignup'])
    }
 }
