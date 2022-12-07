@@ -1,7 +1,5 @@
 
 
-
-
 <div class="continer">
   <div class="job" *ngFor="let job of jobs">
     <h2>{{ job.jobTitle}}</h2>
@@ -25,8 +23,7 @@
             <div class="applications border-dark border-bottom pb-3" *ngFor="let data of applications" >
               <div class="contents" *ngIf="data != null">
 
-               <!-- <button class="download_btn" mat-button color="warn" (click)="download(data._id)">Download resume</button> -->
-               <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download resume: {{data.resume}}</button></a>
+               <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download Resume</button></a>
 
                 <p>Profile Links: {{ data.link }}</p>
 

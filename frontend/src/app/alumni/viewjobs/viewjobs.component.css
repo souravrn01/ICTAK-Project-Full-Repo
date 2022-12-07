@@ -24,10 +24,6 @@ h4{
     margin-left: 170px;
 }
 
-.disabled{
-  cursor:not-allowed; 
-  opacity: 0.5;
-  }
 
   #closed{
     color: red; 

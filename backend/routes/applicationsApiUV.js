@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const ApplicationData = require('../models/applicationsUV')
 const multer=require('multer')
+const path = require("path");
 
 
 const DIR  = './uploads/'                                   // file upload code 
@@ -22,7 +23,7 @@ router.post('/upload', upload.single('resume'), async(req, res, next)=>{
    try {
     const url = req.protocol + '://' + req.get('host')
     const user = new ApplicationData({
-        resume : 'uploads/' + req.file.filename,
+        resume : url + '/download/' + req.file.filename,
         link: req.body.link,
         job_id: req.body.job_id,
         alum_id: req.body.alum_id
@@ -67,21 +68,10 @@ router.put('/verify', async(req, res)=>{
         let updates = {$set: update}
         let verified = await ApplicationData.findByIdAndUpdate({"_id": id}, updates, {new:true} )
         res.send(verified)
-    } catch (error) {
+    } catch (error) { 
         console.log(error)
     }
 })
 
 
-router.get('/download/:id', async(req, res)=>{
-    try {
-      let id = req.params.id 
-      let items = await ApplicationData.findById(id,{resume:1})
-      let resume = items.resume
-      res.download('resume')
-      res.send(items.resume)
-    } catch (error) {
-        console.log(error)
-    }
-})
 module.exports = router;
