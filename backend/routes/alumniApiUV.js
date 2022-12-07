@@ -108,7 +108,7 @@ router.put('/alumniexperience',async (req,res)=>{ //for update experience data o
     try{
        const {experience,_id} = req.body;
        console.log(experience);
-        let experiencedatas = {$set:{experience:experience}}
+        let experiencedatas = {$push:{experience:experience}}
         let experiences= await AluminiData.findByIdAndUpdate({"_id":_id},experiencedatas,{new:true})
         res.send(experiences)
         console.log(verifiedAlumni)
