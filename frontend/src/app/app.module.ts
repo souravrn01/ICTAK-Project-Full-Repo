@@ -27,6 +27,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FooterComponent } from './main/footer/footer.component';
 import { JobsComponent } from './main/jobs/jobs.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AdminLoginComponent } from './main/admin-login/admin-login.component';
 
 
 
@@ -41,6 +42,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EmpLoginComponent,
     FooterComponent,
     JobsComponent,
+    AdminLoginComponent,
       
    
   ],

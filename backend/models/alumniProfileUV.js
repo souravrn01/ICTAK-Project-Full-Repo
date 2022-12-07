@@ -16,7 +16,7 @@ const alumniSchema= new schema({
     state:String,
     country:String,
     profile:String,
-    education :
+    education :[
         {
             qualification:{
                 type: String,
@@ -45,9 +45,11 @@ const alumniSchema= new schema({
             year_of_pass:{
                 type: Number,
                 default: 0
-            },   
-        },
-    experience :
+            }  
+        }
+    ],
+       
+    experience :[
         {
             company:{
                 type: String,
@@ -77,7 +79,8 @@ const alumniSchema= new schema({
                 type: Number,
                 default: 0
             },
-        } ,
+        } 
+    ],
    
     highest_qualification:{
                 type: String,
