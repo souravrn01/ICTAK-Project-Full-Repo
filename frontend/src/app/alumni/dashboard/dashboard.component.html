@@ -120,108 +120,83 @@
         </div>
     </div>
 </mat-card>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">
+
     <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
         <div class="container">
             <div class="row">
                 <div class="col-md-10">
                     <h2>Education</h2>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Qualification</h4>
-                    <h3>{{alumnidata.education.qualification}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Completion Status</h4>
-                    <h3>{{alumnidata.education.completion_status}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Main Stream</h4>
-                    <h3>{{alumnidata.education.main_stream}}</h3>
+                <div class="col-md-2 ms-auto">
+                    <button type="button" (click)="navigatetoeducation(alumnidata._id)" class="btn btn-light">Add</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Specialization</h4>
-                    <h3>{{alumnidata.education.specialization}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>University</h4>
-                    <h3>{{alumnidata.education.university}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Percentage</h4>
-                    <h3>{{alumnidata.education.percentage}}</h3>
-                </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Qualification</th>
+                    <th scope="col">Completion Status</th>
+                    <th scope="col">Main Stream</th>
+                    <th scope="col">Specialization</th>
+                    <th scope="col">University</th>
+                    <th scope="col">Percentage</th>
+                    <th scope="col">Notice Period</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let education of educations">  <!--<tr *ngFor="let book of books; let i= index"></tr> -->
+                    <td>{{education.qualification}}</td>
+                    <td>{{education.completion_status}}</td>
+                    <td>{{education.main_stream}}</td>
+                    <td>{{education.specialization}}</td>
+                    <td>{{education.university}}</td>
+                    <td>{{education.percentage}}</td>
+                    <td>{{education.percentage}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Year Of Passing</h4>
-                    <h3>{{alumnidata.education.year_of_pass}}</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 ms-auto">
-                    <button type="button" (click)="navigatetoeducation(alumnidata._id)" class="btn btn-light">Add/Edit</button>
-                </div>
-            </div>
-        </div>
     </mat-card>
-</div>
-<div class="col-md-6">
+
     <mat-card class="m-1 p-2" style="background: linear-gradient(90deg, rgb(184, 126, 155)0%, rgb(111, 111, 175)35%, rgb(104, 193, 211)100%);">
         <div class="container">
             <div class="row">
                 <div class="col-md-10">
                     <h2>Experience</h2>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Company</h4>
-                    <h3>{{alumnidata.experience.company}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Designation</h4>
-                    <h3>{{alumnidata.experience.Designation}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Presently Working</h4>
-                    <h3>{{alumnidata.experience.presently_working}}</h3>
+                <div class="col-md-2 ms-auto">
+                    <button type="submit" (click)="navigatetoexperience(alumnidata._id)" class="btn btn-light">Add</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Starting Date</h4>
-                    <h3>{{alumnidata.experience.starting_date|date}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Ending Date</h4>
-                    <h3>{{alumnidata.experience.ending_date|date}}</h3>
-                </div>
-                <div class="col-md-4">
-                    <h4>Current Month Salary</h4>
-                    <h3>{{alumnidata.experience.current_monthly_salary}}</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Notice Period</h4>
-                    <h3>{{alumnidata.experience.notice_period}}</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 ms-auto">
-                <button type="submit" (click)="navigatetoexperience(alumnidata._id)" class="btn btn-light">Add/Edit</button>
-            </div>
-        </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Company</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Presently Working</th>
+                    <th scope="col">Starting Date</th>
+                    <th scope="col">Ending Date</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Notice Period</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let experience of experiences">
+                    <td>{{experience.company}}</td>
+                    <td>{{experience.Designation}}</td>
+                    <td>{{experience.presently_working}}</td>
+                    <td>{{experience.starting_date|date}}</td>
+                    <td>{{experience.ending_date|date}}</td>
+                    <td>{{experience.current_monthly_salary}}</td>
+                    <td>{{experience.notice_period}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+              </div>
     </mat-card>
-</div></div></div>
+
 
 
 

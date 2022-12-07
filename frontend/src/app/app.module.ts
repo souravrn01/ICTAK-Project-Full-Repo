@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AdminModule } from './admin/admin.module';
 import { AlumniModule } from './alumni/alumni.module';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployerModule } from './employer/employer.module';
@@ -48,6 +48,7 @@ import { AdminLoginComponent } from './main/admin-login/admin-login.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     AdminModule,
     EmployerModule,
