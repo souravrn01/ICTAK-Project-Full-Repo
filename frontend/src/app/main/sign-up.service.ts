@@ -32,7 +32,7 @@ apiURL:any='http://localhost:3000/api'
     return this.http.post<any>(`${this.apiURL}/employeuv/employe`,data)
   }
   loginadmin(data:any){
-    return this.http.post<any>(`${this.apiURL}/login/loginadmin`,data)
+    return this.http.post<any>('http://localhost:3000/api/login/loginadmin',data)
   }
  
 }
