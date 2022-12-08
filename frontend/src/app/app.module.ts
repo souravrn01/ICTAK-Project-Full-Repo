@@ -29,6 +29,8 @@ import { JobsComponent } from './main/jobs/jobs.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminLoginComponent } from './main/admin-login/admin-login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FilterPipe } from './pipes/filter.pipe';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FooterComponent,
     JobsComponent,
     AdminLoginComponent,
+    FilterPipe
       
    
   ],
@@ -66,7 +69,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatSnackBarModule
   ],
-  providers: [SignUpService],
+  providers: [SignUpService,TokenInterceptorService],
   bootstrap: [AppComponent],
   entryComponents:[LoginComponent]
 })
