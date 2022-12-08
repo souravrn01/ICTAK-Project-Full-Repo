@@ -5,16 +5,14 @@
     <div class="row">
       <div class="col-12 p-5">
         <div class="input-group mb-3">
-          <input type="text" class="form-control p-2" placeholder="Find your Job Here" aria-label="Recipient's username"
-            aria-describedby="button-addon2">
-          <button class="btn btn-light m-1 p-2" type="button" id="button-addon2">SEARCH</button>
+          <input type="text" class="form-control" placeholder="Find your Job Here" [(ngModel)]="filterString" >
         </div>
       </div>
     </div>
   </div>
 </section>
 <div class="container">
-  <div class="row" *ngFor="let job of jobs" >
+  <tr class="row" *ngFor="let job of jobs | filter:filterString" >
     <div class="col-md-12 m-2">
       <mat-card [ngClass]="{'disable' : datecheck(job.closingDate)}">
         <mat-card-content >
@@ -57,5 +55,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-  </div>
+  </tr>
 </div>

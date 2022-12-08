@@ -12,7 +12,7 @@ button:hover{
   color: black;
 }
 h4{
-  color:white;
+  color:rgb(14, 13, 13);
   font-weight: 500;
   font-size: 18px;
 }
@@ -53,7 +53,7 @@ nav{
   }
   h1{
     font-size: 28px;
-    color:white;
+    color:rgb(29, 27, 27);
     font-weight: 400;
   }
   h2{
@@ -61,4 +61,10 @@ nav{
   }
   p{
     font-size: 16px;
+  }
+  mat-card{
+    border-style: solid;
+    border-width: 8px 8px 8px 8px;
+    border-color: white;
+    border-radius: 0.5rem;
   }

@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Pipe } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlumniApiService } from '../alumni-api.service';
 import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-viewjobs',
   templateUrl: './viewjobs.component.html',
   styleUrls: ['./viewjobs.component.css'],
 })
+
 export class ViewjobsComponent implements OnInit {
   constructor(private apiService: AlumniApiService, private router: Router, private activeroute: ActivatedRoute) {}
 
+  filterString:string=''
   form: any = new FormGroup({
     link: new FormControl(null),
     job_id: new FormControl(null),
