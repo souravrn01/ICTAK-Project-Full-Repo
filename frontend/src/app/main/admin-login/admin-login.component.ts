@@ -28,7 +28,7 @@ export class AdminLoginComponent implements OnInit {
       console.log('data from backend',res)
       
         localStorage.setItem('token',res.token)
-        alert("Admin has successfully logged in")
+        alert("Admin  successfully logged In")
         this.router.navigate(['adminDash'])
   
     })
