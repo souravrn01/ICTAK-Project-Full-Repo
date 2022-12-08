@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
 
-  empdata:any=[]
+  
   constructor(private router:Router,
     private SignUpService:SignUpService) { }
 
@@ -22,14 +22,17 @@ export class AdminLoginComponent implements OnInit {
   }
   userverify(){
   
-    this.SignUpService.login(this.loginForm).subscribe(res=>{
-  
+    console.log(this.loginForm.value)
+    let data=this.loginForm.value
+    this.SignUpService.loginadmin(data).subscribe(res=>{
       
+        console.log('data from backend',res)
         localStorage.setItem('token',res.token)
-  
-        alert("Admin has successfully logged in")
+        //localStorage.getItem('token')
+        //localStorage.removeItem()
+        alert("Admin  successfully logged In")
         this.router.navigate(['adminDash'])
-  
+      
     })
     
   }

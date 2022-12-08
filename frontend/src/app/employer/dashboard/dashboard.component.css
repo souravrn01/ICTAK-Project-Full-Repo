@@ -1,16 +1,30 @@
 .navbar{
-
-    background-color: rgba(0, 0, 0, .2);
+    background: linear-gradient(90deg, rgba(0,212,255,1)0%, rgb(44, 38, 41)35%, rgba(9,9,121,1)100%);
     
+}
+.row{
+    margin-top: 100px;
 }
 .spacer{
     flex:1 1 auto;
 }
 
 .head{
-    width: 15%;
+    width: 25%;
+    height: 100%;
+    position: fixed;
+   
+    /* width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px; */
 }
 .side{
     width: 85%;
+    margin-left: 170px;
 }
 

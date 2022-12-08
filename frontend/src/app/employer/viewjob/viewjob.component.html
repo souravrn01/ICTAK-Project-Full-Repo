@@ -1,5 +1,5 @@
 
-  <mat-card class="example-card"  *ngFor="let job of jobs">
+  <mat-card class="example-card"  *ngFor="let job of Jobs">
     <mat-card-header>  
     <mat-card-title ><i>{{job.jobTitle}}</i></mat-card-title> 
     </mat-card-header>
@@ -21,9 +21,60 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button (click)="getSingleJob(job._id)" >EDIT</button>
+      <button  mat-button (click)="view(job._id)" class="mb-3 "data-bs-toggle="modal" data-bs-target="#view">View Applications</button>
       <!-- <button mat-button>DELETE</button> -->
     </mat-card-actions>
   </mat-card>
+  <div class="modal fade" id="view" tabindex="-1" >
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" ><b>{{condition}}</b></h3>
+          <button  class="btn btn-head" data-bs-dismiss="modal">close</button>
+        </div>
+        <div class="modal-body">
+          <div class="applications border-dark border-bottom pb-3" *ngFor="let data of applications" >
+            <div class="contents" *ngIf="data != null">
+
+             <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download Resume</button></a>
+
+              <p>Profile Links: {{ data.link }}</p>
+
+              <mat-expansion-panel hideToggle (click)="getprofile(data.alum_id)" class="profile_display">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    SHOW FULL PROFILE
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      PERSONAL DETAILS
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                    <SPAN>Approval Status: </SPAN><em>{{profile.approval_status}}</em><br>
+                    <SPAN>Name: </SPAN><em>{{profile.name}}</em><br>
+                    <SPAN>Email: </SPAN><em>{{profile.email}}</em><br>
+                    <SPAN>Phone Number: </SPAN><em>{{profile.phone}}</em><br>
+                    <SPAN>Gender: </SPAN><em>{{profile.gender}}</em><br>
+                    <SPAN>Date of Birth: </SPAN><em>{{profile.date_of_birth | date}}</em><br>
+                    <SPAN>Martial Status: </SPAN><em>{{profile.marital_status}}</em><br>
+                    <SPAN>Permanent Address: </SPAN><em>{{profile.permanent_address}}</em><br>
+                    <SPAN>Alternate Number: </SPAN><em>{{profile.alternate_phone_number}}</em><br>
+                    <SPAN>Pincode: </SPAN><em>{{profile.pincode}}</em><br>
+                    <SPAN>District: </SPAN><em>{{profile.district}}</em><br>
+                    <SPAN>State: </SPAN><em>{{profile.state}}</em><br>
+                    <SPAN>Country: </SPAN><em>{{profile.country}}</em><br>
+                </mat-expansion-panel>
+ 
+              </mat-expansion-panel>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
   

@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class JobsComponent implements OnInit {
 
   constructor(private apiService:SignUpService, private router:Router) { }
-
+  
+  filterString:string=''
   jobs:any=[]
   ngOnInit(): void {
     this.getjob()

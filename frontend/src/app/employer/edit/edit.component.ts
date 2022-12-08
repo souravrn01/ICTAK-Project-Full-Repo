@@ -10,7 +10,7 @@ import { EmployerApiService } from '../employer-api.service';
 })
 export class EditComponent implements OnInit {
   id: any;
- data:any=[]
+ data:any={};
   constructor(private route:ActivatedRoute,private api:EmployerApiService,private router:Router) { }
 
 
@@ -22,11 +22,14 @@ export class EditComponent implements OnInit {
     })
   }
   update(){
-    console.log(this.data)
+   
     this.api.updatejob(this.data,this.id).subscribe((res:any)=>{
-    console.log(res)
+      console.log(this.data)
+      
     this.data=res
+      console.log(res)
     alert('data updated')
+    this.ngOnInit()
     }) 
   }
 

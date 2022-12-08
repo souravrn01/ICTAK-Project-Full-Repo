@@ -1,5 +1,6 @@
 .navbar{
-    background-color: rgba(0, 0, 0, .2);
+    background: linear-gradient(90deg, rgba(0,212,255,1)0%, rgb(44, 38, 41)35%, rgba(9,9,121,1)100%);
+    color:aliceblue
 }
 .spacer{
     flex:1 1 auto;
@@ -11,4 +12,9 @@ a:hover{
 button:hover{
     background-color: white;
     color: black;
+}
+.editdiv{
+    margin-top: 30px;
+    padding: 70px;
+    
 }
