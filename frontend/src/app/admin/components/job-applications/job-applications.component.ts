@@ -34,9 +34,9 @@ export class JobApplicationsComponent implements OnInit {
 
   getprofile(id:any){
     this.adminApi.getsinglealumnidata(id).subscribe(res=>{
+      console.log(res)
       this.profile = res
       console.log(this.profile.name, this.profile.education.qualification);
-      
     })
   }
   delete(id:any){
