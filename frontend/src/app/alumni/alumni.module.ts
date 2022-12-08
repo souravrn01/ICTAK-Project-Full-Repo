@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
 import { HeaderComponent } from './header/header.component';
 import { FilterPipe } from './filter.pipe';
+import { AlumniApiService } from './alumni-api.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { FilterPipe } from './filter.pipe';
     ViewjobsComponent,
     ApplyjobsComponent,
     HeaderComponent,
-  
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -67,6 +68,8 @@ import { FilterPipe } from './filter.pipe';
 
 
     
-  ]
+  ],
+  providers:[AlumniApiService]
 })
+
 export class AlumniModule { }

@@ -30,7 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminLoginComponent } from './main/admin-login/admin-login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilterPipe } from './pipes/filter.pipe';
-@NgModule({
+
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -43,8 +43,6 @@ import { FilterPipe } from './pipes/filter.pipe';
     JobsComponent,
     AdminLoginComponent,
     FilterPipe
-      
-   
   ],
   imports: [
     BrowserModule,
