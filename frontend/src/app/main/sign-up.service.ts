@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Token } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,7 @@ apiURL:any='http://localhost:3000/api'
     return this.http.post<any>(`${this.apiURL}/employeuv/emplogin`,data)
   }
   getalumnilogin(data:any){
-    return this.http.post(`http://localhost:3000/api/alumniuv/singlealumni`,data)
+    return this.http.post<any>(`http://localhost:3000/api/alumniuv/singlealumni`,data)
   }
   getsingleemplogin(data:any){
     return this.http.get(`${this.apiURL}/employeuv/singleemp`,data)
@@ -35,4 +36,8 @@ apiURL:any='http://localhost:3000/api'
     return this.http.post<any>('http://localhost:3000/api/login/loginadmin',data)
   }
  
+
+  getToken(){
+    return localStorage.getItem('token')
+  }
 }

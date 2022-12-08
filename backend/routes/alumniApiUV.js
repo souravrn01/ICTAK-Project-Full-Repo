@@ -159,20 +159,24 @@ router.delete('/deletealumni/:id', async (req, res) => {        // for admin to 
         console.log(error);
     }
 })
-
+//to delete education of alumni
 router.delete('/deleteeducation/:id',async (req,res)=>{
     try{
 
+        let id = req.params.education.id
+        let data = await AluminiData.findByIdAndDelete(id)
+        res.send(data)
     }
     catch(error){
         console.log(error)
     }
 })
-
+//to delete experiences of alumni
 router.delete('/deleteexperience/:id',async (req,res)=>{
     try{
 
-        let id = req.params.id
+        let alumniid=req.params.id
+        let id = req.params.experience
         console.log(id)
         let data = await AluminiData.findByIdAndDelete(id)
         res.send(data)

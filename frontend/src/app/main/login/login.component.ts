@@ -20,26 +20,32 @@ export class LoginComponent implements OnInit {
     email:new FormControl(null,[Validators.required,Validators.email]),
     password:new FormControl(null,[Validators.required,Validators.minLength(8)]),
   })
-
   ngOnInit() {  
   
   }
-
 login(){
   
    this.SignUpService.getalumnilogin(this.loginForm.value).subscribe(res=>{
     this.alumnidata = res
-    console.log(res)
+   console.log(res)
     if(this.alumnidata === null){
     }else{
-      console.log(this.alumnidata[0]._id);
+       console.log('data from backend',res)
+       localStorage.setItem('token',res.token)
+       alert("Login Successfully")
+       console.log(this.alumnidata[0]._id);
        this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata[0]._id}`)
     }
-   })
+
+  
+
+   
+    })
+    
 }
-openSnackBar(message:any,action:any){
-  this.snackBar.open(message,action)
-}
+// openSnackBar(message:any,action:any){
+//   this.snackBar.open(message,action)
+// }
 }
 
 
