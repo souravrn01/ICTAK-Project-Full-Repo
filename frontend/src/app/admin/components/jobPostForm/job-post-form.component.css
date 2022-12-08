@@ -2,7 +2,7 @@
   width: 100%;
   background-color: #1b1b32;
   color: #f5f6f7;
-  font-family: Tahoma;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -34,11 +34,12 @@
   }
 
   input, textarea {
-    background-color: #9b9ba0;
-    border: 1px solid #4343f5;
-    color: #6d3333;
+    background-color: #a0d0fa;
+    /* border: 1px solid #ff487f; */
+    color: #141d25;
     outline: none;
-  
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
   }
   input[type="submit"] {
     display: block;
@@ -47,6 +48,43 @@
     height: 2em;
     font-size: 1.1rem;
     background-color: #b9b9c2;
-    border-color: rgb(127, 85, 85);
+    /* border-color: #E53F71; */
     min-width: 300px;
   }
+
+  .navbar{
+    
+    background-color:#b5b5f0 !important;
+    width: 100% ;
+    box-shadow: 1px 1px 10px 2px #fff, -1px 1px 10px 2px #fff ;
+  }
+
+  #btn:hover{
+    background-color: #221520;
+    color:#b9b9c2
+  }
+
+  input:focus, textarea:focus{
+    box-shadow: 1px 1px 5px 1px #fff, -1px 1px 5px 1px #fff ;
+  }
+
+  .logo{
+    display: block;
+    max-width:70px;
+    max-height:50px;
+    scale:4;
+    aspect-ratio: auto;
+    padding-left: 20px;
+    /* border: 1px solid red; */
+}
+
+.logout{
+  margin-left: 15px;
+}
+
+.alert{
+  border: 1px solid red;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: larger;
+}

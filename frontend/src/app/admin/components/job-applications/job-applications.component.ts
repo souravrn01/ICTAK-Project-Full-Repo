@@ -10,7 +10,7 @@ export class JobApplicationsComponent implements OnInit {
 
   constructor(private adminApi: AdminApiService) { }
 
-  condition:String ="" 
+  condition:String =''
   jobs:any=''
   applications:any=''
   profile:any=''
