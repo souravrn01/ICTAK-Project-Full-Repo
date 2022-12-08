@@ -14,7 +14,15 @@ export class ExperienceComponent implements OnInit {
 
   id:any=''
   data:any=[]
-    
+    holder={
+      company:'',
+      Designation:'',
+      presently_working:'',
+      starting_date:'',
+      ending_date:'',
+      current_monthly_salary:'',
+      notice_period:''
+    }
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
     console.log(this.id)
@@ -24,6 +32,7 @@ export class ExperienceComponent implements OnInit {
     })
   }
   onsubmit(){
+    this.data.push(this.holder)
     console.log(this.data); 
     this.alumniApi.alumniexperience(this.data, this.id).subscribe(res=>{
     console.log(res)

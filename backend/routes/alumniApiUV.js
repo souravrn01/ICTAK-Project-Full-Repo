@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const AluminiData = require('../models/alumniProfileUV')
-const multer=require('multer')
-
+const jwt = require('jsonwebtoken')
 
 
 
@@ -51,8 +50,13 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
 
     try{
         let data = await AluminiData.find({email:req.body.email,password:req.body.password,approval_status:"verified"})
-        res.send(data)
-    }catch(error){
+        let payload = {'email':req.body.email,'password':req.body.password,'date':Date.now()}
+         let token = jwt.sign(payload,'secretkey')
+         res.send(data)
+         res.send({ 'token': token});
+        
+    }
+    catch(error){
         console.log(error)
     }
 })
@@ -105,9 +109,10 @@ router.put('/alumnieducation', async (req, res) => { //for add education data of
 })
 router.put('/alumniexperience',async (req,res)=>{ //for update experience data of alumni
     try{
-       const {experience,id} = req.body;
-       console.log(experience);
-        let experiencedatas = {$push:{experience:experience}}
+        console.log(req.body.data,req.body.id)
+        let id = req.body.id;
+        let update={experience:req.body.data}
+        let experiencedatas={$set:update}
         let experiences= await AluminiData.findByIdAndUpdate({"_id":id},experiencedatas,{new:true})
         res.send(experiences)
         console.log(experiences)
