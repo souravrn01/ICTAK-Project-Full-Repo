@@ -30,6 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminLoginComponent } from './main/admin-login/admin-login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilterPipe } from './pipes/filter.pipe';
+import { TokenInterceptorService } from './token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     MatFormFieldModule,
     MatSnackBarModule
   ],
-  providers: [SignUpService],
+  providers: [SignUpService,TokenInterceptorService],
   bootstrap: [AppComponent],
   entryComponents:[LoginComponent]
 })

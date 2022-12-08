@@ -67,7 +67,7 @@
                                                                                 <input class="form-check-input"
                                                                                     type="radio" name="gender"
                                                                                     id="gender" value="Male"
-                                                                                    [(ngModel)]="data.gender" checked>
+                                                                                    [(ngModel)]="data.gender" checked required>
                                                                                 Male
                                                                             </label>
                                                                         </div>
@@ -80,7 +80,7 @@
                                                                                 <input class="form-check-input"
                                                                                     type="radio" name="gender"
                                                                                     id="gender" value="Female"
-                                                                                    [(ngModel)]="data.gender">
+                                                                                    [(ngModel)]="data.gender" required>
                                                                                 Female
                                                                             </label>
                                                                         </div>
@@ -92,7 +92,7 @@
                                                                                 <input class="form-check-input"
                                                                                     type="radio" name="gender"
                                                                                     id="gender" value="Other"
-                                                                                    [(ngModel)]="data.gender">
+                                                                                    [(ngModel)]="data.gender" required>
                                                                                 Other
                                                                             </label>
                                                                         </div>
@@ -108,7 +108,7 @@
                                                                     <div class="col-md-8">
                                                                         <input type="date" class="form-control"
                                                                             name="date_of_birth"
-                                                                            [(ngModel)]="data.date_of_birth">
+                                                                            [(ngModel)]="data.date_of_birth" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -146,7 +146,7 @@
                                                                         <input type="number" class="form-control"
                                                                             name="alternatenumber"
                                                                             placeholder="Alternate Phone Number"
-                                                                            [(ngModel)]="data.alternate_phone_number">
+                                                                            [(ngModel)]="data.alternate_phone_number" required pattern="/\b\d{3}[-. ]?\d{3}[-. ]?\d{4}\b/g">
                                                                     </div>
                                                                 </div>
                                                                 <div class="row m-1 form-group">
@@ -157,7 +157,7 @@
                                                                     <div class="col-md-9 mb-1">
                                                                         <input type="number" class="form-control"
                                                                             name="pincode" placeholder="Pincode"
-                                                                            [(ngModel)]="data.pincode">
+                                                                            [(ngModel)]="data.pincode" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row m-2 form-group">
@@ -168,7 +168,7 @@
                                                                     <div class="col-md-9 mb-1">
                                                                         <input type="text" class="form-control"
                                                                             name="district" placeholder="District"
-                                                                            [(ngModel)]="data.district">
+                                                                            [(ngModel)]="data.district" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row m-1 form-group">
@@ -179,7 +179,7 @@
                                                                     <div class="col-md-9 mb-1">
                                                                         <input type="text" class="form-control"
                                                                             name="state" placeholder="State"
-                                                                            [(ngModel)]="data.state">
+                                                                            [(ngModel)]="data.state" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row m-2 form-group">
@@ -190,7 +190,7 @@
                                                                     <div class="col-md-9 mb-1">
                                                                         <input type="text" class="form-control"
                                                                             name="country" placeholder="Country"
-                                                                            [(ngModel)]="data.country">
+                                                                            [(ngModel)]="data.country" required>
                                                                     </div>
                                                                 </div>
                                                             </div>

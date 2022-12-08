@@ -28,6 +28,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
 import { HeaderComponent } from './header/header.component';
+import { FilterPipe } from './filter.pipe';
+import { AlumniApiService } from './alumni-api.service';
 
 
 @NgModule({
@@ -40,7 +42,7 @@ import { HeaderComponent } from './header/header.component';
     ViewjobsComponent,
     ApplyjobsComponent,
     HeaderComponent,
-  
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -63,8 +65,11 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+
+
     
-    
-  ]
+  ],
+  providers:[AlumniApiService]
 })
+
 export class AlumniModule { }

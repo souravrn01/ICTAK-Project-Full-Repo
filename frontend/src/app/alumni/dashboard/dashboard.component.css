@@ -42,22 +42,22 @@ nav{
     border-bottom: 1px solid rgb(218, 211, 211);
     margin-top: 10px;
     height: 40px;
-    color: black;
+    color: rgb(79, 136, 79);
    }
    select{
     margin-top: 19px;
     color: rgb(128, 121, 121);
    }
   h3{
-    font-weight: 600;
+    font-weight: 400;
+  }
+  h4{
+    color: rgb(84, 155, 84);
   }
   h1{
     font-size: 28px;
     color:rgb(29, 27, 27);
     font-weight: 400;
-  }
-  h2{
-    font-size: 25px;
   }
   p{
     font-size: 16px;

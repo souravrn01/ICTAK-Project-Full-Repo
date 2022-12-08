@@ -10,7 +10,7 @@ export class JobApplicationsComponent implements OnInit {
 
   constructor(private adminApi: AdminApiService) { }
 
-  condition:String ="" 
+  condition:String =''
   jobs:any=''
   applications:any=''
   profile:any=''
@@ -34,9 +34,9 @@ export class JobApplicationsComponent implements OnInit {
 
   getprofile(id:any){
     this.adminApi.getsinglealumnidata(id).subscribe(res=>{
+      console.log(res)
       this.profile = res
       console.log(this.profile.name, this.profile.education.qualification);
-      
     })
   }
   delete(id:any){

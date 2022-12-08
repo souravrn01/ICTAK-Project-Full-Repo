@@ -47,17 +47,65 @@ body{
 .job:hover{
     transform: scale(1.10);
 }
+.imgBox{
+    width:100px;
+    height: 100px;
+    margin: auto;
+    border: 1px dashed #262626;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imgBox img{
+    width: 100%;
+}
+.carousel-inner{
+    background:rgb(218, 209, 216);
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(153, 149, 149, 0.5);
+}
+.carousel-caption {
+    position: static;
+    padding-bottom: 15px;
+    padding-top: 0;
+}
+
+.carousel-caption h3{
+    font-size: 35px;
+    margin-bottom: 15px;
+    font-family: allura;
+    color: #262626;
+    text-shadow: none;
+}
+
+.carousel-caption h4{
+    color: #262626;
+    text-shadow: none;
+}
+.carousel-caption p{
+    font-size: 18px;
+    margin: auto;
+    width:70%;
+    margin-bottom: 10px;
+    font-family: teko;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: none;
+    color: #262626;
+}
 
 
-
-
-
-
-
-
-
-
-
+.carousel-control{
+    color: #262626;
+}
+.carousel-indicators .active{
+    background-color: #2b2626;
+    width: 20px;
+}
+.carousel-indicators{
+    top: 90%;
+    bottom: 10px;
+   
+}
 
 
 

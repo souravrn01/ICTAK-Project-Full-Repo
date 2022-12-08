@@ -31,7 +31,7 @@ login(){
     if(this.alumnidata === null){
     }else{
        console.log('data from backend',res)
-       localStorage.setItem('token',res.token)
+       //localStorage.setItem('token',res.token)
        alert("Login Successfully")
        console.log(this.alumnidata[0]._id);
        this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata[0]._id}`)
