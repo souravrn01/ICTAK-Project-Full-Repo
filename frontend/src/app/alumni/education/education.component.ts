@@ -10,10 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EducationComponent implements OnInit {
 
   constructor(private alumniApi:AlumniApiService,private router:Router,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute) { } 
 
   id:any =''
-  data:any=''                      
+  data:any=[]
   holder={
     qualification:'',
     completion_status:'',
@@ -33,18 +33,15 @@ export class EducationComponent implements OnInit {
   }
 
   onsubmit(){
-    
-      console.log(this.holder); 
-      let finaldata=this.data.push(this.holder); 
-      console.log(finaldata); 
-      // this.alumniApi.alumnieducation(this.data, this.id).subscribe(res=>{
-      // console.log(res)
-      // this.data=res
-      // alert("Data updated successfully")
-      // this.ngOnInit()
-      // this.router.navigate([`alumnidashboard/${this.id}`])
-      //this code works
-    //})
+      this.data.push(this.holder)
+      console.log(this.data);
+      this.alumniApi.alumnieducation(this.data, this.id).subscribe(res=>{
+      console.log(res)
+      this.data=res
+      alert("Data updated successfully")
+      this.ngOnInit()
+      this.router.navigate([`alumnidashboard/${this.id}`])
+    })
   }
  
   back(){

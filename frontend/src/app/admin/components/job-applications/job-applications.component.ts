@@ -20,8 +20,8 @@ export class JobApplicationsComponent implements OnInit {
     })
   }
   view(id:any){
-    this.adminApi.applicationforjob(id).subscribe(res=>{
-      this.applications = res
+    this.adminApi.applicationforjob(id).subscribe(res=>{ //gets all applications from database
+      this.applications = res // saving the reponse
       if(this.applications.length > 0){
         this.condition = `Number of Applications: ${this.applications.length}`
       }else{

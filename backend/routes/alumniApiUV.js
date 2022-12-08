@@ -73,15 +73,14 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
         console.log(req.body)
         let id = req.body.id
         let generaldata = {
-            gender:req.body.gender,
-            date_of_birth:req.body.date_of_birth,
-            marital_status:req.body.marital_status,
-            permanent_address:req.body.permanent_address,
-            alternate_phone_number:req.body.alternate_phone_number,
-            pincode:req.body.pincode,
-            district:req.body.district,
-            state:req.body.state,
-            country:req.body.country,
+            gender:req.body.data.gender,
+            date_of_birth:req.body.data.date_of_birth,
+            permanent_address:req.body.data.permanent_address,
+            alternate_phone_number:req.body.data.alternate_phone_number,
+            pincode:req.body.data.pincode,
+            district:req.body.data.district,
+            state:req.body.data.state,
+            country:req.body.data.country,
         }
         let generaldatas = {$set:generaldata}
         let generaldataupdate= await AluminiData.findByIdAndUpdate({"_id":id},generaldatas,{new:true})
@@ -93,13 +92,12 @@ router.put('/generaldata',async(req,res)=>{ //update one alumni general informat
 })
 router.put('/alumnieducation', async (req, res) => { //for add education data of alumni
     try {
-        // const {education,id} = req.body;
-        // console.log(education);
-        // let educationdatas={$push:{education:education}}
-        // let education2 = await AluminiData.findByIdAndUpdate({"_id":id},educationdatas,{new:true})
-        // res.send(education2)
-        // console.log(education2);
-        console.log(req.body)
+            console.log(req.body.data, req.body.id)
+            let id = req.body.id;
+            let updates = {education: req.body.data}
+            let toUpdate = {$set: updates}
+            let updated = await AluminiData.findByIdAndUpdate({"_id":id},toUpdate,{new:true})
+            res.send(updated)
        }
        catch (error) {
        console.log('post error:', error);
