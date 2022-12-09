@@ -62,11 +62,11 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
         // let payload = {'email':req.body.email,'password':req.body.password,'date':Date.now()}
         //  let token = jwt.sign(payload,'secretkey')
         if(!data){
-            return res.json({ message: "Admin didnot verified yet" });
+            return res.json({ message: "Invalid User Login Or Admin didnot verified your data yet !!" });
 
         }
-         res.send(data)
-         //res.send({ 'token': token,data});
+         
+         res.send({token,data});
         //  res.send({ 'token': token});
         
     }
