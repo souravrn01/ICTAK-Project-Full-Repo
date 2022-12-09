@@ -27,8 +27,8 @@ export class AdminLoginComponent implements OnInit {
     this.SignUpService.loginadmin(data).subscribe(res=>{
       
         console.log('data from backend',res)
-        //localStorage.setItem('token',res.token)
-        //localStorage.getItem('token')
+        localStorage.setItem('token',res.token)
+        localStorage.getItem('token')
         //localStorage.removeItem()
         alert("Admin  successfully logged In")
         this.router.navigate(['adminDash'])

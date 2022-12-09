@@ -21,13 +21,13 @@ apiURL:any='http://localhost:3000/api'
     return this.http.post<any>(`http://localhost:3000/api/alumniuv/singlealumni`,data)
   }
   getsingleemplogin(data:any){
-    return this.http.get(`${this.apiURL}/employeuv/singleemp`,data)
+    return this.http.get<any>(`${this.apiURL}/employeuv/singleemp`,data)
   }
   getemployeelogin(){
-    return this.http.get(`${this.apiURL}/employeuv/employelist`)
+    return this.http.get<any>(`${this.apiURL}/employeuv/employelist`)
   }
   getJob(){
-    return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
+    return this.http.get<any>('http://localhost:3000/api/verifiedjobs/getjob')
   }
   singleemploye(data:any){
     return this.http.post<any>(`${this.apiURL}/employeuv/employe`,data)
