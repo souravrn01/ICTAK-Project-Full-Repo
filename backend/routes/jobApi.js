@@ -57,7 +57,7 @@ router.post('/postjob', async(req, res)=>{  // posting job
     }
 })
 
-router.put('/editJob',verifytoken, async(req, res)=>{  // update Job
+router.put('/editJob', async(req, res)=>{  // update Job
     try {
         let id = req.body.id
         let updates = {

@@ -18,11 +18,11 @@ export class TokenInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
-    const token= this.adminService.getToken()
+    const token= this.SignupService.getToken()
     if(token){
       req = req.clone({
 
-        setHeaders: { Authorization: `${token}` }
+        setHeaders: { Authorization: `Beard ${token}` }
       })
     }
     return next.handle(req);

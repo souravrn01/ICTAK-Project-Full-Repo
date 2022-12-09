@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { FooterComponent } from './footer/footer.component';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -44,6 +45,9 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     MatDialogModule,
     MatExpansionModule
-  ]
+  ],
+
+  providers:[AuthGuard]
+
 })
 export class EmployerModule { }
