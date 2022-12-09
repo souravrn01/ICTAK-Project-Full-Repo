@@ -1,5 +1,5 @@
 const {JsonWebTokenError} = require("jsonwebtoken")
-
+const jwt = require('jsonwebtoken')
 
 //middleware
 function verifytoken (req, res, next) {
