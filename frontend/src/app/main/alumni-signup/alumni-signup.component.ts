@@ -25,8 +25,17 @@ export class AlumniSignupComponent implements OnInit {
   }
   sign(){
   this.signup.addData(this.alumniSignup.value).subscribe((res)=>{
-    console.log(this.alumniSignup.value)
+    // console.log(this.alumniSignup.value)
+    //   this.router.navigate(['/home'])
+    if(res.message){
+      alert(res.message)
+        
+    }
+    else{
+      alert('registerd successfully')
       this.router.navigate(['/home'])
+
+    }
  }
   )
 }

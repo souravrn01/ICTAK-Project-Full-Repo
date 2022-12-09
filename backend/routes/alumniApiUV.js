@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken')
 
 router.post('/aluminisignup', async (req, res) => {
     try {
-        let data = {
+        let item = {
             name: req.body.name,
             email: req.body.email,
             phone: req.body.phone,
@@ -20,11 +20,16 @@ router.post('/aluminisignup', async (req, res) => {
             company_name: req.body.company_name,
             password: req.body.password,
         }
-        const alumini = new AluminiData(data)
-        const saveAlumini = await alumini.save()
-        res.send(saveAlumini)
-    } catch (error) {
-        console.log('post error:', error);
+        let user = await AluminiData.findOne({ email: req.body.email })
+        if (!user) {
+            const newuser = new AluminiData(item)
+            const saveuser = await newuser.save()
+            res.send(saveuser)
+        }
+        return res.json({ message:"Email already registered" });
+    } catch (error)
+{
+        console.log('post error:',error)
     }
 })
 
