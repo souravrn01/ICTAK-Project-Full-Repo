@@ -46,7 +46,8 @@ router.get('/aluminis', async (req, res) => {       // getdata for admin to coll
     }
 })
 router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
-    console.log(req.body) 
+    
+    // console.log(req.body) 
 
     try{
         let data = await AluminiData.findOne({email:req.body.email,
@@ -65,6 +66,7 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
 
         }
          res.send(data)
+         //res.send({ 'token': token,data});
         //  res.send({ 'token': token});
         
     }
