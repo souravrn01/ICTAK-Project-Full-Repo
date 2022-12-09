@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AdminApiService } from'./admin-api.service';
 @Component({
   selector: 'app-admin-dash',
   templateUrl: './admin-dash.component.html',
   styleUrls: ['./admin-dash.component.css']
 })
 export class AdminDashComponent implements OnInit {
-
-  constructor() { }
+data :any;
+  constructor(private api:AdminApiService) {}
 
   ngOnInit(): void {
   }
   customOptions: OwlOptions = {
-    loop: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
@@ -35,4 +36,13 @@ export class AdminDashComponent implements OnInit {
     },
     nav: true
   }
-}
+  getalumni(data:any){
+  this.api.getalumni().subscribe((res)=>{
+    this.data=res
+    console.log(res
+      
+      );
+  })
+  }
+
+  }
