@@ -41,7 +41,28 @@ router.post('/upload', upload.single('resume'), async(req, res, next)=>{
 router.get('/applicationdata/:id', async (req, res) => {       // getdata for admin to collect unverified applications
     try {
         let id = req.params.id
-        let list = await ApplicationData.find({job_id: id })
+        let list = await ApplicationData.find({job_id: id , approval_status: "not approved"})
+        res.send(list)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+router.get('/UVApps', async (req, res) => {      //  unverified applications
+    try {
+     
+        let list = await ApplicationData.find({ approval_status: "not approved"})
+        res.send(list)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
+router.get('/VApps', async (req, res) => {      //  verified applications
+    try {
+       
+        let list = await ApplicationData.find({ approval_status: "verified"})
         res.send(list)
     } catch (error) {
         console.log(error)

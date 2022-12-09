@@ -45,6 +45,17 @@ router.get('/aluminis', async (req, res) => {       // getdata for admin to coll
         console.log(error)
     }
 })
+
+router.get('/aluminiVer', async (req, res) => {       // getdata for admin to collect verified alumni
+    try {
+        let list = await AluminiData.find({ approval_status: "verified" })
+        res.send(list)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
 router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
     
     // console.log(req.body) 
