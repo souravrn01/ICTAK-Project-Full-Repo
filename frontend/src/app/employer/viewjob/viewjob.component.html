@@ -1,13 +1,13 @@
 
-  <mat-card class="example-card"  *ngFor="let job of Jobs">
-    <mat-card-header>  
-    <mat-card-title ><i>{{job.jobTitle}}</i></mat-card-title> 
+  <mat-card class="box example-card"  *ngFor="let job of Jobs">
+    <mat-card-header class="head text-primary">  
+    <mat-card-title ><h2>{{job.jobTitle}}</h2></mat-card-title> 
     </mat-card-header>
     <mat-card-content>
         <table class="table">
            
             <tbody>
-              <tr>COMPANY NAME:  {{job.companyName}}</tr><br>
+              <tr>COMPANY NAME:<b>{{job.companyName}}</b> </tr><br>
               <tr>EDUCATION QUALIFICATION:  {{job.qualification}}</tr><br>
               <tr>JOB SECTOR: {{job.jobSector}} </tr><br>
               <tr>LOCATION: {{job.location}}</tr><br>

@@ -1,7 +1,7 @@
 const express=require('express')
 const router=express.Router()
 const EmployeData=require('../models/employerProfileUV')
-
+const jwt=require('jsonwebtoken')
 
 
 router.get('/employelist',async(req,res)=>{
@@ -98,32 +98,24 @@ router.get('/singleemp',async(req,res)=>{       //get singledata of alumni
         console.log('post error:',error)
     }
 })
-router.post('/emplogin', async (req, res) => {
-    try {
-        let user = await EmployeData.findOne({ 
-            email: req.body.email, 
-            password: req.body.password})
-        if (!user) {
-            return res.json({ message: "Invalid username or password" });
-
-
-        }
-        res.send(user)
-    } catch (error) {
-        console.log(error)
-    }
-})
 router.post('/employe', async (req, res) => {
     try {
         let user = await EmployeData.findOne({ 
             email: req.body.email, 
             password: req.body.password,approval_status:"verified"})
+            let email=req.body.email;
+            let password=req.body.password;
+            let payload = {
+                'email':req.body.email,
+                'password':req.body.password,
+                'date':Date.now()}
+                let token = jwt.sign(payload,'secretkey')
         if (!user) {
-            return res.json({ message: "admin didnot verified yet" });
+            return res.json({ message: "Invalid username or password or admin didnot verified yet" });
 
 
         }
-        res.send(user)
+        res.send({token,user})
     } catch (error) {
         console.log(error)
     }

@@ -21,32 +21,25 @@ export class EmpLoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(){
-    this.SignUpService.login(this.loginForm.value).subscribe(res=>{
-      if(res.message){
-        alert(res.message)
-        this.router.navigate(['/employelogin'])
-      }
-      
-     else{ this.SignUpService.singleemploye(this.loginForm.value).subscribe(res=>{
+     this.SignUpService.singleemploye(this.loginForm.value).subscribe(res=>{
         if(res.message){
           alert(res.message)
           this.router.navigate(['/employelogin'])
         }
         else{
+          console.log(res)
           alert("Successfully logged in")
           this.router.navigate(['/empDash/dash'])
-        }
-        
-      })}
-    })
-  
+        }    
+      })
+ 
 }
 onsubmit(data:any){
-  this.SignUpService. getsingleemplogin(this.loginForm.value).subscribe((res)=>{
-    this.empdata=res
-    console.log(res)
+  // this.SignUpService. getsingleemplogin(this.loginForm.value).subscribe((res)=>{
+  //   this.empdata=res
+  //   console.log(res)
     // this.router.navigateByUrl(`/empDash`,data)
-  })
+  // })
 }
 
 
