@@ -24,9 +24,11 @@ export class EmpLoginComponent implements OnInit {
   login(){ 
       this.SignUpService.singleemploye(this.loginForm.value).subscribe(res=>{
         console.log(res)
+        console.log('data from backend',res)
         localStorage.setItem('token',res.token)
         if(res.message){
           alert(res.message)
+          alert("Invalid Login or Admin verified your data yet!!")
           this.router.navigate(['/employelogin'])
         }
         else{

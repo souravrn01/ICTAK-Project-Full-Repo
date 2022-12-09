@@ -28,11 +28,14 @@ export class AdminLoginComponent implements OnInit {
       
         console.log('data from backend',res)
         localStorage.setItem('token',res.token)
-        localStorage.getItem('token')
-        //localStorage.removeItem()
-        alert("Admin  successfully logged In")
+        if(res.message){
+          alert('Invalid Username and Password')
+          this.router.navigate(['/adminlogin'])
+        }
+        else{
+          alert("Admin  successfully logged In")
         this.router.navigate(['adminDash'])
-      
+         } 
     })
     
   }

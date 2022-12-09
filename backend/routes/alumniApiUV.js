@@ -52,22 +52,25 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
     try{
         let data = await AluminiData.findOne({email:req.body.email,
             password:req.body.password,approval_status:"verified"})
-            let email=req.body.email;
-            let password=req.body.password;
-            let payload= {
-            'email':email,
-            'password':password,
-            'date':Date.now()}
-            let token = await jwt.sign(payload,'secretKey')
+            // let email=req.body.email;
+            // let password=req.body.password;
+            // let payload= {
+            // 'email':email,
+            // 'password':password,
+            // 'date':Date.now()}
+            // let token = await jwt.sign(payload,'secretKey')
         // let payload = {'email':req.body.email,'password':req.body.password,'date':Date.now()}
         //  let token = jwt.sign(payload,'secretkey')
         if(!data){
-            return res.json({ message: "Invalid User Login Or Admin didnot verified your data yet !!" });
+            return res.json({ message: " Admin didnot verified your data yet !!" });
 
+        }else{
+
+            res.send(data);
+            //  res.send({ 'token': token});
         }
          
-         res.send({token,data});
-        //  res.send({ 'token': token});
+        
         
     }
     catch(error){
