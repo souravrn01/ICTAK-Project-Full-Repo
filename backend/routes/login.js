@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken')
 
 router.post('/loginadmin',async(req,res)=>{
     try{
+        console.log('From frontend auth token',req.headers.authorization)
         let email=req.body.email;
         let password=req.body.password;
         let payload= {

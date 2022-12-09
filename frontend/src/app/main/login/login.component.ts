@@ -27,20 +27,18 @@ login(){
   
    this.SignUpService.getalumnilogin(this.loginForm.value).subscribe(res=>{
     this.alumnidata = res
-   console.log(res)
-    if(this.alumnidata === null){
-    }else{
-       console.log('data from backend',res)
-       //localStorage.setItem('token',res.token)
-       alert("Login Successfully")
-       console.log(this.alumnidata[0]._id);
-       this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata[0]._id}`)
+    console.log(res)
+    console.log(this.alumnidata._id);
+    localStorage.setItem('token',res.token)
+    if(res.message){
+      alert('admin didnot verified yet')
+      this.router.navigate(['/alumnilogin'])
     }
-
-  
-
-   
-    })
+    else{
+      alert('Successfully Login')
+      this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata._id}`)
+     } 
+  })
     
 }
 // openSnackBar(message:any,action:any){

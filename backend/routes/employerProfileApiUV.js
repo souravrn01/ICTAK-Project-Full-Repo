@@ -4,6 +4,7 @@ const EmployeData=require('../models/employerProfileUV')
 const jwt=require('jsonwebtoken')
 
 
+
 router.get('/employelist',async(req,res)=>{
     try {
         let list=await EmployeData.find()
@@ -96,6 +97,24 @@ router.get('/singleemp',async(req,res)=>{       //get singledata of alumni
     } catch (error)
 {
         console.log('post error:',error)
+    }
+})
+
+
+//EMPLOYEE LOGIN CHECK
+router.post('/emplogin', async (req, res) => {
+    try {
+        let user = await EmployeData.findOne({ 
+            email: req.body.email, 
+            password: req.body.password})
+        if (!user) {
+            return res.json({ message: "Invalid username or password" });
+
+
+        }
+        res.send(user)
+    } catch (error) {
+        console.log(error)
     }
 })
 router.post('/employe', async (req, res) => {
