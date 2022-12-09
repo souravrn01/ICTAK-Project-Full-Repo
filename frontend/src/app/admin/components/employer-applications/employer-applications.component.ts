@@ -2,24 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { AdminApiService } from '../../admin-api.service';
 
 @Component({
-  selector: 'app-job-applications',
-  templateUrl: './job-applications.component.html',
-  styleUrls: ['./job-applications.component.css']
+  selector: 'app-employer-applications',
+  templateUrl: './employer-applications.component.html',
+  styleUrls: ['./employer-applications.component.css']
 })
-export class JobApplicationsComponent implements OnInit {
+export class EmployerApplicationsComponent implements OnInit {
 
   constructor(private adminApi: AdminApiService) { }
-
   condition:String =''
   jobs:any=''
   applications:any=''
   profile:any=''
+
+
   ngOnInit(): void {
-    this.adminApi.getappliedjobs().subscribe(res=>{
+    this.adminApi.getempappliedjobs().subscribe(res=>{
       this.jobs = res
       console.log(this.jobs)
     })
   }
+
   view(id:any){
     this.adminApi.applicationforjob(id).subscribe(res=>{ //gets all applications from database
       this.applications = res // saving the reponse
@@ -50,4 +52,6 @@ export class JobApplicationsComponent implements OnInit {
     })
   }
 
+
 }
+ 

@@ -1,0 +1,16 @@
+.logo{
+    display: block;
+    max-width:80px;
+    scale:4;
+    aspect-ratio: auto;
+    /* border: 1px solid red; */
+    margin-left: 5%
+}
+h3{
+
+    display:inline-block
+}
+.body{
+    background-color: black;
+    height: 100vh
+}

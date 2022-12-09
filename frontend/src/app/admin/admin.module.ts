@@ -13,10 +13,12 @@ import { VerifyEmpComponent } from './components/verify-emp/verify-emp.component
 import { JobApplicationsComponent } from './components/job-applications/job-applications.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
+import { EmployerApplicationsComponent } from './components/employer-applications/employer-applications.component';
+import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent, VerifyEmpComponent, JobApplicationsComponent],
+  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent, VerifyEmpComponent, JobApplicationsComponent, EmployerApplicationsComponent, DashAdminComponent],
   imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule,MatExpansionModule,MatButtonModule],
 })
 export class AdminModule {}

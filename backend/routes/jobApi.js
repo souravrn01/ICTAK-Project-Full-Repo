@@ -10,9 +10,19 @@ router.get('/getjob', async(req, res)=>{  // getting job
         console.log('get error:', error);
     }
 })
-router.get('/getempjob', async(req, res)=>{  // getting job
+
+router.get('/getempjob', async(req, res)=>{  // getting job by employer
     try {
     let jobs = await JOBDATA.find({postedBy:"employe"})
+        res.send(jobs)
+    } catch (error) {
+        console.log('get error:', error);
+    }
+})
+
+router.get('/getadminjob', async(req, res)=>{  // getting job by admin
+    try {
+    let jobs = await JOBDATA.find({postedBy:"admin"})
         res.send(jobs)
     } catch (error) {
         console.log('get error:', error);

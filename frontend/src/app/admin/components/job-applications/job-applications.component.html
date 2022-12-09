@@ -1,73 +1,135 @@
+<div class="body">
+  
+  <nav class="navbar bg-light sticky-top" >
+    <div class="container-fluid">
+        <img src="../../../../assets/images/logo.png" alt="LOGO" class="logo">
+      <div class="" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item ms-auto">
+            <button class="btn btn-outline-dark bttn" routerLink="/dashadmin">BACK</button>
+            <button class="btn btn-outline-dark logout bttn" routerLink="/home">LOGOUT</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="tabs row container mx-auto ">
+    <button type="button" class="col-sm-5  me-auto active tab btn btn-secondary" routerLink="/adminjobsandapplies">Admin Job Posts</button>
+    <button type="button" class=" col-sm-5  ms-auto tab btn btn-secondary" routerLink="/empjobsandapplies">Employer Job Posts</button>
+  </div>
 
 
-<div class="continer">
-  <div class="job" *ngFor="let job of jobs">
-    <h2>{{ job.jobTitle}}</h2>
-    <h4>Company : <span>{{ job.companyName}}</span></h4>
-    <h4>Place : <span>{{ job.location}}</span></h4>
-    <h4>Qualification : <span>{{ job.qualification}}</span></h4>
-    <h4>Experience : <span>{{ job.experience}}</span></h4>
-    <h4>ClosingDate : <span>{{ job.closingDate | date}}</span></h4>
-    <h4>Salary-Range : <span>{{ job.salaryRange}}</span></h4>
-    <h4>Skills : <span>{{ job.skills}}</span></h4>
-    <h4>Description : <span>{{ job.description}}</span></h4>
-    <button (click)="view(job._id)" class="mb-3 btn btn-info"data-bs-toggle="modal" data-bs-target="#view">View Applications</button>
-    <div class="modal fade" id="view" tabindex="-1" >
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title fs-5" ><b>{{condition}}</b></h3>
-            <button  class="btn btn-head" data-bs-dismiss="modal">close</button>
-          </div>
-          <div class="modal-body">
-            <div class="applications border-dark border-bottom pb-3" *ngFor="let data of applications" >
-              <div class="contents" *ngIf="data != null">
+  <div class="container-fluid row test_1 mx-auto">
+    <div  *ngFor="let job of jobs" class="container col-md-5 test_2 " >
+      <div class="card row job">
+        <div calss = "col-md-5"><P>Job Title: </P><span>{{ job.jobTitle}}</span></div>
+        <div calss = "col-md-5"><p>Company : </p><span>{{ job.companyName}}</span></div>
+        <div calss = "col-md-5"><p>Place : </p><span>{{ job.location}}</span></div>
+        <div calss = "col-md-5"><p>Qualification : </p><span>{{ job.qualification}}</span></div>
+        <div calss = "col-md-5"><p>Experience : </p><span>{{ job.experience}}</span></div>
+        <div calss = "col-md-5"><p>ClosingDate : </p><span>{{ job.closingDate | date}}</span></div>
+        <div calss = "col-md-5"><p>Salary-Range : </p><span>{{ job.salaryRange}}</span></div>
+        <div calss = "col-md-5"><p>Skills : </p><span class="skills">{{ job.skills}}</span></div>
+        <div calss = "col-md-5"><p class="des_label">Description : </p><span class="description ">{{ job.description}}</span></div>
+      </div>
+      <div class="view">
+      <button (click)="view(job._id)" class="btn mb-3 button btn-outline-dark mt-2" data-bs-toggle="modal" data-bs-target="#view">View Applications</button>
+      </div>
+    </div>
+ 
 
-               <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download Resume</button></a>
+       <!-- modal -->
+  <div class="modal fade" id="view" tabindex="-1" >
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" ><b>{{condition}}</b></h3>
+          <button  class="btn btn-head" data-bs-dismiss="modal">close</button>
+        </div>
+        <div class="modal-body">
+          <div class="applications border-dark border-bottom pb-3" *ngFor="let data of applications" >
+            <div class="contents" *ngIf="data != null">
 
-                <p>Profile Links: {{ data.link }}</p>
+             <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download Resume</button></a>
 
-                <mat-expansion-panel hideToggle (click)="getprofile(data.alum_id)" class="profile_display">
+              <p id="plink">Profile Links: <span>{{ data.link }}</span></p> <!-- changes here -->
+              <mat-expansion-panel hideToggle (click)="getprofile(data.alum_id)" class="profile_display">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    SHOW FULL PROFILE
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-expansion-panel hideToggle>
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      SHOW FULL PROFILE
+                      PERSONAL DETAILS                                                                  <!--add extra dropdowns-->
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                  <mat-expansion-panel hideToggle>
-                    <mat-expansion-panel-header>
-                      <mat-panel-title>
-                        PERSONAL DETAILS
-                      </mat-panel-title>
-                    </mat-expansion-panel-header>
                     <span *ngIf = "profile === null"> THIS PROFILE IS NOT AVAILABLE </span>
-                      <SPAN *ngIf="profile != null">Approval Status: </SPAN><em *ngIf="profile != null">{{profile.approval_status}}</em><br>
-                      <SPAN *ngIf="profile != null">Name: </SPAN><em *ngIf="profile != null">{{profile.name}}</em><br>
-                      <SPAN *ngIf="profile != null">Email: </SPAN><em *ngIf="profile != null">{{profile.email}}</em><br>
-                      <SPAN *ngIf="profile != null">Phone Number: </SPAN><em *ngIf="profile != null">{{profile.phone}}</em><br>
-                      <SPAN *ngIf="profile != null">Gender: </SPAN><em *ngIf="profile != null">{{profile.gender}}</em><br>
-                      <SPAN *ngIf="profile != null">Date of Birth: </SPAN><em *ngIf="profile != null">{{profile.date_of_birth | date}}</em><br>
-                      <SPAN *ngIf="profile != null">Martial Status: </SPAN><em *ngIf="profile != null">{{profile.marital_status}}</em><br>
-                      <SPAN *ngIf="profile != null">Permanent Address: </SPAN><em *ngIf="profile != null">{{profile.permanent_address}}</em><br>
-                      <SPAN *ngIf="profile != null">Alternate Number: </SPAN><em *ngIf="profile != null">{{profile.alternate_phone_number}}</em><br>
-                      <SPAN *ngIf="profile != null">Pincode: </SPAN><em *ngIf="profile != null">{{profile.pincode}}</em><br>
-                      <SPAN *ngIf="profile != null">District: </SPAN><em *ngIf="profile != null">{{profile.district}}</em><br>
-                      <SPAN *ngIf="profile != null">State: </SPAN><em *ngIf="profile != null">{{profile.state}}</em><br>
-                      <SPAN *ngIf="profile != null">Country: </SPAN><em *ngIf="profile != null">{{profile.country}}</em><br>
-                  </mat-expansion-panel>
+                    <SPAN *ngIf="profile != null">Approval Status: </SPAN><em *ngIf="profile != null">{{profile.approval_status}}</em><br>
+                    <SPAN *ngIf="profile != null">Name: </SPAN><em *ngIf="profile != null">{{profile.name}}</em><br>
+                    <SPAN *ngIf="profile != null">Email: </SPAN><em *ngIf="profile != null">{{profile.email}}</em><br>
+                    <SPAN *ngIf="profile != null">Phone Number: </SPAN><em *ngIf="profile != null">{{profile.phone}}</em><br>
+                    <SPAN *ngIf="profile != null">Gender: </SPAN><em *ngIf="profile != null">{{profile.gender}}</em><br>
+                    <SPAN *ngIf="profile != null">Date of Birth: </SPAN><em *ngIf="profile != null">{{profile.date_of_birth | date}}</em><br>
+                    <SPAN *ngIf="profile != null">Permanent Address: </SPAN><em *ngIf="profile != null">{{profile.permanent_address}}</em><br>
+                    <SPAN *ngIf="profile != null">Alternate Number: </SPAN><em *ngIf="profile != null">{{profile.alternate_phone_number}}</em><br>
+                    <SPAN *ngIf="profile != null">Pincode: </SPAN><em *ngIf="profile != null">{{profile.pincode}}</em><br>
+                    <SPAN *ngIf="profile != null">District: </SPAN><em *ngIf="profile != null">{{profile.district}}</em><br>
+                    <SPAN *ngIf="profile != null">State: </SPAN><em *ngIf="profile != null">{{profile.state}}</em><br>
+                    <SPAN *ngIf="profile != null">Country: </SPAN><em *ngIf="profile != null">{{profile.country}}</em><br>
+                    <SPAN *ngIf="profile != null">Highest Qualification: </SPAN><em *ngIf="profile != null">{{profile.highest_qualification}}</em><br>
+                    <SPAN *ngIf="profile != null">ICTAK Batch </SPAN><em *ngIf="profile != null">{{profile.batch_details}}</em><br>
+                    <SPAN *ngIf="profile != null">ICTAK Course: </SPAN><em *ngIf="profile != null">{{profile.course_started_at_ictak}}</em><br>
+                </mat-expansion-panel> 
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      EDUCATION DETAILS
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <span *ngIf = "profile.education === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                    <div *ngFor=" let edu of profile.education" class="mb-2 edu">
+                      <SPAN *ngIf="profile != null">Qualification: </SPAN><em *ngIf="profile != null">{{edu.qualification}}</em><br>
+                      <SPAN *ngIf="profile != null">Completion Status: </SPAN><em *ngIf="profile != null">{{edu.completion_status}}</em><br>
+                      <SPAN *ngIf="profile != null">Stream: </SPAN><em *ngIf="profile != null">{{edu.main_stream}}</em><br>
+                      <SPAN *ngIf="profile != null">Specialization: </SPAN><em *ngIf="profile != null">{{edu.specialization}}</em><br>
+                      <SPAN *ngIf="profile != null">University: </SPAN><em *ngIf="profile != null">{{edu.university}}</em><br>
+                      <SPAN *ngIf="profile != null">Percentage: </SPAN><em *ngIf="profile != null">{{edu.percentage}}</em><br>
+                      <SPAN *ngIf="profile != null">year of Passing: </SPAN><em *ngIf="profile != null">{{edu.year_of_pass | date}}</em><br>
+                    </div>
+                </mat-expansion-panel>  
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      PREVIOUS EXPERINCES
+                    </mat-panel-title>
+                  </mat-expansion-panel-header >
+                   <span *ngIf = "profile.experience === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                    <div *ngFor="let exp of profile.experience" class="mb-2 edu">
+                      <SPAN *ngIf="profile != null">Company Name: </SPAN><em *ngIf="profile != null">{{exp.company}}</em><br>
+                      <SPAN *ngIf="profile != null">Designation: </SPAN><em *ngIf="profile != null">{{exp.Designation}}</em><br>
+                      <SPAN *ngIf="profile != null">Working Status: </SPAN><em *ngIf="profile != null">{{exp.presently_working}}</em><br>
+                      <SPAN *ngIf="profile != null"> Starting Date: </SPAN><em *ngIf="profile != null">{{exp.starting_date | date}}</em><br>
+                      <SPAN *ngIf="profile != null">Ending Date: </SPAN><em *ngIf="profile != null">{{exp.ending_date | date}}</em><br>
+                      <SPAN *ngIf="profile != null">Montly Salary: </SPAN><em *ngIf="profile != null">{{exp.current_monthly_salary }}</em><br>
+                      <SPAN *ngIf="profile != null">Notice Period: </SPAN><em *ngIf="profile != null">{{exp.notice_period}}</em><br>
+                    </div>
+                </mat-expansion-panel>                   
+              </mat-expansion-panel>
 
-                  
-                </mat-expansion-panel>
+              <button type="button" class="btn btn-danger my-3" (click)="delete(data._id)">Delete</button>
+              <!-- <button type="button" class="btn btn-success my-3" (click)="verify(data._id)">Verify</button> -->
 
-
-
-                <button type="button" class="btn btn-danger my-3" (click)="delete(data._id)">Delete</button>
-                <button type="button" class="btn btn-success my-3" (click)="verify(data._id)">Verify</button>
-              </div>
-              
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>   
+   <!-- modal ends -->
+
+
   </div>
 </div>
