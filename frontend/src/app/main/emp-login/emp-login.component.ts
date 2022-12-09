@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { SignUpService } from '../sign-up.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-emp-login',
@@ -21,7 +22,7 @@ export class EmpLoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(){
-    this.SignUpService.login(this.loginForm.value).subscribe(res=>{
+    this.SignUpService.emplogin(this.loginForm.value).subscribe(res=>{
       if(res.message){
         alert(res.message)
         this.router.navigate(['/employelogin'])

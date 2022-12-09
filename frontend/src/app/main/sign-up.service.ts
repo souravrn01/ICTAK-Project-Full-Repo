@@ -14,7 +14,7 @@ apiURL:any='http://localhost:3000/api'
   addEmploye(data:any){
     return this.http.post<any>(`${this.apiURL}/employeuv/employesignup`,data)
   }
-  login(data:any){
+  emplogin(data:any){
     return this.http.post<any>(`${this.apiURL}/employeuv/emplogin`,data)
   }
   getalumnilogin(data:any){
@@ -35,9 +35,5 @@ apiURL:any='http://localhost:3000/api'
   loginadmin(data:any){
     return this.http.post<any>('http://localhost:3000/api/login/loginadmin',data)
   }
- 
 
-  getToken(){
-    return localStorage.getItem('token')
-  }
 }

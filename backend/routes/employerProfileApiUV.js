@@ -1,7 +1,7 @@
 const express=require('express')
 const router=express.Router()
 const EmployeData=require('../models/employerProfileUV')
-
+const jwt = require('jsonwebtoken')
 
 
 router.get('/employelist',async(req,res)=>{
@@ -98,6 +98,9 @@ router.get('/singleemp',async(req,res)=>{       //get singledata of alumni
         console.log('post error:',error)
     }
 })
+
+
+//EMPLOYEE LOGIN CHECK
 router.post('/emplogin', async (req, res) => {
     try {
         let user = await EmployeData.findOne({ 
