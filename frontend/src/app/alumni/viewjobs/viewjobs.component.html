@@ -5,36 +5,31 @@
     <div class="row">
       <div class="col-12 p-5">
         <div class="input-group mb-3">
-          <input type="text" class="form-control p-2" placeholder="Find your Job Here" aria-label="Recipient's username"
-            aria-describedby="button-addon2">
-          <button class="btn btn-light m-1 p-2" type="button" id="button-addon2">SEARCH</button>
+          <input type="text" class="form-control" placeholder="Find your Job Here" [(ngModel)]="filterString" >
         </div>
       </div>
     </div>
   </div>
 </section>
 <div class="container">
-  <div class="row" *ngFor="let job of jobs">
+  <tr class="row" *ngFor="let job of jobs | filter:filterString" >
     <div class="col-md-12 m-2">
-      <mat-card >
-        <mat-card-content>
-          <h2>{{job.jobTitle}}</h2>
+      <mat-card [ngClass]="{'disable' : datecheck(job.closingDate)}">
+        <mat-card-content >
+          <h2>{{job.jobTitle}}<h4 *ngIf="datecheck(job.closingDate)" id="closed"><b>APPLICATION CLOSED</b></h4></h2>
           <h4>Company : {{job.companyName}}</h4>
           <h4>Place : {{job.location}}</h4>
           <h4>Qualification : {{job.qualification}}</h4>
           <h4>Experience : {{job.experience}}</h4>
           <h4>ClosingDate : {{job.closingDate|date}}</h4>
           <h4>Salary-Range : {{job.salaryRange}}</h4>
-          <h4>Skills : {{job.skills}}</h4>
+          <h4>Skills : {{job.skills}}</h4> 
           <h4>Description : {{job.description}}</h4>
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-light" style="background-color:rgb(192, 92, 184)" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" (click)="storeid(job._id)" [disabled]="">
-            Apply
-          </button>
-
+            data-bs-target="#contents" (click)="storeid(job._id)" [disabled]="datecheck(job.closingDate)"> Apply </button>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+          <div class="modal fade" id="contents" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -60,5 +55,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-  </div>
+  </tr>
 </div>

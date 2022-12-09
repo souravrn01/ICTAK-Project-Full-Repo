@@ -10,7 +10,7 @@ export class JobApplicationsComponent implements OnInit {
 
   constructor(private adminApi: AdminApiService) { }
 
-  condition:String =""
+  condition:String =''
   jobs:any=''
   applications:any=''
   profile:any=''
@@ -20,8 +20,8 @@ export class JobApplicationsComponent implements OnInit {
     })
   }
   view(id:any){
-    this.adminApi.applicationforjob(id).subscribe(res=>{
-      this.applications = res
+    this.adminApi.applicationforjob(id).subscribe(res=>{ //gets all applications from database
+      this.applications = res // saving the reponse
       if(this.applications.length > 0){
         this.condition = `Number of Applications: ${this.applications.length}`
       }else{
@@ -34,9 +34,9 @@ export class JobApplicationsComponent implements OnInit {
 
   getprofile(id:any){
     this.adminApi.getsinglealumnidata(id).subscribe(res=>{
+      console.log(res)
       this.profile = res
       console.log(this.profile.name, this.profile.education.qualification);
-      
     })
   }
   delete(id:any){
@@ -47,6 +47,6 @@ export class JobApplicationsComponent implements OnInit {
   verify(id:any){
     this.adminApi.verifyApplication(id).subscribe(res=>{
     })
-    
   }
+
 }

@@ -1,7 +1,5 @@
 
 
-
-
 <div class="continer">
   <div class="job" *ngFor="let job of jobs">
     <h2>{{ job.jobTitle}}</h2>
@@ -24,7 +22,9 @@
           <div class="modal-body">
             <div class="applications border-dark border-bottom pb-3" *ngFor="let data of applications" >
               <div class="contents" *ngIf="data != null">
-                <button type="button" class="btn btn-warning my-3">Download Resume</button>
+
+               <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download Resume</button></a>
+
                 <p>Profile Links: {{ data.link }}</p>
 
                 <mat-expansion-panel hideToggle (click)="getprofile(data.alum_id)" class="profile_display">
@@ -39,20 +39,20 @@
                         PERSONAL DETAILS
                       </mat-panel-title>
                     </mat-expansion-panel-header>
-                      <SPAN>Approval Status: </SPAN><em>{{profile.approval_status}}</em><br>
-                      <SPAN>Name: </SPAN><em>{{profile.name}}</em><br>
-                      <SPAN>Email: </SPAN><em>{{profile.email}}</em><br>
-                      <SPAN>Phone Number: </SPAN><em>{{profile.phone}}</em><br>
-                      <SPAN>Gender: </SPAN><em>{{profile.gender}}</em><br>
-                      <SPAN>Date of Birth: </SPAN><em>{{profile.date_of_birth | date}}</em><br>
-                      <SPAN>Martial Status: </SPAN><em>{{profile.marital_status}}</em><br>
-                      <SPAN>Permanent Address: </SPAN><em>{{profile.permanent_address}}</em><br>
-                      <SPAN>Alternate Number: </SPAN><em>{{profile.alternate_phone_number}}</em><br>
-                      <SPAN>Pincode: </SPAN><em>{{profile.pincode}}</em><br>
-                      <SPAN>District: </SPAN><em>{{profile.district}}</em><br>
-                      <SPAN>State: </SPAN><em>{{profile.state}}</em><br>
-                      <SPAN>Country: </SPAN><em>{{profile.country}}</em><br>
-          
+                    <span *ngIf = "profile === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                      <SPAN *ngIf="profile != null">Approval Status: </SPAN><em *ngIf="profile != null">{{profile.approval_status}}</em><br>
+                      <SPAN *ngIf="profile != null">Name: </SPAN><em *ngIf="profile != null">{{profile.name}}</em><br>
+                      <SPAN *ngIf="profile != null">Email: </SPAN><em *ngIf="profile != null">{{profile.email}}</em><br>
+                      <SPAN *ngIf="profile != null">Phone Number: </SPAN><em *ngIf="profile != null">{{profile.phone}}</em><br>
+                      <SPAN *ngIf="profile != null">Gender: </SPAN><em *ngIf="profile != null">{{profile.gender}}</em><br>
+                      <SPAN *ngIf="profile != null">Date of Birth: </SPAN><em *ngIf="profile != null">{{profile.date_of_birth | date}}</em><br>
+                      <SPAN *ngIf="profile != null">Martial Status: </SPAN><em *ngIf="profile != null">{{profile.marital_status}}</em><br>
+                      <SPAN *ngIf="profile != null">Permanent Address: </SPAN><em *ngIf="profile != null">{{profile.permanent_address}}</em><br>
+                      <SPAN *ngIf="profile != null">Alternate Number: </SPAN><em *ngIf="profile != null">{{profile.alternate_phone_number}}</em><br>
+                      <SPAN *ngIf="profile != null">Pincode: </SPAN><em *ngIf="profile != null">{{profile.pincode}}</em><br>
+                      <SPAN *ngIf="profile != null">District: </SPAN><em *ngIf="profile != null">{{profile.district}}</em><br>
+                      <SPAN *ngIf="profile != null">State: </SPAN><em *ngIf="profile != null">{{profile.state}}</em><br>
+                      <SPAN *ngIf="profile != null">Country: </SPAN><em *ngIf="profile != null">{{profile.country}}</em><br>
                   </mat-expansion-panel>
 
                   

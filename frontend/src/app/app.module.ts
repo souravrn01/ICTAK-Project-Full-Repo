@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AdminModule } from './admin/admin.module';
 import { AlumniModule } from './alumni/alumni.module';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployerModule } from './employer/employer.module';
@@ -27,9 +27,10 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FooterComponent } from './main/footer/footer.component';
 import { JobsComponent } from './main/jobs/jobs.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
-
-
+import { AdminLoginComponent } from './main/admin-login/admin-login.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FilterPipe } from './pipes/filter.pipe';
+import { TokenInterceptorService } from './token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,11 +42,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EmpLoginComponent,
     FooterComponent,
     JobsComponent,
+    AdminLoginComponent,
+    FilterPipe
       
    
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     AdminModule,
     EmployerModule,
@@ -61,9 +65,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HttpClientModule,
     MatIconModule,
     CarouselModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
-  providers: [SignUpService],
+  providers: [SignUpService,TokenInterceptorService],
   bootstrap: [AppComponent],
   entryComponents:[LoginComponent]
 })

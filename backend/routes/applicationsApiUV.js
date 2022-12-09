@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const ApplicationData = require('../models/applicationsUV')
 const multer=require('multer')
+const path = require("path");
 
 
 const DIR  = './uploads/'                                   // file upload code 
@@ -14,7 +15,7 @@ const storage  = multer.diskStorage({
         cb(null, filename)
     },
 })
-var upload = multer({
+var upload = multer({ 
     storage:storage,
 })
 
@@ -22,7 +23,7 @@ router.post('/upload', upload.single('resume'), async(req, res, next)=>{
    try {
     const url = req.protocol + '://' + req.get('host')
     const user = new ApplicationData({
-        resume : url + '/uploads/' + req.file.filename,
+        resume : url + '/download/' + req.file.filename,
         link: req.body.link,
         job_id: req.body.job_id,
         alum_id: req.body.alum_id
@@ -40,7 +41,7 @@ router.post('/upload', upload.single('resume'), async(req, res, next)=>{
 router.get('/applicationdata/:id', async (req, res) => {       // getdata for admin to collect unverified applications
     try {
         let id = req.params.id
-        let list = await ApplicationData.find({ approval_status: "not approved", job_id: id })
+        let list = await ApplicationData.find({job_id: id })
         res.send(list)
     } catch (error) {
         console.log(error)
@@ -67,9 +68,10 @@ router.put('/verify', async(req, res)=>{
         let updates = {$set: update}
         let verified = await ApplicationData.findByIdAndUpdate({"_id": id}, updates, {new:true} )
         res.send(verified)
-    } catch (error) {
+    } catch (error) { 
         console.log(error)
     }
 })
+
 
 module.exports = router;

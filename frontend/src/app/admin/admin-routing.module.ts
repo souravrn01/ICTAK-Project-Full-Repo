@@ -13,8 +13,7 @@ const routes: Routes = [
   {path:'verifyalumni', component:AlumniUVComponent},
   {path:'verifyemp', component:VerifyEmpComponent},
   {path:'jobsandapplies', component:JobApplicationsComponent},
-  
-];
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

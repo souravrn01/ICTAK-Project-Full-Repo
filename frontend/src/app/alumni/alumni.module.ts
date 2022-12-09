@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AlumniRoutingModule } from './alumni-routing.module';
-import { ProfileComponent } from './profile/profile.component';
+
 import { GeneralInformationComponent } from './general-information/general-information.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
@@ -28,11 +28,12 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
 import { HeaderComponent } from './header/header.component';
+import { FilterPipe } from './filter.pipe';
+import { AlumniApiService } from './alumni-api.service';
 
 
 @NgModule({
   declarations: [
-    ProfileComponent,
     GeneralInformationComponent,
     ExperienceComponent,
     EducationComponent,
@@ -41,7 +42,7 @@ import { HeaderComponent } from './header/header.component';
     ViewjobsComponent,
     ApplyjobsComponent,
     HeaderComponent,
-  
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -64,7 +65,11 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+
+
     
-  ]
+  ],
+  providers:[AlumniApiService]
 })
+
 export class AlumniModule { }
