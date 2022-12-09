@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { EmployerApiService } from './employer/employer-api.service';
 import { SignUpService } from './main/sign-up.service';
 
 @Injectable({
@@ -8,13 +9,18 @@ import { SignUpService } from './main/sign-up.service';
 })
 export class AuthGuardGuard implements CanActivate {
 
+  constructor(private signupService:SignUpService,private router:Router){}
 
-constructor(private ff:SignUpService){}
-
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+  canActivate():boolean{
+    if(this.signupService.loggedIn()){
+      return true
+    }
+    else{
+      this.router.navigate(['/employelogin'])
+      return false
+    }
   }
+
+
   
 }

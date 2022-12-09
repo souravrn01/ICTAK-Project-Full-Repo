@@ -29,7 +29,7 @@ login(){
     this.alumnidata = res
     console.log(res)
     console.log(this.alumnidata._id);
-    //localStorage.setItem('token',res.token)
+    localStorage.setItem('token',res.token)
     if(res.message){
       alert('admin didnot verified yet')
       this.router.navigate(['/alumnilogin'])
