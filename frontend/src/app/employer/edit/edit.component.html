@@ -5,8 +5,8 @@
 
   </mat-toolbar>
   <mat-card class="editdiv">
-    <mat-card-content>
-        <form #editForm="ngForm" (ngSubmit)="update()">
+    <mat-card-content class="editdiv">
+        <form  #editForm="ngForm" (ngSubmit)="update()">
             <div class="row mb-3">
               <label class="form-label">JOB TITLE</label>
               <input type="text" class="form-control" name="jobTitle" [(ngModel)]="data.jobTitle">
@@ -64,4 +64,5 @@
           </form>
         </mat-card-content>
     </mat-card>
+    <app-footer></app-footer>
     

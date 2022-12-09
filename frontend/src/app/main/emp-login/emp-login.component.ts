@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { SignUpService } from '../sign-up.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-emp-login',
@@ -20,33 +21,29 @@ export class EmpLoginComponent implements OnInit {
   })
   ngOnInit(): void {
   }
-  login(){
-    this.SignUpService.login(this.loginForm.value).subscribe(res=>{
-      if(res.message){
-        alert(res.message)
-        this.router.navigate(['/employelogin'])
-      }
-      
-     else{ this.SignUpService.singleemploye(this.loginForm.value).subscribe(res=>{
+  login(){ 
+      this.SignUpService.singleemploye(this.loginForm.value).subscribe(res=>{
+        console.log(res)
+        console.log('data from backend',res)
+        localStorage.setItem('token',res.token)
         if(res.message){
           alert(res.message)
+          alert("Invalid Login or Admin verified your data yet!!")
           this.router.navigate(['/employelogin'])
         }
         else{
           alert("Successfully logged in")
           this.router.navigate(['/empDash/dash'])
-        }
-        
-      })}
-    })
-  
+        }    
+      })
+ 
 }
 onsubmit(data:any){
-  this.SignUpService. getsingleemplogin(this.loginForm.value).subscribe((res)=>{
-    this.empdata=res
-    console.log(res)
+  // this.SignUpService. getsingleemplogin(this.loginForm.value).subscribe((res)=>{
+  //   this.empdata=res
+  //   console.log(res)
     // this.router.navigateByUrl(`/empDash`,data)
-  })
+  // })
 }
 
 

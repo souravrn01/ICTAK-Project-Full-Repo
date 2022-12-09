@@ -19,7 +19,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { AlumniSignupComponent } from './main/alumni-signup/alumni-signup.component';
 import { EmployeSignupComponent } from './main/employe-signup/employe-signup.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignUpService } from './main/sign-up.service';
 import { ActivatedRoute } from '@angular/router';
 import { EmpLoginComponent } from './main/emp-login/emp-login.component';
@@ -30,6 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AdminLoginComponent } from './main/admin-login/admin-login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilterPipe } from './pipes/filter.pipe';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { AuthGuardGuard } from './auth-guard.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     JobsComponent,
     AdminLoginComponent,
     FilterPipe
+      
+   
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,12 @@ import { FilterPipe } from './pipes/filter.pipe';
     MatFormFieldModule,
     MatSnackBarModule
   ],
-  providers: [SignUpService],
+  providers: [SignUpService,AuthGuardGuard,
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent],
   entryComponents:[LoginComponent]
 })

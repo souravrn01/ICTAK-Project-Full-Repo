@@ -64,5 +64,7 @@ verifyApplication(id:any){
 download(id:any){
   return this.http.get(`http://localhost:3000/api/applicationsuv/download/${id}`)
 }
-
+getToken(){
+  return localStorage.getItem('token')
+}
 }
