@@ -31,6 +31,7 @@ import { AdminLoginComponent } from './main/admin-login/admin-login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilterPipe } from './pipes/filter.pipe';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { AuthGuardGuard } from './auth-guard.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
     MatFormFieldModule,
     MatSnackBarModule
   ],
-  providers: [SignUpService,
+  providers: [SignUpService,AuthGuardGuard,
   {
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,

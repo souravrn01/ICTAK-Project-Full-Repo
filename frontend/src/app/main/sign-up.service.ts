@@ -35,5 +35,7 @@ apiURL:any='http://localhost:3000/api'
   loginadmin(data:any){
     return this.http.post<any>('http://localhost:3000/api/login/loginadmin',data)
   }
-
+getToken(){
+  return localStorage.getItem('token')
+}
 }

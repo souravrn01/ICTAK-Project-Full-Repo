@@ -32,11 +32,11 @@ router.post('/loginadmin',async(req,res)=>{
 //     if (!req.headers.authorization) {
 //         return res.status(401).send('Unautherized request');
 //     }
-//     let token = req.headers.authorization.split(' ')[1];
-//     if (token == 'null') {
+//     let token = req.headers.authorization
+//     if (token == null) {
 //         return res.status(401).send('Unautherized request');
 //     }
-//     let payload = jwt. verify(token , 'secretkey');
+//     let payload = jwt. verify(token ,'secretkey');
 //     console.log("payload=", payload);
 //     if (!payload) {
 //         return res.status(401).send('Unautherized request');

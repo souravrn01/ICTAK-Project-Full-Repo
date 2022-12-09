@@ -1,8 +1,8 @@
 const express  = require('express')
 const router = express.Router()
 const JOBDATA = require('../models/jobs')
-
-router.get('/getjob', async(req, res)=>{  // getting job
+const verifytoken=require('../middlewares/jwtVerify')
+router.get('/getjob',verifytoken, async(req, res)=>{  // getting job
     try {
         let jobs = await JOBDATA.find()
         res.send(jobs)
@@ -10,8 +10,9 @@ router.get('/getjob', async(req, res)=>{  // getting job
         console.log('get error:', error);
     }
 })
-router.get('/getempjob', async(req, res)=>{  // getting job
+router.get('/getempjob',verifytoken, async(req, res)=>{  // getting job
     try {
+        console.log('token from frontend',req.headers.authorization)
     let jobs = await JOBDATA.find({postedBy:"employe"})
         res.send(jobs)
     } catch (error) {
@@ -45,7 +46,7 @@ router.post('/postjob', async(req, res)=>{  // posting job
     }
 })
 
-router.put('/editJob', async(req, res)=>{  // update Job
+router.put('/editJob',verifytoken, async(req, res)=>{  // update Job
     try {
         let id = req.body.id
         let updates = {
