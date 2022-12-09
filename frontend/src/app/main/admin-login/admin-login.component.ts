@@ -34,7 +34,7 @@ export class AdminLoginComponent implements OnInit {
         }
         else{
           alert("Admin  successfully logged In")
-        this.router.navigate(['adminDash'])
+        this.router.navigate(['dashadmin'])
          } 
     })
     
