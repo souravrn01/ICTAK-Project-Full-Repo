@@ -80,16 +80,7 @@ router.put('/editJob', async(req, res)=>{  // update Job
         console.log('update error:',error);
     }
 })
-// router.put('/editJob',async(req,res)=>{
-//     try {
-//         let data=req.body
-//         let updatedata=await JOBDATA.findOneAndUpdate({"_id":req.body.id},data)
-//         res.send(updatedata)
-//     } catch (error) {
-//         console.log('update error:',error)
 
-//     }
-// })
 
 router.delete('/deletejob/:id', async(req, res)=>{  //delete Jobs
     try {

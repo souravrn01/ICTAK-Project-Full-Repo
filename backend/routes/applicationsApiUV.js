@@ -47,6 +47,15 @@ router.get('/applicationdata/:id', async (req, res) => {       // getdata for ad
         console.log(error)
     }
 })
+router.get('/applicationdatas/:id', async (req, res) => {       // getdata for verified applications
+    try {
+        let id = req.params.id
+        let list = await ApplicationData.find({job_id: id,approval_status:"verified" })
+        res.send(list)
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 router.delete('/delete/:id', async (req, res)=>{
     try {
