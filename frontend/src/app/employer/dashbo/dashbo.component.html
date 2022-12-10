@@ -2,67 +2,58 @@
 
 <main id="main" class="main">
    <div class="pagetitle">
-      <h1>Dashboard</h1>
    </div>
    <section class="section dashboard">
       <div class="row">
          <div class="col-lg-12">
             <div class="row">
-               <div class="col-xxl-4 col-md-4">
-                  <div class="card info-card revenue-card">
+               <div class="col-xxl-4 col-md-4 ">
+                  <div class="card info-card revenue-card boxes">
 
-                     <div class="card-body">
-                        <h5 class="card-title">JOB  <span>| Approved</span></h5>
+                     <div class="card-body text-center">
+                        <h3>{{job}}+</h3>
+                        <h2><b>JOBS</b></h2>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"><i
                                  class="bi bi-check-circle"></i></div>
-                           <div class="ps-3">
-                              <h6>approvedcount</h6>
-                           </div>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-xxl-4 col-md-4">
-                  <div class="card info-card customers-card">
+               <div class="col-xxl-4 col-md-4 ">
+                  <div class="card info-card customers-card boxes">
 
-                     <div class="card-body">
-                        <h5 class="card-title">Applied<span>| Job</span></h5>
+                     <div class="card-body text-center">
+                        <h3>{{Company}}+</h3>
+                        <h2><b>COMPANY</b></h2>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
                                  class="bi bi-dash-circle"></i></div>
-                           <div class="ps-3">
-                              <h6>notapprovedcount</h6>
-
-                           </div>
+                           
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-xxl-4 col-md-4">
-                  <div class="card info-card sales-card">
+               <div class="col-xxl-4 col-md-4 ">
+                  <div class="card info-card sales-card boxes">
 
-                     <div class="card-body">
-                        <h5 class="card-title">Response <span>| Pending</span></h5>
+                     <div class="card-body text-center">
+                        <h3>{{users}}+</h3>
+                        <h2><b>USERS</b></h2>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
                                  class="bi bi-exclamation-circle"></i></div>
-                           <div class="ps-3">
-                              <h6>responsependingcount</h6>
-                              <span class="text-danger small pt-1 fw-bold">Pending</span> <span
-                                 class="text-muted small pt-2 ps-1"></span>
-                           </div>
                         </div>
                      </div>
                   </div>
                </div>
 
 
-               <div class="col-12">
+               <div class="col-12 mt-4">
                   <div class="card recent-sales overflow-auto">
 
                      <div class="card-body">
-                        <h5 class="card-title">Curriculam <span>| Approved</span></h5>
+                        
                         <table class="table table-borderless datatable">
                            <thead>
                               <tr >

@@ -30,10 +30,15 @@ export class EditComponent implements OnInit {
       console.log(res)
     alert('data updated')
     this.ngOnInit()
+    this.router.navigate([`/empDash/viewjob`])
     }) 
   }
 
  backfn(){
   this.router.navigate(['/empDash/dash'])
  }
+ function(){
+  localStorage.removeItem('token')
+}
+
 }

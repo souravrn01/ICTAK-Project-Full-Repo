@@ -60,4 +60,7 @@ export class JobApplicationsComponent implements OnInit {
     })
   }
 
+  function(){
+    localStorage.removeItem('token')
+  }
 }

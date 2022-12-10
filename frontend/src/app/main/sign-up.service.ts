@@ -27,7 +27,7 @@ apiURL:any='http://localhost:3000/api'
     return this.http.get<any>(`${this.apiURL}/employeuv/employelist`)
   }
   getJob(){
-    return this.http.get<any>('http://localhost:3000/api/verifiedjobs/getjob')
+    return this.http.get<any>('http://localhost:3000/api/verifiedjobs/getjobs')
   }
   singleemploye(data:any){
     return this.http.post<any>(`${this.apiURL}/employeuv/employe`,data)
@@ -41,4 +41,7 @@ apiURL:any='http://localhost:3000/api'
    loggedIn(){
     return !!localStorage.getItem('token');
    }
-} 
+   loggedOut(){
+    return localStorage.removeItem('token');
+   }
+}

@@ -3,11 +3,11 @@
 <div class="body continer-fluid">
     <nav class="navbar navbar-expand-sm  navbar-dark" style="background-color:black">
         <div class="container-fluid">
-            <mat-menu #menu="matMenu" class="drop-items">
-                <button mat-menu-item class="drop-items" routerLink="/jobpost">PostJob</button>
-                <button mat-menu-item  class="drop-items" routerLink="/verifyalumni"> Profiles </button>
-                <button mat-menu-item  class="drop-items" routerLink="/empjobsandapplies">Applicaions</button>
-                <button mat-menu-item class="drop-items" routerLink="/home">Logout</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/jobpost">PostJob</button>
+                <button mat-menu-item routerLink="/verifyalumni"> Profiles </button>
+                <button mat-menu-item routerLink="/empjobsandapplies">Applicaions</button>
+                <button mat-menu-item routerLink="/home" (click)="function()">Logout</button>
             </mat-menu>
             <div class="container-fluid logocon">
                   <img src="../../../../assets/images/ICTAK-white.png" alt="Logo" class=" logo img-fluid">
@@ -25,7 +25,7 @@
                 <a class="nav-link" routerLink="/empjobsandapplies">Applicaions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/home">Logout</a>
+                <a class="nav-link" routerLink="/home"  (click)="function()">Logout</a>
               </li>
     
             </ul>

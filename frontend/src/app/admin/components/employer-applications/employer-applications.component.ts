@@ -55,7 +55,9 @@ export class EmployerApplicationsComponent implements OnInit {
       this.ngOnInit()
     })
   }
-
+  function(){
+    localStorage.removeItem('token')
+  }
 
 }
  

@@ -41,5 +41,7 @@ export class JobPostFormComponent implements OnInit {
     this.status = true
   }
   }
-
+  function(){
+    localStorage.removeItem('token')
+  }
 }
