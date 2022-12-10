@@ -41,4 +41,7 @@ apiURL:any='http://localhost:3000/api'
    loggedIn(){
     return !!localStorage.getItem('token');
    }
+   loggedOut(){
+    return localStorage.removeItem('token');
+   }
 }

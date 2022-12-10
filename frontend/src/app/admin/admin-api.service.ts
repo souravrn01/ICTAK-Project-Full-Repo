@@ -19,6 +19,10 @@ export class AdminApiService {
     return this.http.get('http://localhost:3000/api/alumniuv/aluminis')
   }
 
+  getalumniV(){
+    return this.http.get('http://localhost:3000/api/alumniuv/aluminiVer')
+  }
+
   approvealumni(data:any){
     return this.http.put(`http://localhost:3000/api/alumniuv/onealumni`,data)
     
@@ -30,6 +34,10 @@ export class AdminApiService {
 
   getEmp(){
     return this.http.get('http://localhost:3000/api/employeuv/employers')
+  }
+
+  getEmpV(){
+    return this.http.get('http://localhost:3000/api/employeuv/employersV')
   }
 
   deleteemp(id:any){
@@ -50,6 +58,16 @@ export class AdminApiService {
   applicationforjob(id:any){
     return this.http.get(`http://localhost:3000/api/applicationsuv/applicationdata/${id}`)
   }
+
+  applicationUVjob(){
+    return this.http.get(`http://localhost:3000/api/applicationsuv/UVApps`)
+  }
+
+  applicationVjob(){
+    return this.http.get(`http://localhost:3000/api/applicationsuv/VApps`)
+  }
+
+
   getsinglealumnidata(id:any){
     return this.http.get(`http://localhost:3000/api/alumniuv/alumni/${id}`)
   }

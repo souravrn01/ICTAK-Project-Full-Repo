@@ -1,16 +1,66 @@
 .logo{
     display: block;
-    max-width:80px;
+    max-width:50px;
     scale:4;
     aspect-ratio: auto;
     /* border: 1px solid red; */
     margin-left: 5%
 }
-h3{
+.h1{
 
-    display:inline-block
+    display:block;
+    color:rgb(197, 187, 187);
+    text-align: center;
+    font-size: 60px;
+    margin-top: 25px;
+    letter-spacing: 5px;
 }
 .body{
     background-color: black;
-    height: 100vh
+}
+
+.alumver , .alumun{
+    text-align: center;
+}
+
+.alumver{
+    height: 150px;
+    width: 350px;
+    border: 2px solid green;
+    padding:20px;
+    border-radius:20px;
+    color: green
+}
+
+.alumun{
+    height: 150px;
+    width: 350px;
+    border: 2px solid rgb(224, 41, 41);
+    padding:20px;
+    border-radius:20px;
+    color: rgb(224, 41, 41);
+}
+.rowAlum{
+    border-bottom: 2px solid white;
+    padding: 20px;
+
+}
+
+.h2, .h3{
+
+    display:block;
+    color:rgb(197, 187, 187);
+    text-align: center;
+    font-size: 60px;
+    margin-top: 100px;
+    letter-spacing: 5px;
+}
+
+span{
+    font-size: 80px;
+}
+.drop{
+    display: inline-block;
+    margin: 0px auto;
+    box-shadow: 0px 2px 3px 5px white;
 }
