@@ -7,7 +7,7 @@ import { SignUpService } from './main/sign-up.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardGuard implements CanActivate {
+export class AuthGuardGuard implements CanActivate { 
 
   constructor(private signupService:SignUpService,private router:Router){}
 

@@ -9,7 +9,7 @@ import { JobApplicationsComponent } from './components/job-applications/job-appl
 import { JobPostFormComponent } from './components/jobPostForm/job-post-form.component';
 import { VerifyEmpComponent } from './components/verify-emp/verify-emp.component';
 
-
+ 
 const routes: Routes = [
   {path:'adminDash',canActivate:[AuthGuard], component:AdminDashComponent},
   {path:'jobpost',canActivate:[AuthGuard], component:JobPostFormComponent},
