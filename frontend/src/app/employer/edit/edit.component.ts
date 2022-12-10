@@ -36,4 +36,8 @@ export class EditComponent implements OnInit {
  backfn(){
   this.router.navigate(['/empDash/dash'])
  }
+ function(){
+  localStorage.removeItem('token')
+}
+
 }

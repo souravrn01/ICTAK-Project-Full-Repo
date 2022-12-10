@@ -75,4 +75,8 @@ export class DashAdminComponent implements OnInit {
       
     })
   }
+  function(){
+    localStorage.removeItem('token')
+  }
+
 }
