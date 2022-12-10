@@ -31,6 +31,7 @@ export class AlumniUVComponent implements OnInit {
   
   onSubmit(name:string, email:string){            // send email via nodemailer                                             
     console.log(this.feedbackForm.value);
+    window.alert(" Feedback Send !!")
     this.api.postmail(this.feedbackForm.value, email, name).subscribe(res=>{
       console.log(res);
     })
@@ -49,14 +50,17 @@ export class AlumniUVComponent implements OnInit {
     this.verified = data
      this.api.approvealumni(this.verified).subscribe( res =>{
         console.log(res);
+        window.alert(" Approved ")
          this.getAlumni()
      })
   }
 
    delete(id:any){          // alumni delete
-    this.api.deletealumni(id).subscribe( res =>{
-       this.getAlumni()
-    })
+    if(window.confirm(" are you sure to delete this ? ")){
+      this.api.deletealumni(id).subscribe( res =>{
+        this.getAlumni()
+     })
+    }
   }
 
 

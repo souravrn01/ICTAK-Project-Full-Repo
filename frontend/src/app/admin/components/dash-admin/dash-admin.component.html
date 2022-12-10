@@ -1,25 +1,25 @@
 
 
-<div class="body">
+<div class="body continer-fluid">
     <nav class="navbar navbar-expand-sm  navbar-dark" style="background-color:black">
         <div class="container-fluid">
-            <mat-menu #menu="matMenu" class="">
-                <button mat-menu-item routerLink="/jobpost">PostJob</button>
-                <button mat-menu-item routerLink="/verifyalumni"> Profiles </button>
-                <button mat-menu-item routerLink="/empjobsandapplies">Applicaions</button>
-                <button mat-menu-item routerLink="/home">Logout</button>
+            <mat-menu #menu="matMenu" class="drop-items">
+                <button mat-menu-item class="drop-items" routerLink="/jobpost">PostJob</button>
+                <button mat-menu-item  class="drop-items" routerLink="/verifyalumni"> Profiles </button>
+                <button mat-menu-item  class="drop-items" routerLink="/empjobsandapplies">Applicaions</button>
+                <button mat-menu-item class="drop-items" routerLink="/home">Logout</button>
             </mat-menu>
             <div class="container-fluid logocon">
                   <img src="../../../../assets/images/ICTAK-white.png" alt="Logo" class=" logo img-fluid">
             </div>
             <button mat-button [matMenuTriggerFor]="menu" class=" d-sm-none drop">Navs</button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarNav" >
+            <ul class="navbar-nav" >
               <li class="nav-item">
                 <a class="nav-link" routerLink="/jobpost">PostJob</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/verifyalumni"> Profiles</a>
+                <a class="nav-link" routerLink="/verifyalumni">Profiles</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/empjobsandapplies">Applicaions</a>
@@ -32,37 +32,37 @@
           </div>
         </div>
      </nav>
-<h1 class=" h1">ALUMNI DATA</h1>
+<h1 class=" h1 col container mx-auto">ALUMNI DATA</h1>
 <div class="row rowAlum container mx-auto">
-    <div class= "col-sm-6 mx-auto mb-3 alumver">
+    <div class= "container col-sm-6 mx-auto mb-3 alumver">
         <h1>Verfied Alumni profiles</h1><br>
         <span>{{alumV.length}}</span>
     </div>
-    <div class= "col-sm-6 mx-auto mb-3 alumun">
+    <div class= " container col-sm-6 mx-auto mb-3 alumun">
         <h1>Unverfied Alumni profiles</h1><br>
         <span>{{alumUV.length}}</span>
     </div>
 </div>
 
-<h1 class=" h2">EMPLOYER DATA</h1>
+<h1 class=" h2 col colcontainer mx-auto">EMPLOYER DATA</h1>
 <div class="row rowAlum container mx-auto">
-    <div class= "col-sm-6 mx-auto mb-3 alumver">
-        <h1>Verfied Employers profiles</h1><br>
+    <div class= "col-sm-6 mx-auto mb-3 alumver container">
+        <h1>Verfied Employer profiles</h1><br>
         <span>{{empV.length}}</span>
     </div>
-    <div class= "col-sm-6 mx-auto mb-3 alumun">
-        <h1>Unverfied Employers profiles</h1><br>
+    <div class= "col-sm-6 mx-auto mb-3 alumun container">
+        <h1>Unverfied Employer profiles</h1><br>
         <span>{{empUV.length}}</span>
     </div>
 </div>
 
-<h1 class=" h2">APPLICATIONS</h1>
+<h1 class=" h2  col container mx-auto display-6">APPLICATIONS</h1>
 <div class="row rowAlum container mx-auto">
-    <div class= "col-sm-6 mx-auto mb-3 alumver">
+    <div class= "col-sm-6 mx-auto mb-3 alumver container">
         <h1>Verfied Applications</h1><br>
         <span>{{appV.length}}</span>
     </div>
-    <div class= "col-sm-6 mx-auto mb-3 alumun">
+    <div class= "col-sm-6 mx-auto mb-3 alumun container">
         <h1>Unverfied Applications</h1><br>
         <span>{{appUV.length}}</span>
     </div>

@@ -16,10 +16,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { EmployerApplicationsComponent } from './components/employer-applications/employer-applications.component';
 import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
-  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent, VerifyEmpComponent, JobApplicationsComponent, EmployerApplicationsComponent, DashAdminComponent],
-  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule,CarouselModule,MatCardModule,MatExpansionModule,MatButtonModule,MatMenuModule],
+  declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent,  VerifyEmpComponent, JobApplicationsComponent, EmployerApplicationsComponent, DashAdminComponent],
+  imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule, MatSnackBarModule, CarouselModule,MatCardModule,MatExpansionModule,MatButtonModule,MatMenuModule],
 })
 export class AdminModule {}

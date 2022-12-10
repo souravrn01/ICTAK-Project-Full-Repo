@@ -7,7 +7,7 @@ import { EmployerApiService } from './employer/employer-api.service';
 import { SignUpService } from './main/sign-up.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class TokenInterceptorService implements HttpInterceptor {
 

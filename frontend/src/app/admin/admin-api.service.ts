@@ -12,6 +12,7 @@ export class AdminApiService {
   }
 
   postmail(data:any, email:any, name:any){
+    console.log(data, email, name)
     return this.http.post('http://localhost:3000/api/nodemailer/alumnimail', {data, email, name})
   }
 
@@ -84,5 +85,9 @@ download(id:any){
 }
 getToken(){
   return localStorage.getItem('token')
+}
+
+deleteJob(id:any){
+  return this.http.delete(`http://localhost:3000/api/verifiedjobs/deletejob/${id}`)
 }
 }

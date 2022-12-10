@@ -43,12 +43,16 @@ export class EmployerApplicationsComponent implements OnInit {
     })
   }
   delete(id:any){
+   if(window.confirm("are you sure?")){
     this.adminApi.deleteApplication(id).subscribe(res=>{
-      
+      this.ngOnInit()
     })
+   }
   }
   verify(id:any){
     this.adminApi.verifyApplication(id).subscribe(res=>{
+      window.alert(" verified")
+      this.ngOnInit()
     })
   }
 
