@@ -55,6 +55,8 @@ approve(data:any){   // approval
       this.getEmp()
   })
 }
-
+function(){
+  localStorage.removeItem('token')
+}
 
 } 

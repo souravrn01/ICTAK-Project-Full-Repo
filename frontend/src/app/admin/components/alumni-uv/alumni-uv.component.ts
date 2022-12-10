@@ -59,7 +59,9 @@ export class AlumniUVComponent implements OnInit {
     })
   }
 
-
+  function(){
+    localStorage.removeItem('token')
+  }
 
 }
 

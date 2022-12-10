@@ -51,7 +51,9 @@ export class EmployerApplicationsComponent implements OnInit {
     this.adminApi.verifyApplication(id).subscribe(res=>{
     })
   }
-
+  function(){
+    localStorage.removeItem('token')
+  }
 
 }
  
