@@ -30,6 +30,7 @@ export class EditComponent implements OnInit {
       console.log(res)
     alert('data updated')
     this.ngOnInit()
+    this.router.navigate([`/empDash/viewjob`])
     }) 
   }
 
