@@ -12,7 +12,7 @@ router.get('/getjob',verifytoken, async(req, res)=>{  // getting job
 })
 
 
-router.get('/getempjob', async(req, res)=>{  // getting job by employer
+router.get('/getempjob',verifytoken, async(req, res)=>{  // getting job by employer
     try {
         console.log('token from frontend',req.headers.authorization)
     let jobs = await JOBDATA.find({postedBy:"employe"})
