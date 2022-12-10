@@ -11,7 +11,7 @@ function verifytoken (req, res, next) {
     if (token == 'null') {
         return res.status(401).send('Unautherized request');
     }
-    let payload = jwt. verify(token , 'secretkey');
+    let payload = jwt.verify(token , 'secretkey');
     console.log("payload=", payload);
     if (!payload) {
         return res.status(401).send('Unautherized request');
