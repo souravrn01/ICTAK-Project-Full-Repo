@@ -10,7 +10,7 @@ apiUrl:any=('http://localhost:3000/api')
     return this.http.post(`${this.apiUrl}/verifiedjobs/postjob`,data)
   }
   getJob(){
-    return this.http.get(`${this.apiUrl}/verifiedjobs/getempjob`)
+    return this.http.get(`${this.apiUrl}/verifiedjobs/getempjobs`)
   }
   getSingleJob(id:any){
     return this.http.get(`${this.apiUrl}/verifiedjobs/getOneJob/${id}`)

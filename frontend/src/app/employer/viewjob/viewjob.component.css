@@ -4,6 +4,8 @@
   }
   .box{
    background-image: linear-gradient(to top, #bdc1c5, #b4bec4, #a9bbc1, #9fb8bc, #95b5b5);
+   word-break: break-all;
+   overflow: auto;
    padding: 50px;
    border-radius: 50px 10px;
    /* background-color: green; */
@@ -14,5 +16,6 @@
    -webkit-transform: scale(1.5); /* Safari 3-8 */
    transform: scale(.9); 
  }
+
   
  
