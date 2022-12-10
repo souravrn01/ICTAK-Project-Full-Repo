@@ -17,7 +17,7 @@ export class AlumniSignupComponent implements OnInit {
     batch_details:new FormControl(null,Validators.required),
     placement_status:new FormControl(null,Validators.required),
     company_name:new FormControl(null),
-    password:new FormControl(null,[Validators.required,Validators.minLength(8),Validators.maxLength(15)])
+    password:new FormControl(null,[Validators.required,Validators.minLength(8),Validators.maxLength(15),Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")])
   })
   constructor(private signup:SignUpService,private router:Router) { }
 
