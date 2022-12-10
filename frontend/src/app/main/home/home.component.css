@@ -14,7 +14,7 @@ h4{
 
 nav{
     background: linear-gradient(90deg, rgba(0,212,255,1)0%, rgb(44, 38, 41)35%, rgba(9,9,121,1)100%);
-    
+    margin-bottom: 5px;
 }
 .logo{
 
@@ -26,12 +26,12 @@ nav{
      padding-left: 20px;
      /* border: 1px solid red; */
 }
-
 mat-card{
     padding:20px;
     margin: 15px;
 } 
 .cards{
+    
     padding: 50px;
     margin-left: 10px;
     font-size: 18px;

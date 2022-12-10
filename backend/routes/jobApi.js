@@ -30,7 +30,14 @@ router.get('/getadminjob', async(req, res)=>{  // getting job by admin
         console.log('get error:', error);
     }
 })
-
+router.get('/getjobs', async(req, res)=>{  // getting job by admin
+    try {
+    let jobs = await JOBDATA.find()
+        res.send(jobs)
+    } catch (error) {
+        console.log('get error:', error);
+    }
+})
 
 router.post('/postjob', async(req, res)=>{  // posting job
     try {
