@@ -7,12 +7,17 @@ import { EmployerApiService } from '../employer-api.service';
   styleUrls: ['./dashbo.component.css']
 })
 export class DashboComponent implements OnInit {
-  jobs:any=[]
-
+  jobs:any=[];
+  user:any=[];
+  JOB:any=[];
+  application:any=[];
   constructor(private api:EmployerApiService) { }
 
   ngOnInit(): void {
     this.getjob()
+    this.userlength()
+    this.joblength()
+   this.applicationlenth()
   }
 
 getjob(){
@@ -20,25 +25,28 @@ getjob(){
     this.jobs=res
   })
 }
-job:number=0;
-jobstop:any=setInterval(()=>{
-  this.job++;
-  if(this.job==2870){
-    clearInterval(this.jobstop)
-  }
-},500)
-Company:number=0;
-Companystop:any=setInterval(()=>{
-  this.Company++;
-  if(this.Companystop==2870){
-    clearInterval(this.Companystop)
-  }
-},1000)
-users:number=0;
-usersstop:any=setInterval(()=>{
-  this.users++;
-  if(this.usersstop==2870){
-    clearInterval(this.usersstop)
-  }
-},1500)
+
+
+
+userlength(){
+  this.api.getalumnilength().subscribe(res=>{
+    this.user=res
+    console.log(res)
+    console.log('user:', this.user.length);
+  })
+}
+joblength(){
+  this.api.getJob().subscribe(res=>{
+    this.JOB=res
+    console.log(res)
+    console.log('job:', this.JOB.length);
+  })
+}
+applicationlenth(){
+  this.api.getapplicationlength().subscribe(res=>{
+    this.application=res
+    console.log(res)
+    console.log('Company:', this.application.length);
+  })
+}
 }

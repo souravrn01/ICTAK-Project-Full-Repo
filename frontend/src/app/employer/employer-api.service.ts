@@ -33,5 +33,10 @@ download(id:any){
 getappliedjobs(){
   return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
 }
-
+getalumnilength(){
+  return this.http.get(`${this.apiUrl}/alumniuv/aluminiVer`)
+}
+getapplicationlength(){
+  return this.http.get(`${this.apiUrl}/applicationsuv/Apps`)
+}
 }
