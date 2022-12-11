@@ -44,10 +44,12 @@ export class ViewjobComponent implements OnInit {
       console.log(this.applications.length);
       console.log(this.applications);
     })
+  
     
   }
   getprofile(id:any){
     this.api.getsinglealumnidata(id).subscribe(res=>{
+      console.log(res)
       this.profile = res
       console.log(this.profile.name, this.profile.education.qualification);
       

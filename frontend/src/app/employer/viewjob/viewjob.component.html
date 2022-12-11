@@ -25,7 +25,7 @@
       <!-- <button mat-button>DELETE</button> -->
     </mat-card-actions>
   </mat-card>
-  <div class="modal fade" id="view" tabindex="-1" >
+  <div class="modal fade popup" id="view" tabindex="-1" >
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -38,8 +38,7 @@
 
              <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download Resume</button></a>
 
-              <p>Profile Links: {{ data.link }}</p>
-
+              <p id="plink">Profile Links: <span>{{ data.link }}</span></p> <!-- changes here -->
               <mat-expansion-panel hideToggle (click)="getprofile(data.alum_id)" class="profile_display">
                 <mat-expansion-panel-header>
                   <mat-panel-title>
@@ -49,32 +48,70 @@
                 <mat-expansion-panel hideToggle>
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      PERSONAL DETAILS
+                      PERSONAL DETAILS                                                                  <!--add extra dropdowns-->
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                    <SPAN>Approval Status: </SPAN><em>{{profile.approval_status}}</em><br>
-                    <SPAN>Name: </SPAN><em>{{profile.name}}</em><br>
-                    <SPAN>Email: </SPAN><em>{{profile.email}}</em><br>
-                    <SPAN>Phone Number: </SPAN><em>{{profile.phone}}</em><br>
-                    <SPAN>Gender: </SPAN><em>{{profile.gender}}</em><br>
-                    <SPAN>Date of Birth: </SPAN><em>{{profile.date_of_birth | date}}</em><br>
-                    <SPAN>Martial Status: </SPAN><em>{{profile.marital_status}}</em><br>
-                    <SPAN>Permanent Address: </SPAN><em>{{profile.permanent_address}}</em><br>
-                    <SPAN>Alternate Number: </SPAN><em>{{profile.alternate_phone_number}}</em><br>
-                    <SPAN>Pincode: </SPAN><em>{{profile.pincode}}</em><br>
-                    <SPAN>District: </SPAN><em>{{profile.district}}</em><br>
-                    <SPAN>State: </SPAN><em>{{profile.state}}</em><br>
-                    <SPAN>Country: </SPAN><em>{{profile.country}}</em><br>
-                </mat-expansion-panel>
- 
+                    <span *ngIf = "profile === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                    <SPAN *ngIf="profile != null">Approval Status: </SPAN><em *ngIf="profile != null">{{profile.approval_status}}</em><br>
+                    <SPAN *ngIf="profile != null">Name: </SPAN><em *ngIf="profile != null">{{profile.name}}</em><br>
+                    <SPAN *ngIf="profile != null">Email: </SPAN><em *ngIf="profile != null">{{profile.email}}</em><br>
+                    <SPAN *ngIf="profile != null">Phone Number: </SPAN><em *ngIf="profile != null">{{profile.phone}}</em><br>
+                    <SPAN *ngIf="profile != null">Gender: </SPAN><em *ngIf="profile != null">{{profile.gender}}</em><br>
+                    <SPAN *ngIf="profile != null">Date of Birth: </SPAN><em *ngIf="profile != null">{{profile.date_of_birth | date}}</em><br>
+                    <SPAN *ngIf="profile != null">Permanent Address: </SPAN><em *ngIf="profile != null">{{profile.permanent_address}}</em><br>
+                    <SPAN *ngIf="profile != null">Alternate Number: </SPAN><em *ngIf="profile != null">{{profile.alternate_phone_number}}</em><br>
+                    <SPAN *ngIf="profile != null">Pincode: </SPAN><em *ngIf="profile != null">{{profile.pincode}}</em><br>
+                    <SPAN *ngIf="profile != null">District: </SPAN><em *ngIf="profile != null">{{profile.district}}</em><br>
+                    <SPAN *ngIf="profile != null">State: </SPAN><em *ngIf="profile != null">{{profile.state}}</em><br>
+                    <SPAN *ngIf="profile != null">Country: </SPAN><em *ngIf="profile != null">{{profile.country}}</em><br>
+                    <SPAN *ngIf="profile != null">Highest Qualification: </SPAN><em *ngIf="profile != null">{{profile.highest_qualification}}</em><br>
+                    <SPAN *ngIf="profile != null">ICTAK Batch </SPAN><em *ngIf="profile != null">{{profile.batch_details}}</em><br>
+                    <SPAN *ngIf="profile != null">ICTAK Course: </SPAN><em *ngIf="profile != null">{{profile.course_started_at_ictak}}</em><br>
+                </mat-expansion-panel> 
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      EDUCATION DETAILS
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <span *ngIf = "profile.education === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                    <div *ngFor=" let edu of profile.education" class="mb-2 edu">
+                      <SPAN *ngIf="profile != null">Qualification: </SPAN><em *ngIf="profile != null">{{edu.qualification}}</em><br>
+                      <SPAN *ngIf="profile != null">Completion Status: </SPAN><em *ngIf="profile != null">{{edu.completion_status}}</em><br>
+                      <SPAN *ngIf="profile != null">Stream: </SPAN><em *ngIf="profile != null">{{edu.main_stream}}</em><br>
+                      <SPAN *ngIf="profile != null">Specialization: </SPAN><em *ngIf="profile != null">{{edu.specialization}}</em><br>
+                      <SPAN *ngIf="profile != null">University: </SPAN><em *ngIf="profile != null">{{edu.university}}</em><br>
+                      <SPAN *ngIf="profile != null">Percentage: </SPAN><em *ngIf="profile != null">{{edu.percentage}}</em><br>
+                      <SPAN *ngIf="profile != null">year of Passing: </SPAN><em *ngIf="profile != null">{{edu.year_of_pass | date}}</em><br>
+                    </div>
+                </mat-expansion-panel>  
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      PREVIOUS EXPERINCES
+                    </mat-panel-title>
+                  </mat-expansion-panel-header >
+                   <span *ngIf = "profile.experience === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                    <div *ngFor="let exp of profile.experience" class="mb-2 edu">
+                      <SPAN *ngIf="profile != null">Company Name: </SPAN><em *ngIf="profile != null">{{exp.company}}</em><br>
+                      <SPAN *ngIf="profile != null">Designation: </SPAN><em *ngIf="profile != null">{{exp.Designation}}</em><br>
+                      <SPAN *ngIf="profile != null">Working Status: </SPAN><em *ngIf="profile != null">{{exp.presently_working}}</em><br>
+                      <SPAN *ngIf="profile != null"> Starting Date: </SPAN><em *ngIf="profile != null">{{exp.starting_date | date}}</em><br>
+                      <SPAN *ngIf="profile != null">Ending Date: </SPAN><em *ngIf="profile != null">{{exp.ending_date | date}}</em><br>
+                      <SPAN *ngIf="profile != null">Montly Salary: </SPAN><em *ngIf="profile != null">{{exp.current_monthly_salary }}</em><br>
+                      <SPAN *ngIf="profile != null">Notice Period: </SPAN><em *ngIf="profile != null">{{exp.notice_period}}</em><br>
+                    </div>
+                </mat-expansion-panel>                   
               </mat-expansion-panel>
+
+              
+
             </div>
-            
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>   
   
 
   
