@@ -31,7 +31,11 @@ verified: any = []
 
 onSubmit(name:string, email:string){
   console.log(this.feedbackForm.value);
-  this.api.postmail(this.feedbackForm.value, email, name)
+  window.alert("Feedback Send")
+  this.api.postmail(this.feedbackForm.value, email, name).subscribe(res=>{
+    console.log(res)
+  })
+ 
 }
 
 getEmp(){              // frtch all employer data
@@ -42,9 +46,11 @@ getEmp(){              // frtch all employer data
 }
 
 delete(id:any){
-  this.api.deleteemp(id).subscribe( res=>{
-    this.getEmp()
-  })
+  if(window.confirm("Are you sure to delete this?")){
+    this.api.deleteemp(id).subscribe( res=>{
+      this.getEmp()
+    })
+  }
 }
 
 approve(data:any){   // approval
@@ -52,9 +58,12 @@ approve(data:any){   // approval
  this.verified = data
   this.api.approveemp(this.verified).subscribe( res =>{
      console.log(res);
+     window.alert(" Approved ")
       this.getEmp()
   })
 }
-
+function(){
+  localStorage.removeItem('token')
+}
 
 } 

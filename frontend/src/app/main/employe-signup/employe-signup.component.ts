@@ -15,7 +15,7 @@ export class EmployeSignupComponent implements OnInit {
     phone:new FormControl(null,[Validators.required,Validators.pattern('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$')]),
     company:new FormControl(null,Validators.required),
     designation:new FormControl(null,Validators.required),
-    password:new FormControl(null,[Validators.required,Validators.minLength(8),Validators.maxLength(15)])
+    password:new FormControl(null,[Validators.required,Validators.minLength(8)])
   })
   constructor(private signup:SignUpService,private router:Router) { }
 
@@ -25,13 +25,8 @@ onSubmit(){
   // console.log(this.employeeForm.value)
   // console.log(this.employeeForm.status)
   // let status=this.employeeForm.status
-  // this.signup.addEmploye(this.employeeForm.value).subscribe((res)=>{
-  //   console.log(this.employeeForm.value)
-  //   this.router.navigate(['/empDash'])
-  // })
   this.signup.addEmploye(this.employeeForm.value).subscribe((res)=>{
-    // console.log(this.employeeForm.value)
-    // this.router.navigate(['/employelogin'])
+    
     if(res.message){
       alert(res.message)
         this.router.navigate(['/employesignup'])

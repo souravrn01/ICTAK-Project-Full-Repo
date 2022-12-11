@@ -18,6 +18,8 @@ import { DashboComponent } from './dashbo/dashbo.component';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { FooterComponent } from './footer/footer.component';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -25,6 +27,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ViewjobComponent,
     EditComponent,
     DashboComponent,
+    FooterComponent,
    
   ],
   imports: [
@@ -42,6 +45,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FormsModule,
     MatDialogModule,
     MatExpansionModule
-  ]
+  ],
+
+  providers:[AuthGuard]
+
 })
 export class EmployerModule { }

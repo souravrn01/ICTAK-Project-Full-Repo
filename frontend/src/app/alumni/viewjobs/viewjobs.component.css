@@ -21,7 +21,16 @@ h4{
     border-radius: 0.5rem; 
 }
 
-
+p{
+  background: transparent;
+  font-size: 16px;
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: rgb(231, 230, 230);
+  background-color:rgb(231, 230, 230) ;
+  border-radius: 0.5rem; 
+  overflow-y: scroll;
+}
 
   #closed{
     color: red; 

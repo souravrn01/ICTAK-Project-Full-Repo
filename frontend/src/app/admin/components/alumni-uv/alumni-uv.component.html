@@ -1,25 +1,49 @@
+<div class="body">
+  
+  <nav class="navbar bg-light sticky-top" >
+    <div class="container-fluid">
+        <img src="../../../../assets/images/logo.png" alt="LOGO" class="logo">
+      <div class="" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item ms-auto">
+            <button class="btn btn-outline-dark bttn" routerLink="/dashadmin">BACK</button>
+            <button class="btn btn-outline-dark logout bttn" routerLink="/home" (click)="function()">LOGOUT</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
-<h1>Alumni Verification</h1>
-<div class="container">
-    <div class="row" *ngFor ="let alumni of alumniData">
-      <div class="col-md-12 m-2">
-        <mat-card style="background-color:rgb(194, 194, 144)">
+
+  <div class="tabs row container mx-auto">
+    <button type="button" class="col-sm-5  active mx-auto tab btn btn-secondary" routerLink="/verifyalumni">Alumni verification</button>
+    <button type="button" class=" col-sm-5  mx-auto tab btn btn-secondary" routerLink="/verifyemp">Employer Verification</button>
+  </div>
+
+
+<div class="container-fluid">
+  <div class="row collect conatiner-fluid">
+    <div *ngFor ="let alumni of alumniData" class="container col-lg-6 test">
+        <mat-card class="card">
           <mat-card-content>
-            <form [formGroup] = "feedbackForm "  (ngSubmit)="onSubmit(alumni.name, alumni.email)">
-            <h3>Name:{{alumni.name}}</h3>
-            <h3>email : {{alumni.email}} </h3>
-            <h3>Phone : {{alumni.phone}} </h3>
-            <h3>Hightest Qualification: {{alumni.highest_qualification}}</h3>
-            <h3>Selected Course: {{alumni.course_started_at_ictak}} </h3>
-            <h3>Batch Name: {{alumni.batch_details}} </h3>
-            <h3>Placement Status:{{alumni.placement_status}} </h3>
-             <h3 for="feedback">
-                Feedback : <textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
-             </h3>
-             <button class="btn btn-light" type="submit">Send</button>
-             <button class="btn btn-light" (click)="delete(alumni._id)" >Delete</button>
-             <button class="btn btn-light" (click)="approve(alumni)" >Approve</button>   
+            <form [formGroup] = "feedbackForm " class="row" >
+                <div class="col-md-6"><p>Name : </p><span>{{alumni.name}}</span></div>
+                <div class="col-md-6"><p>email : </p><span>{{alumni.email}}</span></div> 
+                <div class="col-md-6"><p>Phone : </p><span>{{alumni.phone}}</span> </div>
+                <div class="col-md-6"><p>Hightest Qualification:</p><span>{{alumni.highest_qualification}}</span></div>
+                <div class="col-md-6"><p>Selected Course:</p><span>{{alumni.course_started_at_ictak}}</span> </div>
+                <div class="col-md-6"><p>Batch Name:</p><span>{{alumni.batch_details}}</span></div> 
+                <div class="col-md-6 mx-auto"><p>Placement Status:</p><span>{{alumni.placement_status}}</span> </div>
+                <div class="col-md-6 mx-auto"><p>Company name:</p><span *ngIf="alumni.company_name != null; else nil">{{alumni.company_name}}</span><ng-template #nil><span>nil</span></ng-template> </div>
+                <p for="feedback" id="feedback">
+                    Feedback : <textarea name="feedback" id="feedback"  formControlName="feedback"></textarea >
+                </p>
+        
+                 <button type="button" class="btn button btn-outline-danger" (click)="delete(alumni._id)">Delete</button>
+                 <button type="button" class="btn button btn-outline-success" (click)="approve(alumni)">Verify</button>
+                 <button type="submit" class="btn button btn-outline-primary" (click)="onSubmit(alumni.name, alumni.email)">Send</button>
+
             </form>
         </mat-card-content>
     </mat-card>

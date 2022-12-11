@@ -1,6 +1,30 @@
-<app-header></app-header>
+ <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+       <img src="/assets/images/logo.png" alt="logo" class="logo"> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <button class="color" mat-raised-button [matMenuTriggerFor]="menu" routerLink="/jobs" >Jobs</button>
+          <button class="color" mat-raised-button [matMenuTriggerFor]="menu" >Login/Register</button>
+          <mat-menu #menu="matMenu">
+            <h3>Registration</h3>
+            <button mat-menu-item routerLink="/employesignup">Employer/Faculty</button>
+            <button mat-menu-item routerLink="/alumnisignup">Alumni</button>
+          <h3>Login</h3> 
+          <button mat-menu-item routerLink="/alumnilogin">Jobseeker Login</button>
+          <button mat-menu-item routerLink="/employelogin" >Employer Login</button>
+          <button mat-menu-item routerLink="/adminlogin" >Admin Login</button>
+          </mat-menu>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
 
-    <div class="container">
+    <div class="container details mt-5">
         <div class="row mt-2">
             <div class="col-md-12">
                 <div class="card">
@@ -77,6 +101,53 @@
             </div>
         </div>
     </div>
+    <div class="container hexa">
+        <div class="hexagon">
+            <div class="shape">
+                <img src="assets/images/p4.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h3>Jerin Paul</h3>
+                    <h3>MEAN STACK DEVELOPER</h3>
+                <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                    is the attitude of all the employees. I got placed at a good 
+                    company with the excellent training at ICTAK.
+                </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hexagon">
+            <div class="shape">
+                <img src="assets/images/p6.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h3>Ann Mathew</h3>
+                        <h3>MEAN STACK DEVELOPER</h3>
+                        <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                            is the attitude of all the employees. I got placed at a good 
+                            company with the excellent training at ICTAK.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hexagon">
+            <div class="shape">
+                <img src="assets/images/p3.webp" alt="">
+                <div class="content">
+                    <div>
+                        <h3>Manuel John</h3>
+                        <h3>MEAN STACK DEVELOPER</h3>
+                        <p>I joined ICTAK after my post-graduation. One thing that impress me the most
+                            is the attitude of all the employees. I got placed at a good 
+                            company with the excellent training at ICTAK.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
 <div class="container mt-3">
     
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -136,33 +207,7 @@
         </button>
       </div>
 </div>
-<!-- <div class="container mt-2">
-    <marquee behavior="alternate" direction="left">
-        <div class="row ">
-            <div class="col-md-2">
-                <img src="../assets/images/cyberpark.png" alt="">
-            </div>
-            <div class="col-md-2 ">
-                <img src="../assets/images/keralait.png" alt="">
-            </div>
-            <div class="col-md-2">
-                <img src="../assets/images/ksm.png" alt="">
-            </div>
-            <div class="col-md-2">
-                <img src="../assets/images/technopark.png" alt="">
-            </div>
-
-            <div class="col-md-2">
-                <img src="../assets/images/cii.png" alt="">
-            </div>
-            <div class="col-md-2">
-                <img src="../assets/images/gtech.png" alt="">
-            </div>
-        </div>
-    </marquee>
-    </div>       
-   -->
-
+  
 <app-footer></app-footer>
 
 

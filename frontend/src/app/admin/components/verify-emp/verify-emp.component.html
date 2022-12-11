@@ -1,24 +1,58 @@
-                                             
-<h1>Employee Verification</h1>
-<div class="container">
-    <div class="row" *ngFor ="let emp of employerData">
-      <div class="col-md-12 m-2">
-        <mat-card style="background-color:rgb(194, 194, 144)">
-          <mat-card-content>
-            <form [formGroup] = "feedbackForm"  (ngSubmit)="onSubmit(emp.name, emp.email)">
-            <h3>Name : {{emp.name}}</h3>
-            <h3>email : {{emp.email}} </h3>
-            <h3>Phone : {{emp.phone}} </h3>
-            <h3>Company : {{emp.company}}</h3>
-            <h3>Position : {{emp.designation}} </h3>
-             <h3 for="feedback">
-                Feedback : <textarea name="feedback" id="feedback" cols="50" rows="5" formControlName="feedback"></textarea >
-             </h3>
-             <button class="btn btn-light" type="submit">Send</button>
-             <button class="btn btn-light" (click)="delete(emp._id)" >Delete</button>
-             <button class="btn btn-light" (click)="approve(emp)" >Approve</button>   
-            </form>
-        </mat-card-content>
-    </mat-card>
+<div class="body">
+     
+  <nav class="navbar bg-light sticky-top" >
+    <div class="container-fluid">
+        <img src="../../../../assets/images/logo.png" alt="LOGO" class="logo">
+      <div class="" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item ms-auto">
+            <button class="btn btn-outline-dark bttn" routerLink="/dashadmin">BACK</button>
+            <button class="btn btn-outline-dark logout bttn" routerLink="/home" (click)="function()">LOGOUT</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="tabs row container mx-auto">
+    <button type="button" class="col-sm-5   mx-auto tab btn btn-secondary" routerLink="/verifyalumni">Alumni verification</button>
+    <button type="button" class=" col-sm-5 active mx-auto tab btn btn-secondary" router="/verifyemp">Employer Verification</button>
   </div>
+
+
+
+<div class="conatiner-fluid">
+  <div class="container-fluid row">
+    <div  *ngFor ="let emp of employerData" class="container col-lg-6 mx-auto test">
+      <mat-card class="card">
+        <mat-card-content>
+          <form [formGroup] = "feedbackForm"  class="row" >
+          <div class="col-md-6 data data"><p>Name : </p><span>{{emp.name}}</span></div>
+          <div class="col-md-6 data data"><p>email : </p><span>{{emp.email}}</span></div>
+          <div class="col-md-6 data data"><p>Phone : </p><span>{{emp.phone}}</span></div>
+          <div class="col-md-6 data data"><p>Company : </p><span>{{emp.company}}</span></div>
+          <div class="col-md-6 data data"><p>Position : </p><span>{{emp.designation}}</span></div>
+           <p for="feedback" id="feedback">
+            Feedback : <textarea name="feedback" id="feedback" cols="50" rows="2" formControlName="feedback"></textarea >
+           </p>
+           <button class=" button btn-outline-primary" type="submit" id="liveToastBtn" (click)="onSubmit(emp.name, emp.email)">Send</button>
+           <button class=" button btn-outline-danger" (click)="delete(emp._id)" >Delete</button>
+           <button class=" button btn-outline-success" (click)="approve(emp)" >Approve</button>   
+          </form>
+         </mat-card-content>
+      </mat-card>
+
+
+
+
+
+
+
+
+
+    </div> 
+  </div>  
+</div>
+
 </div>

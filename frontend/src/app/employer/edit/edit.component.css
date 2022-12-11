@@ -2,6 +2,13 @@
     background: linear-gradient(90deg, rgba(0,212,255,1)0%, rgb(44, 38, 41)35%, rgba(9,9,121,1)100%);
     color:aliceblue
 }
+.logo{
+    display: block;
+    max-width:50px;
+    scale:4;
+    aspect-ratio: auto;
+    margin-left: 5%
+}
 .spacer{
     flex:1 1 auto;
 }
@@ -15,6 +22,12 @@ button:hover{
 }
 .editdiv{
     margin-top: 30px;
-    padding: 70px;
+    padding: 30px;
+    background-image: linear-gradient(to right top, #eceff2, #e5ebef, #dde7ea, #d5e3e5, #cedfdf);
+    box-shadow: 20px 20px 10px grey;
     
+}
+.form-control{
+    
+    border-radius: 50px;
 }

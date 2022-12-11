@@ -10,7 +10,7 @@ apiUrl:any=('http://localhost:3000/api')
     return this.http.post(`${this.apiUrl}/verifiedjobs/postjob`,data)
   }
   getJob(){
-    return this.http.get(`${this.apiUrl}/verifiedjobs/getempjob`)
+    return this.http.get(`${this.apiUrl}/verifiedjobs/getempjobs`)
   }
   getSingleJob(id:any){
     return this.http.get(`${this.apiUrl}/verifiedjobs/getOneJob/${id}`)
@@ -22,19 +22,11 @@ apiUrl:any=('http://localhost:3000/api')
     return this.http.put(`${this.apiUrl}/verifiedjobs/editJob`,{data,id})
   }
   applicationforjob(id:any){
-    return this.http.get(`http://localhost:3000/api/applicationsuv/applicationdata/${id}`)
+    return this.http.get(`http://localhost:3000/api/applicationsuv/applicationdatas/${id}`)
   }
   getsinglealumnidata(id:any){
     return this.http.get(`http://localhost:3000/api/alumniuv/alumni/${id}`)
   }
-deleteApplication(id:any){
-  return this.http.delete(`http://localhost:3000/api/applicationsuv/delete/${id}`)
-}
-
-verifyApplication(id:any){
-  return this.http.put('http://localhost:3000/api/applicationsuv/verify/', {id})
-}
-  
 download(id:any){
   return this.http.get(`http://localhost:3000/api/applicationsuv/download/${id}`)
 }

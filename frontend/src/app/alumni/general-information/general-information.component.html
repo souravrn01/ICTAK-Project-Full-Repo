@@ -144,9 +144,10 @@
                                     
                                                                     <div class="col-md-9 mb-1">
                                                                         <input type="number" class="form-control"
-                                                                            name="alternatenumber"
+                                                                            name="alternate_phone_number"
                                                                             placeholder="Alternate Phone Number"
-                                                                            [(ngModel)]="data.alternate_phone_number" required pattern="/\b\d{3}[-. ]?\d{3}[-. ]?\d{4}\b/g">
+                                                                            pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"
+                                                                            [(ngModel)]="data.alternate_phone_number" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row m-1 form-group">
@@ -202,7 +203,7 @@
 
                                         <div class="row">
                                             <div class="col-md-12 text-center m-2 ps-3 pe-3">
-                                                <button type="submit" class="btn btn-secondary">Save</button>
+                                                <button type="submit" class="btn btn-secondary" [disabled]="personalForm.invalid">Save</button>
                                                 <button type="reset" class="btn btn-secondary m-2 ">Clear</button>
                                             </div>
                                         </div>

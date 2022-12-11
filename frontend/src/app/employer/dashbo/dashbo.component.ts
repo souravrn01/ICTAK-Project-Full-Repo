@@ -20,4 +20,25 @@ getjob(){
     this.jobs=res
   })
 }
+job:number=0;
+jobstop:any=setInterval(()=>{
+  this.job++;
+  if(this.job==2870){
+    clearInterval(this.jobstop)
+  }
+},500)
+Company:number=0;
+Companystop:any=setInterval(()=>{
+  this.Company++;
+  if(this.Companystop==2870){
+    clearInterval(this.Companystop)
+  }
+},1000)
+users:number=0;
+usersstop:any=setInterval(()=>{
+  this.users++;
+  if(this.usersstop==2870){
+    clearInterval(this.usersstop)
+  }
+},1500)
 }

@@ -1,12 +1,17 @@
 <mat-toolbar class="navbar fixed-top">
-    <div class="spacer"></div>
-    <a mat-button routerLink="Home" (click)="backfn()">HOME</a>
-    <a mat-button>LOG OUT</a>
-
+    
+   
+    <div class="container-fluid logocon">
+        <img src="/assets/images/logo.png" alt="logo" class="logo"> 
+        <div class="spacer"></div>
+        <a mat-button routerLink="Home" (click)="backfn()">HOME</a>
+        <a mat-button routerLink="" (click)="function()"func >LOG OUT</a>
+  </div>
+ 
   </mat-toolbar>
   <mat-card class="editdiv">
-    <mat-card-content>
-        <form #editForm="ngForm" (ngSubmit)="update()">
+    <mat-card-content class="editdiv">
+        <form  #editForm="ngForm" (ngSubmit)="update()">
             <div class="row mb-3">
               <label class="form-label">JOB TITLE</label>
               <input type="text" class="form-control" name="jobTitle" [(ngModel)]="data.jobTitle">
@@ -64,4 +69,5 @@
           </form>
         </mat-card-content>
     </mat-card>
+    <app-footer></app-footer>
     

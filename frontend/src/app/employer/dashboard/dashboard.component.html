@@ -4,8 +4,10 @@
         <button mat-icon-button>
             <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
         </button>
+        <div class="container-fluid logocon">
+          <img src="/assets/images/logo.png" alt="logo" class="logo"> 
+    </div>
         <div class="spacer"></div>
-        <button mat-icon-button>Home</button>
 </mat-toolbar-row>
   </mat-toolbar>
   <div class="row">
@@ -16,7 +18,7 @@
             <a mat-list-item routerLink="dash">DASHBOARD</a><br>
             <a mat-list-item routerLink="viewjob">VIEW JOB</a><br>
             <a mat-list-item routerLink="job" >ADD JOB</a><br>
-            <a mat-list-item routerLink="">LOGOUT</a><br>
+            <a mat-list-item routerLink="" (click)="function()">LOGOUT</a><br>
             
         </mat-nav-list>
     </mat-sidenav>
@@ -29,4 +31,5 @@
     <router-outlet></router-outlet>
 </div>
 </div>
+<app-footer></app-footer>
 

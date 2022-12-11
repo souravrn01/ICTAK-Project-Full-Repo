@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken')
 
 router.post('/aluminisignup', async (req, res) => {
     try {
-        let data = {
+        let item = {
             name: req.body.name,
             email: req.body.email,
             phone: req.body.phone,
@@ -20,11 +20,16 @@ router.post('/aluminisignup', async (req, res) => {
             company_name: req.body.company_name,
             password: req.body.password,
         }
-        const alumini = new AluminiData(data)
-        const saveAlumini = await alumini.save()
-        res.send(saveAlumini)
-    } catch (error) {
-        console.log('post error:', error);
+        let user = await AluminiData.findOne({ email: req.body.email })
+        if (!user) {
+            const newuser = new AluminiData(item)
+            const saveuser = await newuser.save()
+            res.send(saveuser)
+        }
+        return res.json({ message:"Email already registered" });
+    } catch (error)
+{
+        console.log('post error:',error)
     }
 })
 
@@ -45,27 +50,38 @@ router.get('/aluminis', async (req, res) => {       // getdata for admin to coll
         console.log(error)
     }
 })
+
+router.get('/aluminiVer', async (req, res) => {       // getdata for admin to collect verified alumni
+    try {
+        let list = await AluminiData.find({ approval_status: "verified" })
+        res.send(list)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
 router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
-    console.log(req.body) 
+    
+    // console.log(req.body) 
 
     try{
         let data = await AluminiData.findOne({email:req.body.email,
             password:req.body.password,approval_status:"verified"})
-            let email=req.body.email;
-            let password=req.body.password;
-            let payload= {
-            'email':email,
-            'password':password,
-            'date':Date.now()}
-            let token = await jwt.sign(payload,'secretKey')
+            // let email=req.body.email;
+            // let password=req.body.password;
         // let payload = {'email':req.body.email,'password':req.body.password,'date':Date.now()}
         //  let token = jwt.sign(payload,'secretkey')
         if(!data){
-            return res.json({ message: "Admin didnot verified yet" });
+            return res.json({ message: " Admin didnot verified your data yet !!" });
 
+        }else{
+
+            res.send(data);
+            //  res.send({ 'token': token});
         }
-         res.send(data)
-        //  res.send({ 'token': token});
+         
+        
         
     }
     catch(error){

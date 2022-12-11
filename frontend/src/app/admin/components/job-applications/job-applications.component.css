@@ -1,31 +1,151 @@
 .job{
-    background-color: rgb(3, 64, 27);
-    width: 60vw;
-    color: rgb(214, 184, 136);
-    margin:10px auto;
-    padding:20px;
+    background-color: #bed4f2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 3px 3px 5px;
 }
+
  .modal-body, .modal-header{
-    background-color: rgb(210, 156, 182);
+    background-color: rgb(248, 194, 220); 
     color:rgb(68, 3, 60)
+}
+.dlt{
+    color: red;
+    display: inline-block;
+    width: 80px;
+    margin-left: 80%;
+    text-align: center;
+}
+
+.dlt:hover{
+    background-color: red;
+    color:white;
+    border-radius: 10px;
+    cursor:pointer;
 }
 
 .btn-head{
-    background-color: rgb(245, 85, 27) !important;
+    border-color: rgb(246, 92, 78) !important;
+    color:rgb(63, 3, 3);
+}
+.btn-head:hover{
+    background-color:rgb(246, 92, 78) !important;
 }
 
 .profile_display span{
     color:rgb(248, 36, 61);
     font-weight: 500;
+    background-color: rgb(235, 220, 251);
 }
 .profile_display em{
     color:brown;
     font-weight: 700;
 }
 
+#plink span{
+    display: inline-block;
+    padding:5px
+}
+
 .download_btn{
     margin-top: 5px;
     margin-bottom: 5px;
-    color:rgb(43, 15, 86);
-    background-color:rgb(209, 159, 255)
+    color: rgb(214, 179, 247);
+    background-color:rgb(37, 9, 79)
+}
+
+.logo{
+    display: block;
+    max-width:80px;
+    scale:4;
+    aspect-ratio: auto;
+    padding-left: 20px;
+    /* border: 1px solid red; */
+}
+
+.bttn{
+    margin-right: 5px;
+}
+
+.btn-outline-info{
+    margin-top: 2px;
+    margin-left: 32%;
+    background-color: #032c62;
+    color:#bed4f2
+}
+
+
+.navbar{
+    
+    background-color:#bed4f2 !important;
+    width: 100% ;
+    box-shadow: 1px 1px 3px 3px rgb(78, 127, 241);
+    margin-bottom: 30px;
+  }
+
+  .active{
+    background-color: #7ec6f9;
+    color:#020f20;
+    font-weight: 800;
+   box-shadow:   -7px 7px 2px #036cff;
+    border: 1px solid  #64a3fc;;
+}
+.tabs{
+    text-align-last: center;
+}
+
+.tab{
+    margin: 20px 10px ;
+    
+}
+
+.body{
+    background-color: rgb(223, 230, 233);
+}
+
+p {
+    font-size: larger;
+    font-family:  Tahoma, sans-serif, serif;
+    font-weight: 600;
+    /* background-color: #75a8eb; */
+    display:block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding:2px
+}
+
+span{
+    font-weight: 500;
+    color:rgb(221, 225, 237);
+    background-color: #243d5e;
+    display:block;
+    padding: 2px;
+    border-radius: 5px;
+    line-height: 1.5;
+    word-spacing: 2px;
+}
+
+.view{
+
+    text-align: center;
+    height: 50px;
+    background-color: #d3e2f4;
+    box-shadow: 2px 2px 2px rgb(188, 188, 241), -2px -2px 2px rgb(188, 188, 241);
+    width: 180px;
+    margin: 0px auto 40px auto;
+    border-radius: 5px;
+}
+
+.description{
+   height:100px;
+   overflow-y: scroll;
+}
+
+.skills{
+    height:50px;
+    overflow-y: scroll;
+}
+
+.edu{
+    border-bottom: 2px solid rgb(27, 0, 27);
 }

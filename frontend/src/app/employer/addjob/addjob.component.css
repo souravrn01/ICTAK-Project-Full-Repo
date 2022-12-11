@@ -1,4 +1,15 @@
 .header{
     text-align: center;
+    background-image: linear-gradient(to right top, #eceff2, #e1e4e7, #d5dadc, #cacfd0, #c0c5c5);
+    box-shadow: 5px 10px #888888;
     /* width:50%; */
+}
+.form{
+    background-image: linear-gradient(to right top, #eceff2, #e5ebef, #dde7ea, #d5e3e5, #cedfdf);
+    box-shadow: 20px 20px 10px grey;
+    border-radius: 50px 10px;
+}
+.form-control{
+    
+    border-radius: 50px ;
 }

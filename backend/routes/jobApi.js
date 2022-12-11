@@ -1,8 +1,8 @@
 const express  = require('express')
 const router = express.Router()
 const JOBDATA = require('../models/jobs')
-
-router.get('/getjob', async(req, res)=>{  // getting job
+const verifytoken=require('../middlewares/jwtVerify')
+router.get('/getjob',verifytoken, async(req, res)=>{  // getting job
     try {
         let jobs = await JOBDATA.find()
         res.send(jobs)
@@ -10,8 +10,20 @@ router.get('/getjob', async(req, res)=>{  // getting job
         console.log('get error:', error);
     }
 })
-router.get('/getempjob', async(req, res)=>{  // getting job
+
+
+router.get('/getempjob', async(req, res)=>{  // getting job by employer
     try {
+        console.log('token from frontend',req.headers.authorization)
+    let jobs = await JOBDATA.find({postedBy:"employe"})
+        res.send(jobs)
+    } catch (error) {
+        console.log('get error:', error);
+    }
+})
+router.get('/getempjobs',verifytoken, async(req, res)=>{  // getting job by employer
+    try {
+        console.log('token from frontend',req.headers.authorization)
     let jobs = await JOBDATA.find({postedBy:"employe"})
         res.send(jobs)
     } catch (error) {
@@ -19,6 +31,22 @@ router.get('/getempjob', async(req, res)=>{  // getting job
     }
 })
 
+router.get('/getadminjob', async(req, res)=>{  // getting job by admin
+    try {
+    let jobs = await JOBDATA.find({postedBy:"admin"})
+        res.send(jobs)
+    } catch (error) {
+        console.log('get error:', error);
+    }
+})
+router.get('/getjobs', async(req, res)=>{  // getting job by HOMEPAGE
+    try {
+    let jobs = await JOBDATA.find()
+        res.send(jobs)
+    } catch (error) {
+        console.log('get error:', error);
+    }
+})
 
 router.post('/postjob', async(req, res)=>{  // posting job
     try {
@@ -45,7 +73,7 @@ router.post('/postjob', async(req, res)=>{  // posting job
     }
 })
 
-router.put('/editJob', async(req, res)=>{  // update Job
+router.put('/editJob',verifytoken, async(req, res)=>{  // update Job
     try {
         let id = req.body.id
         let updates = {
@@ -68,16 +96,7 @@ router.put('/editJob', async(req, res)=>{  // update Job
         console.log('update error:',error);
     }
 })
-// router.put('/editJob',async(req,res)=>{
-//     try {
-//         let data=req.body
-//         let updatedata=await JOBDATA.findOneAndUpdate({"_id":req.body.id},data)
-//         res.send(updatedata)
-//     } catch (error) {
-//         console.log('update error:',error)
 
-//     }
-// })
 
 router.delete('/deletejob/:id', async(req, res)=>{  //delete Jobs
     try {

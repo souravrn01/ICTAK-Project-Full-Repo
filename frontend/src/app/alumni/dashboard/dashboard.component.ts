@@ -41,16 +41,4 @@ export class DashboardComponent implements OnInit {
   tojobs(id:any){
     this.router.navigateByUrl(`/alumniviewjobs/${id}`)
   }
-  deleteexperience(id:any){
-    this.apiService.alumniexperienceremove(id).subscribe(res=>{
-      
-    })
-  }
-// deleteeducation(id:any){
-//   this.apiService.alumnieducationremove(id).subscribe(res=>{
-//   console.log(id)
-  
-//   })
-// }
- 
 }

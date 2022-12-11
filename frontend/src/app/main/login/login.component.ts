@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,
     private SignUpService:SignUpService, private snackBar:MatSnackBar) { }
 
-    alumnidata:any
+    alumnidata:any=[]
 
   loginForm=new FormGroup({
     email:new FormControl(null,[Validators.required,Validators.email]),
@@ -30,17 +30,15 @@ login(){
     console.log(res)
     console.log(this.alumnidata._id);
     localStorage.setItem('token',res.token)
-if(res.message){
-  alert('admin didnot verified yet')
-  this.router.navigate(['/alumnilogin'])
-}
- else{
-  alert('Successfully Login')
-  this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata._id}`)
- } 
-
-   
-    })
+    if(res.message){
+      alert('admin didnot verified yet')
+      this.router.navigate(['/alumnilogin'])
+    }
+    else{
+      alert('Successfully Login')
+      this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata._id}`)
+     } 
+  })
     
 }
 // openSnackBar(message:any,action:any){

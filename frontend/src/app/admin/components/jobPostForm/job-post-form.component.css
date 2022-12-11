@@ -54,9 +54,9 @@
 
   .navbar{
     
-    background-color:#b5b5f0 !important;
+    background-color:#cbcbf6 !important;
     width: 100% ;
-    box-shadow: 1px 1px 10px 2px #fff, -1px 1px 10px 2px #fff ;
+    box-shadow: 1px 1px 3px 2px #fff, -1px 1px 3px 2px #fff ;
   }
 
   #btn:hover{
