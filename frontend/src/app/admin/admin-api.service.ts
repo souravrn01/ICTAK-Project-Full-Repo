@@ -84,9 +84,7 @@ deleteApplication(id:any){
 verifyApplication(id:any){
   return this.http.put('http://localhost:3000/api/applicationsuv/verify/', {id})
 }
-getJob(){
-  return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
-}
+
 
 download(id:any){
   return this.http.get(`http://localhost:3000/api/applicationsuv/download/${id}`)

@@ -28,7 +28,7 @@
       </div>
     </div>
   </nav>
-  <div>
+  <div class="dt">
     <!-- <div class="card">
     <div class="card-header">
         <button>ADMIN HOME</button>
@@ -42,6 +42,7 @@
     <h2>VERFICATION</h2>
     <div >
         <h3>NEW ALUMNI'S</h3>
+        <h4>Unverfied Alumni</h4>
         <owl-carousel-o [options]="customOptions">
 
             <ng-template carouselSlide *ngFor="let i of data">
@@ -70,12 +71,12 @@
 
           <mat-card class="example-card">
             <mat-card-header>
-              <mat-card-title>Number of Alumni Verified : {{data.length}}</mat-card-title>
-              
+              <mat-card-title>Number of Alumni Unverified : {{data.length}}</mat-card-title>
+            
             </mat-card-header>
           </mat-card>
 
-
+          <h4>Verfied Alumni</h4>
           <owl-carousel-o [options]="customOptions">
 
             <ng-template carouselSlide *ngFor="let i of alumniV">
@@ -104,7 +105,7 @@
 
           <mat-card class="example-card">
             <mat-card-header>
-              <mat-card-title>Number of Job Application Verified : {{alumniV.length}}</mat-card-title>
+              <mat-card-title>Number of Alumni Verified : {{alumniV.length}}</mat-card-title>
               
             </mat-card-header>
           </mat-card>
@@ -112,44 +113,90 @@
     </div>
 
     <div>
-        <h3>NEW RECRUITERS</h3>
-        <owl-carousel-o [options]="customOptions1">
+        <h3>NEW EMPLOYER</h3>
+        <h4>Unverfied Employer</h4>
+        <owl-carousel-o [options]="customOptions">
 
-            <ng-template carouselSlide>
+          <ng-template carouselSlide *ngFor="let e of empUV">
+            <mat-card class="example-card">
+                <mat-card-header >
+                 
+                  <mat-card-title> Name:{{e.name}}</mat-card-title>
+                  <mat-card-title> Email:{{e.email}}</mat-card-title>
+                  <mat-card-title> phone:{{e.phone}}</mat-card-title>
+                  <mat-card-title> Company:{{e.company}}</mat-card-title>
+                  <mat-card-title> Designation:{{e.designation}}</mat-card-title>
+                  <mat-card-title> Usertype: {{e.usertype}}</mat-card-title>
+                  <mat-card-title> Approval Status:{{e.approval_status}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                 
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+              </mat-card>
+          </ng-template>  
+          
+        </owl-carousel-o>
+
+        
               <mat-card class="example-card">
                   <mat-card-header>
-                    <mat-card-title>Number of Emp:{{emp.length}}</mat-card-title>
+                    <mat-card-title>Number of Employer Unverified:{{emp.length}}</mat-card-title>
 
                   </mat-card-header>
                  
                 </mat-card>
+                <h4>Verfied Employer</h4>
 
-                <mat-card class="example-card">
+                <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let e of emp">
+                  <mat-card class="example-card">
+                      <mat-card-header >
+                       
+                        <mat-card-title> Name:{{e.name}}</mat-card-title>
+                        <mat-card-title> Email:{{e.email}}</mat-card-title>
+                        <mat-card-title> phone:{{e.phone}}</mat-card-title>
+                        <mat-card-title> Company:{{e.company}}</mat-card-title>
+                        <mat-card-title> Designation:{{e.designation}}</mat-card-title>
+                        <mat-card-title> Usertype: {{e.usertype}}</mat-card-title>
+                        <mat-card-title> Approval Status:{{e.approval_status}}</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                       
+                      </mat-card-content>
+                      <mat-card-actions>
+                      </mat-card-actions>
+                    </mat-card>
+                </ng-template>  
+          </owl-carousel-o>
+
+                <mat-card class="example-card" >
                   <mat-card-header>
-                    <mat-card-title >Number of unverified Emp :{{empUV.length}}</mat-card-title>
+                    <mat-card-title >Number of Employer Verified:{{empUV.length}}</mat-card-title>
 
                   </mat-card-header>
                  
                 </mat-card>
                 
-            </ng-template>  
       
       
-          </owl-carousel-o>
 
-    </div>
     <h2>JOB APPLICATION</h2>
-    <owl-carousel-o [options]="customOptions1">
+        
+    <h4>Unverfied job</h4>
+  
 
-        <ng-template carouselSlide >
-          <mat-card class="example-card">
+          <mat-card class="example-card"id="sty">
               <mat-card-header>
                 <mat-card-title>Number of Job Application : {{jobUV.length}}</mat-card-title>
                 
               </mat-card-header>
-            
             </mat-card>
-            <mat-card class="example-card">
+
+            <h4>Verfied job</h4>
+
+            <mat-card class="example-card" id="sty">
               <mat-card-header>
                 <mat-card-title>Number of Job Application Verified : {{job.length}}</mat-card-title>
                 
@@ -157,9 +204,7 @@
              
             </mat-card>
 
-        </ng-template>  
    
-      </owl-carousel-o>
     </div>
  
 
