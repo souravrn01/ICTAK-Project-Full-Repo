@@ -72,7 +72,7 @@ import { AlumniApiService } from './alumni/alumni-api.service';
     MatFormFieldModule,
     MatSnackBarModule
   ],
-  providers: [SignUpService,AuthGuardGuard,
+  providers: [SignUpService,AuthGuardGuard, EmpLoginComponent,
   {
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,

@@ -12,6 +12,10 @@ import { ThisReceiver } from '@angular/compiler';
 export class EmpLoginComponent implements OnInit {
 
   empdata:any=[]
+
+  Id:string  = 'test ID'
+holder:any=[]
+
   constructor(private router:Router,
     private SignUpService:SignUpService) { }
 
@@ -23,8 +27,11 @@ export class EmpLoginComponent implements OnInit {
   }
   login(){ 
       this.SignUpService.singleemploye(this.loginForm.value).subscribe(res=>{
-        console.log(res)
-        console.log('data from backend',res)
+
+        this.holder = res.user
+        console.log("getting user", this.holder._id)
+
+        // console.log('data from backend',res)
         localStorage.setItem('token',res.token)
         if(res.message){
           alert(res.message)
@@ -33,7 +40,7 @@ export class EmpLoginComponent implements OnInit {
         }
         else{
           alert("Successfully logged in")
-          this.router.navigate(['/empDash/dash'])
+         this.router.navigateByUrl(`/empDash/dash`)
         }    
 
       })
@@ -49,3 +56,4 @@ onsubmit(data:any){
 
 
 }
+

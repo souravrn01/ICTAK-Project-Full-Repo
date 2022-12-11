@@ -12,8 +12,9 @@ const routes: Routes = [
   {path: 'empDash',canActivate:[AuthGuard], component: DashboardComponent,
   children: [{ path: 'dash', component:DashboComponent },
   { path: 'job', component: AddjobComponent },
+  { path: 'dash', component: DashboComponent },
   {path: 'viewjob', component: ViewjobComponent}]
-},{path: 'edit/:id', component: EditComponent},{path: 'Home', component:DashboardComponent }];
+},{path: 'edit', component: EditComponent},{path: 'Home', component:DashboardComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

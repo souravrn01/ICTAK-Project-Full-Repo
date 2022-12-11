@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EmployerApiService } from '../employer-api.service';
+
 
 @Component({
   selector: 'app-dashbo',
@@ -9,9 +11,11 @@ import { EmployerApiService } from '../employer-api.service';
 export class DashboComponent implements OnInit {
   jobs:any=[]
 
-  constructor(private api:EmployerApiService) { }
-
+  constructor(private api:EmployerApiService, private actroute: ActivatedRoute) { }
+ 
   ngOnInit(): void {
+   console.log( this.actroute.snapshot.paramMap.get('id'));
+   
     this.getjob()
   }
 

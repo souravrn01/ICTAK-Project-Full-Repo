@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EditComponent } from '../edit/edit.component';
 import { EmployerApiService } from '../employer-api.service';
+import {EmpLoginComponent} from '../../main/emp-login/emp-login.component'
 
 @Component({
   selector: 'app-viewjob',
@@ -10,18 +11,26 @@ import { EmployerApiService } from '../employer-api.service';
   styleUrls: ['./viewjob.component.css']
 })
 export class ViewjobComponent implements OnInit {
+  @ViewChild(EmpLoginComponent)
+  child!: EmpLoginComponent;
+
+  routerID:any=''
   Jobs:any=[];
   data:any;
   condition:String ="" 
   jobs:any=''
   applications:any=''
   profile:any=''
-  constructor(private api:EmployerApiService,private router:Router) { }
+  constructor(private api:EmployerApiService,private router:Router, public emp:EmpLoginComponent, private actroute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.actroute.snapshot.paramMap.get('id');
+    console.log(this.routerID )
     this.getjob()
-    this.api.getappliedjobs().subscribe(res=>{
+    
+    this.api.getappliedjobs().subscribe(async res=>{
       this.jobs = res
+      
     })
   }
   getjob(){
@@ -56,5 +65,11 @@ export class ViewjobComponent implements OnInit {
     })
   }
 
+  search(){
+    for ( var job of this.jobs){
+        let find = job.postedBy;
+        console.log(find);
+    }
+  }
 
 }

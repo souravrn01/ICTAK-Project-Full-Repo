@@ -2,7 +2,7 @@ const express=require('express')
 const router=express.Router()
 const EmployeData=require('../models/employerProfileUV')
 const jwt=require('jsonwebtoken')
-
+ 
 
 
 router.get('/employelist',async(req,res)=>{
@@ -133,10 +133,12 @@ router.post('/employe', async (req, res) => {
             password: req.body.password,approval_status:"verified"})
             let email=req.body.email;
             let password=req.body.password;
+            
             let payload = {
                 'email':req.body.email,
                 'password':req.body.password,
                 'date':Date.now()}
+
                 let token =await jwt.sign(payload,'secretkey')
         if (!user) {
             return res.json({ message: "Invalid username or password or admin didnot verified yet" });

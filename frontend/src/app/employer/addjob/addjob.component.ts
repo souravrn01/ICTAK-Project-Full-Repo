@@ -11,6 +11,7 @@ import { EmployerModule } from '../employer.module';
 export class AddjobComponent implements OnInit {
   id:any;
   datas:any=[];
+  postedBy:string='employer name'
 
   constructor(private api:EmployerApiService) { }
   addForm:any=new FormGroup({
@@ -24,7 +25,7 @@ export class AddjobComponent implements OnInit {
     salaryRange:new FormControl('',Validators.required),
     experience:new FormControl('',Validators.required),
     closingDate:new FormControl('',Validators.required),
-    postedBy:new FormControl('employe')
+    postedBy:new FormControl(this.postedBy)
   
   })
   ngOnInit(): void {

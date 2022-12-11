@@ -11,7 +11,7 @@ import { VerifyEmpComponent } from './components/verify-emp/verify-emp.component
 
  
 const routes: Routes = [
-  {path:'adminDash',canActivate:[AuthGuard], component:AdminDashComponent},
+  {path:'adminDash', component:AdminDashComponent},
   {path:'jobpost',canActivate:[AuthGuard], component:JobPostFormComponent},
   {path:'verifyalumni',canActivate:[AuthGuard], component:AlumniUVComponent},
   {path:'verifyemp',canActivate:[AuthGuard], component:VerifyEmpComponent},
