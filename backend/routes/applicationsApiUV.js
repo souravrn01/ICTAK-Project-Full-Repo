@@ -68,6 +68,15 @@ router.get('/VApps', async (req, res) => {      //  verified applications
         console.log(error)
     }
 })
+router.get('/Apps', async (req, res) => {      //  verified applications
+    try {
+       
+        let list = await ApplicationData.find({ approval_status: "verified",postedBy:"employe"})
+        res.send(list)
+    } catch (error) {
+        console.log(error)
+    }
+})
 router.get('/applicationdatas/:id', async (req, res) => {       // getdata for verified applications
     try {
         let id = req.params.id

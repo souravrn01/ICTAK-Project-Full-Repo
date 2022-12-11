@@ -43,10 +43,8 @@ export class AdminDashComponent implements OnInit {
       },
       740: {
         items: 3
-      },
-      940: {
-        items: 4
       }
+     
     },
     nav: true
   }
