@@ -22,7 +22,9 @@ export class EmployeSignupComponent implements OnInit {
   ngOnInit(): void {
   }
 onSubmit(){
-  
+  // console.log(this.employeeForm.value)
+  // console.log(this.employeeForm.status)
+  // let status=this.employeeForm.status
   this.signup.addEmploye(this.employeeForm.value).subscribe((res)=>{
     
     if(res.message){

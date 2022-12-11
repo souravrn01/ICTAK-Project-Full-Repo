@@ -41,9 +41,19 @@ export class JobApplicationsComponent implements OnInit {
     })
   }
   delete(id:any){
-    this.adminApi.deleteApplication(id).subscribe(res=>{
-      
-    })
+    if(window.confirm(" are you sure?")){
+      this.adminApi.deleteApplication(id).subscribe(res=>{
+        this.ngOnInit()
+      })
+    }
+  }
+
+  deleteJob(id:any){
+    if(window.confirm(" are you sure?")){
+      this.adminApi.deleteJob(id).subscribe(res=>{
+        this.ngOnInit()
+      })
+    }
   }
   verify(id:any){
     this.adminApi.verifyApplication(id).subscribe(res=>{

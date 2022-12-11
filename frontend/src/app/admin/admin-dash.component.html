@@ -1,8 +1,35 @@
 
 <!-- <app-job-post-form></app-job-post-form> -->
 
-<div>
-    <div class="card">
+
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="ADMIN">ADMIN HOME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="POST">POSTJOB</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="VERI">VERFICATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="APP">APPLICATION</a>
+          </li>
+       
+
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-outline-ERROR">LOGOUT</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <!-- <div class="card">
     <div class="card-header">
         <button>ADMIN HOME</button>
         <button>POSTJOB</button>
@@ -11,182 +38,130 @@
         <button>LOGOUT</button>
   
     </div>
-    </div>
+    </div> --> 
     <h2>VERFICATION</h2>
-    <div>
+    <div >
         <h3>NEW ALUMNI'S</h3>
         <owl-carousel-o [options]="customOptions">
 
-            <ng-template carouselSlide>
+            <ng-template carouselSlide *ngFor="let i of data">
               <mat-card class="example-card">
-                  <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>Shanu</mat-card-title>
-                    <mat-card-subtitle>learner</mat-card-subtitle>
+                  <mat-card-header >
+                   
+                    <mat-card-title> Name:{{i.name}}</mat-card-title>
+                    <mat-card-title> Email:{{i.email}}</mat-card-title>
+                    <mat-card-title> phone:{{i.phone}}</mat-card-title>
+                    <mat-card-title> Hightest Qualification:{{i.highest_qualification}}</mat-card-title>
+                    <mat-card-title> Selected Course:{{i.course_started_at_ictak}}</mat-card-title>
+                    <mat-card-title> Batch Name: {{i.batch_details}}</mat-card-title>
+                    <mat-card-title> Placement Status:{{i.placement_status}} </mat-card-title>
+                    <mat-card-title> Company Name:{{i.company_name}}</mat-card-title> 
+                    <mat-card-title> Approval Status:{{i.approval_status}}</mat-card-title>
                   </mat-card-header>
                   <mat-card-content>
-                   <p>course</p>
-                   <p>email</p>
+                   
                   </mat-card-content>
                   <mat-card-actions>
-                    <button mat-button>verify</button>
                   </mat-card-actions>
                 </mat-card>
             </ng-template>  
-      
-      
-            <ng-template carouselSlide>
-          <mat-card class="example-card">
-              <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Shanu</mat-card-title>
-                <mat-card-subtitle>learner</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-               <p>course</p>
-               <p>email</p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>verify</button>
-              </mat-card-actions>
-            </mat-card>
-            </ng-template>  
-      
-            <ng-template carouselSlide>
-          <mat-card class="example-card">
-              <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Shanu</mat-card-title>
-                <mat-card-subtitle>learner</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-               <p>course</p>
-               <p>email</p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>verify</button>
-              </mat-card-actions>
-            </mat-card>
-            </ng-template>  
+            
           </owl-carousel-o>
+
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Number of Alumni Verified : {{data.length}}</mat-card-title>
+              
+            </mat-card-header>
+          </mat-card>
+
+
+          <owl-carousel-o [options]="customOptions">
+
+            <ng-template carouselSlide *ngFor="let i of alumniV">
+              <mat-card class="example-card">
+                  <mat-card-header >
+                   
+                    <mat-card-title> Name:{{i.name}}</mat-card-title>
+                    <mat-card-title> Email:{{i.email}}</mat-card-title>
+                    <mat-card-title> phone:{{i.phone}}</mat-card-title>
+                    <mat-card-title> Hightest Qualification:{{i.highest_qualification}}</mat-card-title>
+                    <mat-card-title> Selected Course:{{i.course_started_at_ictak}}</mat-card-title>
+                    <mat-card-title> Batch Name: {{i.batch_details}}</mat-card-title>
+                    <mat-card-title> Placement Status:{{i.placement_status}} </mat-card-title>
+                    <mat-card-title> Company Name:{{i.company_name}}</mat-card-title> 
+                    <mat-card-title> Approval Status:{{i.approval_status}}</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                   
+                  </mat-card-content>
+                  <mat-card-actions>
+                  </mat-card-actions>
+                </mat-card>
+            </ng-template>  
+            
+          </owl-carousel-o>
+
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Number of Job Application Verified : {{alumniV.length}}</mat-card-title>
+              
+            </mat-card-header>
+          </mat-card>
+     
     </div>
 
     <div>
         <h3>NEW RECRUITERS</h3>
-        <owl-carousel-o [options]="customOptions">
+        <owl-carousel-o [options]="customOptions1">
 
             <ng-template carouselSlide>
               <mat-card class="example-card">
                   <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>Shanu</mat-card-title>
-                    <mat-card-subtitle>learner</mat-card-subtitle>
+                    <mat-card-title>Number of Emp:{{emp.length}}</mat-card-title>
+
                   </mat-card-header>
-                  <mat-card-content>
-                   <p>course</p>
-                   <p>email</p>
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <button mat-button>verify</button>
-                  </mat-card-actions>
+                 
                 </mat-card>
+
+                <mat-card class="example-card">
+                  <mat-card-header>
+                    <mat-card-title >Number of unverified Emp :{{empUV.length}}</mat-card-title>
+
+                  </mat-card-header>
+                 
+                </mat-card>
+                
             </ng-template>  
       
       
-            <ng-template carouselSlide>
-          <mat-card class="example-card">
-              <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Shanu</mat-card-title>
-                <mat-card-subtitle>learner</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-               <p>course</p>
-               <p>email</p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>verify</button>
-              </mat-card-actions>
-            </mat-card>
-            </ng-template>  
-      
-            <ng-template carouselSlide>
-          <mat-card class="example-card">
-              <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Shanu</mat-card-title>
-                <mat-card-subtitle>learner</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-               <p>course</p>
-               <p>email</p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>verify</button>
-              </mat-card-actions>
-            </mat-card>
-            </ng-template>  
           </owl-carousel-o>
+
     </div>
     <h2>JOB APPLICATION</h2>
-    <owl-carousel-o [options]="customOptions">
+    <owl-carousel-o [options]="customOptions1">
 
-        <ng-template carouselSlide>
+        <ng-template carouselSlide >
           <mat-card class="example-card">
               <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Shanu</mat-card-title>
-                <mat-card-subtitle>learner</mat-card-subtitle>
+                <mat-card-title>Number of Job Application : {{jobUV.length}}</mat-card-title>
+                
               </mat-card-header>
-              <mat-card-content>
-               <p>course</p>
-               <p>email</p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>verify</button>
-              </mat-card-actions>
+            
             </mat-card>
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Number of Job Application Verified : {{job.length}}</mat-card-title>
+                
+              </mat-card-header>
+             
+            </mat-card>
+
         </ng-template>  
-  
-  
-        <ng-template carouselSlide>
-      <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shanu</mat-card-title>
-            <mat-card-subtitle>learner</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-           <p>course</p>
-           <p>email</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>verify</button>
-          </mat-card-actions>
-        </mat-card>
-        </ng-template>  
-  
-        <ng-template carouselSlide>
-      <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shanu</mat-card-title>
-            <mat-card-subtitle>learner</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-           <p>course</p>
-           <p>email</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>verify</button>
-          </mat-card-actions>
-        </mat-card>
-        </ng-template>  
+   
       </owl-carousel-o>
-
-
     </div>
-
+ 
 
     
 

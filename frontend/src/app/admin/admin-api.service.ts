@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { throwMatDialogContentAlreadyAttachedError } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,16 @@ export class AdminApiService {
   }
 
   postmail(data:any, email:any, name:any){
+    console.log(data, email, name)
     return this.http.post('http://localhost:3000/api/nodemailer/alumnimail', {data, email, name})
   }
 
   getalumni(){
     return this.http.get('http://localhost:3000/api/alumniuv/aluminis')
   }
+postalumni(){
+  return this.http.get('http://localhost:3000/api/alumniuv/aluminisignup')
+}
 
   getalumniV(){
     return this.http.get('http://localhost:3000/api/alumniuv/aluminiVer')
@@ -27,6 +32,7 @@ export class AdminApiService {
     return this.http.put(`http://localhost:3000/api/alumniuv/onealumni`,data)
     
   }
+
 
   deletealumni(id:any){
     return this.http.delete(`http://localhost:3000/api/alumniuv/deletealumni/${id}`)
@@ -78,11 +84,18 @@ deleteApplication(id:any){
 verifyApplication(id:any){
   return this.http.put('http://localhost:3000/api/applicationsuv/verify/', {id})
 }
-  
+getJob(){
+  return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
+}
+
 download(id:any){
   return this.http.get(`http://localhost:3000/api/applicationsuv/download/${id}`)
 }
 getToken(){
   return localStorage.getItem('token')
+}
+
+deleteJob(id:any){
+  return this.http.delete(`http://localhost:3000/api/verifiedjobs/deletejob/${id}`)
 }
 }

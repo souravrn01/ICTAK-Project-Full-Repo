@@ -27,7 +27,7 @@
     <div *ngFor ="let alumni of alumniData" class="container col-lg-6 test">
         <mat-card class="card">
           <mat-card-content>
-            <form [formGroup] = "feedbackForm " class="row" (ngSubmit)="onSubmit(alumni.name, alumni.email)">
+            <form [formGroup] = "feedbackForm " class="row" >
                 <div class="col-md-6"><p>Name : </p><span>{{alumni.name}}</span></div>
                 <div class="col-md-6"><p>email : </p><span>{{alumni.email}}</span></div> 
                 <div class="col-md-6"><p>Phone : </p><span>{{alumni.phone}}</span> </div>
@@ -42,7 +42,7 @@
         
                  <button type="button" class="btn button btn-outline-danger" (click)="delete(alumni._id)">Delete</button>
                  <button type="button" class="btn button btn-outline-success" (click)="approve(alumni)">Verify</button>
-                 <button type="submit" class="btn button btn-outline-primary">Send</button>
+                 <button type="submit" class="btn button btn-outline-primary" (click)="onSubmit(alumni.name, alumni.email)">Send</button>
 
             </form>
         </mat-card-content>

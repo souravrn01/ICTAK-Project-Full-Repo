@@ -27,7 +27,7 @@
     <div  *ngFor ="let emp of employerData" class="container col-lg-6 mx-auto test">
       <mat-card class="card">
         <mat-card-content>
-          <form [formGroup] = "feedbackForm"  class="row" (ngSubmit)="onSubmit(emp.name, emp.email)">
+          <form [formGroup] = "feedbackForm"  class="row" >
           <div class="col-md-6 data data"><p>Name : </p><span>{{emp.name}}</span></div>
           <div class="col-md-6 data data"><p>email : </p><span>{{emp.email}}</span></div>
           <div class="col-md-6 data data"><p>Phone : </p><span>{{emp.phone}}</span></div>
@@ -36,12 +36,21 @@
            <p for="feedback" id="feedback">
             Feedback : <textarea name="feedback" id="feedback" cols="50" rows="2" formControlName="feedback"></textarea >
            </p>
-           <button class=" button btn-outline-primary" type="submit">Send</button>
+           <button class=" button btn-outline-primary" type="submit" id="liveToastBtn" (click)="onSubmit(emp.name, emp.email)">Send</button>
            <button class=" button btn-outline-danger" (click)="delete(emp._id)" >Delete</button>
            <button class=" button btn-outline-success" (click)="approve(emp)" >Approve</button>   
           </form>
          </mat-card-content>
       </mat-card>
+
+
+
+
+
+
+
+
+
     </div> 
   </div>  
 </div>

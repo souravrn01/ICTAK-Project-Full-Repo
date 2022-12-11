@@ -23,6 +23,7 @@
   <div class="container-fluid row test_1 mx-auto">
     <div  *ngFor="let job of jobs" class="container col-md-5 test_2 " >
       <div class="card row job">
+        <p class="dlt" (click)="deleteJob(job._id)">DELETE</p>
         <div calss = "col-md-5"><P>Job Title: </P><span>{{ job.jobTitle}}</span></div>
         <div calss = "col-md-5"><p>Company : </p><span>{{ job.companyName}}</span></div>
         <div calss = "col-md-5"><p>Place : </p><span>{{ job.location}}</span></div>
@@ -66,22 +67,24 @@
                       PERSONAL DETAILS                                                                  <!--add extra dropdowns-->
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                    <span *ngIf = "profile === null"> THIS PROFILE IS NOT AVAILABLE </span>
-                    <SPAN *ngIf="profile != null">Approval Status: </SPAN><em *ngIf="profile != null">{{profile.approval_status}}</em><br>
-                    <SPAN *ngIf="profile != null">Name: </SPAN><em *ngIf="profile != null">{{profile.name}}</em><br>
-                    <SPAN *ngIf="profile != null">Email: </SPAN><em *ngIf="profile != null">{{profile.email}}</em><br>
-                    <SPAN *ngIf="profile != null">Phone Number: </SPAN><em *ngIf="profile != null">{{profile.phone}}</em><br>
-                    <SPAN *ngIf="profile != null">Gender: </SPAN><em *ngIf="profile != null">{{profile.gender}}</em><br>
-                    <SPAN *ngIf="profile != null">Date of Birth: </SPAN><em *ngIf="profile != null">{{profile.date_of_birth | date}}</em><br>
-                    <SPAN *ngIf="profile != null">Permanent Address: </SPAN><em *ngIf="profile != null">{{profile.permanent_address}}</em><br>
-                    <SPAN *ngIf="profile != null">Alternate Number: </SPAN><em *ngIf="profile != null">{{profile.alternate_phone_number}}</em><br>
-                    <SPAN *ngIf="profile != null">Pincode: </SPAN><em *ngIf="profile != null">{{profile.pincode}}</em><br>
-                    <SPAN *ngIf="profile != null">District: </SPAN><em *ngIf="profile != null">{{profile.district}}</em><br>
-                    <SPAN *ngIf="profile != null">State: </SPAN><em *ngIf="profile != null">{{profile.state}}</em><br>
-                    <SPAN *ngIf="profile != null">Country: </SPAN><em *ngIf="profile != null">{{profile.country}}</em><br>
-                    <SPAN *ngIf="profile != null">Highest Qualification: </SPAN><em *ngIf="profile != null">{{profile.highest_qualification}}</em><br>
-                    <SPAN *ngIf="profile != null">ICTAK Batch </SPAN><em *ngIf="profile != null">{{profile.batch_details}}</em><br>
-                    <SPAN *ngIf="profile != null">ICTAK Course: </SPAN><em *ngIf="profile != null">{{profile.course_started_at_ictak}}</em><br>
+                    <span *ngIf = "profile == null;  else other"> THIS PROFILE IS NOT AVAILABLE </span>
+                    <ng-template #other>
+                      <SPAN *ngIf="profile != null">Approval Status: </SPAN><em *ngIf="profile != null">{{profile.approval_status}}</em><br>
+                      <SPAN *ngIf="profile != null">Name: </SPAN><em *ngIf="profile != null">{{profile.name}}</em><br>
+                      <SPAN *ngIf="profile != null">Email: </SPAN><em *ngIf="profile != null">{{profile.email}}</em><br>
+                      <SPAN *ngIf="profile != null">Phone Number: </SPAN><em *ngIf="profile != null">{{profile.phone}}</em><br>
+                      <SPAN *ngIf="profile != null">Gender: </SPAN><em *ngIf="profile != null">{{profile.gender}}</em><br>
+                      <SPAN *ngIf="profile != null">Date of Birth: </SPAN><em *ngIf="profile != null">{{profile.date_of_birth | date}}</em><br>
+                      <SPAN *ngIf="profile != null">Permanent Address: </SPAN><em *ngIf="profile != null">{{profile.permanent_address}}</em><br>
+                      <SPAN *ngIf="profile != null">Alternate Number: </SPAN><em *ngIf="profile != null">{{profile.alternate_phone_number}}</em><br>
+                      <SPAN *ngIf="profile != null">Pincode: </SPAN><em *ngIf="profile != null">{{profile.pincode}}</em><br>
+                      <SPAN *ngIf="profile != null">District: </SPAN><em *ngIf="profile != null">{{profile.district}}</em><br>
+                      <SPAN *ngIf="profile != null">State: </SPAN><em *ngIf="profile != null">{{profile.state}}</em><br>
+                      <SPAN *ngIf="profile != null">Country: </SPAN><em *ngIf="profile != null">{{profile.country}}</em><br>
+                      <SPAN *ngIf="profile != null">Highest Qualification: </SPAN><em *ngIf="profile != null">{{profile.highest_qualification}}</em><br>
+                      <SPAN *ngIf="profile != null">ICTAK Batch </SPAN><em *ngIf="profile != null">{{profile.batch_details}}</em><br>
+                      <SPAN *ngIf="profile != null">ICTAK Course: </SPAN><em *ngIf="profile != null">{{profile.course_started_at_ictak}}</em><br>
+                    </ng-template>
                 </mat-expansion-panel> 
                 <mat-expansion-panel hideToggle>
                   <mat-expansion-panel-header>
@@ -89,7 +92,8 @@
                       EDUCATION DETAILS
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                  <span *ngIf = "profile.education === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                  <span *ngIf = "profile.education == null; else other"> THIS PROFILE IS NOT AVAILABLE </span>
+                  <ng-template #other>
                     <div *ngFor=" let edu of profile.education" class="mb-2 edu">
                       <SPAN *ngIf="profile != null">Qualification: </SPAN><em *ngIf="profile != null">{{edu.qualification}}</em><br>
                       <SPAN *ngIf="profile != null">Completion Status: </SPAN><em *ngIf="profile != null">{{edu.completion_status}}</em><br>
@@ -99,6 +103,7 @@
                       <SPAN *ngIf="profile != null">Percentage: </SPAN><em *ngIf="profile != null">{{edu.percentage}}</em><br>
                       <SPAN *ngIf="profile != null">year of Passing: </SPAN><em *ngIf="profile != null">{{edu.year_of_pass | date}}</em><br>
                     </div>
+                  </ng-template>
                 </mat-expansion-panel>  
                 <mat-expansion-panel hideToggle>
                   <mat-expansion-panel-header>
@@ -106,7 +111,8 @@
                       PREVIOUS EXPERINCES
                     </mat-panel-title>
                   </mat-expansion-panel-header >
-                   <span *ngIf = "profile.experience === null"> THIS PROFILE IS NOT AVAILABLE </span>
+                   <span *ngIf = "profile.experience == null; else other"> THIS PROFILE IS NOT AVAILABLE </span>
+                  <ng-template #other>
                     <div *ngFor="let exp of profile.experience" class="mb-2 edu">
                       <SPAN *ngIf="profile != null">Company Name: </SPAN><em *ngIf="profile != null">{{exp.company}}</em><br>
                       <SPAN *ngIf="profile != null">Designation: </SPAN><em *ngIf="profile != null">{{exp.Designation}}</em><br>
@@ -116,6 +122,7 @@
                       <SPAN *ngIf="profile != null">Montly Salary: </SPAN><em *ngIf="profile != null">{{exp.current_monthly_salary }}</em><br>
                       <SPAN *ngIf="profile != null">Notice Period: </SPAN><em *ngIf="profile != null">{{exp.notice_period}}</em><br>
                     </div>
+                  </ng-template>
                 </mat-expansion-panel>                   
               </mat-expansion-panel>
 

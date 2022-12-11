@@ -1,4 +1,7 @@
-
+.navbar{
+    height: 50px;
+    background-color: aqua;
+}
 .card{
  
     background-color: #2efd059f;
@@ -26,4 +29,15 @@
      .example-header-image {
        
        background-size: cover;
+     }
+     p{
+        font-weight:500;
+        font-size: larger;
+     }
+     #job{
+        display:flex;
+        
+     }
+     mat-card-title{
+        font-family: 'Times New Roman', Times, serif;
      }
