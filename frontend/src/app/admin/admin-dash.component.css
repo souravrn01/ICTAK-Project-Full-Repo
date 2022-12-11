@@ -34,3 +34,10 @@
         font-weight:500;
         font-size: larger;
      }
+     #job{
+        display:flex;
+        
+     }
+     mat-card-title{
+        font-family: 'Times New Roman', Times, serif;
+     }
