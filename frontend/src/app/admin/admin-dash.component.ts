@@ -8,16 +8,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./admin-dash.component.css']
 })
 export class AdminDashComponent implements OnInit {
-  alumniData:any=[]
+  
   data:any=[]
-  id:any=[]
+  job:any=[]
+  emp:any=[]
+  jobverfied:any=[]
   constructor(
-    private route:ActivatedRoute,
     private api:AdminApiService) {}
 
   ngOnInit(): void {
-    this.getAlumni()
-
+    this.getAlumni(),
+    this.getjob(),
+    this.getjobverfied(),
+    this.getemp()
+    
   }
   customOptions: OwlOptions = {
     loop: false,
@@ -51,13 +55,36 @@ export class AdminDashComponent implements OnInit {
   //     );
   // })
 
-  getAlumni(){              // fetch alumni data
+  getAlumni(){             
     this.api.getalumni().subscribe(data=>{
       this.data=JSON.parse(JSON.stringify(data));
       console.log(this.data);
+      console.log(this.data.length)
       
     })
   }
+  getjob(){
+       this.api.getJob().subscribe(data=>{
+        this.job=JSON.parse(JSON.stringify(data));
+        console.log(this.job);
+        console.log(this.job.length)
+       })
+  }
+getemp(){
+  this.api.getEmp().subscribe(data=>{
+    this.emp=JSON.parse(JSON.stringify(data));
+    console.log(this.emp);
+    console.log(this.emp.length)
+   })
+}
+getjobverfied(){
+  this.api.getappliedjobs().subscribe(data=>{
+    this.jobverfied=JSON.parse(JSON.stringify(data));
+    console.log(this.jobverfied);
+    console.log(this.jobverfied.length)
+   })
+}
+
   }
 
   

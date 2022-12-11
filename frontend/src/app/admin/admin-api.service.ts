@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { throwMatDialogContentAlreadyAttachedError } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ postalumni(){
     return this.http.put(`http://localhost:3000/api/alumniuv/onealumni`,data)
     
   }
+
 
   deletealumni(id:any){
     return this.http.delete(`http://localhost:3000/api/alumniuv/deletealumni/${id}`)
