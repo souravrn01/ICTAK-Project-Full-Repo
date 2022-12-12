@@ -17,10 +17,14 @@ import { EmployerApplicationsComponent } from './components/employer-application
 import { DashAdminComponent } from './components/dash-admin/dash-admin.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AuthGuard } from './auth.guard';
+import { AdminApiService } from './admin-api.service';
 
 
 @NgModule({
   declarations: [NavbarComponent,  JobPostFormComponent, AdminDashComponent, AlumniUVComponent,  VerifyEmpComponent, JobApplicationsComponent, EmployerApplicationsComponent, DashAdminComponent],
   imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule,HttpClientModule, MatSnackBarModule, CarouselModule,MatCardModule,MatExpansionModule,MatButtonModule,MatMenuModule],
-})
+  providers:[AuthGuard,AdminApiService]
+}
+)
 export class AdminModule {}

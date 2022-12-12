@@ -30,6 +30,7 @@ import { ApplyjobsComponent } from './applyjobs/applyjobs.component';
 import { HeaderComponent } from './header/header.component';
 import { FilterPipe } from './filter.pipe';
 import { AlumniApiService } from './alumni-api.service';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -69,7 +70,7 @@ import { AlumniApiService } from './alumni-api.service';
 
     
   ],
-  providers:[AlumniApiService]
+  providers:[AlumniApiService,AuthGuard]
 })
 
 export class AlumniModule { }

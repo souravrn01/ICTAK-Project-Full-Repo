@@ -31,7 +31,7 @@ import { AdminLoginComponent } from './main/admin-login/admin-login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilterPipe } from './pipes/filter.pipe';
 import { TokenInterceptorService } from './token-interceptor.service';
-import { AuthGuardGuard } from './auth-guard.guard';
+
 import { AdminApiService } from './admin/admin-api.service';
 import { EmployerApiService } from './employer/employer-api.service';
 import { AlumniApiService } from './alumni/alumni-api.service';
@@ -72,7 +72,7 @@ import { AlumniApiService } from './alumni/alumni-api.service';
     MatFormFieldModule,
     MatSnackBarModule
   ],
-  providers: [SignUpService,AuthGuardGuard, EmpLoginComponent,
+  providers: [SignUpService,EmpLoginComponent,
   {
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,
