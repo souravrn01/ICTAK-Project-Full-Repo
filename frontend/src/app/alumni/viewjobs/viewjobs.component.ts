@@ -60,6 +60,7 @@ storeid(id:any){
     this.apiService.addjobapplication(data).subscribe((res) => {
       console.log(res);
     });
+    location.reload();
   }
 
   datecheck(date:any){
