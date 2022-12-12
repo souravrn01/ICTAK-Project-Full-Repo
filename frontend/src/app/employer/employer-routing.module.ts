@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'job', component: AddjobComponent },
   { path: 'dash', component: DashboComponent },
   {path: 'viewjob', component: ViewjobComponent}]
-},{path: 'edit', component: EditComponent},{path: 'Home', component:DashboardComponent }];
+},{path: 'edit/:id', component: EditComponent},{path: 'Home', component:DashboardComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
