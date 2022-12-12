@@ -66,7 +66,7 @@ storeid(id:any){
     const today = new Date()
     const jobdate = new Date(date)
     console.log(today, jobdate);
-    if(jobdate > today){
+    if(jobdate < today){
       this.date = true
       return true
     }else{

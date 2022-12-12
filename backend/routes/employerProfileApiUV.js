@@ -25,7 +25,7 @@ router.get('/employers',async(req,res)=>{       // getdata for admin to collect 
 
 router.get('/employersV',async(req,res)=>{       // getdata for admin to collect unverified employer
     try {
-        let list=await EmployeData.find({approval_status: "verified"})
+        let list=await EmployeData.find({approval_status: "verified",posted_By:req.body.id})
         res.send(list)
     } catch (error) {
        console.log(error) 

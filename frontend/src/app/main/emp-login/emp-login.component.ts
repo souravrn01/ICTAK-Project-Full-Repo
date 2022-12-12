@@ -40,7 +40,7 @@ holder:any=[]
         }
         else{
           alert("Successfully logged in")
-         this.router.navigateByUrl(`/empDash/dash`)
+         this.router.navigateByUrl(`/empDash/dash/${this.holder._id}`)
         }    
 
       })

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmployerApiService } from '../employer-api.service';
-
 
 @Component({
   selector: 'app-dashbo',
   templateUrl: './dashbo.component.html',
+  template:`<app-viewjob [data]="empid"></app-viewjob>`,
   styleUrls: ['./dashbo.component.css']
 })
-export class DashboComponent implements OnInit {
 
+export class DashboComponent implements OnInit {
+@Input() empid:any
 
   constructor(private api:EmployerApiService, private actroute: ActivatedRoute) { }
  
@@ -17,11 +18,12 @@ export class DashboComponent implements OnInit {
   user:any=[];
   JOB:any=[];
   application:any=[];
-
+id:any=''
 
   ngOnInit(): void {
-   console.log( this.actroute.snapshot.paramMap.get('id'));
-   
+
+    this.empid=this.actroute.snapshot.paramMap.get('id')
+   console.log(this.empid);
     this.getjob()
     this.userlength()
     this.joblength()

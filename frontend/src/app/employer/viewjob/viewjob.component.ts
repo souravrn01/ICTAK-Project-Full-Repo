@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,Input } from '@angular/core';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EditComponent } from '../edit/edit.component';
@@ -8,15 +8,17 @@ import {EmpLoginComponent} from '../../main/emp-login/emp-login.component'
 @Component({
   selector: 'app-viewjob',
   templateUrl: './viewjob.component.html',
+  template:`<p>{{ data }}</p>`,
   styleUrls: ['./viewjob.component.css']
 })
 export class ViewjobComponent implements OnInit {
+  @Input() data:any
   @ViewChild(EmpLoginComponent)
   child!: EmpLoginComponent;
 
   routerID:any=''
   Jobs:any=[];
-  data:any;
+
   condition:String ="" 
   jobs:any=''
   applications:any=''
@@ -24,6 +26,7 @@ export class ViewjobComponent implements OnInit {
   constructor(private api:EmployerApiService,private router:Router, public emp:EmpLoginComponent, private actroute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.data)
     this.actroute.snapshot.paramMap.get('id');
     console.log(this.routerID )
     this.getjob()

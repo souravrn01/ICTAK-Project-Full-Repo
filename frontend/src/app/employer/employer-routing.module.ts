@@ -10,7 +10,7 @@ import { ViewjobComponent } from './viewjob/viewjob.component';
 
 const routes: Routes = [
   {path: 'empDash',canActivate:[AuthGuard], component: DashboardComponent,
-  children: [{ path: 'dash', component:DashboComponent },
+  children: [{ path: 'dash/:id', component:DashboComponent },
   { path: 'job', component: AddjobComponent },
   { path: 'dash', component: DashboComponent },
   {path: 'viewjob', component: ViewjobComponent}]
