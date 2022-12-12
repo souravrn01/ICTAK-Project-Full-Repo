@@ -28,7 +28,7 @@
       </div>
     </div>
   </nav>
-  <div>
+  <div class="dt">
     <!-- <div class="card">
     <div class="card-header">
         <button>ADMIN HOME</button>
@@ -42,6 +42,7 @@
     <h2>VERFICATION</h2>
     <div >
         <h3>NEW ALUMNI'S</h3>
+        <h4>Unverfied Alumni</h4>
         <owl-carousel-o [options]="customOptions">
 
             <ng-template carouselSlide *ngFor="let i of data">
@@ -71,11 +72,11 @@
           <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title>Number of Alumni Unverified : {{data.length}}</mat-card-title>
-              
+            
             </mat-card-header>
           </mat-card>
 
-
+          <h4>Verfied Alumni</h4>
           <owl-carousel-o [options]="customOptions">
 
             <ng-template carouselSlide *ngFor="let i of alumniV">
@@ -113,7 +114,7 @@
 
     <div>
         <h3>NEW EMPLOYER</h3>
-
+        <h4>Unverfied Employer</h4>
         <owl-carousel-o [options]="customOptions">
 
           <ng-template carouselSlide *ngFor="let e of empUV">
@@ -138,7 +139,7 @@
           
         </owl-carousel-o>
 
-
+        
               <mat-card class="example-card">
                   <mat-card-header>
                     <mat-card-title>Number of Employer Unverified:{{emp.length}}</mat-card-title>
@@ -146,8 +147,9 @@
                   </mat-card-header>
                  
                 </mat-card>
-                <owl-carousel-o [options]="customOptions">
+                <h4>Verfied Employer</h4>
 
+                <owl-carousel-o [options]="customOptions">
                 <ng-template carouselSlide *ngFor="let e of emp">
                   <mat-card class="example-card">
                       <mat-card-header >
@@ -169,7 +171,7 @@
                 </ng-template>  
           </owl-carousel-o>
 
-                <mat-card class="example-card">
+                <mat-card class="example-card" >
                   <mat-card-header>
                     <mat-card-title >Number of Employer Verified:{{empUV.length}}</mat-card-title>
 
@@ -182,22 +184,19 @@
 
     <h2>JOB APPLICATION</h2>
         
+    <h4>Unverfied job</h4>
   
-  <mat-card class="example-card">
-    <mat-card-header *ngFor="let j of job">
-      <mat-card-title>job: {{j.resume}}</mat-card-title>
-      
-    </mat-card-header>
-   
-  </mat-card>
-          <mat-card class="example-card">
+
+          <mat-card class="example-card"id="sty">
               <mat-card-header>
                 <mat-card-title>Number of Job Application : {{jobUV.length}}</mat-card-title>
                 
               </mat-card-header>
-            
             </mat-card>
-            <mat-card class="example-card">
+
+            <h4>Verfied job</h4>
+
+            <mat-card class="example-card" id="sty">
               <mat-card-header>
                 <mat-card-title>Number of Job Application Verified : {{job.length}}</mat-card-title>
                 

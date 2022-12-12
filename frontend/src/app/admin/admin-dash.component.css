@@ -40,4 +40,33 @@
      }
      mat-card-title{
         font-family: 'Times New Roman', Times, serif;
+        word-spacing: 0.2em;
+     }
+     h4{
+        text-align: center;
+     }
+     .example-card{
+        box-shadow: 2px 3px 4px rgba(18, 18, 19, 0.418);
+        background-image: linear-gradient(to right,#f38efa,#758cf0cb);
+     }
+     .navbar{
+        width: 100%;
+        background-image: linear-gradient(to right,#de6262,#ffb88c);
+     }
+     .navbar-brand{
+        color: white;
+     }
+     .nav-link{
+        color:white;
+     }
+     .nav-link:hover{color: rgba(60, 61, 60, 0.979);}
+     .dt{
+        background-image: linear-gradient(to right,#1b7dfd,#ffb88c);
+     }
+     #sty{
+        width: 100%;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        
      }
