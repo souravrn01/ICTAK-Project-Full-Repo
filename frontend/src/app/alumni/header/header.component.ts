@@ -14,4 +14,8 @@ export class HeaderComponent implements OnInit {
   back(){
     history.back()
   }
+  function(){
+    localStorage.removeItem('token')
+  }
+
 }

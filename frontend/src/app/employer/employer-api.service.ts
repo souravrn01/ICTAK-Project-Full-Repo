@@ -39,4 +39,13 @@ getalumnilength(){
 getapplicationlength(){
   return this.http.get(`${this.apiUrl}/applicationsuv/Apps`)
 }
+getToken(){
+  return localStorage.getItem('token');
+ }
+ loggedIn(){
+  return !!localStorage.getItem('token');
+ }
+ loggedOut(){
+  return localStorage.removeItem('token');
+ }
 }

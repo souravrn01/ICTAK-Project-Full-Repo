@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     private SignUpService:SignUpService, private snackBar:MatSnackBar) { }
 
     alumnidata:any=[]
-
+    holder:any=[]
   loginForm=new FormGroup({
     email:new FormControl(null,[Validators.required,Validators.email]),
     password:new FormControl(null,[Validators.required,Validators.minLength(8)]),
@@ -26,9 +26,10 @@ export class LoginComponent implements OnInit {
 login(){
   
    this.SignUpService.getalumnilogin(this.loginForm.value).subscribe(res=>{
-    this.alumnidata = res
+    this.holder = res.data
+    console.log("getting user", this.holder._id)
     console.log(res)
-    console.log(this.alumnidata._id);
+    console.log(this.holder.token);
     localStorage.setItem('token',res.token)
     if(res.message){
       alert('admin didnot verified yet')
@@ -36,7 +37,7 @@ login(){
     }
     else{
       alert('Successfully Login')
-      this.router.navigateByUrl(`/alumnidashboard/${this.alumnidata._id}`)
+      this.router.navigateByUrl(`/alumnidashboard/${this.holder._id}`)
      } 
   })
     

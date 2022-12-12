@@ -41,4 +41,9 @@ export class DashboardComponent implements OnInit {
   tojobs(id:any){
     this.router.navigateByUrl(`/alumniviewjobs/${id}`)
   }
+
+  function(){
+    localStorage.removeItem('token')
+  }
+
 }

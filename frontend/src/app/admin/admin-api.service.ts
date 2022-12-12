@@ -89,11 +89,16 @@ verifyApplication(id:any){
 download(id:any){
   return this.http.get(`http://localhost:3000/api/applicationsuv/download/${id}`)
 }
-getToken(){
-  return localStorage.getItem('token')
-}
-
 deleteJob(id:any){
   return this.http.delete(`http://localhost:3000/api/verifiedjobs/deletejob/${id}`)
 }
+getToken(){
+  return localStorage.getItem('token');
+ }
+ loggedIn(){
+  return !!localStorage.getItem('token');
+ }
+ loggedOut(){
+  return localStorage.removeItem('token');
+ }
 }

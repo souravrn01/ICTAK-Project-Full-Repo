@@ -42,5 +42,14 @@ alumniexperienceremove(id:any){
 //   return this.http.delete(`http://localhost:3000/api/alumniuv/deleteeducation/${id}`)
 // }
 
+getToken(){
+  return localStorage.getItem('token');
+ }
+ loggedIn(){
+  return !!localStorage.getItem('token');
+ }
+ loggedOut(){
+  return localStorage.removeItem('token');
+ }
 }
 
