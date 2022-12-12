@@ -31,8 +31,15 @@ download(id:any){
   return this.http.get(`http://localhost:3000/api/applicationsuv/download/${id}`)
 }
 getappliedjobs(){
-  return this.http.get('http://localhost:3000/api/verifiedjobs/getjob')
+  return this.http.get(`http://localhost:3000/api/verifiedjobs/getjob/`)
 }
+
+getemployerjobs(id:any){
+  console.log(id);
+   return this.http.get(`http://localhost:3000/api/verifiedjobs/getidjob/${id}`)
+  
+}
+
 getalumnilength(){
   return this.http.get(`${this.apiUrl}/alumniuv/aluminiVer`)
 }
@@ -48,4 +55,17 @@ getToken(){
  loggedOut(){
   return localStorage.removeItem('token');
  }
+
+
+data:any // emp id
+
+ setData(data:any){
+  this.data = data
+ }
+
+getData(){
+  return this.data
 }
+
+}
+

@@ -11,6 +11,18 @@ router.get('/getjob',verifytoken, async(req, res)=>{  // getting job
     }
 })
 
+router.get('/getidjob/:id', async(req, res)=>{  // getting job
+    try {
+        let empID = req.params.id
+        console.log(empID)
+        let jobs = await JOBDATA.find({postedBy:empID})
+        res.send(jobs)
+    } catch (error) {
+        console.log('get error:', error);
+    }
+})
+
+
 
 router.get('/getempjob', async(req, res)=>{  // getting job by employer
     try {
@@ -116,6 +128,6 @@ router.get('/getOneJob/:id', async(req,res)=>{ // Get a single job by id
     } catch (error) {
         console.log('single error:',error);
     }
-})
+}) 
 
 module.exports = router;

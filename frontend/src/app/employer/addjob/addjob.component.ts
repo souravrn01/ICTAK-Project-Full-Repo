@@ -11,7 +11,7 @@ import { EmployerModule } from '../employer.module';
 export class AddjobComponent implements OnInit {
   id:any;
   datas:any=[];
-  postedBy:string='employer name'
+  postedBy:any = ''
 
   constructor(private api:EmployerApiService) { }
   addForm:any=new FormGroup({
@@ -25,12 +25,17 @@ export class AddjobComponent implements OnInit {
     salaryRange:new FormControl('',Validators.required),
     experience:new FormControl('',Validators.required),
     closingDate:new FormControl('',Validators.required),
-    postedBy:new FormControl(this.postedBy)
+    postedBy:new FormControl('')
   
   })
   ngOnInit(): void {
+    this.addForm.value.postedBy =  this.api.getData()
+    console.log(this.addForm.value.postedBy);
+    
   }
   onsubmit(){
+    this.addForm.value.postedBy =  this.api.getData()
+    console.log(this.addForm.value.postedBy);
     this.api.addJob(this.addForm.value).subscribe(res=>{
       console.log(res);
       alert('data saved successfully')

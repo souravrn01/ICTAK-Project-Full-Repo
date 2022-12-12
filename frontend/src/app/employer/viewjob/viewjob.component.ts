@@ -8,37 +8,37 @@ import {EmpLoginComponent} from '../../main/emp-login/emp-login.component'
 @Component({
   selector: 'app-viewjob',
   templateUrl: './viewjob.component.html',
-  template:`<p>{{ data }}</p>`,
+  
   styleUrls: ['./viewjob.component.css']
 })
 export class ViewjobComponent implements OnInit {
-  @Input() data:any
+
+  ID:any
+
   @ViewChild(EmpLoginComponent)
   child!: EmpLoginComponent;
 
-  routerID:any=''
-  Jobs:any=[];
+  
+ 
 
   condition:String ="" 
-  jobs:any=''
+  jobs:any
   applications:any=''
   profile:any=''
   constructor(private api:EmployerApiService,private router:Router, public emp:EmpLoginComponent, private actroute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.data)
-    this.actroute.snapshot.paramMap.get('id');
-    console.log(this.routerID )
+
+    this.ID = this.api.getData()
+    console.log('from view jobs:',this.ID)
     this.getjob()
     
-    this.api.getappliedjobs().subscribe(async res=>{
-      this.jobs = res
-      
-    })
   }
+
   getjob(){
-    this.api.getJob().subscribe(res=>{
-      this.Jobs=res
+    this.api.getemployerjobs(this.ID).subscribe(async res=>{
+      this.jobs = res
+      console.log(this.jobs[0])
     })
   }
   getSingleJob(id:any){
