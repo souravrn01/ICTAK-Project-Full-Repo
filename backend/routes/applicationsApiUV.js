@@ -5,7 +5,7 @@ const multer=require('multer')
 const path = require("path");
 
 
-const DIR  = './uploads/'                                   // file upload code 
+const DIR  = './uploads'                         // file upload code 
 const storage  = multer.diskStorage({
     destination: (req, res, cb)=>{
         cb(null, DIR)
@@ -51,7 +51,7 @@ router.get('/applicationdata/:id', async (req, res) => {       // getdata for ad
 router.get('/UVApps', async (req, res) => {      //  unverified applications
     try {
      
-        let list = await ApplicationData.find({ approval_status: "not approved"})
+        let list = await ApplicationData.find({ approval_status: "not approved"}, {postedBy:{$ne : "admin"}})
         res.send(list)
     } catch (error) {
         console.log(error)

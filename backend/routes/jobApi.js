@@ -24,10 +24,10 @@ router.get('/getidjob/:id', async(req, res)=>{  // getting job
 
 
 
-router.get('/getempjob', async(req, res)=>{  // getting job by employer
+router.get('/getempjob', async(req, res)=>{  // getting job by employer used by admin
     try {
         console.log('token from frontend',req.headers.authorization)
-    let jobs = await JOBDATA.find({postedBy:"employe"})
+    let jobs = await JOBDATA.find({postedBy:{$ne: "admin"}})
         res.send(jobs)
     } catch (error) {
         console.log('get error:', error);

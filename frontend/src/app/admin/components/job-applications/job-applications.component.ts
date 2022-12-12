@@ -43,7 +43,7 @@ export class JobApplicationsComponent implements OnInit {
   delete(id:any){
     if(window.confirm(" are you sure?")){
       this.adminApi.deleteApplication(id).subscribe(res=>{
-        this.ngOnInit()
+        location.reload()
       })
     }
   }
@@ -51,7 +51,7 @@ export class JobApplicationsComponent implements OnInit {
   deleteJob(id:any){
     if(window.confirm(" are you sure?")){
       this.adminApi.deleteJob(id).subscribe(res=>{
-        this.ngOnInit()
+        location.reload()
       })
     }
   }
