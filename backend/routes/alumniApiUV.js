@@ -76,7 +76,6 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
         }else{
 
             res.send({token,data});
-            //  res.send({ 'token': token});
         }
          
         

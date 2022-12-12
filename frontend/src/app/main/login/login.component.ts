@@ -42,9 +42,6 @@ login(){
   })
     
 }
-// openSnackBar(message:any,action:any){
-//   this.snackBar.open(message,action)
-// }
 }
 
 
