@@ -26,16 +26,15 @@ export class LoginComponent implements OnInit {
 login(){
   
    this.SignUpService.getalumnilogin(this.loginForm.value).subscribe(res=>{
-    this.holder = res.data
-    console.log("getting user", this.holder._id)
-    console.log(res)
-    console.log(this.holder.token);
-    localStorage.setItem('token',res.token)
     if(res.message){
       alert('admin didnot verified yet')
       this.router.navigate(['/alumnilogin'])
     }
     else{
+      this.holder = res.data
+      console.log(res)
+      console.log('token',res.token);
+      localStorage.setItem('token',res.token)
       alert('Successfully Login')
       this.router.navigateByUrl(`/alumnidashboard/${this.holder._id}`)
      } 
