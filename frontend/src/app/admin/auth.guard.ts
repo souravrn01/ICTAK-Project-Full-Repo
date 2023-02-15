@@ -11,16 +11,14 @@ export class AuthGuard implements CanActivate {
   constructor(private adminService:AdminApiService,private router:Router){}
 
   canActivate():boolean{
+    
     if(this.adminService.loggedIn()){
       return true
-    }
-    else{
+    } else{
       this.router.navigate(['/adminlogin'])
       return false
     }
 
-
-  
   }
   
 }

@@ -1,7 +1,7 @@
 const {JsonWebTokenError} = require("jsonwebtoken")
 const jwt = require('jsonwebtoken')
 
-//middleware
+//middleware 
 function verifytoken (req, res, next) {
     console.log('headers=', req.headers.authorization);
     if (!req.headers.authorization) {

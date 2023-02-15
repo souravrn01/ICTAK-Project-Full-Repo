@@ -11,7 +11,7 @@ export class ApplyjobsComponent implements OnInit {
 
   constructor(private apiService: AlumniApiService, private router: Router) { }
 
-  jobs:any=[]
+  jobs:any=[] 
   form:any=new FormGroup({
     resume_file_upload:new FormControl(null),
     profile_link:new FormControl(null)
@@ -28,13 +28,11 @@ export class ApplyjobsComponent implements OnInit {
     const formData = new FormData();
     formData.append("resume", file)
     const upload$ = this.apiService
-
   }
 
   
   onSubmit(){
     console.log('hii');
-    
   }
 
 }

@@ -141,9 +141,7 @@ router.post('/employe', async (req, res) => {
 
                 let token =await jwt.sign(payload,'secretkey')
         if (!user) {
-            return res.json({ message: "Invalid username or password or admin didnot verified yet" });
-
-
+            return res.json({ message: "Invalid username or password or admin didnot verified yet" })
         }
         res.send({token,user})
     } catch (error) {

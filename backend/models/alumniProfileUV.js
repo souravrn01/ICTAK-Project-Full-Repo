@@ -20,7 +20,7 @@ const alumniSchema= new schema({
         {
             qualification:{
                 type: String,
-                default: ""
+                default: "sample"
             },
             completion_status:{
                 type: String,

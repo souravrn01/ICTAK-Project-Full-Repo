@@ -52,7 +52,7 @@ postalumni(){
 
   approveemp(data:any){
     return this.http.put(`http://localhost:3000/api/employeuv/verifyemp`, data)
-  }
+  } 
 
   getappliedjobs(){
     return this.http.get('http://localhost:3000/api/verifiedjobs/getadminjob')

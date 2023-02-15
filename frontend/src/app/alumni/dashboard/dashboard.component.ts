@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private activaRoute:ActivatedRoute,private apiService: AlumniApiService,private router:Router) { }
   
-  alumni_id:any=''
+  alumni_id:any='' 
   alumnidata:any=''
   educations:any=''
   experiences:any=''

@@ -7,7 +7,7 @@ import { AdminApiService } from '../../admin-api.service';
   templateUrl: './job-post-form.component.html',
   styleUrls: ['./job-post-form.component.css']
 })
-export class JobPostFormComponent implements OnInit {
+export class JobPostFormComponent implements OnInit { 
     status:boolean = false
   jobForm:any = new FormGroup({
     'jobTitle':new FormControl('',[Validators.required]),
@@ -42,6 +42,6 @@ export class JobPostFormComponent implements OnInit {
   }
   }
   function(){
-    localStorage.removeItem('token')
+    localStorage.removeItem('token') 
   }
 }

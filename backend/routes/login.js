@@ -22,7 +22,7 @@ router.post('/loginadmin',async(req,res)=>{
             return res.json({ message: " Invalid Username and password !!" });
         }
        
-    }  
+    }   
         catch(error){
             console.log(error)
         }

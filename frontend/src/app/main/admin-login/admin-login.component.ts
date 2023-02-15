@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
 
-  
+   
   constructor(private router:Router,
     private SignUpService:SignUpService) { }
 

@@ -12,7 +12,7 @@ import { ThisReceiver } from '@angular/compiler';
 export class EmpLoginComponent implements OnInit {
 
   empdata:any=[]
-
+ 
   Id:string  = 'test ID'
 holder:any=[]
 

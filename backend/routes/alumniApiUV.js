@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const AluminiData = require('../models/alumniProfileUV')
 const jwt = require('jsonwebtoken')
-
+ 
 
 
 
@@ -77,9 +77,6 @@ router.post('/singlealumni',async(req,res)=>{       //get singledata of alumni
 
             res.send({token,data});
         }
-         
-        
-        
     }
     catch(error){
         console.log(error)
@@ -100,7 +97,7 @@ router.get('/alumni/:id',(req,res)=>{
 router.put('/generaldata',async(req,res)=>{ //update one alumni general information
     try{
         console.log(req.body)
-        let id = req.body.id
+        let id = req.body.id 
         let generaldata = {
             gender:req.body.data.gender,
             date_of_birth:req.body.data.date_of_birth,
